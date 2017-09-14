@@ -1,0 +1,116 @@
+//EVNT BANK
+
+gcEVNT->Id  = pEVNT->id[nrow];
+gcEVNT->Pmom  = pEVNT->p[nrow];
+gcEVNT->Mass  = pEVNT->m[nrow];
+gcEVNT->Charge  = (Char_t) pEVNT->q[nrow];
+gcEVNT->Betta  = pEVNT->b[nrow];
+gcEVNT->Px  = pEVNT->cx[nrow]*pEVNT->p[nrow];
+gcEVNT->Py  = pEVNT->cy[nrow]*pEVNT->p[nrow];
+gcEVNT->Pz  = pEVNT->cz[nrow]*pEVNT->p[nrow];
+gcEVNT->X  = pEVNT->vx[nrow];
+gcEVNT->Y  = pEVNT->vy[nrow];
+gcEVNT->Z  = pEVNT->vz[nrow];
+gcEVNT->Dcstat  = (Char_t) pEVNT->dc[nrow];
+gcEVNT->Ccstat  = (Char_t) pEVNT->cc[nrow];
+gcEVNT->Scstat  = (Char_t) pEVNT->sc[nrow];
+gcEVNT->Ecstat  = (Char_t) pEVNT->ec[nrow];
+gcEVNT->Lcstat  = (Char_t) pEVNT->lec[nrow];
+gcEVNT->Ststat  = (Char_t) pEVNT->st[nrow];
+gcEVNT->Status  = (Char_t) pEVNT->stat[nrow];
+
+//GSIM BANK
+
+  gcGSIM->Id  = TDatabasePDG::Instance()->ConvertGeant3ToPdg( pPART->mcid[nrow] );
+  gcGSIM->Charge  = (Char_t) pPART->qpart[nrow];// not sure
+  Float_t E2=pow(pPART->mcm[nrow],2) + pow(pPART->mcp[nrow],2);
+  gcGSIM->Betta  =  pPART->mcp[nrow] / sqrt(E2);
+  gcGSIM->Px  = pPART->mcp[nrow]*TMath::Sin(TMath::DegToRad()*pPART->mctheta[nrow])*TMath::Cos(TMath::DegToRad()*pPART->mcphi[nrow]);
+  gcGSIM->Py  = pPART->mcp[nrow]*TMath::Sin(TMath::DegToRad()*pPART->mctheta[nrow])*TMath::Sin(TMath::DegToRad()*pPART->mcphi[nrow]);
+  gcGSIM->Pz  = pPART->mcp[nrow]*TMath::Cos(TMath::DegToRad()*pPART->mctheta[nrow]);
+  gcGSIM->X  = pPART->mcvx[nrow];
+  gcGSIM->Y  = pPART->mcvy[nrow];
+  gcGSIM->Z  = pPART->mcvz[nrow];
+  gcGSIM->Dcstat  = 0;
+  gcGSIM->Ccstat  = 0;//(UChar_t) pPART->get_CCstat(nrow);
+  gcGSIM->Scstat  = 0;//(UChar_t) pPART->get_SCstat(nrow);
+  gcGSIM->Ecstat  = 0;//(UChar_t) pPART->get_ECstat(nrow);
+  gcGSIM->Lcstat  = 0;//(UChar_t) pPART->get_LCstat(nrow);
+  gcGSIM->Ststat  = 0;// gcGSIM->Ststat  = (UChar_t) pPART->get_STstat(nrow);
+  gcGSIM->Status  = 1;// (UChar_t) pPART->get_Status(nrow);  
+
+//ECPB
+
+gcECPB->Scht  = 0; //not sure
+gcECPB->Etot  = pECPB->etot[nrow]; //100*sector+Whole_Hit_ID in ECHB 
+gcECPB->Ein  = pECPB->ec_ei[nrow];
+gcECPB->Eout  = pECPB->ec_eo[nrow];
+gcECPB->Time  = pECPB->ec_t[nrow];
+gcECPB->Path  = pECPB->ec_r[nrow];
+gcECPB->X  = pECPB->ech_x[nrow];
+gcECPB->Y  = pECPB->ech_y[nrow];
+gcECPB->Z  = pECPB->ech_z[nrow];
+gcECPB->M2_hit  = pECPB->ec_m2[nrow];
+gcECPB->M3_hit  = pECPB->ec_m3[nrow];
+gcECPB->M4_hit  = pECPB->ec_m4[nrow];
+gcECPB->Innstr  = pECPB->ec_inst[nrow];
+gcECPB->Outstr  = pECPB->ec_oust[nrow];
+gcECPB->Chi2ec  = pECPB->ec_c2[nrow];
+gcECPB->Status  = pECPB->ec_stat[nrow];
+
+//SCPB
+
+gcSCPB->Scpdht  = pSCPB->sc_sect[nrow]*10000 + pSCPB->sc_pd[nrow]*100 + pSCPB->sc_hit[nrow]; // 1 ScPdHt !10000*sector+100*SC_PD_ID+Hit_ID in SCR
+gcSCPB->Edep  = pSCPB->edep [nrow];
+gcSCPB->Time  = pSCPB->sc_t [nrow];
+gcSCPB->Path  = pSCPB->sc_r [nrow];
+gcSCPB->Chi2sc  = pSCPB->sc_c2 [nrow];
+gcSCPB->Status  = pSCPB->sc_stat [nrow];
+
+
+// DCPB
+
+gcDCPB->Sctr  = pDCPB->dc_sect[nrow]*100 + pDCPB->dc_trk[nrow];//100*sector+track_ID in *BTR 
+gcDCPB->X_sc  = pDCPB->dc_xsc [nrow];
+gcDCPB->Y_sc  = pDCPB->dc_ysc [nrow];
+gcDCPB->Z_sc  = pDCPB->dc_zsc [nrow];
+gcDCPB->Cx_sc  = pDCPB->dc_cxsc [nrow];
+gcDCPB->Cy_sc  = pDCPB->dc_cysc [nrow];
+gcDCPB->Cz_sc  = pDCPB->dc_czsc [nrow];
+gcDCPB->X_ec  = pDCPB->dc_vx [nrow]; // Mod(3/4/00) MWH - DCPB was changed by Stepan.
+gcDCPB->Y_ec  = pDCPB->dc_vy [nrow];
+gcDCPB->Z_ec  = pDCPB->dc_vz [nrow];
+gcDCPB->Th_cc  = pDCPB->dc_vr [nrow];
+gcDCPB->Chi2  = pDCPB->dc_c2 [nrow];
+gcDCPB->Status  = pDCPB->dc_stat[nrow];
+
+
+//CCPB
+
+gcCCPB->Scsght  = pCCPB->cc_sect[nrow]*10000 +  pCCPB->cc_segm[nrow]*100 + pCCPB->cc_hit[nrow] ; //100*sector + Cluster # in CCRC. Not sure.
+gcCCPB->Nphe  =  pCCPB->nphe[nrow];
+gcCCPB->Time  = pCCPB->cc_t [nrow];
+gcCCPB->Path  = pCCPB->cc_r [nrow];
+gcCCPB->Chi2cc  = pCCPB->cc_c2 [nrow];
+gcCCPB->Status  = pCCPB->cc_segm [nrow]*10 + 1000*(1+((pCCPB->cc_sect[nrow]%2)?1:-1));/*! Status word - now 10*(CC segment number) 
+                                             ! + 1000*( 1 + phy_index).
+                                             ! PHY_INDEX = -1 : left  PMT (1,3,5...35)
+                                             ! PHY_INDEX = +1 : right PMT (2,4,6...36). Not sure */
+
+//LCPB
+
+gcLCPB->Scht  = pLCPB->lec_sect [nrow]*100 + pLCPB->lec_hit [nrow]; //100*sector+Hit_ID in EC1R
+gcLCPB->Etot  = pLCPB->lec_etot [nrow];
+gcLCPB->Time  = pLCPB->lec_t[nrow];
+gcLCPB->Path  = pLCPB->lec_r [nrow];
+gcLCPB->X  = pLCPB->lec_x [nrow];
+gcLCPB->Y  = pLCPB->lec_y [nrow];
+gcLCPB->Z  = pLCPB->lec_z [nrow];
+gcLCPB->Chi2lc  = pLCPB->lec_c2 [nrow];
+gcLCPB->Status  = pLCPB->lec_stat [nrow];
+gcLCPB->Ein  = pLCPB->lec_ein [nrow];
+
+
+
+
+

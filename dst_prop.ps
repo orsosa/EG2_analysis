@@ -1,0 +1,6684 @@
+%!PS-Adobe-3.0
+%%BoundingBox: (atend)
+%%Pages: (atend)
+%%PageOrder: (atend)
+%%DocumentFonts: (atend)
+%%DocumentNeedsFonts: (atend)
+%%DocumentSuppliedFonts: (atend)
+%%Creator: Frame 5.5
+%%DocumentData: Clean7Bit
+%%EndComments
+%%BeginProlog
+%
+% Frame ps_prolog 5.5, for use with Adobe Unix Frame 5.5 products
+%
+% This ps_prolog file is Copyright (c) 1986-1996 Adobe Systems, Incoporated.
+% All rights reserved.  This ps_prolog file may be freely copied and 
+% distributed in conjunction with documents created using FrameMaker, 
+% FrameMaker+SGML, FrameReader, and FrameViewer as long as this 
+% copyright notice is preserved.
+/FMDocSave save def
+%
+% FrameMaker users specify the proper paper size for each print job in the
+% "Print" dialog's "Printer Paper Size" "Width" and "Height~ fields.  If the
+% printer that the PS file is sent to does not support the requested paper
+% size, or if there is no paper tray of the proper size currently installed, 
+% then the job will not be printed.  The following flag, if set to true, will
+% cause the job to print on the default paper in such cases.
+/FMAllowPaperSizeMismatch            false def
+%
+% Frame products normally print colors as their true color on a color printer
+% or as shades of gray, based on luminance, on a black-and white printer. The
+% following flag, if set to true, forces all non-white colors to print as pure
+% black. This has no effect on bitmap images.
+/FMPrintAllColorsAsBlack             false def
+%
+% Frame products can either set their own line screens or use a printer's 
+% default settings. Three flags below control this separately for no 
+% separations, spot separations and process separations. If a flag
+% is true, then the default printer settings will not be changed. If it is
+% false, Frame products will use their own settings from a table based on
+% the printer's resolution.
+/FMUseDefaultNoSeparationScreen      true  def
+/FMUseDefaultSpotSeparationScreen    true  def
+/FMUseDefaultProcessSeparationScreen false def
+%
+% For any given PostScript printer resolution, Frame products have two sets of 
+% screen angles and frequencies for printing process separations, which are 
+% recomended by Adobe. The following variable chooses the higher frequencies
+% when set to true or the lower frequencies when set to false. This is only
+% effective if the appropriate FMUseDefault...SeparationScreen flag is false.
+/FMUseHighFrequencyScreens true def
+%
+% The following is a set of predefined optimal frequencies and angles for various
+% common dpi settings. This is taken from "Advances in Color Separation Using
+% PostScript Software Technology," from Adobe Systems (3/13/89 P.N. LPS 0043)
+% and corrolated with information which is in various PPD (4.0) files.
+%
+% The "dpiranges" figure is the minimum dots per inch device resolution which
+% can support this setting. The "low" and "high" values are controlled by the
+% setting of the FMUseHighFrequencyScreens flag above. The "TDot" flags control
+% the use of the "Yellow Triple Dot" feature whereby the frequency id divided by
+% three, but the dot function is "trippled" giving a block of 3x3 dots per cell.
+%
+% PatFreq is a compromise pattern frequency for ps Level 2 printers which is close
+% to the ideal WYSIWYG pattern frequency of 9 repetitions/inch but does not beat
+% (too badly) against the screen frequencies of any separations for that DPI.
+/dpiranges   [  2540    2400    1693     1270    1200     635      600      0      ] def
+/CMLowFreqs  [ 100.402  94.8683 89.2289 100.402  94.8683  66.9349  63.2456 47.4342 ] def
+/YLowFreqs   [  95.25   90.0    84.65    95.25   90.0     70.5556  66.6667 50.0    ] def
+/KLowFreqs   [  89.8026 84.8528 79.8088  89.8026 84.8528  74.8355  70.7107 53.033  ] def
+/CLowAngles  [  71.5651 71.5651 71.5651 71.5651  71.5651  71.5651  71.5651 71.5651 ] def
+/MLowAngles  [  18.4349 18.4349 18.4349 18.4349  18.4349  18.4349  18.4349 18.4349 ] def
+/YLowTDot    [  true    true    false    true    true     false    false   false   ] def
+/CMHighFreqs [ 133.87  126.491 133.843  108.503 102.523  100.402   94.8683 63.2456 ] def
+/YHighFreqs  [ 127.0   120.0   126.975  115.455 109.091   95.25    90.0    60.0    ] def
+/KHighFreqs  [ 119.737 113.137 119.713  128.289 121.218   89.8026  84.8528 63.6395 ] def
+/CHighAngles [  71.5651 71.5651 71.5651  70.0169 70.0169  71.5651  71.5651 71.5651 ] def
+/MHighAngles [  18.4349 18.4349 18.4349  19.9831 19.9831  18.4349  18.4349 18.4349 ] def
+/YHighTDot   [  false   false   true     false   false    true     true    false   ] def
+/PatFreq     [	10.5833 10.0     9.4055  10.5833 10.0	  10.5833  10.0	   9.375   ] def
+%
+% PostScript Level 2 printers contain an "Accurate Screens" feature which can
+% improve process separation rendering at the expense of compute time. This 
+% flag is ignored by PostScript Level 1 printers.
+/FMUseAcccurateScreens true def
+%
+% The following PostScript procedure defines the spot function that Frame
+% products will use for process separations. You may un-comment-out one of
+% the alternative functions below, or use your own.
+%
+% Dot function
+/FMSpotFunction {abs exch abs 2 copy add 1 gt 
+		{1 sub dup mul exch 1 sub dup mul add 1 sub }
+		{dup mul exch dup mul add 1 exch sub }ifelse } def
+%
+% Line function
+% /FMSpotFunction { pop } def
+%
+% Elipse function
+% /FMSpotFunction { dup 5 mul 8 div mul exch dup mul exch add 
+%		sqrt 1 exch sub } def
+%
+%
+/FMversion (5.5) def 
+/fMLevel1 /languagelevel where {pop languagelevel} {1} ifelse 2 lt def
+/FMPColor
+	fMLevel1 {
+		false
+		/colorimage where {pop pop true} if
+	} {
+		true
+	} ifelse
+def
+/FrameDict 400 dict def 
+systemdict /errordict known not {/errordict 10 dict def
+		errordict /rangecheck {stop} put} if
+% The readline in PS 23.0 doesn't recognize cr's as nl's on AppleTalk
+FrameDict /tmprangecheck errordict /rangecheck get put 
+errordict /rangecheck {FrameDict /bug true put} put 
+FrameDict /bug false put 
+mark 
+% Some PS machines read past the CR, so keep the following 3 lines together!
+currentfile 5 string readline
+00
+0000000000
+cleartomark 
+errordict /rangecheck FrameDict /tmprangecheck get put 
+FrameDict /bug get { 
+	/readline {
+		/gstring exch def
+		/gfile exch def
+		/gindex 0 def
+		{
+			gfile read pop 
+			dup 10 eq {exit} if 
+			dup 13 eq {exit} if 
+			gstring exch gindex exch put 
+			/gindex gindex 1 add def 
+		} loop
+		pop 
+		gstring 0 gindex getinterval true 
+		} bind def
+	} if
+/FMshowpage /showpage load def
+/FMquit /quit load def
+/FMFAILURE { 
+	2 copy exch = = flush 
+	FMshowpage 
+	/Helvetica findfont 12 scalefont setfont
+	72 200 moveto show
+	72 220 moveto show
+	FMshowpage 
+	FMquit 
+	} def 
+/FMVERSION {
+	FMversion ne {
+		(Adobe Frame product version does not match ps_prolog!  Check installation;)
+		(also check ~/fminit and ./fminit for old versions) FMFAILURE
+		} if
+	} def 
+/fmConcatProcs
+	{
+	/proc2 exch cvlit def/proc1 exch cvlit def/newproc proc1 length proc2 length add array def
+	newproc 0 proc1 putinterval newproc proc1 length proc2 putinterval newproc cvx
+}def
+FrameDict begin [
+	/ALDsave
+	/FMdicttop
+	/FMoptop
+	/FMpointsize
+	/FMsetsize
+	/FMsaveobject
+	/b
+	/bitmapsave
+	/blut
+	/bpside
+	/bs
+	/bstring
+	/bwidth
+	/c
+	/cf
+	/cs
+	/cynu
+	/depth
+	/edown
+	/fh
+	/fillvals
+	/fw
+	/fx
+	/fy
+	/g
+	/gfile
+	/gindex
+	/grnt
+	/gryt
+	/gstring
+	/height
+	/hh
+	/i
+	/im
+	/indx
+	/is
+	/k
+	/kk
+	/landscape
+	/lb
+	/len
+	/llx
+	/lly
+	/m
+	/magu
+	/manualfeed
+	/n
+	/offbits
+	/onbits
+	/organgle
+	/orgbangle
+	/orgbfreq
+	/orgbproc
+	/orgbxfer
+	/orgfreq
+	/orggangle
+	/orggfreq
+	/orggproc
+	/orggxfer
+	/orghalftone
+	/orgmatrix
+	/orgproc
+	/orgrangle
+	/orgrfreq
+	/orgrproc
+	/orgrxfer
+	/orgxfer
+	/pagesave
+	/paperheight
+	/papersizedict
+	/paperwidth
+	/pos
+	/pwid
+	/r
+	/rad
+	/redt
+	/sl
+	/str
+	/tran
+	/u
+	/urx
+	/ury
+	/val
+	/width
+	/width
+	/ws
+	/ww
+	/x
+	/x1
+	/x2
+	/xindex
+	/xpoint
+	/xscale
+	/xx
+	/y
+	/y1
+	/y2
+	/yelu
+	/yindex
+	/ypoint
+	/yscale
+	/yy
+	/tintGray
+] { 0 def } forall
+/FmBD {bind def} bind def
+systemdict /pdfmark known systemdict /currentdistillerparams known and {
+	/fMAcrobat true def
+	
+	/FmPD /pdfmark load def
+	
+	
+	/FmPT /show load def
+	
+	
+	currentdistillerparams /CoreDistVersion get 2000 ge {
+	
+		
+		/FmPD2 /pdfmark load def
+		
+		
+		
+		
+		
+		/FmPA { mark exch /Dest exch 5 3 roll 
+				/View [ /XYZ null 6 -2 roll FmDC exch pop null] /DEST FmPD 
+		}FmBD
+	} {
+		
+		/FmPD2 /cleartomark load def
+		/FmPA {pop pop pop}FmBD
+	} ifelse
+} {
+	
+	/fMAcrobat false def
+	/FmPD /cleartomark load def
+	/FmPD2 /cleartomark load def
+	/FmPT /pop load def
+	/FmPA {pop pop pop}FmBD
+} ifelse
+/FmDC {
+	transform fMDefaultMatrix defaultmatrix itransform cvi exch cvi exch
+}FmBD
+/FmBx {
+	dup 3 index lt {3 1 roll exch} if 
+	1 index 4 index lt {4 -1 roll 3 1 roll exch 4 1 roll} if
+}FmBD
+/FMnone 0 def
+/FMcyan 1 def
+/FMmagenta 2 def
+/FMyellow 3 def
+/FMblack 4 def
+/FMcustom 5 def
+/fMNegative false def 
+/FrameSepIs FMnone def 
+/FrameSepBlack 0 def
+/FrameSepYellow 0 def
+/FrameSepMagenta 0 def
+/FrameSepCyan 0 def
+/FrameSepRed 1 def
+/FrameSepGreen 1 def
+/FrameSepBlue 1 def
+/FrameCurGray 1 def
+/FrameCurPat null def
+/FrameCurColors [ 0 0 0 1 0 0 0 1] def 
+/FrameColorEpsilon .001 def	
+/eqepsilon {		
+	sub dup 0 lt {neg} if
+	FrameColorEpsilon le
+} bind def
+/FrameCmpColorsCMYK { 
+	2 copy 0 get exch 0 get eqepsilon {
+		2 copy 1 get exch 1 get eqepsilon {
+			2 copy 2 get exch 2 get eqepsilon {
+				3 get exch 3 get eqepsilon
+			} {pop pop false} ifelse
+		}{pop pop false} ifelse
+	} {pop pop false} ifelse
+} bind def
+/FrameCmpColorsRGB { 
+	2 copy 4 get exch 0 get eqepsilon {
+		2 copy 5 get exch 1 get eqepsilon {
+			6 get exch 2 get eqepsilon
+		}{pop pop false} ifelse
+	} {pop pop false} ifelse
+} bind def
+/RGBtoCMYK { 
+	1 exch sub 
+	3 1 roll 
+	1 exch sub 
+	3 1 roll 
+	1 exch sub 
+	3 1 roll 
+	3 copy 
+	2 copy 
+	le { pop } { exch pop } ifelse 
+	2 copy 
+	le { pop } { exch pop } ifelse 
+	dup dup dup 
+	6 1 roll 
+	4 1 roll 
+	7 1 roll 
+	sub 
+	6 1 roll 
+	sub 
+	5 1 roll 
+	sub 
+	4 1 roll 
+} bind def
+/CMYKtoRGB { 
+	dup dup 4 -1 roll add 						  
+	5 1 roll 3 -1 roll add 						  
+	4 1 roll add 								  
+	1 exch sub dup 0 lt {pop 0} if 3 1 roll 	  
+	1 exch sub dup 0 lt {pop 0} if exch 	      
+	1 exch sub dup 0 lt {pop 0} if exch	  		  
+} bind def
+/FrameSepInit {
+	1.0 RealSetgray
+} bind def
+/FrameSetSepColor { 
+	/FrameSepBlue exch def
+	/FrameSepGreen exch def
+	/FrameSepRed exch def
+	/FrameSepBlack exch def
+	/FrameSepYellow exch def
+	/FrameSepMagenta exch def
+	/FrameSepCyan exch def
+	/FrameSepIs FMcustom def
+	setCurrentScreen	
+} bind def
+/FrameSetCyan {
+	/FrameSepBlue 1.0 def
+	/FrameSepGreen 1.0 def
+	/FrameSepRed 0.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 1.0 def
+	/FrameSepIs FMcyan def
+	setCurrentScreen	
+} bind def
+ 
+/FrameSetMagenta {
+	/FrameSepBlue 1.0 def
+	/FrameSepGreen 0.0 def
+	/FrameSepRed 1.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 1.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMmagenta def
+	setCurrentScreen
+} bind def
+ 
+/FrameSetYellow {
+	/FrameSepBlue 0.0 def
+	/FrameSepGreen 1.0 def
+	/FrameSepRed 1.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 1.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMyellow def
+	setCurrentScreen
+} bind def
+ 
+/FrameSetBlack {
+	/FrameSepBlue 0.0 def
+	/FrameSepGreen 0.0 def
+	/FrameSepRed 0.0 def
+	/FrameSepBlack 1.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMblack def
+	setCurrentScreen
+} bind def
+ 
+/FrameNoSep { 
+	/FrameSepIs FMnone def
+	setCurrentScreen
+} bind def
+/FrameSetSepColors { 
+	FrameDict begin
+	[ exch 1 add 1 roll ]
+	/FrameSepColors  
+	exch def end
+	} bind def
+/FrameColorInSepListCMYK { 
+	FrameSepColors {  
+       		exch dup 3 -1 roll 
+       		FrameCmpColorsCMYK 
+       		{ pop true exit } if
+    	} forall 
+	dup true ne {pop false} if
+	} bind def
+/FrameColorInSepListRGB { 
+	FrameSepColors {  
+       		exch dup 3 -1 roll 
+       		FrameCmpColorsRGB 
+       		{ pop true exit } if
+    	} forall 
+	dup true ne {pop false} if
+	} bind def
+/RealSetgray /setgray load def
+/RealSetrgbcolor /setrgbcolor load def
+/RealSethsbcolor /sethsbcolor load def
+end 
+/setgray { 
+	FrameDict begin
+	FrameSepIs FMnone eq
+		{ RealSetgray } 
+		{ 
+		FrameSepIs FMblack eq 
+			{ RealSetgray } 
+			{ FrameSepIs FMcustom eq 
+			  FrameSepRed 0 eq and
+			  FrameSepGreen 0 eq and
+			  FrameSepBlue 0 eq and {
+			  	RealSetgray
+			  } {
+				1 RealSetgray pop 
+			  } ifelse
+			} ifelse
+		} ifelse
+	end
+} bind def
+/setrgbcolor { 
+	FrameDict begin
+	FrameSepIs FMnone eq
+	{  RealSetrgbcolor }
+	{
+		3 copy [ 4 1 roll ] 
+		FrameColorInSepListRGB
+		{
+				FrameSepBlue eq exch 
+			 	FrameSepGreen eq and exch 
+			 	FrameSepRed eq and
+			 	{ 0 } { 1 } ifelse
+		}
+		{
+			FMPColor {
+				RealSetrgbcolor
+				currentcmykcolor
+			} {
+				RGBtoCMYK
+			} ifelse
+			FrameSepIs FMblack eq
+			{1.0 exch sub 4 1 roll pop pop pop} {
+			FrameSepIs FMyellow eq
+			{pop 1.0 exch sub 3 1 roll pop pop} {
+			FrameSepIs FMmagenta eq
+			{pop pop 1.0 exch sub exch pop } {
+			FrameSepIs FMcyan eq
+			{pop pop pop 1.0 exch sub } 
+			{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+		} ifelse
+		RealSetgray
+	} 
+	ifelse
+	end
+} bind def
+/sethsbcolor {
+	FrameDict begin
+	FrameSepIs FMnone eq 
+	{ RealSethsbcolor } 
+	{
+		RealSethsbcolor 
+		currentrgbcolor  
+		setrgbcolor 
+	} 
+	ifelse
+	end
+} bind def
+FrameDict begin
+/setcmykcolor where {
+	pop /RealSetcmykcolor /setcmykcolor load def
+} {
+	/RealSetcmykcolor {
+		4 1 roll
+		3 { 3 index add 0 max 1 min 1 exch sub 3 1 roll} repeat 
+		RealSetrgbcolor pop
+	} bind def
+} ifelse
+userdict /setcmykcolor { 
+		FrameDict begin
+		FrameSepIs FMnone eq
+		{ RealSetcmykcolor } 
+		{
+			4 copy [ 5 1 roll ]
+			FrameColorInSepListCMYK
+			{
+				FrameSepBlack eq exch 
+				FrameSepYellow eq and exch 
+				FrameSepMagenta eq and exch 
+				FrameSepCyan eq and 
+				{ 0 } { 1 } ifelse
+			}
+			{
+				FrameSepIs FMblack eq
+				{1.0 exch sub 4 1 roll pop pop pop} {
+				FrameSepIs FMyellow eq
+				{pop 1.0 exch sub 3 1 roll pop pop} {
+				FrameSepIs FMmagenta eq
+				{pop pop 1.0 exch sub exch pop } {
+				FrameSepIs FMcyan eq
+				{pop pop pop 1.0 exch sub } 
+				{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+			} ifelse
+			RealSetgray
+		}
+		ifelse
+		end
+	} bind put
+fMLevel1 { 
+	
+	
+	
+	/patScreenDict 7 dict dup begin
+		<0f1e3c78f0e1c387> [ 45  { pop } {exch pop} 		.5   2 sqrt] FmBD
+		<0f87c3e1f0783c1e> [ 135 { pop } {exch pop}			.5   2 sqrt] FmBD
+		<cccccccccccccccc> [ 0   { pop } dup				.5   2	   ] FmBD
+		<ffff0000ffff0000> [ 90  { pop } dup				.5   2	   ] FmBD
+		<8142241818244281> [ 45  { 2 copy lt {exch} if pop}	dup .75  2 sqrt] FmBD
+		<03060c183060c081> [ 45  { pop } {exch pop}			.875 2 sqrt] FmBD
+		<8040201008040201> [ 135 { pop } {exch pop}			.875 2 sqrt] FmBD
+	end def
+} { 
+	
+	/patProcDict 5 dict dup begin
+		<0f1e3c78f0e1c387> { 3 setlinewidth -1 -1 moveto 9 9 lineto stroke 
+											4 -4 moveto 12 4 lineto stroke
+											-4 4 moveto 4 12 lineto stroke} bind def
+		<0f87c3e1f0783c1e> { 3 setlinewidth -1 9 moveto 9 -1 lineto stroke 
+											-4 4 moveto 4 -4 lineto stroke
+											4 12 moveto 12 4 lineto stroke} bind def
+		<8142241818244281> { 1 setlinewidth -1 9 moveto 9 -1 lineto stroke
+											-1 -1 moveto 9 9 lineto stroke } bind def
+		<03060c183060c081> { 1 setlinewidth -1 -1 moveto 9 9 lineto stroke 
+											4 -4 moveto 12 4 lineto stroke
+											-4 4 moveto 4 12 lineto stroke} bind def
+		<8040201008040201> { 1 setlinewidth -1 9 moveto 9 -1 lineto stroke 
+											-4 4 moveto 4 -4 lineto stroke
+											4 12 moveto 12 4 lineto stroke} bind def
+	end def
+	/patDict 15 dict dup begin
+		/PatternType 1 def		
+		/PaintType 2 def		
+		/TilingType 3 def		
+		/BBox [ 0 0 8 8 ] def 	
+		/XStep 8 def			
+		/YStep 8 def			
+		/PaintProc {
+			begin
+			patProcDict bstring known {
+				patProcDict bstring get exec
+			} {
+				8 8 true [1 0 0 -1 0 8] bstring imagemask
+			} ifelse
+			end
+		} bind def
+	end def
+} ifelse
+/tintCMYK {
+	1 tintGray sub FrameCurColors 0 4 getinterval aload pop 	
+	4 index mul 5 1 roll										
+	3 index mul 5 1 roll										
+	2 index mul 5 1 roll										
+	mul 4 1 roll												
+}bind def
+/tintRGB {
+	1 tintGray sub FrameCurColors 4 3 getinterval aload pop 	
+	1 exch sub 3 index mul 1 exch sub 4 1 roll					
+	1 exch sub 2 index mul 1 exch sub 4 1 roll					
+	1 exch sub mul 1 exch sub 3 1 roll							
+}bind def
+/combineColor {
+	/tintGray 1 1 FrameCurGray sub FrameCurColors 7 get mul sub def
+    FrameSepIs FMnone eq
+	{
+		graymode fMLevel1 or not {
+			
+			[/Pattern [/DeviceCMYK]] setcolorspace
+			tintCMYK FrameCurPat setcolor
+		} {
+			FrameCurColors 3 get 1.0 ge {
+				tintGray RealSetgray
+			} {
+				fMAcrobat not FMPColor graymode and and {
+					tintCMYK
+					RealSetcmykcolor
+				} {
+					tintRGB
+					RealSetrgbcolor
+				} ifelse
+			} ifelse
+		} ifelse
+	} { 
+		FrameCurColors 0 4 getinterval aload
+		FrameColorInSepListCMYK {
+			FrameSepBlack eq exch 
+			FrameSepYellow eq and exch 
+			FrameSepMagenta eq and exch 
+			FrameSepCyan eq and
+			FrameSepIs FMcustom eq and
+			{ tintGray } { 1 } ifelse
+		} {
+			FrameSepIs FMblack eq
+			{tintGray 1.0 exch sub mul 1.0 exch sub 4 1 roll pop pop pop} {
+			FrameSepIs FMyellow eq
+			{pop tintGray 1.0 exch sub mul 1.0 exch sub 3 1 roll pop pop} {
+			FrameSepIs FMmagenta eq
+			{pop pop tintGray 1.0 exch sub mul 1.0 exch sub exch pop } {
+			FrameSepIs FMcyan eq
+			{pop pop pop tintGray 1.0 exch sub mul 1.0 exch sub } 
+			{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+		} ifelse
+		graymode fMLevel1 or not {
+			
+			[/Pattern [/DeviceGray]] setcolorspace
+			FrameCurPat setcolor
+		} { 
+			graymode not fMLevel1 and {
+				
+				dup 1 lt {pop FrameCurGray} if
+			} if
+			RealSetgray
+		} ifelse
+	} ifelse
+} bind def
+/savematrix {
+	orgmatrix currentmatrix pop
+	} bind def
+/restorematrix {
+	orgmatrix setmatrix
+	} bind def
+/fMDefaultMatrix matrix def
+/fMatrix2 matrix def
+/dpi    72 0 fMDefaultMatrix defaultmatrix dtransform
+    dup mul exch   dup mul add   sqrt def
+	
+/freq dpi dup 72 div round dup 0 eq {pop 1} if 8 mul div def
+/sangle 1 0 fMDefaultMatrix defaultmatrix dtransform exch atan def
+	sangle fMatrix2 rotate 
+	fMDefaultMatrix defaultmatrix fMatrix2 concatmatrix 
+	dup 0 get /sflipx exch def
+	    3 get /sflipy exch def
+/screenIndex {
+	0 1 dpiranges length 1 sub { dup dpiranges exch get 1 sub dpi le {exit} {pop} ifelse } for
+} bind def
+/getCyanScreen {
+	FMUseHighFrequencyScreens { CHighAngles CMHighFreqs} {CLowAngles CMLowFreqs} ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get /FMSpotFunction load
+} bind def
+/getMagentaScreen {
+	FMUseHighFrequencyScreens { MHighAngles CMHighFreqs } {MLowAngles CMLowFreqs} ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get /FMSpotFunction load
+} bind def
+/getYellowScreen {
+	FMUseHighFrequencyScreens { YHighTDot YHighFreqs} { YLowTDot YLowFreqs } ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get { 3 div
+			{2 { 1 add 2 div 3 mul dup floor sub 2 mul 1 sub exch} repeat
+			FMSpotFunction } } {/FMSpotFunction load } ifelse
+			0.0 exch
+} bind def
+/getBlackScreen  {
+	FMUseHighFrequencyScreens { KHighFreqs } { KLowFreqs } ifelse
+		screenIndex get 45.0 /FMSpotFunction load 
+} bind def
+/getSpotScreen {
+	getBlackScreen
+} bind def
+/getCompositeScreen {
+	getBlackScreen
+} bind def
+/FMSetScreen 
+	fMLevel1 { /setscreen load 
+	}{ {
+		8 dict begin
+		/HalftoneType 1 def
+		/SpotFunction exch def
+		/Angle exch def
+		/Frequency exch def
+		/AccurateScreens FMUseAcccurateScreens def
+		currentdict end sethalftone
+	} bind } ifelse
+def
+/setDefaultScreen {
+	fMLevel1 {
+		FMPColor {
+			orgrxfer cvx orggxfer cvx orgbxfer cvx orgxfer cvx setcolortransfer
+		}
+		{
+			orgxfer cvx settransfer
+		} ifelse
+		orgfreq organgle orgproc cvx setscreen
+	} {
+		orghalftone sethalftone
+	}ifelse
+} bind def
+/setCurrentScreen {
+	FrameSepIs FMnone eq {
+		FMUseDefaultNoSeparationScreen {
+			setDefaultScreen
+		} {
+			getCompositeScreen FMSetScreen
+		} ifelse
+	} {
+		FrameSepIs FMcustom eq {
+			FMUseDefaultSpotSeparationScreen {
+				setDefaultScreen
+			} {
+				getSpotScreen FMSetScreen
+			} ifelse
+		} {
+			FMUseDefaultProcessSeparationScreen {
+				setDefaultScreen
+			} {
+				FrameSepIs FMcyan eq {
+					getCyanScreen FMSetScreen
+				} {
+					FrameSepIs FMmagenta eq {
+						getMagentaScreen FMSetScreen
+					} {
+						FrameSepIs FMyellow eq {
+							getYellowScreen FMSetScreen
+						} {
+							getBlackScreen FMSetScreen
+						} ifelse
+					} ifelse
+				} ifelse
+			} ifelse
+		} ifelse
+	} ifelse 
+} bind def
+end
+	
+/FMDOCUMENT { 
+	array /FMfonts exch def 
+	dup 1 gt {/#copies exch def} {pop} ifelse
+	FrameDict begin
+	0 ne /manualfeed exch def
+	/paperheight exch def
+	/paperwidth exch def
+	0 ne /fMNegative exch def 
+	0 ne /edown exch def 
+	/yscale exch def
+	/xscale exch def
+	fMLevel1 {
+		manualfeed {setmanualfeed} if
+		/FMdicttop countdictstack 1 add def 
+		/FMoptop count def 
+		setpapername 
+		manualfeed {true} {papersize} ifelse 
+		{manualpapersize} {false} ifelse 
+		{desperatepapersize} {false} ifelse 
+		{papersizefailure} if
+		count -1 FMoptop {pop pop} for
+		countdictstack -1 FMdicttop {pop end} for 
+		}
+		{2 dict
+		 dup /PageSize [paperwidth paperheight] put
+		 manualfeed {dup /ManualFeed manualfeed put} if
+		 {setpagedevice} stopped {papersizefailure} if
+		}
+	ifelse 
+	
+	fMLevel1 not {
+		/orghalftone currenthalftone def
+	}if 
+	
+	FMPColor {
+		currentcolorscreen
+			cvlit /orgproc exch def
+				  /organgle exch def 
+				  /orgfreq exch def
+			cvlit /orgbproc exch def
+				  /orgbangle exch def 
+				  /orgbfreq exch def
+			cvlit /orggproc exch def
+				  /orggangle exch def 
+				  /orggfreq exch def
+			cvlit /orgrproc exch def
+				  /orgrangle exch def 
+				  /orgrfreq exch def
+			currentcolortransfer 
+			fMNegative {
+				1 1 4 { 
+					pop { 1 exch sub } fmConcatProcs 4 1 roll
+				} for
+				4 copy
+				setcolortransfer
+			} if
+			cvlit /orgxfer exch def
+			cvlit /orgbxfer exch def
+			cvlit /orggxfer exch def
+			cvlit /orgrxfer exch def
+	} {
+		currentscreen 
+			cvlit /orgproc exch def
+				  /organgle exch def 
+				  /orgfreq exch def
+				  
+		currenttransfer 
+		fMNegative {
+			{ 1 exch sub } fmConcatProcs
+			dup settransfer
+		} if 
+		cvlit /orgxfer exch def
+	} ifelse
+	end 
+} def 
+/FMENDDOCUMENT {
+	FMDocSave restore	
+} def
+/FMBEGINPAGE { 
+	FrameDict begin 
+	/pagesave save def
+	3.86 setmiterlimit
+	0 0 moveto paperwidth 0 lineto paperwidth paperheight lineto 
+	0 paperheight lineto 0 0 lineto 1 setgray fill
+	/landscape exch 0 ne def
+	landscape { 
+		90 rotate 0 exch dup /pwid exch def neg translate pop 
+	}{
+		pop /pwid exch def
+	} ifelse
+	edown { [-1 0 0 1 pwid 0] concat } if
+	xscale yscale scale
+	/orgmatrix matrix def
+	gsave 
+} def 
+/FMENDPAGE {
+	grestore 
+	pagesave restore
+	end 
+	showpage
+	} def 
+/FMFONTDEFINE { 
+	FrameDict begin
+	findfont 
+	ReEncode 
+	1 index exch 
+	definefont 
+	FMfonts 3 1 roll 
+	put
+	end 
+	} def 
+/FMFILLS {
+	FrameDict begin dup
+	array /fillvals exch def
+	dict /patCache exch def
+	end 
+	} def 
+/FMFILL {
+	FrameDict begin
+	 fillvals 3 1 roll put
+	end 
+	} def 
+/FMNORMALIZEGRAPHICS { 
+	newpath
+	1 setlinewidth
+	0 setlinecap
+	0 0 0 sethsbcolor
+	0 setgray 
+	} bind def
+/FMBEGINEPSF { 
+	end 
+	/FMEPSF save def 
+	/showpage {} def 
+	FMNORMALIZEGRAPHICS 
+	[/fy /fx /fh /fw /ury /urx /lly /llx] {exch def} forall 
+	fx fw 2 div add fy fh 2 div add  translate
+	rotate
+	fw 2 div neg fh 2 div neg translate
+	fw urx llx sub div fh ury lly sub div scale 
+	llx neg lly neg translate 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count def 
+	} bind def
+/FMENDEPSF {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMEPSF restore
+	FrameDict begin 
+	} bind def
+FrameDict begin 
+/setmanualfeed {
+%%BeginFeature: *ManualFeed True
+	 statusdict /manualfeed true put
+%%EndFeature
+	} bind def
+/max {2 copy lt {exch} if pop} bind def
+/min {2 copy gt {exch} if pop} bind def
+/inch {72 mul} def
+/pagedimen { 
+	paperheight sub abs 16 lt exch 
+	paperwidth sub abs 16 lt and
+	{/papername exch def} {pop} ifelse
+	} bind def
+/setpapername { 
+	/papersizedict 14 dict def 
+	papersizedict begin
+	/papername /unknown def 
+		/Letter 8.5 inch 11.0 inch pagedimen
+		/LetterSmall 7.68 inch 10.16 inch pagedimen
+		/Tabloid 11.0 inch 17.0 inch pagedimen
+		/Ledger 17.0 inch 11.0 inch pagedimen
+		/Legal 8.5 inch 14.0 inch pagedimen
+		/Statement 5.5 inch 8.5 inch pagedimen
+		/Executive 7.5 inch 10.0 inch pagedimen
+		/A3 11.69 inch 16.5 inch pagedimen
+		/A4 8.26 inch 11.69 inch pagedimen
+		/A4Small 7.47 inch 10.85 inch pagedimen
+		/B4 10.125 inch 14.33 inch pagedimen
+		/B5 7.16 inch 10.125 inch pagedimen
+	end
+	} bind def
+/papersize {
+	papersizedict begin
+		/Letter {lettertray letter} def
+		/LetterSmall {lettertray lettersmall} def
+		/Tabloid {11x17tray 11x17} def
+		/Ledger {ledgertray ledger} def
+		/Legal {legaltray legal} def
+		/Statement {statementtray statement} def
+		/Executive {executivetray executive} def
+		/A3 {a3tray a3} def
+		/A4 {a4tray a4} def
+		/A4Small {a4tray a4small} def
+		/B4 {b4tray b4} def
+		/B5 {b5tray b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	statusdict begin stopped end 
+	} bind def
+/manualpapersize {
+	papersizedict begin
+		/Letter {letter} def
+		/LetterSmall {lettersmall} def
+		/Tabloid {11x17} def
+		/Ledger {ledger} def
+		/Legal {legal} def
+		/Statement {statement} def
+		/Executive {executive} def
+		/A3 {a3} def
+		/A4 {a4} def
+		/A4Small {a4small} def
+		/B4 {b4} def
+		/B5 {b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	stopped 
+	} bind def
+/desperatepapersize {
+	
+	mark
+	statusdict begin 
+		/setpageparams where {
+			pop
+			paperwidth paperheight 0 1 
+			{setpageparams} stopped 
+		} { 
+			true 
+		} ifelse
+		
+		{
+			
+			/setpagedevice where {
+				pop 
+				1 dict dup begin
+					/PageSize [ paperwidth paperheight ] def
+				end 
+				{setpagedevice} stopped
+			} {
+				true	
+			} ifelse
+		} {
+			false		
+		} ifelse 
+	end
+	{cleartomark true}{cleartomark false}ifelse
+} bind def
+/papersizefailure {
+	FMAllowPaperSizeMismatch not
+		{
+(The requested paper size is not available in any currently-installed tray)
+(Edit the PS file to "FMAllowPaperSizeMismatch true" to use default tray)
+		 FMFAILURE } if
+	} def
+/DiacriticEncoding [
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /space /exclam /quotedbl
+/numbersign /dollar /percent /ampersand /quotesingle /parenleft
+/parenright /asterisk /plus /comma /hyphen /period /slash /zero /one
+/two /three /four /five /six /seven /eight /nine /colon /semicolon
+/less /equal /greater /question /at /A /B /C /D /E /F /G /H /I /J /K
+/L /M /N /O /P /Q /R /S /T /U /V /W /X /Y /Z /bracketleft /backslash
+/bracketright /asciicircum /underscore /grave /a /b /c /d /e /f /g /h
+/i /j /k /l /m /n /o /p /q /r /s /t /u /v /w /x /y /z /braceleft /bar
+/braceright /asciitilde /.notdef /Adieresis /Aring /Ccedilla /Eacute
+/Ntilde /Odieresis /Udieresis /aacute /agrave /acircumflex /adieresis
+/atilde /aring /ccedilla /eacute /egrave /ecircumflex /edieresis
+/iacute /igrave /icircumflex /idieresis /ntilde /oacute /ograve
+/ocircumflex /odieresis /otilde /uacute /ugrave /ucircumflex
+/udieresis /dagger /.notdef /cent /sterling /section /bullet
+/paragraph /germandbls /registered /copyright /trademark /acute
+/dieresis /.notdef /AE /Oslash /.notdef /.notdef /.notdef /.notdef
+/yen /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/ordfeminine /ordmasculine /.notdef /ae /oslash /questiondown
+/exclamdown /logicalnot /.notdef /florin /.notdef /.notdef
+/guillemotleft /guillemotright /ellipsis /.notdef /Agrave /Atilde
+/Otilde /OE /oe /endash /emdash /quotedblleft /quotedblright
+/quoteleft /quoteright /.notdef /.notdef /ydieresis /Ydieresis
+/fraction /currency /guilsinglleft /guilsinglright /fi /fl /daggerdbl
+/periodcentered /quotesinglbase /quotedblbase /perthousand
+/Acircumflex /Ecircumflex /Aacute /Edieresis /Egrave /Iacute
+/Icircumflex /Idieresis /Igrave /Oacute /Ocircumflex /.notdef /Ograve
+/Uacute /Ucircumflex /Ugrave /dotlessi /circumflex /tilde /macron
+/breve /dotaccent /ring /cedilla /hungarumlaut /ogonek /caron
+] def
+/ReEncode { 
+	dup 
+	length 
+	dict begin 
+	{
+	1 index /FID ne 
+		{def} 
+		{pop pop} ifelse 
+	} forall 
+	0 eq {/Encoding DiacriticEncoding def} if 
+	currentdict 
+	end 
+	} bind def
+FMPColor 
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPCOLOR} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPCOLORc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUECOLOR } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUECOLORc } def
+	/BEGINBITMAPCMYK { 
+		BITMAPCMYK } def
+	/BEGINBITMAPCMYKc { 
+		BITMAPCMYKc } def
+	}
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPGRAY} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPGRAYc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUEGRAY } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUEGRAYc } def
+	/BEGINBITMAPCMYK { 
+		BITMAPCMYKGRAY } def
+	/BEGINBITMAPCMYKc { 
+		BITMAPCMYKGRAYc } def
+	}
+ifelse
+/K { 
+	FMPrintAllColorsAsBlack {
+		8 1 roll
+		dup 1 eq 2 index 1 eq and 3 index 1 eq and not
+			{7 {pop} repeat 0 0 0 1 0 0 0} if
+		8 -1 roll
+	} if 
+	FrameCurColors astore 
+	pop combineColor
+} bind def
+/graymode true def
+fMLevel1 {
+	/fmGetFlip {
+		fMatrix2 exch get mul 0 lt { -1 } { 1 } ifelse
+	} FmBD
+} if
+/setPatternMode {
+	fMLevel1 {
+		2 index patScreenDict exch known {
+			pop pop
+			patScreenDict exch get aload pop 
+			freq 								
+			mul									
+			5 2 roll							
+			fMatrix2 currentmatrix 1 get 0 ne {
+				3 -1 roll 90 add 3 1 roll 		
+				sflipx 1 fmGetFlip sflipy 2 fmGetFlip neg mul
+			} {  								
+				sflipx 0 fmGetFlip sflipy 3 fmGetFlip mul 
+			} ifelse
+			0 lt {exch pop} {pop} ifelse 		
+			fMNegative { 
+				{neg} fmConcatProcs 			
+			} if
+			bind
+			
+			
+			
+			systemdict /setscreen get exec		
+			/FrameCurGray exch def
+		} {
+			/bwidth  exch def
+			/bpside  exch def
+			/bstring exch def
+			/onbits 0 def  /offbits 0 def
+			freq sangle landscape {90 add} if 
+				{/ypoint exch def
+				 /xpoint exch def
+				 /xindex xpoint 1 add 2 div bpside mul cvi def
+				 /yindex ypoint 1 add 2 div bpside mul cvi def
+				 bstring yindex bwidth mul xindex 8 idiv add get
+				 1 7 xindex 8 mod sub bitshift and 0 ne fMNegative {not} if
+				 {/onbits  onbits  1 add def 1}
+				 {/offbits offbits 1 add def 0}
+				 ifelse
+				}
+				setscreen
+			offbits offbits onbits add dup 0 ne {div} {pop pop .5} ifelse fMNegative {1.0 exch sub} if
+			/FrameCurGray exch def
+		} ifelse
+	} { 
+		pop pop
+		dup patCache exch known {
+			patCache exch get
+		} { 
+			dup
+			patDict /bstring 3 -1 roll put
+			patDict 
+			9 PatFreq screenIndex get div dup matrix scale
+			makepattern
+			dup 
+			patCache 4 -1 roll 3 -1 roll put
+		} ifelse
+		/FrameCurGray 0 def
+		/FrameCurPat exch def
+	} ifelse
+	/graymode false def
+	combineColor
+} bind def
+/setGrayScaleMode {
+	graymode not {
+		/graymode true def
+		fMLevel1 {
+			setCurrentScreen
+		} if
+	} if
+	/FrameCurGray exch def
+	combineColor
+} bind def
+/normalize {
+	transform round exch round exch itransform
+	} bind def
+/dnormalize {
+	dtransform round exch round exch idtransform
+	} bind def
+/lnormalize { 
+	0 dtransform exch cvi 2 idiv 2 mul 1 add exch idtransform pop
+	} bind def
+/H { 
+	lnormalize setlinewidth
+	} bind def
+/Z {
+	setlinecap
+	} bind def
+	
+/PFill {
+	graymode fMLevel1 or not {
+		gsave 1 setgray eofill grestore
+	} if
+} bind def
+/PStroke {
+	graymode fMLevel1 or not {
+		gsave 1 setgray stroke grestore
+	} if
+	stroke
+} bind def
+/X { 
+	fillvals exch get
+	dup type /stringtype eq
+	{8 1 setPatternMode} 
+	{setGrayScaleMode}
+	ifelse
+	} bind def
+/V { 
+	PFill gsave eofill grestore
+	} bind def
+/Vclip {
+	clip
+	} bind def
+/Vstrk {
+	currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/N { 
+	PStroke
+	} bind def
+/Nclip {
+	strokepath clip newpath
+	} bind def
+/Nstrk {
+	currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/M {newpath moveto} bind def
+/E {lineto} bind def
+/D {curveto} bind def
+/O {closepath} bind def
+/L { 
+ 	/n exch def
+	newpath
+	normalize
+	moveto 
+	2 1 n {pop normalize lineto} for
+	} bind def
+/Y { 
+	L 
+	closepath
+	} bind def
+/R { 
+	/y2 exch def
+	/x2 exch def
+	/y1 exch def
+	/x1 exch def
+	x1 y1
+	x2 y1
+	x2 y2
+	x1 y2
+	4 Y 
+	} bind def
+/rarc 
+	{rad 
+	 arcto
+	} bind def
+/RR { 
+	/rad exch def
+	normalize
+	/y2 exch def
+	/x2 exch def
+	normalize
+	/y1 exch def
+	/x1 exch def
+	mark
+	newpath
+	{
+	x1 y1 rad add moveto
+	x1 y2 x2 y2 rarc
+	x2 y2 x2 y1 rarc
+	x2 y1 x1 y1 rarc
+	x1 y1 x1 y2 rarc
+	closepath
+	} stopped {x1 y1 x2 y2 R} if 
+	cleartomark
+	} bind def
+/RRR { 
+	/rad exch def
+	normalize /y4 exch def /x4 exch def
+	normalize /y3 exch def /x3 exch def
+	normalize /y2 exch def /x2 exch def
+	normalize /y1 exch def /x1 exch def
+	newpath
+	normalize moveto 
+	mark
+	{
+	x2 y2 x3 y3 rarc
+	x3 y3 x4 y4 rarc
+	x4 y4 x1 y1 rarc
+	x1 y1 x2 y2 rarc
+	closepath
+	} stopped
+	 {x1 y1 x2 y2 x3 y3 x4 y4 newpath moveto lineto lineto lineto closepath} if
+	cleartomark
+	} bind def
+/C { 
+	grestore
+	gsave
+	R 
+	clip
+	setCurrentScreen
+} bind def
+/CP { 
+	grestore
+	gsave
+	Y 
+	clip
+	setCurrentScreen
+} bind def
+/F { 
+	FMfonts exch get
+	[FMsetsize 0 0 FMpointsize 0 0] makefont
+	setfont
+	} bind def
+/Q { 
+	/FMpointsize exch def
+	/FMsetsize FMpointsize def
+	F 
+	} bind def
+/QQ { 
+	/FMsetsize exch def
+	/FMpointsize exch def
+	F 
+	} bind def
+/T { 
+	moveto show
+	} bind def
+/RF { 
+	rotate
+	0 ne {-1 1 scale} if
+	} bind def
+/TF { 
+	gsave
+	moveto 
+	RF
+	show
+	grestore
+	} bind def
+/P { 
+	moveto
+	0 32 3 2 roll widthshow
+	} bind def
+/PF { 
+	gsave
+	moveto 
+	RF
+	0 32 3 2 roll widthshow
+	grestore
+	} bind def
+/S { 
+	moveto
+	0 exch ashow
+	} bind def
+/SF { 
+	gsave
+	moveto
+	RF
+	0 exch ashow
+	grestore
+	} bind def
+/B { 
+	moveto
+	0 32 4 2 roll 0 exch awidthshow
+	} bind def
+/BF { 
+	gsave
+	moveto
+	RF
+	0 32 4 2 roll 0 exch awidthshow
+	grestore
+	} bind def
+/G { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	PFill fill
+	grestore
+	} bind def
+/Gstrk {
+	savematrix
+    newpath
+    2 index 2 div add exch 3 index 2 div sub exch 
+    normalize 2 index 2 div sub exch 3 index 2 div add exch 
+    translate
+    scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    restorematrix
+    currentlinewidth exch setlinewidth PStroke setlinewidth
+    } bind def
+/Gclip { 
+	newpath
+	savematrix
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	clip newpath
+	restorematrix
+	} bind def
+/GG { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	rotate 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath
+	PFill
+	fill
+	grestore
+	} bind def
+/GGclip { 
+	savematrix
+	newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath
+	clip newpath
+	restorematrix
+	} bind def
+/GGstrk { 
+	savematrix
+    newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath 
+	restorematrix
+    currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/A { 
+	gsave
+	savematrix
+	newpath
+	2 index 2 div add exch 3 index 2 div sub exch 
+	normalize 2 index 2 div sub exch 3 index 2 div add exch 
+	translate 
+	scale 
+	2 copy 0.0 0.0 1.0 5 3 roll arc 
+	round cvi 360 mod exch round cvi 360 mod eq {closepath} if 
+	restorematrix
+	PStroke
+	grestore
+	} bind def
+/Aclip {
+	newpath
+	savematrix
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	strokepath clip newpath
+	restorematrix
+} bind def
+/Astrk {
+	Gstrk
+} bind def
+/AA { 
+	gsave
+	savematrix
+	newpath
+	
+	3 index 2 div add exch 4 index 2 div sub exch 
+	
+	normalize 3 index 2 div sub exch 4 index 2 div add exch
+	translate 
+	rotate 
+	scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	restorematrix
+	PStroke
+	grestore
+	} bind def
+/AAclip {
+	savematrix
+	newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath
+	strokepath clip newpath
+	restorematrix
+} bind def
+/AAstrk {
+	GGstrk
+} bind def
+/BEGINPRINTCODE { 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count 7 sub def 
+	/FMsaveobject save def
+	userdict begin 
+	/showpage {} def 
+	FMNORMALIZEGRAPHICS 
+	3 index neg 3 index neg translate
+	} bind def
+/ENDPRINTCODE {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMsaveobject restore 
+	} bind def
+/gn { 
+	0 
+	{	46 mul 
+		cf read pop 
+		32 sub 
+		dup 46 lt {exit} if 
+		46 sub add 
+		} loop
+	add 
+	} bind def
+/cfs { 
+	/str sl string def 
+	0 1 sl 1 sub {str exch val put} for 
+	str def 
+	} bind def
+/ic [ 
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0
+	{0 hx} {1 hx} {2 hx} {3 hx} {4 hx} {5 hx} {6 hx} {7 hx} {8 hx} {9 hx}
+	{10 hx} {11 hx} {12 hx} {13 hx} {14 hx} {15 hx} {16 hx} {17 hx} {18 hx}
+	{19 hx} {gn hx} {0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12}
+	{13} {14} {15} {16} {17} {18} {19} {gn} {0 wh} {1 wh} {2 wh} {3 wh}
+	{4 wh} {5 wh} {6 wh} {7 wh} {8 wh} {9 wh} {10 wh} {11 wh} {12 wh}
+	{13 wh} {14 wh} {gn wh} {0 bl} {1 bl} {2 bl} {3 bl} {4 bl} {5 bl} {6 bl}
+	{7 bl} {8 bl} {9 bl} {10 bl} {11 bl} {12 bl} {13 bl} {14 bl} {gn bl}
+	{0 fl} {1 fl} {2 fl} {3 fl} {4 fl} {5 fl} {6 fl} {7 fl} {8 fl} {9 fl}
+	{10 fl} {11 fl} {12 fl} {13 fl} {14 fl} {gn fl}
+	] def
+/ms { 
+	/sl exch def 
+	/val 255 def 
+	/ws cfs 
+	/im cfs 
+	/val 0 def 
+	/bs cfs 
+	/cs cfs 
+	} bind def
+400 ms 
+/ip { 
+	is 
+	0 
+	cf cs readline pop 
+	{	ic exch get exec 
+		add 
+		} forall 
+	pop 
+	
+	} bind def
+/rip { 
+	   
+	  
+	  bis ris copy pop 
+      is
+      0
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop 
+	  ris gis copy pop 
+	  dup is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop
+	  gis bis copy pop 
+	  dup add is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+      pop 
+      
+      } bind def
+/rip4 { 
+	   
+	  
+	  kis cis copy pop 
+      is
+      0
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop 
+	  cis mis copy pop 
+	  dup is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop
+	  mis yis copy pop 
+	  dup dup add is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop
+	  yis kis copy pop 
+	  3 mul is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+      pop 
+      
+      } bind def
+/wh { 
+	/len exch def 
+	/pos exch def 
+	ws 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/bl { 
+	/len exch def 
+	/pos exch def 
+	bs 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/s1 1 string def
+/fl { 
+	/len exch def 
+	/pos exch def 
+	/val cf s1 readhexstring pop 0 get def
+	pos 1 pos len add 1 sub {im exch val put} for
+	pos len 
+	} bind def
+/hx { 
+	3 copy getinterval 
+	cf exch readhexstring pop pop 
+	} bind def
+/wbytes { 
+      dup dup
+      8 gt { pop 8 idiv mul }
+      { 8 eq {pop} {1 eq {7 add 8 idiv} {3 add 4 idiv} ifelse} ifelse } ifelse
+	} bind def
+/BEGINBITMAPBWc { 
+	1 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAPGRAYc { 
+	8 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAP2BITc { 
+	2 {} COMMONBITMAPc
+	} bind def
+/COMMONBITMAPc { 
+		 
+	/cvtProc exch def
+	/depth exch def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/height exch def /width exch def
+	/lb width depth wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	cvtProc                
+	/is im 0 lb getinterval def 
+	ws 0 lb getinterval is copy pop 
+	/cf currentfile def 
+	width height depth [width 0 0 height neg 0 height] 
+	{ip} image 
+	bitmapsave restore 
+	grestore
+	} bind def
+/BEGINBITMAPBW { 
+	1 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAPGRAY { 
+	8 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAP2BIT { 
+	2 {} COMMONBITMAP
+	} bind def
+/COMMONBITMAP { 
+	/cvtProc exch def
+	/depth exch def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/height exch def /width exch def
+	/bitmapsave save def 
+	cvtProc              
+	/is width depth wbytes string def
+	/cf currentfile def 
+	width height depth [width 0 0 height neg 0 height] 
+	{cf is readhexstring pop} image
+	bitmapsave restore 
+	grestore
+	} bind def
+/ngrayt 256 array def
+/nredt 256 array def
+/nbluet 256 array def
+/ngreent 256 array def
+fMLevel1 {
+/colorsetup {
+	currentcolortransfer
+	/gryt exch def
+	/blut exch def
+	/grnt exch def
+	/redt exch def
+	0 1 255 {
+		/indx exch def
+		/cynu 1 red indx get 255 div sub def
+		/magu 1 green indx get 255 div sub def
+		/yelu 1 blue indx get 255 div sub def
+		/kk cynu magu min yelu min def
+		/u kk currentundercolorremoval exec def
+%		/u 0 def
+		nredt indx 1 0 cynu u sub max sub redt exec put
+		ngreent indx 1 0 magu u sub max sub grnt exec put
+		nbluet indx 1 0 yelu u sub max sub blut exec put
+		ngrayt indx 1 kk currentblackgeneration exec sub gryt exec put
+	} for
+	{255 mul cvi nredt exch get}
+	{255 mul cvi ngreent exch get}
+	{255 mul cvi nbluet exch get}
+	{255 mul cvi ngrayt exch get}
+	setcolortransfer
+	{pop 0} setundercolorremoval
+	{} setblackgeneration
+	} bind def
+}
+{
+/colorSetup2 {
+	[ /Indexed /DeviceRGB 255 
+		{dup red exch get 255 div 
+		 exch dup green exch get 255 div 
+		 exch blue exch get 255 div}
+	] setcolorspace
+} bind def
+} ifelse
+/fakecolorsetup {
+	/tran 256 string def
+	0 1 255 {/indx exch def 
+		tran indx
+		red indx get 77 mul
+		green indx get 151 mul
+		blue indx get 28 mul
+		add add 256 idiv put} for
+	currenttransfer
+	{255 mul cvi tran exch get 255.0 div}
+	exch fmConcatProcs settransfer
+} bind def
+/BITMAPCOLOR { 
+	/depth 8 def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/height exch def /width exch def
+	/bitmapsave save def
+	fMLevel1 {	
+		colorsetup
+		/is width depth wbytes string def
+		/cf currentfile def 
+		width height depth [width 0 0 height neg 0 height] 
+		{cf is readhexstring pop} {is} {is} true 3 colorimage 
+	} {
+		colorSetup2
+		/is width depth wbytes string def
+		/cf currentfile def 
+		7 dict dup begin
+			/ImageType 1 def
+			/Width width def
+			/Height height def
+			/ImageMatrix [width 0 0 height neg 0 height] def
+			/DataSource {cf is readhexstring pop} bind def
+			/BitsPerComponent depth def
+			/Decode [0 255] def
+		end image	
+	} ifelse
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPCOLORc { 
+	/depth 8 def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/height exch def /width exch def
+	/lb width depth wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	fMLevel1 {	
+		colorsetup
+		/is im 0 lb getinterval def 
+		ws 0 lb getinterval is copy pop 
+		/cf currentfile def 
+		width height depth [width 0 0 height neg 0 height] 
+		{ip} {is} {is} true 3 colorimage
+	} {
+		colorSetup2
+		/is im 0 lb getinterval def 
+		ws 0 lb getinterval is copy pop 
+		/cf currentfile def 
+		7 dict dup begin
+			/ImageType 1 def
+			/Width width def
+			/Height height def
+			/ImageMatrix [width 0 0 height neg 0 height] def
+			/DataSource {ip} bind def
+			/BitsPerComponent depth def
+			/Decode [0 255] def
+		end image	
+	} ifelse
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPTRUECOLORc { 
+	/depth 24 def
+        gsave
+ 	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/height exch def /width exch def
+	/lb width depth wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/ris im 0 width getinterval def	
+	/gis im width width getinterval def	
+	/bis im width 2 mul width getinterval def 
+        
+	ws 0 lb getinterval is copy pop 
+	/cf currentfile def 
+	width height 8 [width 0 0 height neg 0 height] 
+	{width rip pop ris} {gis} {bis} true 3 colorimage
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPCMYKc { 
+	/depth 32 def
+        gsave
+ 	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/height exch def /width exch def
+	/lb width depth wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/cis im 0 width getinterval def	
+	/mis im width width getinterval def	
+	/yis im width 2 mul width getinterval def 
+	/kis im width 3 mul width getinterval def 
+        
+	ws 0 lb getinterval is copy pop 
+	/cf currentfile def 
+	width height 8 [width 0 0 height neg 0 height] 
+	{width rip4 pop cis} {mis} {yis} {kis} true 4 colorimage
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPTRUECOLOR { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/height exch def /width exch def
+        /bitmapsave save def 
+        /is width string def
+        /gis width string def
+        /bis width string def
+        /cf currentfile def 
+        width height 8 [width 0 0 height neg 0 height] 
+        { cf is readhexstring pop } 
+        { cf gis readhexstring pop } 
+        { cf bis readhexstring pop } 
+        true 3 colorimage 
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPCMYK { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/height exch def /width exch def
+        /bitmapsave save def 
+        /is width string def
+        /mis width string def
+        /yis width string def
+        /kis width string def
+        /cf currentfile def 
+        width height 8 [width 0 0 height neg 0 height] 
+        { cf is readhexstring pop } 
+        { cf mis readhexstring pop } 
+        { cf yis readhexstring pop } 
+        { cf kis readhexstring pop } 
+        true 4 colorimage 
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUEGRAYc { 
+	/depth 24 def
+        gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/height exch def /width exch def
+	/lb width depth wbytes def 
+	sl lb lt {lb ms} if 
+        /bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/ris im 0 width getinterval def	
+	/gis im width width getinterval def	
+	/bis im width 2 mul width getinterval def 
+        ws 0 lb getinterval is copy pop 
+        /cf currentfile def 
+        width height 8 [width 0 0 height neg 0 height] 
+        {width rip pop ris gis bis width gray} image
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPCMYKGRAYc { 
+	/depth 32 def
+        gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/height exch def /width exch def
+	/lb width depth wbytes def 
+	sl lb lt {lb ms} if 
+        /bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/cis im 0 width getinterval def	
+	/mis im width width getinterval def	
+	/yis im width 2 mul width getinterval def 
+	/kis im width 3 mul width getinterval def 
+        ws 0 lb getinterval is copy pop 
+        /cf currentfile def 
+        width height 8 [width 0 0 height neg 0 height] 
+        {width rip pop cis mis yis kis width cgray} image
+        bitmapsave restore 
+        grestore
+        } bind def
+/cgray { 
+        /ww exch def
+        /k exch def
+        /y exch def
+        /m exch def
+        /c exch def
+        0 1 ww 1 sub { /i exch def c i get m i get y i get k i get CMYKtoRGB
+				.144 mul 3 1 roll .587 mul 3 1 roll .299 mul add add
+				c i 3 -1 roll floor cvi put } for
+        c
+ 		} bind def
+/gray { 
+        /ww exch def
+        /b exch def
+        /g exch def
+        /r exch def
+        0 1 ww 1 sub { /i exch def r i get .299 mul g i get .587 mul
+			b i get .114 mul add add r i 3 -1 roll floor cvi put } for
+        r
+        } bind def
+/BITMAPTRUEGRAY { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/height exch def /width exch def
+        /bitmapsave save def 
+        /is width string def
+        /gis width string def
+        /bis width string def
+        /cf currentfile def 
+        width height 8 [width 0 0 height neg 0 height] 
+        { cf is readhexstring pop 
+          cf gis readhexstring pop 
+          cf bis readhexstring pop width gray}  image
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPCMYKGRAY { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/height exch def /width exch def
+        /bitmapsave save def 
+        /is width string def
+        /yis width string def
+        /mis width string def
+        /kis width string def
+        /cf currentfile def 
+        width height 8 [width 0 0 height neg 0 height] 
+        { cf is readhexstring pop 
+          cf mis readhexstring pop 
+          cf yis readhexstring pop 
+          cf kis readhexstring pop width cgray}  image
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPGRAY { 
+	8 {fakecolorsetup} COMMONBITMAP
+	} bind def
+/BITMAPGRAYc { 
+	8 {fakecolorsetup} COMMONBITMAPc
+	} bind def
+/ENDBITMAP {
+	} bind def
+end 
+	/ALDmatrix matrix def ALDmatrix currentmatrix pop
+/StartALD {
+	/ALDsave save def
+	 savematrix
+	 ALDmatrix setmatrix
+	} bind def
+/InALD {
+	 restorematrix
+	} bind def
+/DoneALD {
+	 ALDsave restore
+	} bind def
+/I { setdash } bind def
+/J { [] 0 setdash } bind def
+%%EndProlog
+%%BeginSetup
+(5.5) FMVERSION
+1 1 0 0 612 792 0 1 15 FMDOCUMENT
+%%IncludeFont: Times-Roman
+0 0 /Times-Roman FMFONTDEFINE
+%%IncludeFont: Palatino-BoldItalic
+1 0 /Palatino-BoldItalic FMFONTDEFINE
+%%IncludeFont: Times-Bold
+2 0 /Times-Bold FMFONTDEFINE
+%%IncludeFont: ZapfDingbats
+3 1 /ZapfDingbats FMFONTDEFINE
+%%IncludeFont: Times-BoldItalic
+4 0 /Times-BoldItalic FMFONTDEFINE
+%%IncludeFont: Times-Italic
+5 0 /Times-Italic FMFONTDEFINE
+32 FMFILLS
+0 0 FMFILL
+1 0.1 FMFILL
+2 0.3 FMFILL
+3 0.5 FMFILL
+4 0.7 FMFILL
+5 0.9 FMFILL
+6 0.97 FMFILL
+7 1 FMFILL
+8 <0f1e3c78f0e1c387> FMFILL
+9 <0f87c3e1f0783c1e> FMFILL
+10 <cccccccccccccccc> FMFILL
+11 <ffff0000ffff0000> FMFILL
+12 <8142241818244281> FMFILL
+13 <03060c183060c081> FMFILL
+14 <8040201008040201> FMFILL
+16 1 FMFILL
+17 0.9 FMFILL
+18 0.7 FMFILL
+19 0.5 FMFILL
+20 0.3 FMFILL
+21 0.1 FMFILL
+22 0.03 FMFILL
+23 0 FMFILL
+24 <f0e1c3870f1e3c78> FMFILL
+25 <f0783c1e0f87c3e1> FMFILL
+26 <3333333333333333> FMFILL
+27 <0000ffff0000ffff> FMFILL
+28 <7ebddbe7e7dbbd7e> FMFILL
+29 <fcf9f3e7cf9f3f7e> FMFILL
+30 <7fbfdfeff7fbfdfe> FMFILL
+%%EndSetup
+%%Page: "1" 1
+%%BeginPaperSize: Letter
+%%EndPaperSize
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+J
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+N
+0 8 Q
+(Proposal for the Production of the DST\325) 108 42.62 T
+(s) 235.99 42.62 T
+(1) 536 42.62 T
+1 12 Q
+(CLAS NOTE 1999-002) 422.45 712 T
+0 24 Q
+(Proposal for the Production of the DST\325) 127.34 664 T
+(s) 511.32 664 T
+( to Distrib) 201.58 635 T
+(ute CLAS Data) 298.44 635 T
+2 12 Q
+(Stepan Stepanyan) 277.82 596 T
+0 10 Q
+(Thomas Jef) 228.95 578.33 T
+(ferson National Accelerator F) 275.08 578.33 T
+(acility) 394.05 578.33 T
+(\050March 15, 1999\051) 288.87 563.33 T
+2 F
+(Abstract) 108 539.33 T
+0 F
+(In) 108 515.33 T
+(this) 118.62 515.33 T
+(report) 135.36 515.33 T
+(a) 161.53 515.33 T
+(brief) 168.26 515.33 T
+(description) 189.43 515.33 T
+(of) 236.16 515.33 T
+(the) 246.78 515.33 T
+(CLAS) 261.29 515.33 T
+(data) 289.14 515.33 T
+(streams) 308.09 515.33 T
+(and) 340.93 515.33 T
+(the) 357.66 515.33 T
+(data) 372.17 515.33 T
+(handling) 391.12 515.33 T
+(are) 428.41 515.33 T
+(gi) 442.91 515.33 T
+(v) 450.44 515.33 T
+(en.) 455.29 515.33 T
+(The) 469.52 515.33 T
+(data) 487.36 515.33 T
+(v) 506.31 515.33 T
+(olumes) 511.11 515.33 T
+(produced) 108 503.33 T
+(during) 147.87 503.33 T
+(the) 176.64 503.33 T
+(e) 191.52 503.33 T
+(xperiment) 195.81 503.33 T
+(and) 239.01 503.33 T
+(in) 256.11 503.33 T
+(the) 266.55 503.33 T
+(dif) 281.43 503.33 T
+(ferent) 292.29 503.33 T
+(stages) 318.27 503.33 T
+(of) 345.37 503.33 T
+(the) 356.36 503.33 T
+(analyses) 371.24 503.33 T
+(are) 407.78 503.33 T
+(presented.) 422.64 503.33 T
+(The) 466.12 503.33 T
+(v) 484.33 503.33 T
+(olume) 489.13 503.33 T
+(of) 516.79 503.33 T
+(the) 527.78 503.33 T
+(ra) 108 491.33 T
+(w) 115.62 491.33 T
+(data) 127.35 491.33 T
+(and) 148.52 491.33 T
+(the) 167.48 491.33 T
+(intermediate) 184.21 491.33 T
+(analysis) 238.71 491.33 T
+(results) 275.45 491.33 T
+(\050calibration) 306.07 491.33 T
+(and) 356.68 491.33 T
+(\322cooking\323\051) 375.63 491.33 T
+(is) 424.58 491.33 T
+(lar) 435.76 491.33 T
+(ge,) 446.13 491.33 T
+(and) 462.58 491.33 T
+(it) 481.53 491.33 T
+(will) 491.61 491.33 T
+(require) 511.68 491.33 T
+(substantial) 108 479.33 T
+(ef) 154.84 479.33 T
+(forts) 162.36 479.33 T
+(to) 184.75 479.33 T
+(cop) 196.59 479.33 T
+(y) 210.93 479.33 T
+(and) 219.99 479.33 T
+(distrib) 238.49 479.33 T
+(ute) 263.85 479.33 T
+(these) 280.13 479.33 T
+(data) 304.74 479.33 T
+(structures) 325.46 479.33 T
+(to) 368.4 479.33 T
+(other) 380.24 479.33 T
+(institutions.) 404.85 479.33 T
+(In) 455.87 479.33 T
+(this) 468.26 479.33 T
+(situation,) 486.77 479.33 T
+(the) 527.78 479.33 T
+(production) 108 467.33 T
+(of) 155.32 467.33 T
+(Data) 167.63 467.33 T
+(Summary) 190.5 467.33 T
+(T) 233.38 467.33 T
+(apes,) 238.69 467.33 T
+(that) 262.95 467.33 T
+(contain) 281.93 467.33 T
+(limited,) 315.36 467.33 T
+(compressed) 350.19 467.33 T
+(information) 401.39 467.33 T
+(on) 452.6 467.33 T
+(the) 466.58 467.33 T
+(reconstruction) 482.79 467.33 T
+(results,) 108 455.33 T
+(is) 139.09 455.33 T
+(the) 148.24 455.33 T
+(solution) 162.94 455.33 T
+(to) 197.65 455.33 T
+(the) 207.91 455.33 T
+(distrib) 222.61 455.33 T
+(ution) 247.97 455.33 T
+(of) 271.01 455.33 T
+(CLAS) 281.82 455.33 T
+(data.) 309.86 455.33 T
+(The) 331.5 455.33 T
+(proposal) 349.53 455.33 T
+(discusses) 386.45 455.33 T
+(possible) 426.15 455.33 T
+(DST) 461.41 455.33 T
+(con\336gurations) 482.78 455.33 T
+(that are based on structures already e) 108 443.33 T
+(xisting in the CLAS of) 255.58 443.33 T
+(f-line analysis frame) 346.45 443.33 T
+(w) 428.4 443.33 T
+(ork.) 435.52 443.33 T
+2 16 Q
+(1.0  Intr) 108 391.33 T
+(oduction) 163.26 391.33 T
+0 12 Q
+(The) 108 364 T
+(CLAS) 130.3 364 T
+(detector) 164.61 364 T
+(is) 206.9 364 T
+(a) 218.54 364 T
+(lar) 227.51 364 T
+(ge) 239.96 364 T
+(acceptance) 254.92 364 T
+(spectrometer) 311.19 364 T
+(based) 376.81 364 T
+(on) 407.77 364 T
+(a) 423.41 364 T
+(six-coil) 432.38 364 T
+(superconduct-) 472.02 364 T
+(ing) 108 350 T
+(toroidal) 126.69 350 T
+(magnet) 167.38 350 T
+([1].) 206.06 350 T
+(The) 226.41 350 T
+(detector) 248.42 350 T
+(package) 290.43 350 T
+(consists) 333.09 350 T
+(of) 374.45 350 T
+(three) 387.8 350 T
+(re) 415.14 350 T
+(gions) 424.29 350 T
+(of) 453.65 350 T
+(drift) 467 350 T
+(chambers,) 491.02 350 T
+(g) 108 336 T
+(as) 113.94 336 T
+(Cherenk) 129.87 336 T
+(o) 170.4 336 T
+(v) 176.22 336 T
+(detectors,) 188.15 336 T
+(scintillator) 240.4 336 T
+(counters,) 297.67 336 T
+(and) 347.26 336 T
+(electromagnetic) 370.52 336 T
+(calorimeters.) 453.09 336 T
+(The) 521.34 336 T
+(detector) 108 322 T
+(response) 150.01 322 T
+(to) 195.37 322 T
+(particles) 208.06 322 T
+(passing) 252.08 322 T
+(through) 291.45 322 T
+(is) 332.14 322 T
+(digitized) 343.51 322 T
+(in) 388.87 322 T
+(ADCs) 401.57 322 T
+(and) 434.93 322 T
+(TDCs.) 455.62 322 T
+(The) 490.65 322 T
+(infor-) 512.68 322 T
+(mation) 108 308 T
+(from) 145.13 308 T
+(the) 172.25 308 T
+(ADCs) 190.71 308 T
+(and) 224.5 308 T
+(the) 245.62 308 T
+(TDCs) 264.08 308 T
+(is) 296.54 308 T
+(read) 308.33 308 T
+(out) 332.78 308 T
+(to) 351.91 308 T
+(the) 365.04 308 T
+(main) 383.49 308 T
+(computer) 411.29 308 T
+(,) 456.13 308 T
+(where) 462.92 308 T
+(the) 496.03 308 T
+(e) 514.49 308 T
+(v) 519.52 308 T
+(ent) 525.34 308 T
+(b) 108 294 T
+(uilder) 113.76 294 T
+(collects) 144.63 294 T
+(all) 184.16 294 T
+(fragments) 199.04 294 T
+(and) 249.9 294 T
+(b) 270.1 294 T
+(uilds) 275.86 294 T
+(an) 302.08 294 T
+(e) 316.28 294 T
+(v) 321.31 294 T
+(ent,) 327.13 294 T
+(placing) 347.67 294 T
+(ADC,) 385.87 294 T
+(TDC,) 417.08 294 T
+(and) 446.95 294 T
+(scaler) 467.15 294 T
+(informa-) 498.01 294 T
+(tions) 108 280 T
+(into) 134.67 280 T
+(BOS) 156.68 280 T
+(banks) 183.35 280 T
+([2].) 214.69 280 T
+(Data) 235.01 280 T
+(are) 261 280 T
+(sorted) 278.99 280 T
+(into) 311.65 280 T
+(the) 333.66 280 T
+(BOS) 351.66 280 T
+(banks) 378.33 280 T
+(by) 409.66 280 T
+(detector) 425 280 T
+(type) 466.98 280 T
+(\050see) 490.98 280 T
+(T) 513.64 280 T
+(able) 520.01 280 T
+(1\051,) 108 266 T
+(and) 124.43 266 T
+(are) 145.2 266 T
+(recorded) 163.29 266 T
+(for) 208.7 266 T
+(each) 226.12 266 T
+(e) 251.55 266 T
+(v) 256.57 266 T
+(ent.) 262.39 266 T
+(The) 283.49 266 T
+(scaler) 305.59 266 T
+(information) 337.01 266 T
+(is) 397.11 266 T
+(recorded) 408.55 266 T
+(e) 453.96 266 T
+(v) 458.99 266 T
+(ery) 464.81 266 T
+(10) 483.57 266 T
+(seconds.) 499.01 266 T
+(Each) 108 252 T
+(data) 135.23 252 T
+(\336le) 158.46 252 T
+(is) 177.03 252 T
+(identi\336ed) 188.27 252 T
+(by) 236.85 252 T
+(run) 252.08 252 T
+(number) 271.32 252 T
+(and) 311.21 252 T
+(\336le) 331.78 252 T
+(number) 350.36 252 T
+(.) 386.36 252 T
+(The) 392.59 252 T
+(length) 414.49 252 T
+(of) 447.73 252 T
+(a) 460.96 252 T
+(single) 469.53 252 T
+(data) 501.43 252 T
+(\336le) 524.66 252 T
+(is limited to 2.1 GB. T) 108 238 T
+(ypically a single run can consist of 10-20x2.1GB \336les.) 215.39 238 T
+(The) 108 212 T
+(size) 130.26 212 T
+(of) 152.51 212 T
+(the) 166.1 212 T
+(ra) 184.36 212 T
+(w) 193.51 212 T
+(data) 205.76 212 T
+(stored) 229.35 212 T
+(in) 262.28 212 T
+(the) 275.21 212 T
+(BOS) 293.47 212 T
+(banks) 320.4 212 T
+(is) 351.99 212 T
+(dif) 363.59 212 T
+(ferent) 376.63 212 T
+(for) 408.2 212 T
+(dif) 425.79 212 T
+(ferent) 438.83 212 T
+(run) 470.4 212 T
+(conditions) 490 212 T
+(de\336ned) 108 198 T
+(by) 147.01 198 T
+(beam) 162.68 198 T
+(ener) 192.35 198 T
+(gy) 212.79 198 T
+(,) 224.01 198 T
+(torus) 230.68 198 T
+(\336eld) 258.36 198 T
+(and) 283.38 198 T
+(the) 304.38 198 T
+(tar) 322.72 198 T
+(get.) 335.17 198 T
+(In) 356.51 198 T
+(T) 370.18 198 T
+(able) 376.55 198 T
+(2,) 400.22 198 T
+(the) 412.9 198 T
+(data) 431.24 198 T
+(v) 454.91 198 T
+(olumes) 460.67 198 T
+(for) 499.02 198 T
+(elec-) 516.68 198 T
+(tron-h) 108 184 T
+(ydrogen) 137.27 184 T
+(scattering) 179.51 184 T
+(at) 229.08 184 T
+(dif) 240.67 184 T
+(ferent) 253.7 184 T
+(conditions) 284.6 184 T
+(are) 337.52 184 T
+(sho) 355.09 184 T
+(wn) 371.46 184 T
+(\050the) 389.04 184 T
+(data) 410.62 184 T
+(are) 433.53 184 T
+(from) 451.1 184 T
+(January/Feb-) 477.35 184 T
+(ruary) 108 170 T
+(1999) 136.7 170 T
+(runs\051.) 164.07 170 T
+(The) 195.11 170 T
+(a) 217.15 170 T
+(v) 222.24 170 T
+(erage) 228.06 170 T
+(e) 257.42 170 T
+(v) 262.44 170 T
+(ent) 268.26 170 T
+(size) 286.31 170 T
+(is) 308.34 170 T
+(about) 319.73 170 T
+(3.5kB) 349.77 170 T
+(which,) 382.15 170 T
+(at) 417.85 170 T
+(the) 429.89 170 T
+(data) 447.94 170 T
+(collection) 471.31 170 T
+(rate) 522.01 170 T
+(of) 108 156 T
+(2kHz,) 122.62 156 T
+(will) 156.24 156 T
+(produce) 179.54 156 T
+(25) 222.81 156 T
+(GB) 239.44 156 T
+(of) 260.73 156 T
+(information) 275.36 156 T
+(for) 336.64 156 T
+(one) 355.26 156 T
+(hour) 377.22 156 T
+(of) 403.84 156 T
+(running.) 418.46 156 T
+(This) 463.42 156 T
+(amount) 489.38 156 T
+(of) 530 156 T
+(information) 108 142 T
+(will) 169.61 142 T
+(not) 193.23 142 T
+(be) 213.51 142 T
+(easy) 229.78 142 T
+(to) 256.05 142 T
+(handle) 270.33 142 T
+(without) 307.27 142 T
+(f) 348.88 142 T
+(ast) 352.76 142 T
+(netw) 371.04 142 T
+(ork) 394.24 142 T
+(lines) 415.18 142 T
+(and) 442.8 142 T
+(automated) 465.07 142 T
+(tape) 520.01 142 T
+(dri) 108 128 T
+(v) 121.03 128 T
+(es e) 126.85 128 T
+(v) 144.88 128 T
+(en for a single setting of a single e) 150.7 128 T
+(xperiment.) 315.16 128 T
+(The) 108 102 T
+(of) 129.37 102 T
+(f-line) 139.07 102 T
+(analysis) 167.76 102 T
+(code) 209.14 102 T
+(uses) 234.5 102 T
+(the) 257.88 102 T
+(ra) 275.25 102 T
+(w) 284.39 102 T
+(data) 295.76 102 T
+(BOS) 318.46 102 T
+(banks) 344.51 102 T
+(mentioned) 375.22 102 T
+(abo) 428.59 102 T
+(v) 445.74 102 T
+(e,) 451.56 102 T
+(and) 462.6 102 T
+(con) 482.63 102 T
+(v) 499.48 102 T
+(erts) 505.3 102 T
+(the) 525.34 102 T
+(information) 108 88 T
+(from) 168.18 88 T
+(the) 195.02 88 T
+(ADCs) 213.2 88 T
+(and) 246.71 88 T
+(the) 267.56 88 T
+(TDCs) 285.73 88 T
+(into) 317.92 88 T
+(hits) 340.1 88 T
+(and) 360.96 88 T
+(tracks.) 381.8 88 T
+(In) 416.97 88 T
+(the) 430.48 88 T
+(analysis) 448.66 88 T
+(code,) 490.84 88 T
+(data) 520.01 88 T
+(transfer) 108 74 T
+(between) 147.38 74 T
+(the) 190.1 74 T
+(softw) 207.5 74 T
+(are) 234.05 74 T
+(modules) 251.44 74 T
+(and) 294.84 74 T
+(the) 314.9 74 T
+(storage) 332.3 74 T
+(of) 369.7 74 T
+(the) 382.43 74 T
+(reconstructed) 399.83 74 T
+(\336nal) 467.21 74 T
+(results) 491.28 74 T
+(are) 525.35 74 T
+FMENDPAGE
+%%EndPage: "1" 1
+%%Page: "2" 2
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+N
+0 8 Q
+(to Distrib) 108 42.62 T
+(ute CLAS Data) 138.29 42.62 T
+(2) 536 42.62 T
+0 12 Q
+(done) 108 712 T
+(via) 134.83 712 T
+(BOS) 152.99 712 T
+(system) 179.84 712 T
+(as) 216.68 712 T
+(well.) 230.17 712 T
+(There) 257.34 712 T
+(are) 288.82 712 T
+(about) 306.98 712 T
+(150) 337.14 712 T
+(BOS) 358.64 712 T
+(banks) 385.49 712 T
+([3]) 416.98 712 T
+(de\336ned) 434.48 712 T
+(in) 473.31 712 T
+(the) 486.15 712 T
+(of) 504.31 712 T
+(f-line) 514.01 712 T
+(analysis) 108 698 T
+(code) 150.24 698 T
+(\050see) 176.47 698 T
+(T) 199.36 698 T
+(able) 205.73 698 T
+(3\051.) 229.3 698 T
+(The) 245.87 698 T
+(total) 268.1 698 T
+(data) 293.01 698 T
+(v) 316.58 698 T
+(olume) 322.34 698 T
+(corresponding) 355.91 698 T
+(to) 428.14 698 T
+(the) 441.05 698 T
+(sum) 459.28 698 T
+(of) 482.86 698 T
+(all) 496.43 698 T
+(banks) 512 698 T
+(can be as big as 22 kB per e) 108 684 T
+(v) 241.67 684 T
+(ent.) 247.49 684 T
+(There) 108 658 T
+(are) 139.46 658 T
+(four) 157.59 658 T
+(basic) 181.06 658 T
+(types) 209.2 658 T
+(of) 238.01 658 T
+(data) 251.48 658 T
+(streams) 274.95 658 T
+(for) 315.08 658 T
+(CLAS:) 332.55 658 T
+(the) 370.04 658 T
+(ra) 388.18 658 T
+(w) 397.33 658 T
+(data) 409.47 658 T
+(-) 432.93 658 T
+(created) 440.41 658 T
+(by) 478.53 658 T
+(D) 494.01 658 T
+(A) 502.19 658 T
+(Q,) 510.19 658 T
+(the) 525.34 658 T
+(calibration) 108 644 T
+(and) 163.37 644 T
+(the) 184.74 644 T
+(\322cooking\323) 203.45 644 T
+(data) 256.81 644 T
+(structures) 280.84 644 T
+(-) 331.54 644 T
+(created) 339.58 644 T
+(by) 378.27 644 T
+(the) 394.31 644 T
+(analysis) 413.02 644 T
+(softw) 455.73 644 T
+(are,) 482.27 644 T
+(and) 503.96 644 T
+(the) 525.34 644 T
+(DST\325) 108 630 T
+(s,) 134 630 T
+(the) 145.06 630 T
+(\336nal) 163.1 630 T
+(product.) 187.82 630 T
+(Dif) 230.87 630 T
+(ferent) 246.56 630 T
+(data) 277.93 630 T
+(streams) 301.31 630 T
+(not) 341.35 630 T
+(only) 360.07 630 T
+(contain) 384.79 630 T
+(dif) 423.5 630 T
+(ferent) 436.54 630 T
+(samples) 467.9 630 T
+(of) 509.95 630 T
+(ini-) 523.33 630 T
+(tial) 108 616 T
+(\050ra) 127.45 616 T
+(w\051) 140.59 616 T
+(data) 157.37 616 T
+(b) 181.47 616 T
+(ut) 187.23 616 T
+(also) 200.68 616 T
+(ha) 224.13 616 T
+(v) 235.21 616 T
+(e) 241.04 616 T
+(dif) 250.48 616 T
+(ferent) 263.51 616 T
+(v) 295.61 616 T
+(olumes) 301.37 616 T
+(of) 340.15 616 T
+(information.) 354.26 616 T
+(The) 418.04 616 T
+(biggest) 440.81 616 T
+(e) 479.6 616 T
+(v) 484.62 616 T
+(ent) 490.44 616 T
+(size) 509.22 616 T
+(is) 532 616 T
+(used in the calibration con\336guration, the smallest one in the DST\325) 108 602 T
+(s.) 423.65 602 T
+3 F
+(?) 108 67 T
+4 F
+( - S - sector number) 114.44 67 T
+(, E - entry type, 0 - no number) 211.33 67 T
+(.) 359.22 67 T
+2 10 Q
+(T) 168.82 579.33 T
+(ABLE 1. BOS banks in the raw data str) 174.59 579.33 T
+(eam \050D) 343.6 579.33 T
+(A) 374.07 579.33 T
+(Q cr) 380.84 579.33 T
+(eated\051.) 399.82 579.33 T
+(Bank #) 239.95 558.33 T
+3 9.6 Q
+(?) 270.24 563.13 T
+2 10 Q
+(# Columns) 295.95 558.33 T
+(F) 369.49 558.33 T
+(ormat) 375.35 558.33 T
+(Comments) 438.02 558.33 T
+(HEAD) 161.07 542.33 T
+(0) 255.17 542.33 T
+(8) 316.37 542.33 T
+(I) 383.53 542.33 T
+(Raw banks) 437.32 542.33 T
+(CALL) 161.07 526.33 T
+(0) 255.17 526.33 T
+(3) 316.37 526.33 T
+(B16) 377.14 526.33 T
+(\050general\051) 441.91 526.33 T
+(CC) 161.07 510.33 T
+(S) 254.89 510.33 T
+(3) 316.37 510.33 T
+(B16) 377.14 510.33 T
+(DC0) 161.07 494.33 T
+(S) 254.89 494.33 T
+(2) 316.37 494.33 T
+(B16) 377.14 494.33 T
+(EC) 161.07 478.33 T
+(S) 254.89 478.33 T
+(3) 316.37 478.33 T
+(B16) 377.14 478.33 T
+(EC1) 161.07 462.33 T
+(S) 254.89 462.33 T
+(5) 316.37 462.33 T
+(B16) 377.14 462.33 T
+(SC) 161.07 446.33 T
+(S) 254.89 446.33 T
+(5) 316.37 446.33 T
+(B16) 377.14 446.33 T
+(TGBI) 161.07 430.33 T
+(0) 255.17 430.33 T
+(3) 316.37 430.33 T
+(B32) 377.14 430.33 T
+(TRGS) 161.07 414.33 T
+(0) 255.17 414.33 T
+(64) 313.87 414.33 T
+(I) 383.53 414.33 T
+(Scaler banks) 433.71 414.33 T
+(HLS) 161.07 398.33 T
+(0) 255.17 398.33 T
+(12) 313.87 398.33 T
+(B32) 377.14 398.33 T
+(CCS) 161.07 382.33 T
+(0) 255.17 382.33 T
+(96) 313.87 382.33 T
+(I) 383.53 382.33 T
+(ECS) 161.07 366.33 T
+(0) 255.17 366.33 T
+(96) 313.87 366.33 T
+(I) 383.53 366.33 T
+(SCS) 161.07 350.33 T
+(0) 255.17 350.33 T
+(192) 311.37 350.33 T
+(I) 383.53 350.33 T
+(S1ST) 161.07 334.33 T
+(0) 255.17 334.33 T
+(17) 313.87 334.33 T
+(I) 383.53 334.33 T
+(BREP) 161.07 318.33 T
+(0) 255.17 318.33 T
+(36) 313.87 318.33 T
+(F) 382.42 318.33 T
+(ST) 161.07 302.33 T
+(S) 254.89 302.33 T
+(3) 316.37 302.33 T
+(B16) 377.14 302.33 T
+(Additional) 438.29 302.33 T
+(DSPC) 161.07 286.33 T
+(0) 255.17 286.33 T
+(8) 316.37 286.33 T
+(B16) 377.14 286.33 T
+(raw banks) 438.71 286.33 T
+(DSPS) 161.07 270.33 T
+(0) 255.17 270.33 T
+(3) 316.37 270.33 T
+(B16) 377.14 270.33 T
+(f) 438.56 270.33 T
+(or photon) 441.64 270.33 T
+(DSTC) 161.07 254.33 T
+(0) 255.17 254.33 T
+(9) 316.37 254.33 T
+(B16) 377.14 254.33 T
+(runs) 451.35 254.33 T
+(T) 161.07 238.33 T
+(A) 166.84 238.33 T
+(GE) 173.51 238.33 T
+(S) 254.89 238.33 T
+(2) 316.37 238.33 T
+(B16) 377.14 238.33 T
+(T) 161.07 222.33 T
+(A) 166.84 222.33 T
+(GT) 173.51 222.33 T
+(S) 254.89 222.33 T
+(3) 316.37 222.33 T
+(B16) 377.14 222.33 T
+(TRGT) 161.07 206.33 T
+(S) 254.89 206.33 T
+(13) 313.87 206.33 T
+(B16) 377.14 206.33 T
+(STS) 161.07 190.33 T
+(0) 255.17 190.33 T
+(16) 313.87 190.33 T
+(I) 383.53 190.33 T
+(Additional) 438.29 190.33 T
+(TGS) 161.07 174.33 T
+(0) 255.17 174.33 T
+(192) 311.37 174.33 T
+(I) 383.53 174.33 T
+(scaler banks) 434.54 174.33 T
+(G1SL) 161.07 158.33 T
+(0) 255.17 158.33 T
+(64) 313.87 158.33 T
+(I) 383.53 158.33 T
+(f) 438.56 158.33 T
+(or photon) 441.64 158.33 T
+(G2SL) 161.07 142.33 T
+(0) 255.17 142.33 T
+(64) 313.87 142.33 T
+(I) 383.53 142.33 T
+(runs) 451.35 142.33 T
+(G3SL) 161.07 126.33 T
+(0) 255.17 126.33 T
+(64) 313.87 126.33 T
+(I) 383.53 126.33 T
+(G4SL) 161.07 110.33 T
+(0) 255.17 110.33 T
+(64) 313.87 110.33 T
+(I) 383.53 110.33 T
+(R) 161.07 94.33 T
+(TSL) 167.89 94.33 T
+(0) 255.17 94.33 T
+(64) 313.87 94.33 T
+(I) 383.53 94.33 T
+153.82 574 153.82 88 2 L
+V
+0.5 H
+0 Z
+N
+156.32 571.5 156.32 90.5 2 L
+V
+N
+227.07 571.5 227.07 90.5 2 L
+V
+N
+288.27 571.5 288.27 90.5 2 L
+V
+N
+349.47 571.5 349.47 90.5 2 L
+V
+N
+421.47 571.5 421.47 90.5 2 L
+V
+N
+499.42 571.5 499.42 90.5 2 L
+V
+N
+501.92 574 501.92 88 2 L
+V
+N
+153.57 574.25 502.17 574.25 2 L
+V
+N
+156.07 571.75 499.67 571.75 2 L
+V
+N
+156.57 554.25 499.17 554.25 2 L
+V
+N
+156.57 551.75 499.17 551.75 2 L
+V
+N
+156.57 537 499.17 537 2 L
+V
+N
+156.57 521 499.17 521 2 L
+V
+N
+156.57 505 499.17 505 2 L
+V
+N
+156.57 489 499.17 489 2 L
+V
+N
+156.57 473 499.17 473 2 L
+V
+N
+156.57 457 499.17 457 2 L
+V
+N
+156.57 441 499.17 441 2 L
+V
+N
+156.57 425 499.17 425 2 L
+V
+N
+156.57 409 499.17 409 2 L
+V
+N
+156.57 393 499.17 393 2 L
+V
+N
+156.57 377 499.17 377 2 L
+V
+N
+156.57 361 499.17 361 2 L
+V
+N
+156.57 345 499.17 345 2 L
+V
+N
+156.57 329 499.17 329 2 L
+V
+N
+156.57 313 499.17 313 2 L
+V
+N
+156.57 297 499.17 297 2 L
+V
+N
+156.57 281 499.17 281 2 L
+V
+N
+156.57 265 499.17 265 2 L
+V
+N
+156.57 249 499.17 249 2 L
+V
+N
+156.57 233 499.17 233 2 L
+V
+N
+156.57 217 499.17 217 2 L
+V
+N
+156.57 201 499.17 201 2 L
+V
+N
+156.57 185 499.17 185 2 L
+V
+N
+156.57 169 499.17 169 2 L
+V
+N
+156.57 153 499.17 153 2 L
+V
+N
+156.57 137 499.17 137 2 L
+V
+N
+156.57 121 499.17 121 2 L
+V
+N
+156.57 105 499.17 105 2 L
+V
+N
+156.07 90.25 499.67 90.25 2 L
+V
+N
+153.57 87.75 502.17 87.75 2 L
+V
+N
+FMENDPAGE
+%%EndPage: "2" 2
+%%Page: "3" 3
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+N
+0 8 Q
+(to Distrib) 108 42.62 T
+(ute CLAS Data) 138.29 42.62 T
+(3) 536 42.62 T
+4 12 Q
+(* - In the latest runs ev) 108 603 T
+(ent size is about 5kB.) 221.83 603 T
+2 16 Q
+(2.0   Calibration and \322cooking\323 data str) 108 562.33 T
+(eams) 378.85 562.33 T
+0 12 Q
+(Calibration) 108 521 T
+(and) 166.58 521 T
+(\322cooking\323) 188.49 521 T
+(are) 242.39 521 T
+(the) 261.62 521 T
+(tw) 280.86 521 T
+(o) 292.74 521 T
+(important) 303.32 521 T
+(stages) 354.57 521 T
+(of) 388.48 521 T
+(the) 403.05 521 T
+(data) 422.29 521 T
+(analysis) 446.86 521 T
+(before) 490.11 521 T
+(the) 525.34 521 T
+(main) 108 507 T
+(ph) 136.61 507 T
+(ysics) 148.55 507 T
+(analysis) 177.16 507 T
+(will) 220.44 507 T
+(tak) 243.73 507 T
+(e) 258.27 507 T
+(place.) 268.21 507 T
+(Both) 301.14 507 T
+(processes) 329.09 507 T
+(may) 379.69 507 T
+(be) 404.97 507 T
+(done) 420.91 507 T
+(more) 448.85 507 T
+(than) 478.12 507 T
+(once) 503.39 507 T
+(in) 530.66 507 T
+(order to ensure the highest possible quality of the \336nal results.) 108 493 T
+(F) 108 467 T
+(or) 114.49 467 T
+(detector) 127.47 467 T
+(calibration,) 169.11 467 T
+(a) 226.42 467 T
+(lar) 234.74 467 T
+(ge) 247.18 467 T
+(number) 261.5 467 T
+(of) 301.14 467 T
+(BOS) 314.12 467 T
+(banks) 340.45 467 T
+(\050see) 371.43 467 T
+(T) 393.74 467 T
+(able) 400.11 467 T
+(4\051) 423.09 467 T
+(should) 436.07 467 T
+(be) 471.06 467 T
+(stored) 485.38 467 T
+(for) 517.69 467 T
+(a) 534.67 467 T
+(relati) 108 453 T
+(v) 132.36 453 T
+(ely) 138.18 453 T
+(small) 157.48 453 T
+(e) 188.11 453 T
+(v) 193.14 453 T
+(ent) 198.96 453 T
+(sample) 218.26 453 T
+(\050<10%\051.) 256.88 453 T
+(In) 301.27 453 T
+(the) 315.9 453 T
+(data) 335.2 453 T
+(stream,) 359.82 453 T
+(not) 399.44 453 T
+(only) 419.41 453 T
+(\336nal) 445.38 453 T
+(reconstruction) 471.35 453 T
+(results) 108 439 T
+(for) 142.4 439 T
+(indi) 159.47 439 T
+(vidual) 177.84 439 T
+(packages) 210.91 439 T
+(b) 257.96 439 T
+(ut) 263.72 439 T
+(also) 276.13 439 T
+(some) 298.53 439 T
+(intermediate) 326.93 439 T
+(results) 389.99 439 T
+(are) 424.4 439 T
+(written) 442.12 439 T
+(to) 479.19 439 T
+(the) 491.59 439 T
+(output) 509.33 439 T
+(\336les.) 108 425 T
+(This) 134.27 425 T
+(is) 158.88 425 T
+(necessary) 170.15 425 T
+(to) 220.06 425 T
+(ensure) 232.66 425 T
+(the) 267.25 425 T
+(completeness) 285.18 425 T
+(of) 353.1 425 T
+(the) 366.37 425 T
+(information) 384.3 425 T
+(for) 444.23 425 T
+(the) 461.49 425 T
+(reliable) 479.42 425 T
+(cali-) 518.68 425 T
+(bration) 108 411 T
+(of) 144.9 411 T
+(the) 157.8 411 T
+(detectors.) 175.37 411 T
+(The) 224.59 411 T
+(typical) 246.15 411 T
+(e) 281.72 411 T
+(v) 286.75 411 T
+(ent) 292.57 411 T
+(size) 310.13 411 T
+(in) 331.7 411 T
+(the) 343.94 411 T
+(calibration) 361.5 411 T
+(data) 415.73 411 T
+(stream) 438.63 411 T
+(is) 473.52 411 T
+(about) 484.43 411 T
+(11kB) 513.99 411 T
+(which) 108 397 T
+(is) 140.95 397 T
+(about) 152.58 397 T
+(three) 182.86 397 T
+(times) 210.47 397 T
+(lar) 240.1 397 T
+(ger) 252.54 397 T
+(than) 271.49 397 T
+(original) 295.77 397 T
+(e) 336.73 397 T
+(v) 341.76 397 T
+(ent) 347.58 397 T
+(size.) 365.86 397 T
+(Assuming) 391.14 397 T
+(that) 443.44 397 T
+(calibration) 465.06 397 T
+(pro-) 520.01 397 T
+(cessing) 108 383 T
+(will) 146.68 383 T
+(be) 168.7 383 T
+(done) 183.37 383 T
+(at) 210.05 383 T
+(least) 222.06 383 T
+(twice) 247.41 383 T
+(\050for) 276.75 383 T
+(v) 298.09 383 T
+(eri\336cation) 303.91 383 T
+(of) 355.92 383 T
+(calibration) 369.26 383 T
+(quality\051) 423.93 383 T
+(this) 464.61 383 T
+(will) 485.3 383 T
+(yield) 507.32 383 T
+(a) 534.67 383 T
+(data) 108 369 T
+(v) 130.72 369 T
+(olume) 136.48 369 T
+(of) 169.21 369 T
+(a) 181.93 369 T
+(fe) 189.99 369 T
+(w) 199.01 369 T
+(terabytes) 210.4 369 T
+(\05010) 256.45 369 T
+0 9.6 Q
+(12) 272.45 373.8 T
+0 12 Q
+(B\051) 284.77 369 T
+(for) 299.5 369 T
+(a) 316.22 369 T
+(single) 324.27 369 T
+(run) 355.67 369 T
+(period) 374.39 369 T
+(\050something) 407.78 369 T
+(of) 464.51 369 T
+(order) 477.23 369 T
+(of) 505.28 369 T
+(30%) 518 369 T
+(of the initial data\051.) 108 355 T
+(\322Cooking\323) 108 329 T
+(is) 162.74 329 T
+(the) 173.48 329 T
+(procedure) 190.89 329 T
+(to) 241.61 329 T
+(select) 253.69 329 T
+(real) 283.75 329 T
+(e) 304.48 329 T
+(v) 309.51 329 T
+(ents) 315.33 329 T
+(from) 337.4 329 T
+(the) 363.47 329 T
+(recorded) 380.88 329 T
+(information,) 425.6 329 T
+(con) 488 329 T
+(v) 504.85 329 T
+(ersion) 510.67 329 T
+(of) 108 315 T
+(the) 121.48 315 T
+(ADC) 139.63 315 T
+(and) 168.45 315 T
+(the) 189.27 315 T
+(TDC) 207.42 315 T
+(information) 234.9 315 T
+(into) 295.06 315 T
+(hits) 317.21 315 T
+(and) 338.04 315 T
+(tracks,) 358.86 315 T
+(determination) 394 315 T
+(of) 464.15 315 T
+(the) 477.63 315 T
+(four) 495.78 315 T
+(-v) 515.53 315 T
+(ec-) 525.35 315 T
+(tors) 108 301 T
+(and) 130.76 301 T
+(particle) 152.85 301 T
+(ID.) 193.59 301 T
+(The) 214.01 301 T
+(procedure) 237.43 301 T
+(includes) 290.16 301 T
+(all) 334.92 301 T
+(triggers) 351.67 301 T
+(that) 393.09 301 T
+(ha) 415.85 301 T
+(v) 426.94 301 T
+(e) 432.76 301 T
+(been) 442.85 301 T
+(collected.) 470.26 301 T
+(The) 521.34 301 T
+(a) 108 287 T
+(v) 113.09 287 T
+(erage) 118.91 287 T
+(reduction) 148.31 287 T
+(of) 197.06 287 T
+(the) 210.48 287 T
+(data) 228.57 287 T
+(due) 251.98 287 T
+(to) 272.73 287 T
+(the) 285.49 287 T
+(bad) 303.58 287 T
+(triggers) 324.33 287 T
+(is) 364.42 287 T
+(approximately) 375.85 287 T
+(0.3-0.4) 448.59 287 T
+(\050depending) 486.01 287 T
+(on) 108 273 T
+(run) 123.83 273 T
+(conditions\051.) 143.65 273 T
+(The) 204.48 273 T
+(output) 226.96 273 T
+(data) 261.46 273 T
+(stream) 285.28 273 T
+(for) 321.1 273 T
+(the) 338.92 273 T
+(\322cooking\323) 357.41 273 T
+(contains) 410.56 273 T
+(all) 454.38 273 T
+(ra) 470.21 273 T
+(w) 479.35 273 T
+(data,) 491.84 273 T
+(\336nal) 518.66 273 T
+(analysis) 108 259 T
+(results) 150.23 259 T
+(for) 185.13 259 T
+(indi) 202.68 259 T
+(vidual) 221.05 259 T
+(detector) 254.62 259 T
+(packages) 296.84 259 T
+(and,) 344.38 259 T
+(of) 368.28 259 T
+(course,) 381.84 259 T
+(the) 419.72 259 T
+(e) 437.95 259 T
+(v) 442.98 259 T
+(ent/particle) 448.8 259 T
+(record.) 506.35 259 T
+(The) 108 245 T
+(a) 129.95 245 T
+(v) 135.04 245 T
+(erage) 140.86 245 T
+(e) 170.14 245 T
+(v) 175.16 245 T
+(ent) 180.99 245 T
+(size) 198.94 245 T
+(in) 220.9 245 T
+(this) 233.53 245 T
+(case) 254.16 245 T
+(is) 278.11 245 T
+(~8kB,) 289.41 245 T
+(and) 322.2 245 T
+(the) 342.82 245 T
+(o) 360.78 245 T
+(v) 366.6 245 T
+(erall) 372.42 245 T
+(data) 397.04 245 T
+(v) 420.32 245 T
+(olume) 426.08 245 T
+(is) 459.38 245 T
+(approximately) 470.68 245 T
+(the same as the initial one.) 108 231 T
+(As) 108 205 T
+(it) 124.75 205 T
+(is) 134.83 205 T
+(clear) 146.25 205 T
+(from) 172.98 205 T
+(the) 199.73 205 T
+(abo) 217.8 205 T
+(v) 234.95 205 T
+(e) 240.77 205 T
+(numbers,) 249.51 205 T
+(in) 297.26 205 T
+(all) 310.01 205 T
+(three) 325.42 205 T
+(data) 352.83 205 T
+(streams) 376.23 205 T
+(\050ra) 416.31 205 T
+(w) 429.45 205 T
+(data,) 441.53 205 T
+(calibration) 467.93 205 T
+(and) 522.67 205 T
+(\322cooking\323\051) 108 191 T
+(the) 164.88 191 T
+(e) 183.11 191 T
+(v) 188.14 191 T
+(ent) 193.96 191 T
+(size) 212.19 191 T
+(is) 234.41 191 T
+(big) 245.98 191 T
+(and) 264.88 191 T
+(requires) 285.77 191 T
+(huge) 327.99 191 T
+(disk) 354.88 191 T
+(space) 378.45 191 T
+(and/or) 408.67 191 T
+(tape) 442.89 191 T
+(v) 466.45 191 T
+(olume) 472.21 191 T
+(to) 505.77 191 T
+(han-) 518.68 191 T
+(dle.) 108 177 T
+2 10 Q
+(T) 134.62 689.33 T
+(ABLE 2. A) 140.39 689.33 T
+(v) 186.34 689.33 T
+(erage size of the raw e) 191.24 689.33 T
+(v) 285.22 689.33 T
+(ent f) 290.12 689.33 T
+(or differ) 309.03 689.33 T
+(ent run conditions in kB.) 344.67 689.33 T
+2 12 Q
+(Beam ener) 132.44 667 T
+(gy) 187.3 667 T
+2 10 Q
+(1.5) 246.37 666.33 T
+(GeV) 270.87 666.33 T
+(2.56) 349.37 666.33 T
+(GeV) 378.87 666.33 T
+(4.25) 457.37 666.33 T
+(GeV) 486.87 666.33 T
+2 12 Q
+(T) 130.37 649 T
+(orus curr) 137.27 649 T
+(ent) 185.38 649 T
+(1500A) 221.54 649 T
+(2250A) 275.54 649 T
+(1500A) 329.54 649 T
+(2250A) 383.54 649 T
+(2250A) 437.54 649 T
+(3375A) 491.54 649 T
+(Raw e) 128.37 631 T
+(v) 159.84 631 T
+(ent size) 165.72 631 T
+(3.1kB) 223.03 631 T
+(3.6kB) 277.03 631 T
+(3.7kB) 331.03 631 T
+(3.7kB) 385.03 631 T
+(3.4kB*) 436.03 631 T
+(3.1kB) 493.03 631 T
+119.62 684 119.62 624 2 L
+V
+0.5 H
+0 Z
+N
+122.12 681.5 122.12 626.5 2 L
+V
+N
+210.87 681.5 210.87 626.5 2 L
+V
+2 H
+N
+264.87 661.25 264.87 626.5 2 L
+V
+N
+318.87 681.5 318.87 626.5 2 L
+V
+N
+372.87 661.25 372.87 626.5 2 L
+V
+N
+426.87 681.5 426.87 626.5 2 L
+V
+N
+480.87 661.25 480.87 626.5 2 L
+V
+N
+533.62 681.5 533.62 626.5 2 L
+V
+0.5 H
+N
+536.12 684 536.12 624 2 L
+V
+N
+119.37 684.25 536.37 684.25 2 L
+V
+N
+121.87 681.75 533.87 681.75 2 L
+V
+N
+122.37 661 533.37 661 2 L
+V
+N
+122.37 644.25 533.37 644.25 2 L
+V
+N
+122.37 641.75 533.37 641.75 2 L
+V
+N
+121.87 626.25 533.87 626.25 2 L
+V
+N
+119.37 623.75 536.37 623.75 2 L
+V
+N
+FMENDPAGE
+%%EndPage: "3" 3
+%%Page: "4" 4
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+N
+0 8 Q
+(to Distrib) 108 42.62 T
+(ute CLAS Data) 138.29 42.62 T
+(4) 536 42.62 T
+2 10 Q
+(T) 137.59 689.33 T
+(ABLE 3. Names of the BOS banks curr) 143.36 689.33 T
+(ently de\336ned in the CLAS off-line analysis softwar) 310.41 689.33 T
+(e.) 524.96 689.33 T
+(#) 135.87 668.33 T
+(Name) 164.67 668.33 T
+(#) 215.07 668.33 T
+(Name) 243.87 668.33 T
+(#) 294.27 668.33 T
+(Name) 323.07 668.33 T
+(#) 373.47 668.33 T
+(Name) 402.27 668.33 T
+(#) 452.67 668.33 T
+(Name) 481.47 668.33 T
+(1) 135.87 652.33 T
+(BMPR) 164.67 652.33 T
+(31) 215.07 652.33 T
+(DITM) 243.87 652.33 T
+(61) 294.27 652.33 T
+(ECS) 323.07 652.33 T
+(91) 373.47 652.33 T
+(MTRK) 402.27 652.33 T
+(121) 452.67 652.33 T
+(SCS) 481.47 652.33 T
+(2) 135.87 636.33 T
+(BREP) 164.67 636.33 T
+(32) 215.07 636.33 T
+(DOCA) 243.87 636.33 T
+(62) 294.27 636.33 T
+(EID0) 323.07 636.33 T
+(92) 373.47 636.33 T
+(MVR) 402.27 636.33 T
+(T) 425.75 636.33 T
+(122) 452.67 636.33 T
+(SGMP) 481.47 636.33 T
+(3) 135.87 620.33 T
+(CALL) 164.67 620.33 T
+(33) 215.07 620.33 T
+(DPCP) 243.87 620.33 T
+(63) 294.27 620.33 T
+(EPIC) 323.07 620.33 T
+(93) 373.47 620.33 T
+(P) 402.27 620.33 T
+(AR) 407.64 620.33 T
+(T) 421.68 620.33 T
+(123) 452.67 620.33 T
+(SP) 481.47 620.33 T
+(AR) 492.4 620.33 T
+(4) 135.87 604.33 T
+(CC) 164.67 604.33 T
+(34) 215.07 604.33 T
+(DPSP) 243.87 604.33 T
+(64) 294.27 604.33 T
+(EVNT) 323.07 604.33 T
+(94) 373.47 604.33 T
+(PCO) 402.27 604.33 T
+(124) 452.67 604.33 T
+(SPIN) 481.47 604.33 T
+(5) 135.87 588.33 T
+(CC01) 164.67 588.33 T
+(35) 215.07 588.33 T
+(DSPC) 243.87 588.33 T
+(65) 294.27 588.33 T
+(FBPM) 323.07 588.33 T
+(95) 373.47 588.33 T
+(PR) 402.27 588.33 T
+(TM) 415.2 588.33 T
+(125) 452.67 588.33 T
+(ST) 481.47 588.33 T
+(6) 135.87 572.33 T
+(CC1) 164.67 572.33 T
+(36) 215.07 572.33 T
+(DSPS) 243.87 572.33 T
+(66) 294.27 572.33 T
+(G1SL) 323.07 572.33 T
+(96) 373.47 572.33 T
+(PSO) 402.27 572.33 T
+(126) 452.67 572.33 T
+(ST1) 481.47 572.33 T
+(7) 135.87 556.33 T
+(CCDI) 164.67 556.33 T
+(37) 215.07 556.33 T
+(DSTC) 243.87 556.33 T
+(67) 294.27 556.33 T
+(G2SL) 323.07 556.33 T
+(97) 373.47 556.33 T
+(RCST) 402.27 556.33 T
+(127) 452.67 556.33 T
+(STH) 481.47 556.33 T
+(8) 135.87 540.33 T
+(CCH) 164.67 540.33 T
+(38) 215.07 540.33 T
+(DTCP) 243.87 540.33 T
+(68) 294.27 540.33 T
+(G3SL) 323.07 540.33 T
+(98) 373.47 540.33 T
+(RF) 402.27 540.33 T
+(128) 452.67 540.33 T
+(STPB) 481.47 540.33 T
+(9) 135.87 524.33 T
+(CCMT) 164.67 524.33 T
+(39) 215.07 524.33 T
+(DTRK) 243.87 524.33 T
+(69) 294.27 524.33 T
+(G4SL) 323.07 524.33 T
+(99) 373.47 524.33 T
+(RGLK) 402.27 524.33 T
+(129) 452.67 524.33 T
+(STPE) 481.47 524.33 T
+(10) 135.87 508.33 T
+(CCPB) 164.67 508.33 T
+(40) 215.07 508.33 T
+(EC) 243.87 508.33 T
+(70) 294.27 508.33 T
+(GP) 323.07 508.33 T
+(AR) 336.22 508.33 T
+(100) 373.47 508.33 T
+(RNLG) 402.27 508.33 T
+(130) 452.67 508.33 T
+(STR) 481.47 508.33 T
+(11) 135.87 492.33 T
+(CCPE) 164.67 492.33 T
+(41) 215.07 492.33 T
+(EC01) 243.87 492.33 T
+(71) 294.27 492.33 T
+(HBER) 323.07 492.33 T
+(101) 373.47 492.33 T
+(RNPE) 402.27 492.33 T
+(131) 452.67 492.33 T
+(STS) 481.47 492.33 T
+(12) 135.87 476.33 T
+(CCRC) 164.67 476.33 T
+(42) 215.07 476.33 T
+(EC1) 243.87 476.33 T
+(72) 294.27 476.33 T
+(HBID) 323.07 476.33 T
+(102) 373.47 476.33 T
+(R) 402.27 476.33 T
+(TSL) 409.09 476.33 T
+(132) 452.67 476.33 T
+(T) 481.47 476.33 T
+(A) 487.24 476.33 T
+(CO) 493.91 476.33 T
+(13) 135.87 460.33 T
+(CCS) 164.67 460.33 T
+(43) 215.07 460.33 T
+(EC1P) 243.87 460.33 T
+(73) 294.27 460.33 T
+(HBLA) 323.07 460.33 T
+(103) 373.47 460.33 T
+(R) 402.27 460.33 T
+(UNC) 409.19 460.33 T
+(133) 452.67 460.33 T
+(T) 481.47 460.33 T
+(A) 487.24 460.33 T
+(GE) 493.91 460.33 T
+(14) 135.87 444.33 T
+(CHI2) 164.67 444.33 T
+(44) 215.07 444.33 T
+(EC1R) 243.87 444.33 T
+(74) 294.27 444.33 T
+(HBTB) 323.07 444.33 T
+(104) 373.47 444.33 T
+(S1ST) 402.27 444.33 T
+(134) 452.67 444.33 T
+(T) 481.47 444.33 T
+(A) 487.24 444.33 T
+(GI) 493.91 444.33 T
+(15) 135.87 428.33 T
+(CL01) 164.67 428.33 T
+(45) 215.07 428.33 T
+(ECCA) 243.87 428.33 T
+(75) 294.27 428.33 T
+(HBTR) 323.07 428.33 T
+(105) 373.47 428.33 T
+(SC) 402.27 428.33 T
+(135) 452.67 428.33 T
+(T) 481.47 428.33 T
+(A) 487.24 428.33 T
+(GR) 493.91 428.33 T
+(16) 135.87 412.33 T
+(CLST) 164.67 412.33 T
+(46) 215.07 412.33 T
+(ECCL) 243.87 412.33 T
+(76) 294.27 412.33 T
+(HCAL) 323.07 412.33 T
+(106) 373.47 412.33 T
+(SC1) 402.27 412.33 T
+(136) 452.67 412.33 T
+(T) 481.47 412.33 T
+(A) 487.24 412.33 T
+(GT) 493.91 412.33 T
+(17) 135.87 396.33 T
+(CPED) 164.67 396.33 T
+(47) 215.07 396.33 T
+(ECCT) 243.87 396.33 T
+(77) 294.27 396.33 T
+(HDPL) 323.07 396.33 T
+(107) 373.47 396.33 T
+(SCC) 402.27 396.33 T
+(137) 452.67 396.33 T
+(TBER) 481.47 396.33 T
+(18) 135.87 380.33 T
+(DC0) 164.67 380.33 T
+(48) 215.07 380.33 T
+(ECDI) 243.87 380.33 T
+(78) 294.27 380.33 T
+(HEAD) 323.07 380.33 T
+(108) 373.47 380.33 T
+(SCDI) 402.27 380.33 T
+(138) 452.67 380.33 T
+(TBID) 481.47 380.33 T
+(19) 135.87 364.33 T
+(DC1) 164.67 364.33 T
+(49) 215.07 364.33 T
+(ECG) 243.87 364.33 T
+(79) 294.27 364.33 T
+(HEVT) 323.07 364.33 T
+(109) 373.47 364.33 T
+(SCG) 402.27 364.33 T
+(139) 452.67 364.33 T
+(TBLA) 481.47 364.33 T
+(20) 135.87 348.33 T
+(DCD) 164.67 348.33 T
+(W) 185.93 348.33 T
+(50) 215.07 348.33 T
+(ECH) 243.87 348.33 T
+(80) 294.27 348.33 T
+(HLS) 323.07 348.33 T
+(110) 373.47 348.33 T
+(SCGD) 402.27 348.33 T
+(140) 452.67 348.33 T
+(TBTR) 481.47 348.33 T
+(21) 135.87 332.33 T
+(DCGM) 164.67 332.33 T
+(51) 215.07 332.33 T
+(ECHB) 243.87 332.33 T
+(81) 294.27 332.33 T
+(KFIT) 323.07 332.33 T
+(111) 373.47 332.33 T
+(SCH) 402.27 332.33 T
+(141) 452.67 332.33 T
+(TCSB) 481.47 332.33 T
+(22) 135.87 316.33 T
+(DCGW) 164.67 316.33 T
+(52) 215.07 316.33 T
+(ECMT) 243.87 316.33 T
+(82) 294.27 316.33 T
+(L1PG) 323.07 316.33 T
+(112) 373.47 316.33 T
+(SCMD) 402.27 316.33 T
+(142) 452.67 316.33 T
+(TDPL) 481.47 316.33 T
+(23) 135.87 300.33 T
+(DCH) 164.67 300.33 T
+(53) 215.07 300.33 T
+(ECP) 243.87 300.33 T
+(83) 294.27 300.33 T
+(L2H) 323.07 300.33 T
+(113) 373.47 300.33 T
+(SCMT) 402.27 300.33 T
+(143) 452.67 300.33 T
+(TGBI) 481.47 300.33 T
+(24) 135.87 284.33 T
+(DCPB) 164.67 284.33 T
+(54) 215.07 284.33 T
+(ECP1) 243.87 284.33 T
+(84) 294.27 284.33 T
+(L2S) 323.07 284.33 T
+(114) 373.47 284.33 T
+(SCMW) 402.27 284.33 T
+(144) 452.67 284.33 T
+(TGPB) 481.47 284.33 T
+(25) 135.87 268.33 T
+(DCV1) 164.67 268.33 T
+(55) 215.07 268.33 T
+(ECPB) 243.87 268.33 T
+(85) 294.27 268.33 T
+(LCDI) 323.07 268.33 T
+(115) 373.47 268.33 T
+(SCP) 402.27 268.33 T
+(145) 452.67 268.33 T
+(TGS) 481.47 268.33 T
+(26) 135.87 252.33 T
+(DCV2) 164.67 252.33 T
+(56) 215.07 252.33 T
+(ECPC) 243.87 252.33 T
+(86) 294.27 252.33 T
+(LCPB) 323.07 252.33 T
+(116) 373.47 252.33 T
+(SCPB) 402.27 252.33 T
+(146) 452.67 252.33 T
+(TRGS) 481.47 252.33 T
+(27) 135.87 236.33 T
+(DCV3) 164.67 236.33 T
+(57) 215.07 236.33 T
+(ECPE) 243.87 236.33 T
+(87) 294.27 236.33 T
+(MCEV) 323.07 236.33 T
+(117) 373.47 236.33 T
+(SCPE) 402.27 236.33 T
+(147) 452.67 236.33 T
+(TRKS) 481.47 236.33 T
+(28) 135.87 220.33 T
+(DDL) 164.67 220.33 T
+(Y) 184.86 220.33 T
+(58) 215.07 220.33 T
+(ECPI) 243.87 220.33 T
+(88) 294.27 220.33 T
+(MCHD) 323.07 220.33 T
+(118) 373.47 220.33 T
+(SCPS) 402.27 220.33 T
+(148) 452.67 220.33 T
+(TSPR) 481.47 220.33 T
+(29) 135.87 204.33 T
+(DGEO) 164.67 204.33 T
+(59) 215.07 204.33 T
+(ECPO) 243.87 204.33 T
+(89) 294.27 204.33 T
+(MCTK) 323.07 204.33 T
+(119) 373.47 204.33 T
+(SCR) 402.27 204.33 T
+(149) 452.67 204.33 T
+(TSRG) 481.47 204.33 T
+(30) 135.87 188.33 T
+(DHCL) 164.67 188.33 T
+(60) 215.07 188.33 T
+(ECRB) 243.87 188.33 T
+(90) 294.27 188.33 T
+(MCVX) 323.07 188.33 T
+(120) 373.47 188.33 T
+(SCRC) 402.27 188.33 T
+(150) 452.67 188.33 T
+(UNUS) 481.47 188.33 T
+(151) 452.67 172.33 T
+(VER) 481.47 172.33 T
+(T) 502.18 172.33 T
+128.62 684 128.62 166 2 L
+V
+0.5 H
+0 Z
+N
+131.12 681.5 131.12 168.5 2 L
+V
+N
+158.67 681.5 158.67 168.5 2 L
+V
+N
+209.07 681.5 209.07 168.5 2 L
+V
+2 H
+N
+237.87 681.5 237.87 168.5 2 L
+V
+0.5 H
+N
+288.27 681.5 288.27 168.5 2 L
+V
+2 H
+N
+317.07 681.5 317.07 168.5 2 L
+V
+0.5 H
+N
+367.47 681.5 367.47 168.5 2 L
+V
+2 H
+N
+396.27 681.5 396.27 168.5 2 L
+V
+0.5 H
+N
+446.67 681.5 446.67 168.5 2 L
+V
+2 H
+N
+475.47 681.5 475.47 168.5 2 L
+V
+0.5 H
+N
+524.62 681.5 524.62 168.5 2 L
+V
+N
+527.12 684 527.12 166 2 L
+V
+N
+128.37 684.25 527.37 684.25 2 L
+V
+N
+130.87 681.75 524.87 681.75 2 L
+V
+N
+131.37 664.25 524.37 664.25 2 L
+V
+N
+131.37 661.75 524.37 661.75 2 L
+V
+N
+130.87 168.25 524.87 168.25 2 L
+V
+N
+128.37 165.75 527.37 165.75 2 L
+V
+N
+FMENDPAGE
+%%EndPage: "4" 4
+%%Page: "5" 5
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+N
+0 8 Q
+(to Distrib) 108 42.62 T
+(ute CLAS Data) 138.29 42.62 T
+(5) 536 42.62 T
+3 12 Q
+(?) 108 305 T
+0 F
+( - S - sector number) 114.44 305 T
+(, E - entry type, 0 - no number) 208.94 305 T
+(.) 353.59 305 T
+2 16 Q
+(3.0  DST\325) 108 264.33 T
+(s f) 171.86 264.33 T
+(or CLAS) 187.01 264.33 T
+0 12 Q
+(Although) 108 237 T
+(\322cooking\323) 156.84 237 T
+(naturally) 209.67 237 T
+(reduces) 255.83 237 T
+(the) 295.99 237 T
+(amount) 314.16 237 T
+(of) 353.66 237 T
+(data) 367.17 237 T
+(by) 390.66 237 T
+(simply) 406.17 237 T
+(rejecting) 442.35 237 T
+(\322bad\323) 487.85 237 T
+(trig-) 519.34 237 T
+(gers) 108 223 T
+(in) 133.1 223 T
+(the) 147.54 223 T
+(initial) 167.32 223 T
+(data) 200.43 223 T
+(stream,) 225.53 223 T
+(it) 265.63 223 T
+(still) 277.41 223 T
+(produces) 300.53 223 T
+(a) 348.96 223 T
+(huge) 359.4 223 T
+(data) 387.83 223 T
+(v) 412.93 223 T
+(olume) 418.69 223 T
+(by) 453.8 223 T
+(increasing) 470.91 223 T
+(the) 525.34 223 T
+(amount) 108 209 T
+(of) 147.25 209 T
+(information) 160.5 209 T
+(in) 220.41 209 T
+(the) 233 209 T
+(accepted) 250.91 209 T
+(e) 296.14 209 T
+(v) 301.17 209 T
+(ent.) 306.99 209 T
+(This) 327.9 209 T
+(mak) 352.49 209 T
+(es) 373.03 209 T
+(it) 386.28 209 T
+(quite) 396.2 209 T
+(dif) 423.45 209 T
+(\336cult) 436.48 209 T
+(to) 464.4 209 T
+(distrib) 476.99 209 T
+(ute) 507.42 209 T
+(the) 525.34 209 T
+(lar) 108 195 T
+(ge) 120.44 195 T
+(amount) 134.72 195 T
+(of) 173.66 195 T
+(the) 186.6 195 T
+(processed) 204.21 195 T
+(data) 254.47 195 T
+(for) 277.4 195 T
+(analysis) 294.34 195 T
+(on) 335.95 195 T
+(of) 350.89 195 T
+(f-site) 360.58 195 T
+(computer) 388.19 195 T
+(f) 436.46 195 T
+(arms.) 440.33 195 T
+(Therefore,) 469.6 195 T
+(an) 522.85 195 T
+(y) 534 195 T
+(analysis,) 108 181 T
+(lik) 153 181 T
+(e) 165.55 181 T
+(ph) 174.21 181 T
+(ysics) 186.15 181 T
+(analysis) 213.49 181 T
+(that) 255.49 181 T
+(uses) 276.82 181 T
+(\322cook) 300.82 181 T
+(ed\323) 329.36 181 T
+(data) 349.35 181 T
+(samples) 372.68 181 T
+(will) 414.68 181 T
+(be) 436.68 181 T
+(mainly) 451.35 181 T
+(carried) 488.02 181 T
+(out) 524.66 181 T
+(at) 108 167 T
+(JLAB.) 119.44 167 T
+(This) 153.88 167 T
+(will) 177.99 167 T
+(put) 199.44 167 T
+(an) 217.55 167 T
+(additional) 231.65 167 T
+(load) 282.42 167 T
+(on) 305.86 167 T
+(the) 320.63 167 T
+(CPU) 338.07 167 T
+(f) 364.19 167 T
+(arm,) 368.06 167 T
+(on) 392.5 167 T
+(the) 407.27 167 T
+(w) 424.71 167 T
+(ork) 433.25 167 T
+(disks,) 452.02 167 T
+(and) 482.47 167 T
+(the) 502.57 167 T
+(tape) 520.01 167 T
+(silo.) 108 153 T
+(In) 131.37 153 T
+(order) 144.39 153 T
+(to) 172.74 153 T
+(mak) 185.1 153 T
+(e) 205.65 153 T
+(ef) 214 153 T
+(fecti) 223.03 153 T
+(v) 244.05 153 T
+(e) 249.87 153 T
+(use) 258.23 153 T
+(of) 277.25 153 T
+(the) 290.27 153 T
+(compute) 307.96 153 T
+(po) 352.32 153 T
+(wer) 364.02 153 T
+(e) 385.04 153 T
+(xisting) 390.18 153 T
+(in) 425.89 153 T
+(the) 438.25 153 T
+(collaboration) 455.94 153 T
+(it) 522.3 153 T
+(is) 532 153 T
+(important) 108 139 T
+(to) 157.79 139 T
+(mak) 170.24 139 T
+(e) 190.79 139 T
+(it) 199.24 139 T
+(possible) 209.03 139 T
+(to) 251.48 139 T
+(distrib) 263.94 139 T
+(ute) 294.37 139 T
+(the) 312.16 139 T
+(e) 329.94 139 T
+(xperimental) 335.09 139 T
+(data) 395.53 139 T
+(to) 418.64 139 T
+(the) 431.1 139 T
+(collaborating) 448.88 139 T
+(insti-) 515.33 139 T
+(tutions, at least for \336nal analysis \050in some semi-\336nal stage\051.) 108 125 T
+(A) 108 99 T
+(common) 119.61 99 T
+(w) 164.56 99 T
+(ay) 173.1 99 T
+(to) 187.38 99 T
+(distrib) 199.66 99 T
+(ute) 230.09 99 T
+(the) 247.7 99 T
+(e) 265.31 99 T
+(xperimental) 270.46 99 T
+(data) 330.73 99 T
+(is) 353.67 99 T
+(the) 364.62 99 T
+(production) 382.23 99 T
+(of) 437.17 99 T
+(the) 450.12 99 T
+(Data) 467.73 99 T
+(Summary) 493.33 99 T
+(T) 108 85 T
+(apes) 114.37 85 T
+(\050DST\325) 138.48 85 T
+(s\051.) 168.48 85 T
+(Information) 182.93 85 T
+(in) 243.04 85 T
+(the) 255.16 85 T
+(DST\325) 272.61 85 T
+(s) 298.61 85 T
+(are) 306.07 85 T
+(usually) 323.5 85 T
+(four) 360.95 85 T
+(v) 383.73 85 T
+(ectors) 389.55 85 T
+(of) 420.99 85 T
+(the) 433.77 85 T
+(identi\336ed) 451.22 85 T
+(particles) 499.34 85 T
+2 10 Q
+(T) 156.22 689.33 T
+(ABLE 4. Intermediate BOS banks used f) 161.99 689.33 T
+(or the calibration and in the \322cooking\323.) 335.37 689.33 T
+(Name) 148.47 668.33 T
+(Bank #) 215.18 668.33 T
+3 8 Q
+(?) 245.47 672.33 T
+2 10 Q
+(# columns) 286.54 668.33 T
+(F) 364.09 668.33 T
+(ormat) 369.95 668.33 T
+(BOS origin) 440.64 668.33 T
+(CCRC) 148.47 652.33 T
+(0) 229.97 652.33 T
+(12) 303.07 652.33 T
+(I) 378.13 652.33 T
+(Cher) 423.64 652.33 T
+(enk) 445.12 652.33 T
+(o) 460.53 652.33 T
+(v) 465.43 652.33 T
+(counter) 472.47 652.33 T
+(CL01) 148.47 636.33 T
+(0) 229.97 636.33 T
+(12) 303.07 636.33 T
+(F) 374.28 636.33 T
+(,I) 379.47 636.33 T
+(RF) 458.01 636.33 T
+(SC1) 148.47 620.33 T
+(S) 229.69 620.33 T
+(9) 305.57 620.33 T
+(F) 374.28 620.33 T
+(,I) 379.47 620.33 T
+(T) 436.85 620.33 T
+(OF counter) 443.34 620.33 T
+(SCR) 148.47 604.33 T
+(S) 229.69 604.33 T
+(12) 303.07 604.33 T
+(F) 374.28 604.33 T
+(,I) 379.47 604.33 T
+(SCRC) 148.47 588.33 T
+(S) 229.69 588.33 T
+(12) 303.07 588.33 T
+(F) 374.28 588.33 T
+(,I) 379.47 588.33 T
+(EC1R) 148.47 572.33 T
+(S) 229.69 572.33 T
+(50) 303.07 572.33 T
+(F) 374.28 572.33 T
+(,I) 379.47 572.33 T
+(Lar) 430.7 572.33 T
+(ge angle cal.) 446.71 572.33 T
+(ECHB) 148.47 556.33 T
+(0) 229.97 556.33 T
+(38) 303.07 556.33 T
+(F) 374.28 556.33 T
+(,I) 379.47 556.33 T
+(F) 424.66 556.33 T
+(orward angle cal.) 430.52 556.33 T
+(ECPC) 148.47 540.33 T
+(H/S) 224.41 540.33 T
+(3) 305.57 540.33 T
+(F) 374.28 540.33 T
+(,I) 379.47 540.33 T
+(ECPI) 148.47 524.33 T
+(0) 229.97 524.33 T
+(9) 305.57 524.33 T
+(F) 374.28 524.33 T
+(,I) 379.47 524.33 T
+(ECPO) 148.47 508.33 T
+(0) 229.97 508.33 T
+(7) 305.57 508.33 T
+(I) 378.13 508.33 T
+(DC1) 148.47 492.33 T
+(S) 229.69 492.33 T
+(2) 305.57 492.33 T
+(F) 374.28 492.33 T
+(,I) 379.47 492.33 T
+(Drift chamber) 433.99 492.33 T
+(DHCL) 148.47 476.33 T
+(S) 229.69 476.33 T
+(16) 303.07 476.33 T
+(B08) 371.74 476.33 T
+(HBER) 148.47 460.33 T
+(0) 229.97 460.33 T
+(23) 303.07 460.33 T
+(F) 374.28 460.33 T
+(,I) 379.47 460.33 T
+(HBLA) 148.47 444.33 T
+(S) 229.69 444.33 T
+(16) 303.07 444.33 T
+(F) 374.28 444.33 T
+(,I) 379.47 444.33 T
+(HBTR) 148.47 428.33 T
+(0) 229.97 428.33 T
+(9) 305.57 428.33 T
+(F) 374.28 428.33 T
+(,I) 379.47 428.33 T
+(HDPL) 148.47 412.33 T
+(S) 229.69 412.33 T
+(8) 305.57 412.33 T
+(F) 374.28 412.33 T
+(,I) 379.47 412.33 T
+(TBER) 148.47 396.33 T
+(0) 229.97 396.33 T
+(23) 303.07 396.33 T
+(F) 374.28 396.33 T
+(,I) 379.47 396.33 T
+(TBLA) 148.47 380.33 T
+(S) 229.69 380.33 T
+(17) 303.07 380.33 T
+(F) 374.28 380.33 T
+(,I) 379.47 380.33 T
+(TBTR) 148.47 364.33 T
+(0) 229.97 364.33 T
+(10) 303.07 364.33 T
+(F) 374.28 364.33 T
+(,I) 379.47 364.33 T
+(TDPL) 148.47 348.33 T
+(S) 229.69 348.33 T
+(8) 305.57 348.33 T
+(F) 374.28 348.33 T
+(,I) 379.47 348.33 T
+(TRKS) 148.47 332.33 T
+(S) 229.69 332.33 T
+(10) 303.07 332.33 T
+(F) 374.28 332.33 T
+(,I) 379.47 332.33 T
+141.22 684 141.22 326 2 L
+V
+0.5 H
+0 Z
+N
+143.72 681.5 143.72 328.5 2 L
+V
+N
+192.87 681.5 192.87 328.5 2 L
+V
+N
+272.07 681.5 272.07 328.5 2 L
+V
+N
+344.07 681.5 344.07 328.5 2 L
+V
+N
+416.07 681.5 416.07 328.5 2 L
+V
+N
+512.02 681.5 512.02 328.5 2 L
+V
+N
+514.52 684 514.52 326 2 L
+V
+N
+140.97 684.25 514.77 684.25 2 L
+V
+N
+143.47 681.75 512.27 681.75 2 L
+V
+N
+143.97 663 511.77 663 2 L
+V
+2 H
+N
+143.97 647 511.77 647 2 L
+V
+N
+143.97 631 511.77 631 2 L
+V
+N
+143.97 615 511.77 615 2 L
+V
+0.5 H
+N
+143.97 599 511.77 599 2 L
+V
+N
+143.97 583 511.77 583 2 L
+V
+N
+143.97 567 511.77 567 2 L
+V
+2 H
+N
+143.97 551 511.77 551 2 L
+V
+0.5 H
+N
+143.97 535 511.77 535 2 L
+V
+N
+143.97 519 511.77 519 2 L
+V
+N
+143.97 503 511.77 503 2 L
+V
+2 H
+N
+143.97 487 511.77 487 2 L
+V
+0.5 H
+N
+143.97 471 511.77 471 2 L
+V
+N
+143.97 455 511.77 455 2 L
+V
+N
+143.97 439 511.77 439 2 L
+V
+N
+143.97 423 511.77 423 2 L
+V
+N
+143.97 407 511.77 407 2 L
+V
+N
+143.97 391 511.77 391 2 L
+V
+N
+143.97 375 511.77 375 2 L
+V
+N
+143.97 359 511.77 359 2 L
+V
+N
+143.97 343 511.77 343 2 L
+V
+2 H
+N
+143.47 328.25 512.27 328.25 2 L
+V
+0.5 H
+N
+140.97 325.75 514.77 325.75 2 L
+V
+N
+FMENDPAGE
+%%EndPage: "5" 5
+%%Page: "6" 6
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+N
+0 8 Q
+(to Distrib) 108 42.62 T
+(ute CLAS Data) 138.29 42.62 T
+(6) 536 42.62 T
+0 12 Q
+(in) 108 712 T
+(the) 120.79 712 T
+(e) 138.9 712 T
+(v) 143.93 712 T
+(ent,) 149.75 712 T
+(with) 170.87 712 T
+(some) 195.66 712 T
+(information) 224.44 712 T
+(on) 284.56 712 T
+(the) 300.01 712 T
+(detector) 318.13 712 T
+(response) 360.23 712 T
+(and) 405.67 712 T
+(the) 426.45 712 T
+(general) 444.57 712 T
+(information) 483.34 712 T
+(on the e) 108 698 T
+(v) 145.69 698 T
+(ent.) 151.51 698 T
+(There) 108 672 T
+(are) 139.23 672 T
+(three) 157.13 672 T
+(dif) 184.37 672 T
+(ferent) 197.4 672 T
+(types) 228.63 672 T
+(of) 257.21 672 T
+(DST) 270.45 672 T
+(formats) 296.37 672 T
+(de\336ned) 336.27 672 T
+(and) 374.85 672 T
+(used) 395.42 672 T
+(in) 420.67 672 T
+(the) 433.25 672 T
+(current) 451.16 672 T
+(CLAS) 488.39 672 T
+(of) 522.31 672 T
+(f-) 532.01 672 T
+(line) 108 658 T
+(analysis) 129.17 658 T
+(softw) 171.01 658 T
+(are.) 197.55 658 T
+(Each) 218.38 658 T
+(of) 245.54 658 T
+(these) 258.7 658 T
+(formats) 286.53 658 T
+(is) 326.37 658 T
+(created) 337.54 658 T
+(and,) 375.36 658 T
+(therefore,) 398.86 658 T
+(associated) 448.34 658 T
+(with) 500.83 658 T
+(the) 525.34 658 T
+(softw) 108 644 T
+(are) 134.54 644 T
+(package) 152.27 644 T
+(that) 194.66 644 T
+(does) 215.74 644 T
+(the) 240.81 644 T
+(\336nal) 258.55 644 T
+(particle) 282.96 644 T
+(ID,) 322.03 644 T
+(and) 340.76 644 T
+(the) 361.17 644 T
+(determination) 378.91 644 T
+(of) 448.64 644 T
+(the) 461.71 644 T
+(four) 479.46 644 T
+(v) 502.52 644 T
+(ectors.) 508.34 644 T
+(T) 108 630 T
+(w) 114.37 630 T
+(o) 122.92 630 T
+(of) 131.93 630 T
+(these) 144.93 630 T
+(packages) 172.6 630 T
+(-) 219.59 630 T
+(PID) 226.6 630 T
+(and) 248.94 630 T
+(SEB) 269.28 630 T
+([4]) 294.3 630 T
+(are) 311.3 630 T
+(running) 328.96 630 T
+(parallel) 369.31 630 T
+(in) 408.3 630 T
+(the) 420.65 630 T
+(RECSIS/A1C) 438.33 630 T
+(frame-) 508.02 630 T
+(w) 108 616 T
+(ork.) 116.54 616 T
+(The) 139.84 616 T
+(third) 162.79 616 T
+(one,) 189.76 616 T
+(SD) 214.38 616 T
+(A,) 229.24 616 T
+(is) 245.2 616 T
+(the) 257.5 616 T
+(stand) 276.46 616 T
+(alone) 306.09 616 T
+(package) 336.38 616 T
+(for) 379.99 616 T
+(general) 398.28 616 T
+(e) 437.89 616 T
+(v) 442.92 616 T
+(ent) 448.74 616 T
+(simulation) 467.7 616 T
+(and) 522.67 616 T
+(reconstruction) 108 602 T
+(for) 180.12 602 T
+(CLAS.) 197.58 602 T
+(Here) 234.72 602 T
+(only) 261.5 602 T
+(the) 286.31 602 T
+(\336rst) 304.44 602 T
+(tw) 326.58 602 T
+(o) 338.46 602 T
+(packages) 347.93 602 T
+(and) 395.38 602 T
+(the) 416.17 602 T
+(structure) 434.3 602 T
+(of) 479.76 602 T
+(the) 493.22 602 T
+(corre-) 511.36 602 T
+(sponding DST\325) 108 588 T
+(s will be discussed.) 181.01 588 T
+(In) 108 562 T
+(T) 120.89 562 T
+(able) 127.26 562 T
+(5,) 150.15 562 T
+(the) 162.04 562 T
+(names) 179.6 562 T
+(and) 213.15 562 T
+(the) 233.37 562 T
+(formats) 250.93 562 T
+(of) 290.48 562 T
+(the) 303.37 562 T
+(e) 320.93 562 T
+(xisting) 326.08 562 T
+(tw) 361.65 562 T
+(o) 373.53 562 T
+(DST) 382.42 562 T
+(bank) 407.98 562 T
+(structures) 434.2 562 T
+(in) 483.75 562 T
+(RECSIS/) 495.98 562 T
+(A1C) 108 548 T
+(are) 134.79 548 T
+(presented.) 153.56 548 T
+(Both) 206.67 548 T
+(formats) 234.13 548 T
+(contain) 274.91 548 T
+(basic) 314.36 548 T
+(parameters) 343.14 548 T
+(for) 399.91 548 T
+(identi\336ed) 418.02 548 T
+(particles) 467.48 548 T
+(\050four) 512.26 548 T
+(-) 536 548 T
+(v) 108 534 T
+(ectors,) 113.82 534 T
+(char) 149.79 534 T
+(ge,) 170.23 534 T
+(etc.\051) 188.87 534 T
+(and) 214.17 534 T
+(also) 235.82 534 T
+(some) 259.46 534 T
+(detector) 289.11 534 T
+(speci\336c) 332.08 534 T
+(characteristics.) 373.05 534 T
+(The) 449.01 534 T
+(y) 467.49 534 T
+(also) 477.8 534 T
+(ha) 501.45 534 T
+(v) 512.54 534 T
+(e) 518.36 534 T
+(all) 528 534 T
+(necessary) 108 520 T
+(pointers) 158.24 520 T
+(to) 200.5 520 T
+(connect) 213.43 520 T
+(DST) 254.35 520 T
+(entries) 280.61 520 T
+(to) 316.2 520 T
+(the) 329.13 520 T
+(original) 347.39 520 T
+(BOS) 388.31 520 T
+(banks) 415.25 520 T
+(that) 446.84 520 T
+(were) 468.44 520 T
+(produced) 495.35 520 T
+(by) 108 506 T
+(the) 123.04 506 T
+(detector) 140.75 506 T
+(packages.) 182.44 506 T
+(The) 232.46 506 T
+(main) 254.16 506 T
+(dif) 281.2 506 T
+(ferences) 294.24 506 T
+(between) 337.25 506 T
+(the) 380.28 506 T
+(tw) 397.98 506 T
+(o) 409.86 506 T
+(structures) 418.9 506 T
+(are) 468.6 506 T
+(the) 486.29 506 T
+(amount) 504 506 T
+(of detector related information in the direct DST BOS banks and, of course, the format.) 108 492 T
+(The) 108 466 T
+(SEB) 130.78 466 T
+(output) 156.9 466 T
+(DST) 191.69 466 T
+(format) 218.47 466 T
+(k) 254.58 466 T
+(eeps) 260.46 466 T
+(most) 285.9 466 T
+(of) 313.36 466 T
+(the) 327.47 466 T
+(information) 346.25 466 T
+(from) 407.03 466 T
+(the) 434.47 466 T
+(detector) 453.25 466 T
+(packages) 496.02 466 T
+(that) 108 452 T
+(is) 129.44 452 T
+(related) 140.89 452 T
+(to) 176.98 452 T
+(the) 189.76 452 T
+(reconstructed) 207.86 452 T
+(particles:) 275.95 452 T
+(ener) 323.38 452 T
+(gy) 343.82 452 T
+(depositions,) 359.26 452 T
+(space) 420.37 452 T
+(coordinates) 450.46 452 T
+(of) 509.22 452 T
+(hits) 522.66 452 T
+(and) 108 438 T
+(tracks,) 129.78 438 T
+(times,) 165.89 438 T
+(status,) 199.35 438 T
+(and) 234.15 438 T
+(the) 255.93 438 T
+(pointers) 275.05 438 T
+(to) 318.17 438 T
+(the) 331.96 438 T
+(lo) 351.08 438 T
+(w) 360.11 438 T
+(le) 373.23 438 T
+(v) 381.6 438 T
+(el) 387.42 438 T
+(banks) 400.54 438 T
+(for) 432.99 438 T
+(all) 451.43 438 T
+(detectors.) 467.89 438 T
+(This) 518.66 438 T
+(information) 108 424 T
+(is) 167.53 424 T
+(in) 178.4 424 T
+(XXPB) 190.6 424 T
+(banks,) 225.47 424 T
+(one) 259.33 424 T
+(per) 279.52 424 T
+(detector) 297.71 424 T
+(\050\324XX\325\051,) 339.23 424 T
+(and) 378.4 424 T
+(can) 398.59 424 T
+(be) 418.11 424 T
+(directly) 432.31 424 T
+(accessed) 471.83 424 T
+(from) 516.67 424 T
+(the) 108 410 T
+(main) 125.74 410 T
+(particle) 152.82 410 T
+(bank) 191.89 410 T
+(-) 218.29 410 T
+(EVNT) 225.37 410 T
+(\050for) 260.44 410 T
+(more) 281.5 410 T
+(details,) 309.24 410 T
+(see) 346.65 410 T
+(Appendix) 365.05 410 T
+(I\051.) 415.46 410 T
+(The) 429.53 410 T
+(total) 451.27 410 T
+(e) 475.68 410 T
+(v) 480.71 410 T
+(ent) 486.53 410 T
+(size) 504.27 410 T
+(for) 526.01 410 T
+(this) 108 396 T
+(DST) 128.81 396 T
+(structure) 154.95 396 T
+(is) 200.4 396 T
+(about) 211.88 396 T
+(0.9kB,) 242.01 396 T
+(and) 277.48 396 T
+(it) 298.28 396 T
+(assumes) 308.42 396 T
+(that) 351.88 396 T
+(no) 373.35 396 T
+(other) 388.82 396 T
+(information) 416.95 396 T
+(is) 477.08 396 T
+(needed) 488.55 396 T
+(for) 526.01 396 T
+(future ph) 108 382 T
+(ysics analysis.) 151.6 382 T
+(PID) 108 356 T
+(uses) 131.2 356 T
+(the) 155.74 356 T
+(TBID) 174.27 356 T
+(bank) 206.14 356 T
+(to) 233.34 356 T
+(hold) 246.54 356 T
+(the) 271.75 356 T
+(detector) 290.28 356 T
+(related) 332.8 356 T
+(information) 369.33 356 T
+(and) 429.86 356 T
+(the) 451.06 356 T
+(pointers) 469.6 356 T
+(to) 512.13 356 T
+(the) 525.34 356 T
+(lo) 108 342 T
+(w) 117.04 342 T
+(le) 129.26 342 T
+(v) 137.62 342 T
+(el) 143.44 342 T
+(banks.) 155.67 342 T
+(The) 190.22 342 T
+(information) 212.44 342 T
+(in) 272.67 342 T
+(TBID,) 285.56 342 T
+(besides) 320.12 342 T
+(the) 359.01 342 T
+(pointers,) 377.23 342 T
+(are) 422.45 342 T
+(the) 440.67 342 T
+(betas,) 458.89 342 T
+(times,) 490.11 342 T
+(and) 522.67 342 T
+(the) 108 328 T
+(quality) 126.61 328 T
+(of) 163.89 328 T
+(the) 177.83 328 T
+(matching) 196.43 328 T
+(for) 245.04 328 T
+(each) 262.98 328 T
+(detector) 288.9 328 T
+(.) 326.9 328 T
+(There) 333.84 328 T
+(is) 365.77 328 T
+(a) 377.71 328 T
+(direct) 386.99 328 T
+(access) 418.25 328 T
+(to) 452.85 328 T
+(TBID) 466.12 328 T
+(from) 498.06 328 T
+(the) 525.34 328 T
+(P) 108 314 T
+(AR) 113.57 314 T
+(T) 129.52 314 T
+(bank) 140.32 314 T
+(which) 167.12 314 T
+(is) 199.91 314 T
+(the) 211.39 314 T
+(main) 229.52 314 T
+(particle) 256.99 314 T
+(bank) 296.45 314 T
+(for) 323.25 314 T
+(the) 340.71 314 T
+(PID) 358.85 314 T
+(package) 381.65 314 T
+(\050see) 424.43 314 T
+(Appendix) 447.22 314 T
+(II\051.) 498.02 314 T
+(W) 516.48 314 T
+(ith) 527.33 314 T
+(this) 108 300 T
+(structure,) 128.06 300 T
+(the) 175.77 300 T
+(a) 193.16 300 T
+(v) 198.25 300 T
+(erage) 204.07 300 T
+(e) 232.77 300 T
+(v) 237.8 300 T
+(ent) 243.62 300 T
+(size) 261.01 300 T
+(is) 282.39 300 T
+(of) 293.12 300 T
+(the) 305.84 300 T
+(order) 323.23 300 T
+(of) 351.27 300 T
+(0.5) 363.99 300 T
+(kB;) 381.71 300 T
+(this) 401.77 300 T
+(assumes) 421.84 300 T
+(the) 464.56 300 T
+(possible) 481.94 300 T
+(use) 524 300 T
+(of the information in the lo) 108 286 T
+(w le) 237.36 286 T
+(v) 257.39 286 T
+(el reconstruction banks.) 263.21 286 T
+3 F
+(?) 108 71 T
+4 F
+( - S - sector number) 114.44 71 T
+(, E - entry type, 0 - no number) 211.33 71 T
+(.) 359.22 71 T
+2 10 Q
+(T) 164.42 263.33 T
+(ABLE 5. DST type BOS structur) 170.19 263.33 T
+(es cr) 310.02 263.33 T
+(eated by the PID and the SEB packages.) 329.55 263.33 T
+(Name) 161.07 242.33 T
+(Bank #) 227.78 242.33 T
+3 8 Q
+(?) 258.07 246.33 T
+2 10 Q
+(# columns) 299.14 242.33 T
+(F) 376.69 242.33 T
+(ormat) 382.55 242.33 T
+(BOS origin) 440.64 242.33 T
+(TBID) 161.07 226.33 T
+(E) 241.74 226.33 T
+(34) 315.67 226.33 T
+(F) 386.88 226.33 T
+(,I) 392.07 226.33 T
+(PID) 456.06 226.33 T
+(P) 161.07 210.33 T
+(AR) 166.44 210.33 T
+(T) 180.48 210.33 T
+(E) 241.74 210.33 T
+(13) 315.67 210.33 T
+(F) 386.88 210.33 T
+(,I) 392.07 210.33 T
+(\336nal) 455.22 210.33 T
+(HEVT) 161.07 194.33 T
+(0) 242.57 194.33 T
+(16) 315.67 194.33 T
+(F) 386.88 194.33 T
+(,I) 392.07 194.33 T
+(SEB) 455.22 194.33 T
+(EVNT) 161.07 178.33 T
+(0) 242.57 178.33 T
+(18) 315.67 178.33 T
+(F) 386.88 178.33 T
+(,I) 392.07 178.33 T
+(\336nal) 455.22 178.33 T
+(DCPB) 161.07 162.33 T
+(0) 242.57 162.33 T
+(13) 315.67 162.33 T
+(F) 386.88 162.33 T
+(,I) 392.07 162.33 T
+(CCPB) 161.07 146.33 T
+(0) 242.57 146.33 T
+(6) 318.17 146.33 T
+(F) 386.88 146.33 T
+(,I) 392.07 146.33 T
+(SCPB) 161.07 130.33 T
+(0) 242.57 130.33 T
+(6) 318.17 130.33 T
+(F) 386.88 130.33 T
+(,I) 392.07 130.33 T
+(ECPB) 161.07 114.33 T
+(0) 242.57 114.33 T
+(16) 315.67 114.33 T
+(F) 386.88 114.33 T
+(,I) 392.07 114.33 T
+(LCPB) 161.07 98.33 T
+(0) 242.57 98.33 T
+(9) 318.17 98.33 T
+(F) 386.88 98.33 T
+(,I) 392.07 98.33 T
+153.82 258 153.82 92 2 L
+V
+0.5 H
+0 Z
+N
+156.32 255.5 156.32 94.5 2 L
+V
+N
+205.47 255.5 205.47 94.5 2 L
+V
+N
+284.67 255.5 284.67 94.5 2 L
+V
+N
+356.67 255.5 356.67 94.5 2 L
+V
+N
+428.67 255.5 428.67 94.5 2 L
+V
+N
+499.42 255.5 499.42 94.5 2 L
+V
+N
+501.92 258 501.92 92 2 L
+V
+N
+153.57 258.25 502.17 258.25 2 L
+V
+N
+156.07 255.75 499.67 255.75 2 L
+V
+N
+156.57 238.25 499.17 238.25 2 L
+V
+N
+156.57 235.75 499.17 235.75 2 L
+V
+N
+156.57 221 499.17 221 2 L
+V
+N
+156.57 205 499.17 205 2 L
+V
+2 H
+N
+156.57 189 499.17 189 2 L
+V
+0.5 H
+N
+156.57 173 499.17 173 2 L
+V
+N
+156.57 157 499.17 157 2 L
+V
+N
+156.57 141 499.17 141 2 L
+V
+N
+156.57 125 499.17 125 2 L
+V
+N
+156.57 109 499.17 109 2 L
+V
+N
+156.07 94.25 499.67 94.25 2 L
+V
+N
+153.57 91.75 502.17 91.75 2 L
+V
+N
+FMENDPAGE
+%%EndPage: "6" 6
+%%Page: "7" 7
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+N
+0 8 Q
+(to Distrib) 108 42.62 T
+(ute CLAS Data) 138.29 42.62 T
+(7) 536 42.62 T
+0 12 Q
+(Although) 108 712 T
+(at) 156.18 712 T
+(the) 167.7 712 T
+(present) 185.21 712 T
+(both) 222.71 712 T
+(formats) 246.9 712 T
+(are) 286.4 712 T
+(used) 303.9 712 T
+(to) 328.75 712 T
+(conduct) 340.93 712 T
+(ph) 381.77 712 T
+(ysics) 393.71 712 T
+(analysis) 420.56 712 T
+(the) 462.07 712 T
+(y) 476.55 712 T
+(both) 485.4 712 T
+(ha) 509.59 712 T
+(v) 520.67 712 T
+(e) 526.49 712 T
+(a) 534.67 712 T
+(room) 108 698 T
+(for) 137.23 698 T
+(impro) 155.11 698 T
+(v) 183.6 698 T
+(ements) 189.42 698 T
+(and) 227.31 698 T
+(perhaps) 248.54 698 T
+(can) 289.75 698 T
+(not) 310.3 698 T
+(be) 329.53 698 T
+(claimed) 344.76 698 T
+(to) 386.64 698 T
+(be) 399.88 698 T
+(the) 415.1 698 T
+(\336nal) 433.66 698 T
+(DST) 458.89 698 T
+(formats) 485.45 698 T
+(for) 526.01 698 T
+(CLAS.) 108 684 T
+(In) 108 658 T
+(T) 121.51 658 T
+(able) 127.88 658 T
+(6,) 151.39 658 T
+(a) 163.9 658 T
+(summary) 172.74 658 T
+(of) 220.92 658 T
+(the) 234.43 658 T
+(size) 252.61 658 T
+(of) 274.78 658 T
+(the) 288.29 658 T
+(data) 306.47 658 T
+(streams,) 329.98 658 T
+(and) 373.15 658 T
+(the) 393.99 658 T
+(percentage) 412.17 658 T
+(of) 467.66 658 T
+(reduction) 481.17 658 T
+(of) 530 658 T
+(the) 108 644 T
+(number) 126.79 644 T
+(of) 167.57 644 T
+(e) 181.68 644 T
+(v) 186.71 644 T
+(ents) 192.53 644 T
+(are) 215.99 644 T
+(presented.) 234.76 644 T
+(As) 287.87 644 T
+(one) 305.32 644 T
+(can) 326.77 644 T
+(see) 347.55 644 T
+(from) 366.99 644 T
+(the) 394.44 644 T
+(table) 413.23 644 T
+(the) 440.68 644 T
+(e) 459.46 644 T
+(v) 464.49 644 T
+(ent) 470.31 644 T
+(size) 489.1 644 T
+(in) 511.88 644 T
+(the) 525.34 644 T
+(DST) 108 630 T
+(structure,) 133.78 630 T
+(with) 181.88 630 T
+(both) 206.33 630 T
+(SEB) 230.78 630 T
+(and) 255.9 630 T
+(PID) 276.35 630 T
+(formats) 298.79 630 T
+(is) 338.57 630 T
+(of) 349.68 630 T
+(the) 362.79 630 T
+(order) 380.57 630 T
+(of) 409 630 T
+(1.5kB) 422.11 630 T
+(\050including) 454.23 630 T
+(HEAD) 506.68 630 T
+(and) 108 616 T
+(CALL) 129.13 616 T
+(banks\051.) 164.26 616 T
+(This) 203.05 616 T
+(combination) 228.18 616 T
+(is) 291.98 616 T
+(at) 303.78 616 T
+(least) 316.24 616 T
+(7-8) 342.04 616 T
+(times) 361.83 616 T
+(smaller) 391.63 616 T
+(than) 430.76 616 T
+(the) 455.22 616 T
+(\322cook) 473.68 616 T
+(ed\323) 502.22 616 T
+(and) 522.67 616 T
+(the ra) 108 602 T
+(w data.) 134.81 602 T
+3 10 Q
+(]) 108 278 T
+0 12 Q
+(-) 118 278 T
+(This) 125.17 278 T
+(includes) 149.69 278 T
+(about) 192.86 278 T
+(40%) 222.7 278 T
+(reduction) 247.88 278 T
+(due) 296.38 278 T
+(to) 316.89 278 T
+(bad) 329.4 278 T
+(triggers) 349.91 278 T
+(and) 389.75 278 T
+(the) 410.25 278 T
+(f) 428.09 278 T
+(act) 431.97 278 T
+(that) 449.14 278 T
+(only) 470.32 278 T
+(10%) 494.83 278 T
+(data) 520.01 278 T
+(will be included in the calibration processing.) 108 264 T
+(F) 108 212 T
+(or) 114.49 212 T
+(the) 128.29 212 T
+(production) 146.75 212 T
+(of) 202.55 212 T
+(CLAS) 216.35 212 T
+(DST\325) 250.82 212 T
+(s) 276.82 212 T
+(the) 285.29 212 T
+(follo) 303.76 212 T
+(wing) 326.12 212 T
+(schemes) 353.92 212 T
+(can) 398.38 212 T
+(be) 418.84 212 T
+(considered) 433.97 212 T
+(\050I) 489.75 212 T
+(am) 501.54 212 T
+(sure) 520.01 212 T
+(there are man) 108 198 T
+(y other schemes that can be discussed\051:) 173.12 198 T
+(1.) 108 178 T
+(K) 121.75 178 T
+(eep) 130.11 178 T
+(DST) 149.49 178 T
+(formats) 174.88 178 T
+(as) 214.26 178 T
+(the) 226.98 178 T
+(y) 241.47 178 T
+(are) 250.19 178 T
+(and) 267.57 178 T
+(re-write) 287.62 178 T
+(selected) 328.32 178 T
+(e) 369.7 178 T
+(v) 374.73 178 T
+(ents) 380.55 178 T
+(from) 402.6 178 T
+(the) 428.65 178 T
+(\322cook) 446.04 178 T
+(ed\323) 474.58 178 T
+(data) 493.96 178 T
+(sam-) 516.67 178 T
+(ple) 121.75 164 T
+(on) 140.94 164 T
+(demand,) 157.47 164 T
+(in) 202.99 164 T
+(the) 216.86 164 T
+(user) 236.05 164 T
+(chosen) 260.57 164 T
+(format.) 298.42 164 T
+5 F
+(\050This) 337.95 164 T
+(is) 367.15 164 T
+(the) 379.68 164 T
+(sc) 398.88 164 T
+(heme) 408.69 164 T
+(that) 438.54 164 T
+(is) 461.74 164 T
+(mostly) 474.28 164 T
+(in) 510.14 164 T
+(use) 524 164 T
+(now\051.) 121.75 150 T
+0 F
+(2.) 108 130 T
+(P) 121.75 130 T
+(arallel) 128.24 130 T
+(to) 161.84 130 T
+(the) 174.79 130 T
+(\322cook) 193.07 130 T
+(ed\323) 221.61 130 T
+(data) 241.88 130 T
+(\336les,) 265.49 130 T
+(produce) 292.11 130 T
+(the) 334.38 130 T
+(DST) 352.66 130 T
+(\336les) 378.94 130 T
+(with) 402.56 130 T
+(both) 427.51 130 T
+(formats,) 452.46 130 T
+(ready) 495.74 130 T
+(for) 526.01 130 T
+(distrib) 121.75 116 T
+(ution.) 152.18 116 T
+5 F
+(\050This sc) 182.85 116 T
+(heme was tested for P) 220.34 116 T
+(ass 0 pr) 324.7 116 T
+(ocessing of EG1\051.) 362.17 116 T
+0 F
+(3.) 108 96 T
+(Mak) 121.75 96 T
+(e) 143.62 96 T
+(impro) 152.28 96 T
+(v) 180.77 96 T
+(ements) 186.59 96 T
+(in) 223.91 96 T
+(the) 236.58 96 T
+(e) 254.57 96 T
+(v) 259.6 96 T
+(ent) 265.42 96 T
+(selection) 283.41 96 T
+(schemes) 329.4 96 T
+(and) 373.39 96 T
+(the) 394.04 96 T
+(DST) 412.04 96 T
+(formats) 438.03 96 T
+(and) 478.02 96 T
+(come) 498.68 96 T
+(up) 528 96 T
+(with) 121.75 82 T
+(a) 146.01 82 T
+(single) 154.27 82 T
+(DST) 185.86 82 T
+(format) 211.46 82 T
+(for) 246.38 82 T
+(CLAS) 263.3 82 T
+(data) 296.9 82 T
+(distrib) 319.82 82 T
+(ution.) 350.25 82 T
+5 F
+(\050This) 380.85 82 T
+(may) 408.45 82 T
+(not) 431.37 82 T
+(be) 449.64 82 T
+(easy) 463.89 82 T
+(to) 488.15 82 T
+(do) 500.41 82 T
+(since) 515.34 82 T
+(many of physics analysis codes ar) 121.75 68 T
+(e alr) 284.29 68 T
+(eady oriented to one or another format\051.) 306.17 68 T
+2 F
+(T) 126.31 578 T
+(able 6: Summary of e) 133.21 578 T
+(v) 242.35 578 T
+(ent yield and e) 248.23 578 T
+(v) 322.39 578 T
+(ent size at differ) 328.27 578 T
+(ent stages of analyses.) 410.36 578 T
+2 10 Q
+(Ev) 155.17 553.33 T
+(ent selection) 166.74 553.33 T
+(25%-30%) 244.74 553.33 T
+(25%-30%) 313.14 553.33 T
+(~40%) 390.6 553.33 T
+(<4%) 458.52 553.33 T
+3 8 Q
+(]) 479.22 557.33 T
+2 10 Q
+(BOS banks) 163.16 529.33 T
+(Size/e) 245.14 529.33 T
+(v) 269.43 529.33 T
+(ent) 274.33 529.33 T
+(Size/e) 313.54 529.33 T
+(v) 337.83 529.33 T
+(ent) 342.73 529.33 T
+(Size/e) 381.94 529.33 T
+(v) 406.23 529.33 T
+(ent) 411.13 529.33 T
+(Size/e) 450.34 529.33 T
+(v) 474.63 529.33 T
+(ent) 479.53 529.33 T
+(SEB) 177.75 507.33 T
+(HEVT) 151.6 495.33 T
+(, EVNT &) 179.2 495.33 T
+(**PB banks) 161.77 483.33 T
+(0.9kB) 254.04 495.33 T
+(DST) 325.08 471.33 T
+(PID) 178.59 451.33 T
+(P) 155.27 439.33 T
+(AR) 160.64 439.33 T
+(T & TBID) 174.68 439.33 T
+(0.5kB) 254.04 439.33 T
+(1.5kB) 322.43 451.33 T
+(\050HEAD) 318.69 439.33 T
+(&CALL\051) 315.08 427.33 T
+(\322cooking\323) 381.53 427.33 T
+(On-line banks) 157.05 407.33 T
+(3.5kB) 254.04 407.33 T
+(8kB) 394.58 407.33 T
+(Detector speci\336c) 152.07 387.33 T
+(banks) 149.96 375.33 T
+(in) 177.78 375.33 T
+(addition) 188.38 375.33 T
+(to abo) 169.38 363.33 T
+(v) 195.68 363.33 T
+(e) 200.57 363.33 T
+(3.0kB) 254.04 375.33 T
+(calibration) 448.27 363.33 T
+(Full inf) 151.9 343.33 T
+(ormation) 183.05 343.33 T
+(on hit/track) 162.06 331.33 T
+(r) 150.76 319.33 T
+(econstruction in) 155.02 319.33 T
+(addition to abo) 150.35 307.33 T
+(v) 214.71 307.33 T
+(e) 219.61 307.33 T
+(3.0kB) 254.04 331.33 T
+(11Kb) 459.93 343.33 T
+140.95 569 140.95 299 2 L
+V
+0.5 H
+0 Z
+N
+143.45 566.5 143.45 301.5 2 L
+V
+N
+232.2 566.5 232.2 301.5 2 L
+V
+2 H
+N
+300.6 566.5 300.6 301.5 2 L
+V
+N
+369 566.5 369 301.5 2 L
+V
+N
+437.4 566.5 437.4 301.5 2 L
+V
+N
+504.55 566.5 504.55 301.5 2 L
+V
+0.5 H
+N
+507.05 569 507.05 299 2 L
+V
+N
+140.7 569.25 507.3 569.25 2 L
+V
+N
+143.2 566.75 504.8 566.75 2 L
+V
+N
+143.7 544 504.3 544 2 L
+V
+N
+143.7 521.25 504.3 521.25 2 L
+V
+N
+143.7 518.75 504.3 518.75 2 L
+V
+N
+143.7 464 301.6 464 2 L
+V
+2 H
+N
+143.7 420 370 420 2 L
+V
+N
+143.7 400 370 400 2 L
+V
+N
+143.7 356 438.4 356 2 L
+V
+N
+143.2 301.25 504.8 301.25 2 L
+V
+0.5 H
+N
+140.7 298.75 507.3 298.75 2 L
+V
+N
+FMENDPAGE
+%%EndPage: "7" 7
+%%Page: "8" 8
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+N
+0 8 Q
+(to Distrib) 108 42.62 T
+(ute CLAS Data) 138.29 42.62 T
+(8) 536 42.62 T
+2 16 Q
+(4.0  Summary) 108 709.33 T
+0 12 Q
+(The) 108 682 T
+(analysis) 129.68 682 T
+(of) 171.36 682 T
+(the) 184.38 682 T
+(data) 202.06 682 T
+(v) 225.07 682 T
+(olume) 230.83 682 T
+(produced) 263.85 682 T
+(in) 311.52 682 T
+(the) 323.87 682 T
+(process) 341.55 682 T
+(of) 380.56 682 T
+(data) 393.57 682 T
+(handling) 416.58 682 T
+(sho) 461.6 682 T
+(wed) 477.97 682 T
+(that) 500.98 682 T
+(dis-) 522 682 T
+(trib) 108 668 T
+(ution) 124.43 668 T
+(and) 151.99 668 T
+(processing) 172.22 668 T
+(of) 226.44 668 T
+(the) 239.33 668 T
+(CLAS) 256.89 668 T
+(data) 290.45 668 T
+(at) 313.34 668 T
+(the) 324.9 668 T
+(calibration) 342.46 668 T
+(and) 396.67 668 T
+(the) 416.9 668 T
+(post-\322cooking\323) 434.46 668 T
+(stages) 510.67 668 T
+(are) 108 654 T
+(quite) 126.81 654 T
+(dif) 154.98 654 T
+(\336cult) 168.01 654 T
+(due) 196.84 654 T
+(to) 218.33 654 T
+(the) 231.83 654 T
+(lar) 250.66 654 T
+(ge) 263.1 654 T
+(size) 278.59 654 T
+(of) 301.42 654 T
+(the) 315.57 654 T
+(actual) 334.4 654 T
+(e) 367.22 654 T
+(v) 372.25 654 T
+(ent.) 378.07 654 T
+(Therefore,) 399.89 654 T
+(future) 454.36 654 T
+(analysis) 487.18 654 T
+(of) 530 654 T
+(these) 108 640 T
+(data) 136.59 640 T
+(samples) 160.51 640 T
+(are) 203.11 640 T
+(possible) 221.69 640 T
+(on) 264.95 640 T
+(Jlab) 280.88 640 T
+(computers) 304.15 640 T
+(only) 358.07 640 T
+(\050by) 383.33 640 T
+(using) 403.26 640 T
+(the) 433.19 640 T
+(po) 451.79 640 T
+(werful) 463.49 640 T
+(tape) 498.74 640 T
+(silo) 522.66 640 T
+(and the lar) 108 626 T
+(ge w) 158.44 626 T
+(ork disk space\051.) 181.31 626 T
+(The) 108 600 T
+(distrib) 130.17 600 T
+(ution) 160.6 600 T
+(of) 188.79 600 T
+(CLAS) 202.29 600 T
+(data) 236.48 600 T
+(for) 259.98 600 T
+(ph) 277.48 600 T
+(ysics/\336nal) 289.42 600 T
+(analysis) 341.61 600 T
+(is) 383.78 600 T
+(possible) 395.3 600 T
+(via) 438.14 600 T
+(the) 456.32 600 T
+(production) 474.5 600 T
+(of) 530 600 T
+(small) 108 586 T
+(size) 137.96 586 T
+(Data) 160.57 586 T
+(Summary) 187.17 586 T
+(T) 237.79 586 T
+(apes) 244.16 586 T
+(\050DSTs\051) 269.44 586 T
+(and,) 308.72 586 T
+(therefore) 332.99 586 T
+(reducing) 380.25 586 T
+(the) 426.19 586 T
+(load) 444.81 586 T
+(on) 469.42 586 T
+(Jlab\325) 485.37 586 T
+(s) 508.04 586 T
+(CPU) 516.66 586 T
+(f) 108 572 T
+(arm and tape silo.) 111.88 572 T
+(There) 108 546 T
+(are) 139.48 546 T
+(already) 157.63 546 T
+(DST) 196.45 546 T
+(formats) 222.62 546 T
+(in) 262.78 546 T
+(the) 275.61 546 T
+(CLAS) 293.78 546 T
+(analysis) 327.95 546 T
+(code) 370.11 546 T
+(de\336ned) 396.27 546 T
+(by) 435.1 546 T
+(tw) 450.6 546 T
+(o) 462.48 546 T
+(parallel) 471.98 546 T
+(w) 511.46 546 T
+(ork-) 520.01 546 T
+(ing) 108 532 T
+(packages) 128.12 532 T
+(and,) 176.89 532 T
+(therefore,) 202 532 T
+(all) 253.1 532 T
+(necessary) 269.88 532 T
+(BOS) 321.31 532 T
+(banks) 349.44 532 T
+(for) 382.22 532 T
+(the) 401 532 T
+(DST) 420.45 532 T
+(production) 447.9 532 T
+(already) 504.68 532 T
+(e) 108 518 T
+(xist) 113.15 518 T
+(in) 133.98 518 T
+(the) 146.81 518 T
+(\322cook) 164.96 518 T
+(ed\323) 193.5 518 T
+(data) 213.65 518 T
+(\336les.) 237.13 518 T
+(Before) 263.62 518 T
+(an) 299.77 518 T
+(y) 310.92 518 T
+(ne) 320.41 518 T
+(w) 331.43 518 T
+(ideas) 343.59 518 T
+(for) 371.74 518 T
+(DST) 389.22 518 T
+(formats) 415.38 518 T
+(will) 455.53 518 T
+(come) 477.7 518 T
+(up) 507.18 518 T
+(one) 522.67 518 T
+(can) 108 504 T
+(use) 127.6 504 T
+(e) 146.53 504 T
+(xisting) 151.68 504 T
+(schemes) 187.3 504 T
+(for) 230.9 504 T
+(distrib) 247.83 504 T
+(ution.) 278.26 504 T
+(Since) 308.87 504 T
+(all) 338.48 504 T
+(information) 353.42 504 T
+(is) 413.02 504 T
+(in) 423.97 504 T
+(the) 436.24 504 T
+(data) 453.85 504 T
+(stream) 476.78 504 T
+(it) 511.71 504 T
+(will) 521.33 504 T
+(be) 108 490 T
+(relati) 123.16 490 T
+(v) 147.52 490 T
+(ely) 153.34 490 T
+(easy) 171.84 490 T
+(to) 197.01 490 T
+(produce) 210.18 490 T
+(DST) 252.66 490 T
+(\336les) 279.17 490 T
+(after) 303.01 490 T
+(or) 328.83 490 T
+(e) 342.66 490 T
+(v) 347.69 490 T
+(en) 353.51 490 T
+(in) 368.67 490 T
+(parallel) 381.85 490 T
+(to) 421.67 490 T
+(the) 434.84 490 T
+(\322cooking\323,) 453.34 490 T
+(and) 509.5 490 T
+(to) 530.66 490 T
+(distrib) 108 476 T
+(ute them for ph) 138.43 476 T
+(ysics analysis.) 212.03 476 T
+(There) 108 450 T
+(are) 139.35 450 T
+(a) 157.38 450 T
+(fe) 166.07 450 T
+(w) 175.1 450 T
+(open) 187.13 450 T
+(questions) 213.83 450 T
+(in) 262.54 450 T
+(the) 275.24 450 T
+(data) 293.28 450 T
+(processing) 316.64 450 T
+(in) 371.34 450 T
+(general.) 384.04 450 T
+(One) 425.73 450 T
+(of) 449.09 450 T
+(them,) 462.46 450 T
+(for) 492.83 450 T
+(e) 510.19 450 T
+(xam-) 515.34 450 T
+(ple,) 108 436 T
+(is) 129.03 436 T
+(-) 140.4 436 T
+(do) 147.77 436 T
+(we) 163.13 436 T
+(really) 180.49 436 T
+(need) 211.18 436 T
+(to) 237.21 436 T
+(ha) 249.91 436 T
+(v) 261 436 T
+(e) 266.82 436 T
+(8kB) 275.52 436 T
+(information) 298.89 436 T
+(in) 358.92 436 T
+(the) 371.62 436 T
+(\322cook) 389.65 436 T
+(ed\323) 418.19 436 T
+(\336les.) 438.21 436 T
+(Thro) 464.58 436 T
+(wing) 487.61 436 T
+(a) 514.98 436 T
+(w) 520.13 436 T
+(ay) 528.67 436 T
+(the) 108 422 T
+(ra) 125.43 422 T
+(w) 134.57 422 T
+(data) 146 422 T
+(from) 168.75 422 T
+(the) 194.85 422 T
+(\322cook) 212.27 422 T
+(ed\323) 240.81 422 T
+(\336les) 260.23 422 T
+(will) 282.99 422 T
+(cut) 304.43 422 T
+(do) 321.86 422 T
+(wn) 333.56 422 T
+(the) 350.98 422 T
+(e) 368.41 422 T
+(v) 373.44 422 T
+(ent) 379.26 422 T
+(size) 396.69 422 T
+(by) 418.11 422 T
+(almost) 432.87 422 T
+(a) 467.64 422 T
+(f) 475.73 422 T
+(actor) 479.61 422 T
+(of) 506.36 422 T
+(tw) 519.12 422 T
+(o,) 531 422 T
+(leading) 108 408 T
+(to) 146.49 408 T
+(a) 159 408 T
+(substantial) 167.49 408 T
+(sa) 221.99 408 T
+(ving) 231.75 408 T
+(of) 256.25 408 T
+(resources.) 269.41 408 T
+5 F
+(\050J) 320.89 408 T
+(ust) 329.79 408 T
+(as) 346.96 408 T
+(a) 360.8 408 T
+(r) 369.96 408 T
+(eminder) 374.19 408 T
+(,) 412.18 408 T
+(we) 418.35 408 T
+(have) 434.84 408 T
+(a) 460.66 408 T
+(full) 469.83 408 T
+(set) 489 408 T
+(of) 505.5 408 T
+(BOS) 518 408 T
+(banks) 108 394 T
+(in) 139.03 394 T
+(the) 151.4 394 T
+(selected) 169.09 394 T
+(sample) 210.78 394 T
+(of) 247.81 394 T
+(the) 260.18 394 T
+(pr) 277.87 394 T
+(ocessed) 288 394 T
+(data) 328.35 394 T
+(for) 352.72 394 T
+(calibr) 369.76 394 T
+(ation,) 398.25 394 T
+(whic) 428.95 394 T
+(h) 451.44 394 T
+(in) 460.47 394 T
+(the) 472.84 394 T
+(\336nal) 490.54 394 T
+(sta) 514.91 394 T
+(g) 528.79 394 T
+(e) 534.67 394 T
+(is) 108 380 T
+(as) 119.24 380 T
+(good) 133.15 380 T
+(as) 160.39 380 T
+(r) 174.3 380 T
+(e) 178.52 380 T
+(gular) 183.37 380 T
+(pr) 212.61 380 T
+(ocessed) 222.74 380 T
+(data,) 263.3 380 T
+(and) 290.88 380 T
+(could) 312.11 380 T
+(be) 342.02 380 T
+(and) 356.58 380 T
+(has) 377.82 380 T
+(in) 397.73 380 T
+(fact) 410.31 380 T
+(been) 431.55 380 T
+(successfully) 457.44 380 T
+(used) 518 380 T
+(for analysis.\051) 108 366 T
+0 F
+(Another) 108 340 T
+(question) 150.2 340 T
+(that) 193.74 340 T
+(will) 214.62 340 T
+(ef) 236.17 340 T
+(fect) 245.19 340 T
+(the) 266.06 340 T
+(long) 283.6 340 T
+(range) 307.81 340 T
+(planning) 337.34 340 T
+(of) 382.21 340 T
+(resources) 395.09 340 T
+(is) 443.27 340 T
+(-) 454.15 340 T
+(ho) 461.03 340 T
+(w) 472.73 340 T
+(long) 484.27 340 T
+(we) 508.48 340 T
+(are) 525.35 340 T
+(going) 108 326 T
+(to) 138.58 326 T
+(k) 151.16 326 T
+(eep) 157.04 326 T
+(\322cook) 176.94 326 T
+(ed\323) 205.47 326 T
+(\336les) 225.37 326 T
+(instead) 248.62 326 T
+(of) 285.86 326 T
+(k) 299.1 326 T
+(eeping) 304.98 326 T
+(the) 340.21 326 T
+(only) 358.12 326 T
+(compressed) 382.7 326 T
+(DST) 442.6 326 T
+(\336les.) 468.51 326 T
+(This) 494.76 326 T
+(may) 519.34 326 T
+(cut do) 108 312 T
+(wn the demand on tapes by almost 40%.) 137.36 312 T
+(I) 108 260 T
+(w) 116.03 260 T
+(ould) 124.58 260 T
+(lik) 149.95 260 T
+(e) 162.5 260 T
+(to) 171.87 260 T
+(thank) 185.24 260 T
+(members) 215.94 260 T
+(of) 263.97 260 T
+(\322CLAS) 278 260 T
+(computing) 318.04 260 T
+(needs\323) 373.41 260 T
+(committee) 410.1 260 T
+(and) 464.8 260 T
+(Arne) 486.16 260 T
+(Fre) 514.19 260 T
+(y-) 530 260 T
+(ber) 108 246 T
+(ger for useful discussions and ideas.) 123.11 246 T
+2 16 Q
+(Refer) 108 187.33 T
+(ences) 145.9 187.33 T
+0 12 Q
+(1. Conceptual Design Report, CEB) 108 159 T
+(AF) 276.24 159 T
+(, 1990.) 290.62 159 T
+(2. The BOS system for CLAS detector) 108 145 T
+(. V) 292.99 145 T
+(.Blobel and the CLAS softw) 306.11 145 T
+(are group, 1995.) 442.32 145 T
+(3.) 108 131 T
+(The) 120.67 131 T
+(detailed) 143 131 T
+(description) 184.66 131 T
+(of) 241.65 131 T
+(BOS) 255.32 131 T
+(v) 282.33 131 T
+(ariables) 288.02 131 T
+(in) 329.01 131 T
+(the) 342.02 131 T
+(banks) 360.35 131 T
+(can) 392.01 131 T
+(be) 412.34 131 T
+(found) 427.33 131 T
+(in) 459 131 T
+(the) 472 131 T
+(\322ddl\323) 490.33 131 T
+(\336les) 520 131 T
+(located) 108 117 T
+(in) 145.55 117 T
+(/clas/.../packages/bankdefs/.) 157.78 117 T
+(The) 295.32 117 T
+(name) 316.88 117 T
+(of) 345.76 117 T
+(the) 358.66 117 T
+(\322ddl\323) 376.22 117 T
+(\336le) 405.1 117 T
+(corresponds) 423.34 117 T
+(to) 484.22 117 T
+(the) 496.45 117 T
+(name) 514.01 117 T
+(of the BOS bank.) 108 103 T
+(4.) 108 89 T
+(F) 127.55 89 T
+(or) 134.04 89 T
+(a) 154.58 89 T
+(description) 170.46 89 T
+(of) 234.33 89 T
+(the) 254.87 89 T
+(packages) 280.08 89 T
+(see) 334.61 89 T
+(URL::http://www) 360.48 89 T
+(.cebaf.go) 445.04 89 T
+(v/~manak/) 488.84 89 T
+(of) 108 75 T
+(\337ine_libs.html.) 117.7 75 T
+FMENDPAGE
+%%EndPage: "8" 8
+%%Page: "9" 9
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+N
+0 8 Q
+(to Distrib) 108 42.62 T
+(ute CLAS Data) 138.29 42.62 T
+(9) 536 42.62 T
+2 16 Q
+(A) 108 709.33 T
+(ppendix I) 119.15 709.33 T
+0 12 Q
+(The) 108 681 T
+(output) 130.49 681 T
+(BOS) 164.98 681 T
+(banks) 192.15 681 T
+(of) 223.97 681 T
+(SEB) 237.79 681 T
+(are:) 263.62 681 T
+(HEVT) 285.44 681 T
+(,) 316.54 681 T
+(EVNT) 323.37 681 T
+(,) 354.47 681 T
+(DCPB,) 361.3 681 T
+(CCPB,) 399.46 681 T
+(SCPB,) 436.97 681 T
+(ECPB,) 473.15 681 T
+(LCPB) 509.99 681 T
+(and STPB.) 108 667 T
+(The) 108 641 T
+(HEVT) 130.63 641 T
+(is) 166.6 641 T
+(a) 178.57 641 T
+(e) 187.87 641 T
+(v) 192.9 641 T
+(ent) 198.72 641 T
+(head) 217.36 641 T
+(bank) 243.98 641 T
+(with) 271.28 641 T
+(bank) 296.59 641 T
+(number) 323.89 641 T
+(\3220\323,) 364.52 641 T
+(it) 388.15 641 T
+(has) 398.8 641 T
+(sixteen) 418.76 641 T
+(columns) 456.73 641 T
+(and) 501.37 641 T
+(one) 522.67 641 T
+(ro) 108 627 T
+(w) 117.7 627 T
+(. Columns 13, 14 and 15 are not used for no) 125.58 627 T
+(w) 335.93 627 T
+(. The description of the rest follo) 343.81 627 T
+(ws*:) 501.16 627 T
+2 10 Q
+(  1 EST) 108 604.33 T
+(A) 138.5 604.33 T
+(TUS) 144.77 604.33 T
+(Reconstruction) 216 604.33 T
+(status,) 283.7 604.33 T
+(=1) 313.91 604.33 T
+(if) 327.32 604.33 T
+(the) 336.14 604.33 T
+(right) 352.18 604.33 T
+(trigger) 376.01 604.33 T
+(with) 408.15 604.33 T
+(a) 429.75 604.33 T
+(complete) 437.46 604.33 T
+(set) 478.49 604.33 T
+(of) 492.86 604.33 T
+(parame-) 503.9 604.33 T
+(ters) 216 592.33 T
+(is) 235.71 592.33 T
+(f) 246 592.33 T
+(ound) 249.08 592.33 T
+(and) 274.38 592.33 T
+(=0) 294.11 592.33 T
+(if) 308.42 592.33 T
+(the) 318.15 592.33 T
+(trigger) 335.1 592.33 T
+(particle) 368.14 592.33 T
+(does) 404.52 592.33 T
+(not) 427.03 592.33 T
+(meet) 444.54 592.33 T
+(with) 468.69 592.33 T
+(all) 491.2 592.33 T
+(r) 505.37 592.33 T
+(equir) 509.63 592.33 T
+(e-) 532.23 592.33 T
+(ments \050eg) 216 580.33 T
+(. no TB tracking f) 256.67 580.33 T
+(or f) 332.26 580.33 T
+(ound electr) 347.28 580.33 T
+(on\051. T) 395.15 580.33 T
+(ype - integer) 419.97 580.33 T
+(.) 472.29 580.33 T
+(  2 NR) 108 568.33 T
+(UN) 134.64 568.33 T
+(Run number fr) 216 568.33 T
+(om the HEAD bank.) 280.82 568.33 T
+(  3 NEVENT) 108 556.33 T
+(Ev) 216 556.33 T
+(ent number in the run NR) 227.57 556.33 T
+(UN fr) 338.66 556.33 T
+(om  the HEAD bank.) 363.19 556.33 T
+(  4 TYPE) 108 544.33 T
+(Ev) 216 544.33 T
+(ent type \050Data or MC\051 fr) 227.57 544.33 T
+(om the HEAD bank.) 332.63 544.33 T
+(  5 NPGP) 108 532.33 T
+(The) 216 532.33 T
+(number) 236.59 532.33 T
+(of) 274.41 532.33 T
+(\336nal) 286.66 532.33 T
+(r) 309.48 532.33 T
+(econstructed) 313.74 532.33 T
+(particles) 372.1 532.33 T
+(\050NP) 412.68 532.33 T
+(AR) 428.6 532.33 T
+(T\051) 442.64 532.33 T
+(and) 456.56 532.33 T
+(the) 476.6 532.33 T
+(number) 493.86 532.33 T
+(of) 531.67 532.33 T
+(geometrically) 216 520.33 T
+(matched) 280.17 520.33 T
+(gr) 323.24 520.33 T
+(oups) 332.5 520.33 T
+(of) 358.92 520.33 T
+(hits) 373.66 520.33 T
+(and) 395.64 520.33 T
+(tracks) 418.17 520.33 T
+(\050GP) 451.24 520.33 T
+(AR) 467.72 520.33 T
+(T\051.) 481.76 520.33 T
+(NPGP) 500.67 520.33 T
+(=) 534.3 520.33 T
+(100xNP) 216 508.33 T
+(AR) 248.59 508.33 T
+(T + GP) 262.63 508.33 T
+(AR) 293.15 508.33 T
+(T) 307.19 508.33 T
+(.) 312.96 508.33 T
+(  6 TRGPRS) 108 496.33 T
+(T) 216 496.33 T
+(rigger) 221.93 496.33 T
+(type) 254.09 496.33 T
+(\050EVTCLASS\051) 278.48 496.33 T
+(and) 343.98 496.33 T
+(pr) 366.16 496.33 T
+(escale) 375.98 496.33 T
+(factor) 407.03 496.33 T
+(\050TRIGBITS\051) 438.62 496.33 T
+(fr) 499.69 496.33 T
+(om) 507.28 496.33 T
+(the) 526.67 496.33 T
+(HEAD bank. TRGPRS = EVTCLASS*10000 +TRIGBITS) 216 484.33 T
+(  7 FC) 108 472.33 T
+(F) 216 472.33 T
+(araday Cup r) 221.86 472.33 T
+(eading in Coulombs) 279.46 472.33 T
+(  8 FCG) 108 460.33 T
+(Gated F) 216 460.33 T
+(araday Cup in Coulombs.) 250.47 460.33 T
+(  9 TG) 108 448.33 T
+(Gated clock.) 216 448.33 T
+(10 STT) 108 436.33 T
+(Ev) 216 436.33 T
+(ent start time in ns.) 227.57 436.33 T
+(11 RF1) 108 424.33 T
+(First RF time con) 216 424.33 T
+(v) 290.86 424.33 T
+(erted to ns.) 295.76 424.33 T
+(12 RF2) 108 412.33 T
+(Second RF time con) 216 412.33 T
+(v) 300.87 412.33 T
+(erted to ns.) 305.77 412.33 T
+(16PTIME) 108 400.33 T
+(Ev) 216 400.33 T
+(ent pr) 227.57 400.33 T
+(ocessing time \050UNIX time = seconds\051 fr) 253.22 400.33 T
+(om HEAD banks.) 419.26 400.33 T
+0 12 Q
+(The) 108 367 T
+(EVNT) 131.34 367 T
+(is) 168 367 T
+(the) 180.68 367 T
+(bank) 200.02 367 T
+(where) 228.02 367 T
+(the) 262.02 367 T
+(characteristics) 281.36 367 T
+(of) 354.67 367 T
+(the) 369.34 367 T
+(reconstructed) 388.68 367 T
+(particles) 458 367 T
+(and) 503.33 367 T
+(the) 525.34 367 T
+(pointers) 108 353 T
+(to) 150.81 353 T
+(the) 164.3 353 T
+(detector) 183.11 353 T
+(related) 225.91 353 T
+(banks) 262.71 353 T
+(are) 294.86 353 T
+(stored.) 313.66 353 T
+(EVNT) 350.13 353 T
+(has) 386.27 353 T
+(18) 406.42 353 T
+(columns,) 422.57 353 T
+(the) 470.38 353 T
+(number) 489.2 353 T
+(of) 530 353 T
+(ro) 108 339 T
+(ws) 117.7 339 T
+(corresponds) 134.95 339 T
+(to) 196.85 339 T
+(the) 210.1 339 T
+(number) 228.69 339 T
+(of) 269.27 339 T
+(identi\336ed) 283.18 339 T
+(particles) 332.44 339 T
+(plus) 377.01 339 T
+(the) 400.93 339 T
+(number) 419.52 339 T
+(of) 460.1 339 T
+(geometrically) 474.01 339 T
+(matched) 108 325 T
+(groups) 151.68 325 T
+(of) 187.37 325 T
+(hits) 200.4 325 T
+(and) 220.76 325 T
+(tracks) 241.12 325 T
+(that) 272.8 325 T
+(were) 293.83 325 T
+(not) 320.17 325 T
+(identi\336ed) 338.54 325 T
+(as) 386.9 325 T
+(a) 399.92 325 T
+(particles) 408.28 325 T
+(after) 451.96 325 T
+(time) 476.97 325 T
+(analysis) 501.33 325 T
+(\050lik) 108 311 T
+(e,) 124.55 311 T
+(for) 136.64 311 T
+(e) 154.4 311 T
+(xample,) 159.55 311 T
+(a) 201.65 311 T
+(hit) 210.74 311 T
+(based) 227.18 311 T
+(track) 258.27 311 T
+(that) 286.03 311 T
+(w) 307.79 311 T
+(as) 316.34 311 T
+(matched) 330.1 311 T
+(with) 374.52 311 T
+(hit\050s\051) 399.63 311 T
+(in) 428.73 311 T
+(the) 441.83 311 T
+(outer) 460.26 311 T
+(detector\050s\051) 488.69 311 T
+(b) 108 297 T
+(ut did not pass the TB tracking\051. The follo) 113.76 297 T
+(wing is a description of the EVNT columns*:) 315.78 297 T
+2 10 Q
+(  1  ID) 108 278.33 T
+(P) 216 278.33 T
+(article ID, de\336nitions by P) 222.01 278.33 T
+(article Data Gr) 333.86 278.33 T
+(oup.) 398.66 278.33 T
+(  2  Pmom) 108 266.33 T
+(Reconstructed momentum in GeV/c.) 216 266.33 T
+(  3  Mass) 108 254.33 T
+(Mass squar) 216 254.33 T
+(ed, f) 264.99 254.33 T
+(or char) 283.07 254.33 T
+(ged hadr) 314.35 254.33 T
+(on Mass=Pmom**2*\0501-beta**2\051/beta**2.) 352.23 254.33 T
+(  4  Char) 108 242.33 T
+(ge) 145.12 242.33 T
+(De\336ned char) 216 242.33 T
+(ge.) 270.62 242.33 T
+(  5  Beta) 108 230.33 T
+(P) 216 230.33 T
+(article v) 222.01 230.33 T
+(elocity in the units of c.) 256.62 230.33 T
+(  6  Cx) 108 218.33 T
+(X dir cosine at the pr) 216 218.33 T
+(oduction v) 306.09 218.33 T
+(ertex.) 350.72 218.33 T
+(  7  Cy) 108 206.33 T
+(Y dir cosine at the pr) 216 206.33 T
+(oduction v) 306.09 206.33 T
+(ertex.) 350.72 206.33 T
+(  8  Cz) 108 194.33 T
+(Z dir cosine at the pr) 216 194.33 T
+(oduction v) 305.54 194.33 T
+(ertex.) 350.17 194.33 T
+(  9  X) 108 182.33 T
+(X coordinate of v) 216 182.33 T
+(ertex \050cm\051) 289.5 182.33 T
+( 10  Y) 108 170.33 T
+(Y coordinate of v) 216 170.33 T
+(ertex \050cm\051) 289.5 170.33 T
+( 11  Z) 108 158.33 T
+(Z coordinate of v) 216 158.33 T
+(ertex \050cm\051) 288.95 158.33 T
+( 12  DCstat) 108 146.33 T
+(P) 216 146.33 T
+(ointer to the DCPB, =0 if DC is not in) 221.91 146.33 T
+(v) 381.09 146.33 T
+(olv) 385.99 146.33 T
+(ed, >0 r) 398.67 146.33 T
+(o) 431.13 146.33 T
+(w number in DCPB.) 436.03 146.33 T
+( 13  CCstat) 108 134.33 T
+(P) 216 134.33 T
+(ointer to the CCPB, =0 if CC is not in) 221.91 134.33 T
+(v) 381.09 134.33 T
+(olv) 385.99 134.33 T
+(ed, >0 r) 398.67 134.33 T
+(o) 431.13 134.33 T
+(w number in CCPB.) 436.03 134.33 T
+( 14  SCstat) 108 122.33 T
+(P) 216 122.33 T
+(ointer to the SCPB, =0 if SC is not in) 221.91 122.33 T
+(v) 377.77 122.33 T
+(olv) 382.67 122.33 T
+(ed, >0 r) 395.35 122.33 T
+(o) 427.81 122.33 T
+(w number in SCPB.) 432.71 122.33 T
+( 15  ECstat) 108 110.33 T
+(P) 216 110.33 T
+(ointer to the ECPB, =0 if EC is not in) 221.91 110.33 T
+(v) 379.99 110.33 T
+(olv) 384.89 110.33 T
+(ed, >0 r) 397.57 110.33 T
+(o) 430.03 110.33 T
+(w number in ECPB.) 434.93 110.33 T
+( 16  LCstat) 108 98.33 T
+(P) 216 98.33 T
+(ointer to the LCPB, =0 if EC is not in) 221.91 98.33 T
+(v) 379.99 98.33 T
+(olv) 384.89 98.33 T
+(ed, >0 r) 397.57 98.33 T
+(o) 430.03 98.33 T
+(w number in LCPB.) 434.93 98.33 T
+( 17  STstat) 108 86.33 T
+(P) 216 86.33 T
+(ointer to the STPB, =0 if EC is not in) 221.91 86.33 T
+(v) 378.33 86.33 T
+(olv) 383.23 86.33 T
+(ed, >0 r) 395.91 86.33 T
+(o) 428.37 86.33 T
+(w number in STPB.) 433.27 86.33 T
+( 19  Status) 108 74.33 T
+(Status w) 216 74.33 T
+(ord, =0 out of time particle,) 252.29 74.33 T
+FMENDPAGE
+%%EndPage: "9" 9
+%%Page: "10" 10
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+N
+0 8 Q
+(to Distrib) 108 42.62 T
+(ute CLAS Data) 138.29 42.62 T
+(10) 532 42.62 T
+0 12 Q
+(All) 108 712 T
+(XXPB) 126.68 712 T
+(banks) 162.02 712 T
+(contain) 193.35 712 T
+(detector) 232.02 712 T
+(related) 274.01 712 T
+(information) 310 712 T
+(for) 370.01 712 T
+(identi\336ed) 387.34 712 T
+(particles) 436.01 712 T
+(and) 480.01 712 T
+(geomet-) 500.68 712 T
+(rically) 108 698 T
+(matched) 142.12 698 T
+(groups) 186.23 698 T
+(of) 222.35 698 T
+(hits) 235.8 698 T
+(and) 256.6 698 T
+(tracks.) 277.38 698 T
+(This) 312.49 698 T
+(information) 337.28 698 T
+(is) 397.4 698 T
+(as) 408.86 698 T
+(complete) 422.32 698 T
+(as) 469.76 698 T
+(possible) 483.22 698 T
+(for) 526.01 698 T
+(ph) 108 684 T
+(ysics) 119.94 684 T
+(analysis,) 147.16 684 T
+(and) 192.04 684 T
+(practically) 212.59 684 T
+(no) 266.46 684 T
+(other) 281.68 684 T
+(information) 309.56 684 T
+(should) 369.45 684 T
+(be) 404.67 684 T
+(required.) 419.22 684 T
+(As) 465.42 684 T
+(an) 481.98 684 T
+(e) 496.52 684 T
+(xample,) 501.67 684 T
+(let us describe one of detector banks - DCPB*.) 108 670 T
+2 10 Q
+(  1  ScT) 108 645.33 T
+(r) 138.93 645.33 T
+(100*sector+track_ID in *BTR, wher) 216 645.33 T
+(e * is H or T) 371.5 645.33 T
+(.) 423.1 645.33 T
+(  2  x_SC) 108 633.33 T
+(X coordinate of track intersection with SC plane) 216 633.33 T
+(  3  y_SC) 108 621.33 T
+(Y coordinate of track intersection with SC plane) 216 621.33 T
+(  4  z_SC) 108 609.33 T
+(Z coordinate of track intersection with SC plane) 216 609.33 T
+(  5  CX_SC) 108 597.33 T
+(X dir cosine at \050x_SC,y_SC,z_SC\051) 216 597.33 T
+(  6  CY_SC) 108 585.33 T
+(Y dir cosine at \050x_SC,y_SC,z_SC\051) 216 585.33 T
+(  7  CZ_SC) 108 573.33 T
+(Z dir cosine at \050x_SC,y_SC,z_SC\051) 216 573.33 T
+(  8  X_EC) 108 561.33 T
+(X coordinate of track intersection with EC plane) 216 561.33 T
+(  9  Y_EC) 108 549.33 T
+(Y coordinate of track intersection with EC plane) 216 549.33 T
+( 10  Z_EC) 108 537.33 T
+(Z coordinate of track intersection with EC plane) 216 537.33 T
+( 11  Th_CC) 108 525.33 T
+(Straight line angle fr) 216 525.33 T
+(om origin to the CC int.pnt.) 304.43 525.33 T
+( 12  Chi2) 108 513.33 T
+(Chisquar) 216 513.33 T
+(ed of track \336tting) 255.83 513.33 T
+(.) 329.84 513.33 T
+( 13  Status) 108 501.33 T
+(Status w) 216 501.33 T
+(ord, pass >0 TB track, <0 pass HB tracking only) 252.29 501.33 T
+(.) 457.18 501.33 T
+0 12 Q
+(F) 108 476 T
+(or a description of the columns in the other particle banks \050CCPB, ECPB, SCPB, LCPB) 114.49 476 T
+(and STPB\051 one can look at the comments in the ddl \336les.) 108 462 T
+2 16 Q
+(A) 108 403.33 T
+(ppendix II) 119.15 403.33 T
+0 12 Q
+(The) 108 375 T
+(output) 131.03 375 T
+(BOS) 166.07 375 T
+(banks) 193.79 375 T
+(of) 226.15 375 T
+(the) 240.52 375 T
+(PID) 259.56 375 T
+(module) 283.26 375 T
+(describing) 323.63 375 T
+(particles) 377.99 375 T
+(in) 423.02 375 T
+(the) 436.73 375 T
+(e) 455.77 375 T
+(v) 460.79 375 T
+(ent) 466.61 375 T
+(and) 485.65 375 T
+(related) 507.35 375 T
+(detector) 108 361 T
+(information) 149.63 361 T
+(are) 209.27 361 T
+(stored) 226.9 361 T
+(in) 259.2 361 T
+(P) 271.51 361 T
+(AR) 277.08 361 T
+(T) 293.03 361 T
+(and) 303.34 361 T
+(TBID) 323.64 361 T
+(banks.) 354.61 361 T
+(The) 388.58 361 T
+(PID) 410.22 361 T
+(output) 432.53 361 T
+(does) 466.18 361 T
+(not) 491.15 361 T
+(ha) 509.46 361 T
+(v) 520.55 361 T
+(e) 526.37 361 T
+(a) 534.67 361 T
+(special) 108 347 T
+(e) 144.42 347 T
+(v) 149.45 347 T
+(ent) 155.27 347 T
+(head) 173.04 347 T
+(bank) 198.79 347 T
+(b) 225.22 347 T
+(ut) 230.98 347 T
+(can) 243.42 347 T
+(use) 263.17 347 T
+(the) 282.27 347 T
+(on-line) 300.04 347 T
+(HEAD) 337.13 347 T
+(and) 373.56 347 T
+(other) 393.98 347 T
+(banks) 421.74 347 T
+(\050lik) 452.84 347 T
+(e) 469.39 347 T
+(scaler\051) 477.82 347 T
+(to) 512.9 347 T
+(get) 525.34 347 T
+(necessary information for a full analysis.) 108 333 T
+(The) 108 307 T
+(P) 129.45 307 T
+(AR) 135.02 307 T
+(T) 150.97 307 T
+(bank) 161.09 307 T
+(is) 187.21 307 T
+(the) 198.01 307 T
+(main) 215.46 307 T
+(bank) 242.26 307 T
+(for) 268.38 307 T
+(ph) 285.16 307 T
+(ysics) 297.1 307 T
+(analysis) 323.89 307 T
+(in) 365.35 307 T
+(this) 377.48 307 T
+(frame) 397.61 307 T
+(w) 425.3 307 T
+(ork.) 433.84 307 T
+(It) 455.63 307 T
+(has) 465.75 307 T
+(13) 484.54 307 T
+(columns) 499.33 307 T
+(and) 108 293 T
+(as) 129.18 293 T
+(man) 143.04 293 T
+(y) 163.52 293 T
+(ro) 173.38 293 T
+(ws) 183.07 293 T
+(as) 200.26 293 T
+(particles) 214.12 293 T
+(were) 258.63 293 T
+(identi\336ed.) 285.8 293 T
+(The) 337.99 293 T
+(follo) 360.51 293 T
+(wing) 382.88 293 T
+(is) 410.74 293 T
+(a) 422.6 293 T
+(description) 431.78 293 T
+(of) 488.97 293 T
+(the) 502.82 293 T
+(col-) 521.34 293 T
+(umns in P) 108 279 T
+(AR) 154.91 279 T
+(T*:) 170.86 279 T
+2 10 Q
+(  1  pid) 108 260.33 T
+(P) 216 260.33 T
+(article ID, de\336nitions by GEANT) 222.01 260.33 T
+(.) 362.51 260.33 T
+(  2  x) 108 248.33 T
+(Reconstructed v) 216 248.33 T
+(ertex position X.) 285.05 248.33 T
+(  3  y) 108 236.33 T
+(Reconstructed v) 216 236.33 T
+(ertex position Y) 285.05 236.33 T
+(.) 351.9 236.33 T
+(  4  z) 108 224.33 T
+(Reconstructed v) 216 224.33 T
+(ertex position Z.) 285.05 224.33 T
+(  5  E) 108 212.33 T
+(Ener) 216 212.33 T
+(gy of the particle in GeV) 237.01 212.33 T
+(.) 340.27 212.33 T
+(  6  px) 108 200.33 T
+(X dir cosine of momentum.) 216 200.33 T
+(  7  py) 108 188.33 T
+(Y dir cosine of momentum.) 216 188.33 T
+(  8  pz) 108 176.33 T
+(Z dir cosine of momentum.) 216 176.33 T
+(  9  q) 108 164.33 T
+(De\336ned char) 216 164.33 T
+(ge.) 270.62 164.33 T
+( 10  trkid) 108 152.33 T
+(Index to TBID bank, counting fr) 216 152.33 T
+(om 1) 354.73 152.33 T
+( 11 qpid) 108 140.33 T
+(Quality factor f) 216 140.33 T
+(or the pid) 281.85 140.33 T
+( 12 qtrk) 108 128.33 T
+(Quality factor f) 216 128.33 T
+(or the trk) 281.85 128.33 T
+( 13 \337ags) 108 116.33 T
+(Set of \337ags de\336ning track \050ie, BEAM\051) 216 116.33 T
+FMENDPAGE
+%%EndPage: "10" 10
+%%Page: "11" 11
+612 792 0 FMBEGINPAGE
+0 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 1 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+N
+0 8 Q
+(to Distrib) 108 42.62 T
+(ute CLAS Data) 138.29 42.62 T
+(11) 532 42.62 T
+0 12 Q
+(As) 108 712 T
+(it) 124.54 712 T
+(is) 134.42 712 T
+(clear) 145.63 712 T
+(from) 172.16 712 T
+(the) 198.7 712 T
+(abo) 216.57 712 T
+(v) 233.72 712 T
+(e,) 239.54 712 T
+(column) 251.07 712 T
+(10) 290.28 712 T
+(is) 305.49 712 T
+(a) 316.7 712 T
+(direct) 325.24 712 T
+(pointer) 355.77 712 T
+(\050entry) 392.98 712 T
+(point\051) 424.84 712 T
+(to) 456.72 712 T
+(the) 469.26 712 T
+(TBID.) 487.14 712 T
+(The) 521.34 712 T
+(TBID) 108 698 T
+(is) 139.42 698 T
+(a) 150.85 698 T
+(bank) 159.6 698 T
+(that) 186.35 698 T
+(stores) 207.77 698 T
+(the) 239.19 698 T
+(detector) 257.28 698 T
+(related) 299.36 698 T
+(information,) 335.43 698 T
+(mainly) 398.52 698 T
+(times,) 435.28 698 T
+(quality) 467.71 698 T
+(f) 504.47 698 T
+(actors,) 508.34 698 T
+(and pointers to the lo) 108 684 T
+(w le) 209.03 684 T
+(v) 229.06 684 T
+(el banks. The follo) 234.88 684 T
+(wing is a description of TBID*:) 324.56 684 T
+2 10 Q
+(  1  track) 108 665.33 T
+(Index to TBTR or zer) 216 665.33 T
+(o if neutral.) 308.59 665.33 T
+(  2  sec) 108 653.33 T
+(Sector of the track.) 216 653.33 T
+(  3  beta) 108 641.33 T
+(Beta of the track in units of c) 216 641.33 T
+(  4  vtime) 108 629.33 T
+(V) 216 629.33 T
+(ertex time of the track.) 222.22 629.33 T
+(  5  sc_stat) 108 617.33 T
+(Status of hit matching to SC: see sc.h) 216 617.33 T
+(  6  sc_id) 108 605.33 T
+(P) 216 605.33 T
+(ointer to SCRC bank) 221.91 605.33 T
+(  7  sc_time) 108 593.33 T
+(SC calibrated time f) 216 593.33 T
+(or this track \050ns\051) 301.57 593.33 T
+(  8  sc_qual) 108 581.33 T
+(Quality of match f) 216 581.33 T
+(or SC) 293.8 581.33 T
+(  9  sc_vtime) 108 569.33 T
+(T) 216 569.33 T
+(ime at v) 222.49 569.33 T
+(ertex f) 256.27 569.33 T
+(or SC\050ns\051) 283.5 569.33 T
+( 10  sc_beta) 108 557.33 T
+(Beta calculated fr) 216 557.33 T
+(om T) 291.36 557.33 T
+(OF) 313.68 557.33 T
+( 11  cc_stat) 108 545.33 T
+(Status of hit matching to CC: see sc.h) 216 545.33 T
+( 12  cc_id) 108 533.33 T
+(P) 216 533.33 T
+(ointer to CC01 bank) 221.91 533.33 T
+( 13  cc_time) 108 521.33 T
+(CC calibrated time f) 216 521.33 T
+(or this track \050ns\051) 303.23 521.33 T
+( 14  cc_qual) 108 509.33 T
+(Quality of match f) 216 509.33 T
+(or CC) 293.8 509.33 T
+( 15  cc_vtime) 108 497.33 T
+(T) 216 497.33 T
+(ime at v) 222.49 497.33 T
+(ertex f) 256.27 497.33 T
+(or CC\050ns\051) 283.5 497.33 T
+( 16  cc_beta) 108 485.33 T
+(Beta as calculated by the EC) 216 485.33 T
+( 17  ec_stat) 108 473.33 T
+(Status of hit matching to ec: see sc.h) 216 473.33 T
+( 18  ec_id) 108 461.33 T
+(P) 216 461.33 T
+(ointer to ECHB bank) 221.91 461.33 T
+( 19  ec_time) 108 449.33 T
+(EC calibrated time f) 216 449.33 T
+(or this track \050ns\051) 302.68 449.33 T
+( 20  ec_qual) 108 437.33 T
+(EC quality factor) 216 437.33 T
+( 21  ec_vtime) 108 425.33 T
+(T) 216 425.33 T
+(ime at v) 222.49 425.33 T
+(ertex f) 256.27 425.33 T
+(or EC\050ns\051) 283.5 425.33 T
+( 22  ec_beta) 108 413.33 T
+(Beta as calculated by the EC) 216 413.33 T
+( 23  st_stat) 108 401.33 T
+(Status of hit matching to ST) 216 401.33 T
+( 24  st_id) 108 389.33 T
+(P) 216 389.33 T
+(ointer to STR bank) 221.91 389.33 T
+( 25  st_time) 108 377.33 T
+(ST calibrated time f) 216 377.33 T
+(or this track \050ns\051) 301.02 377.33 T
+( 26  st_qual) 108 365.33 T
+(ST quality factor) 216 365.33 T
+( 27  st_vtime) 108 353.33 T
+(T) 216 353.33 T
+(ime at v) 222.49 353.33 T
+(ertex f) 256.27 353.33 T
+(or ST\050ns\051) 283.5 353.33 T
+( 28  st_beta) 108 341.33 T
+(Beta as calculated by the ST) 216 341.33 T
+( 29  lac_stat) 108 329.33 T
+(Status of hit matching to LA) 216 329.33 T
+(C) 336.84 329.33 T
+( 30  lac_id) 108 317.33 T
+(P) 216 317.33 T
+(ointer to EC1R bank) 221.91 317.33 T
+( 31  lac_time) 108 305.33 T
+(LA) 216 305.33 T
+(C calibrated time f) 229.34 305.33 T
+(or this track \050ns\051) 309.35 305.33 T
+( 32  lac_qual) 108 293.33 T
+(LA) 216 293.33 T
+(C quality factor) 229.34 293.33 T
+( 33  lac_vtime) 108 281.33 T
+(T) 216 281.33 T
+(ime at v) 222.49 281.33 T
+(ertex f) 256.27 281.33 T
+(or LA) 283.5 281.33 T
+(C\050ns\051) 308.78 281.33 T
+( 34  lac_beta) 108 269.33 T
+(Beta as calculated by the LA) 216 269.33 T
+(C) 337.39 269.33 T
+0 12 Q
+(As) 108 232 T
+(w) 125.2 232 T
+(as) 133.75 232 T
+(mentioned) 147.61 232 T
+(abo) 202.15 232 T
+(v) 219.3 232 T
+(e,) 225.12 232 T
+(this) 237.32 232 T
+(con\336guration) 258.53 232 T
+(assumes) 326.39 232 T
+(that) 370.26 232 T
+(for) 392.13 232 T
+(a) 409.99 232 T
+(full) 419.19 232 T
+(analysis) 439.73 232 T
+(some) 482.27 232 T
+(of) 511.47 232 T
+(the) 525.34 232 T
+(on-line and reconstruction banks already e) 108 218 T
+(xist.) 311.44 218 T
+(* - All descriptions are from the ddl \336les in the ./packages/bankdefs directory) 108 166 T
+(.) 478.82 166 T
+FMENDPAGE
+%%EndPage: "11" 11
+%%Trailer
+FMENDDOCUMENT
+%%BoundingBox: 0 0 612 792
+%%PageOrder: Ascend
+%%Pages: 11
+%%DocumentFonts: Times-Roman
+%%+ Palatino-BoldItalic
+%%+ Times-Bold
+%%+ ZapfDingbats
+%%+ Times-BoldItalic
+%%+ Times-Italic
+%%DocumentNeedsFonts: Times-Roman
+%%+ Palatino-BoldItalic
+%%+ Times-Bold
+%%+ ZapfDingbats
+%%+ Times-BoldItalic
+%%+ Times-Italic
+%%DocumentSuppliedFonts:
+%%EOF

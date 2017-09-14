@@ -1,0 +1,3169 @@
+%!PS-Adobe-3.0
+%%BoundingBox: (atend)
+%%Pages: (atend)
+%%PageOrder: (atend)
+%%DocumentFonts: (atend)
+%%Creator: Frame 4.0
+%%DocumentData: Clean7Bit
+%%EndComments
+%%BeginProlog
+%
+% Frame ps_prolog 4.0, for use with Frame 4.0 products
+% This ps_prolog file is Copyright (c) 1986-1993 Frame Technology
+% Corporation.  All rights reserved.  This ps_prolog file may be
+% freely copied and distributed in conjunction with documents created
+% using FrameMaker, FrameBuilder and FrameViewer as long as this 
+% copyright notice is preserved.
+%
+% Frame products normally print colors as their true color on a color printer
+% or as shades of gray, based on luminance, on a black-and white printer. The
+% following flag, if set to True, forces all non-white colors to print as pure
+% black. This has no effect on bitmap images.
+/FMPrintAllColorsAsBlack             false def
+%
+% Frame products can either set their own line screens or use a printer's 
+% default settings. Three flags below control this separately for no 
+% separations, spot separations and process separations. If a flag
+% is true, then the default printer settings will not be changed. If it is
+% false, Frame products will use their own settings from a table based on
+% the printer's resolution.
+/FMUseDefaultNoSeparationScreen      true  def
+/FMUseDefaultSpotSeparationScreen    true  def
+/FMUseDefaultProcessSeparationScreen false def
+%
+% For any given PostScript printer resolution, Frame products have two sets of 
+% screen angles and frequencies for printing process separations, which are 
+% recomended by Adobe. The following variable chooses the higher frequencies
+% when set to true or the lower frequencies when set to false. This is only
+% effective if the appropriate FMUseDefault...SeparationScreen flag is false.
+/FMUseHighFrequencyScreens true def
+%
+% PostScript Level 2 printers contain an "Accurate Screens" feature which can
+% improve process separation rendering at the expense of compute time. This 
+% flag is ignored by PostScript Level 1 printers.
+/FMUseAcccurateScreens true def
+%
+% The following PostScript procedure defines the spot function that Frame
+% products will use for process separations. You may un-comment-out one of
+% the alternative functions below, or use your own.
+%
+% Dot function
+/FMSpotFunction {abs exch abs 2 copy add 1 gt 
+		{1 sub dup mul exch 1 sub dup mul add 1 sub }
+		{dup mul exch dup mul add 1 exch sub }ifelse } def
+%
+% Line function
+% /FMSpotFunction { pop } def
+%
+% Elipse function
+% /FMSpotFunction { dup 5 mul 8 div mul exch dup mul exch add 
+%		sqrt 1 exch sub } def
+%
+%
+/FMversion (4.0) def 
+/FMLevel1 /languagelevel where {pop languagelevel} {1} ifelse 2 lt def
+/FMPColor
+	FMLevel1 {
+		false
+		/colorimage where {pop pop true} if
+	} {
+		true
+	} ifelse
+def
+/FrameDict 400 dict def 
+systemdict /errordict known not {/errordict 10 dict def
+		errordict /rangecheck {stop} put} if
+% The readline in PS 23.0 doesn't recognize cr's as nl's on AppleTalk
+FrameDict /tmprangecheck errordict /rangecheck get put 
+errordict /rangecheck {FrameDict /bug true put} put 
+FrameDict /bug false put 
+mark 
+% Some PS machines read past the CR, so keep the following 3 lines together!
+currentfile 5 string readline
+00
+0000000000
+cleartomark 
+errordict /rangecheck FrameDict /tmprangecheck get put 
+FrameDict /bug get { 
+	/readline {
+		/gstring exch def
+		/gfile exch def
+		/gindex 0 def
+		{
+			gfile read pop 
+			dup 10 eq {exit} if 
+			dup 13 eq {exit} if 
+			gstring exch gindex exch put 
+			/gindex gindex 1 add def 
+		} loop
+		pop 
+		gstring 0 gindex getinterval true 
+		} bind def
+	} if
+/FMshowpage /showpage load def
+/FMquit /quit load def
+/FMFAILURE { 
+	dup = flush 
+	FMshowpage 
+	/Helvetica findfont 12 scalefont setfont
+	72 200 moveto
+	show FMshowpage 
+	FMquit 
+	} def 
+/FMVERSION {
+	FMversion ne {
+		(Frame product version does not match ps_prolog!) FMFAILURE
+		} if
+	} def 
+/FMBADEPSF { 
+	(PostScript Lang. Ref. Man., 2nd Ed., H.2.4 says EPS must not call X              )
+	dup dup (X) search pop exch pop exch pop length 
+	4 -1 roll 
+	putinterval 
+	FMFAILURE
+	} def
+/FMLOCAL {
+	FrameDict begin
+	0 def 
+	end 
+	} def 
+/concatprocs
+	{
+	/proc2 exch cvlit def/proc1 exch cvlit def/newproc proc1 length proc2 length add array def
+	newproc 0 proc1 putinterval newproc proc1 length proc2 putinterval newproc cvx
+}def
+FrameDict begin 
+/FMnone 0 def
+/FMcyan 1 def
+/FMmagenta 2 def
+/FMyellow 3 def
+/FMblack 4 def
+/FMcustom 5 def
+/FrameNegative false def 
+/FrameSepIs FMnone def 
+/FrameSepBlack 0 def
+/FrameSepYellow 0 def
+/FrameSepMagenta 0 def
+/FrameSepCyan 0 def
+/FrameSepRed 1 def
+/FrameSepGreen 1 def
+/FrameSepBlue 1 def
+/FrameCurGray 1 def
+/FrameCurPat null def
+/FrameCurColors [ 0 0 0 1 0 0 0 ] def 
+/FrameColorEpsilon .001 def	
+/eqepsilon {		
+	sub dup 0 lt {neg} if
+	FrameColorEpsilon le
+} bind def
+/FrameCmpColorsCMYK { 
+	2 copy 0 get exch 0 get eqepsilon {
+		2 copy 1 get exch 1 get eqepsilon {
+			2 copy 2 get exch 2 get eqepsilon {
+				3 get exch 3 get eqepsilon
+			} {pop pop false} ifelse
+		}{pop pop false} ifelse
+	} {pop pop false} ifelse
+} bind def
+/FrameCmpColorsRGB { 
+	2 copy 4 get exch 0 get eqepsilon {
+		2 copy 5 get exch 1 get eqepsilon {
+			6 get exch 2 get eqepsilon
+		}{pop pop false} ifelse
+	} {pop pop false} ifelse
+} bind def
+/RGBtoCMYK { 
+	1 exch sub 
+	3 1 roll 
+	1 exch sub 
+	3 1 roll 
+	1 exch sub 
+	3 1 roll 
+	3 copy 
+	2 copy 
+	le { pop } { exch pop } ifelse 
+	2 copy 
+	le { pop } { exch pop } ifelse 
+	dup dup dup 
+	6 1 roll 
+	4 1 roll 
+	7 1 roll 
+	sub 
+	6 1 roll 
+	sub 
+	5 1 roll 
+	sub 
+	4 1 roll 
+} bind def
+/CMYKtoRGB { 
+	dup dup 4 -1 roll add 						  
+	5 1 roll 3 -1 roll add 						  
+	4 1 roll add 								  
+	1 exch sub dup 0 lt {pop 0} if 3 1 roll 	  
+	1 exch sub dup 0 lt {pop 0} if exch 	      
+	1 exch sub dup 0 lt {pop 0} if exch	  		  
+} bind def
+/FrameSepInit {
+	1.0 RealSetgray
+} bind def
+/FrameSetSepColor { 
+	/FrameSepBlue exch def
+	/FrameSepGreen exch def
+	/FrameSepRed exch def
+	/FrameSepBlack exch def
+	/FrameSepYellow exch def
+	/FrameSepMagenta exch def
+	/FrameSepCyan exch def
+	/FrameSepIs FMcustom def
+	setCurrentScreen	
+} bind def
+/FrameSetCyan {
+	/FrameSepBlue 1.0 def
+	/FrameSepGreen 1.0 def
+	/FrameSepRed 0.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 1.0 def
+	/FrameSepIs FMcyan def
+	setCurrentScreen	
+} bind def
+ 
+/FrameSetMagenta {
+	/FrameSepBlue 1.0 def
+	/FrameSepGreen 0.0 def
+	/FrameSepRed 1.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 1.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMmagenta def
+	setCurrentScreen
+} bind def
+ 
+/FrameSetYellow {
+	/FrameSepBlue 0.0 def
+	/FrameSepGreen 1.0 def
+	/FrameSepRed 1.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 1.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMyellow def
+	setCurrentScreen
+} bind def
+ 
+/FrameSetBlack {
+	/FrameSepBlue 0.0 def
+	/FrameSepGreen 0.0 def
+	/FrameSepRed 0.0 def
+	/FrameSepBlack 1.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMblack def
+	setCurrentScreen
+} bind def
+ 
+/FrameNoSep { 
+	/FrameSepIs FMnone def
+	setCurrentScreen
+} bind def
+/FrameSetSepColors { 
+	FrameDict begin
+	[ exch 1 add 1 roll ]
+	/FrameSepColors  
+	exch def end
+	} bind def
+/FrameColorInSepListCMYK { 
+	FrameSepColors {  
+       		exch dup 3 -1 roll 
+       		FrameCmpColorsCMYK 
+       		{ pop true exit } if
+    	} forall 
+	dup true ne {pop false} if
+	} bind def
+/FrameColorInSepListRGB { 
+	FrameSepColors {  
+       		exch dup 3 -1 roll 
+       		FrameCmpColorsRGB 
+       		{ pop true exit } if
+    	} forall 
+	dup true ne {pop false} if
+	} bind def
+/RealSetgray /setgray load def
+/RealSetrgbcolor /setrgbcolor load def
+/RealSethsbcolor /sethsbcolor load def
+end 
+/setgray { 
+	FrameDict begin
+	FrameSepIs FMnone eq
+		{ RealSetgray } 
+		{ 
+		FrameSepIs FMblack eq 
+			{ RealSetgray } 
+			{ FrameSepIs FMcustom eq 
+			  FrameSepRed 0 eq and
+			  FrameSepGreen 0 eq and
+			  FrameSepBlue 0 eq and {
+			  	RealSetgray
+			  } {
+				1 RealSetgray pop 
+			  } ifelse
+			} ifelse
+		} ifelse
+	end
+} bind def
+/setrgbcolor { 
+	FrameDict begin
+	FrameSepIs FMnone eq
+	{  RealSetrgbcolor }
+	{
+		3 copy [ 4 1 roll ] 
+		FrameColorInSepListRGB
+		{
+				FrameSepBlue eq exch 
+			 	FrameSepGreen eq and exch 
+			 	FrameSepRed eq and
+			 	{ 0 } { 1 } ifelse
+		}
+		{
+			FMPColor {
+				RealSetrgbcolor
+				currentcmykcolor
+			} {
+				RGBtoCMYK
+			} ifelse
+			FrameSepIs FMblack eq
+			{1.0 exch sub 4 1 roll pop pop pop} {
+			FrameSepIs FMyellow eq
+			{pop 1.0 exch sub 3 1 roll pop pop} {
+			FrameSepIs FMmagenta eq
+			{pop pop 1.0 exch sub exch pop } {
+			FrameSepIs FMcyan eq
+			{pop pop pop 1.0 exch sub } 
+			{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+		} ifelse
+		RealSetgray
+	} 
+	ifelse
+	end
+} bind def
+/sethsbcolor {
+	FrameDict begin
+	FrameSepIs FMnone eq 
+	{ RealSethsbcolor } 
+	{
+		RealSethsbcolor 
+		currentrgbcolor  
+		setrgbcolor 
+	} 
+	ifelse
+	end
+} bind def
+FrameDict begin
+/setcmykcolor where {
+	pop /RealSetcmykcolor /setcmykcolor load def
+} {
+	/RealSetcmykcolor {
+		4 1 roll
+		3 { 3 index add 0 max 1 min 1 exch sub 3 1 roll} repeat 
+		setrgbcolor pop
+	} bind def
+} ifelse
+userdict /setcmykcolor { 
+		FrameDict begin
+		FrameSepIs FMnone eq
+		{ RealSetcmykcolor } 
+		{
+			4 copy [ 5 1 roll ]
+			FrameColorInSepListCMYK
+			{
+				FrameSepBlack eq exch 
+				FrameSepYellow eq and exch 
+				FrameSepMagenta eq and exch 
+				FrameSepCyan eq and 
+				{ 0 } { 1 } ifelse
+			}
+			{
+				FrameSepIs FMblack eq
+				{1.0 exch sub 4 1 roll pop pop pop} {
+				FrameSepIs FMyellow eq
+				{pop 1.0 exch sub 3 1 roll pop pop} {
+				FrameSepIs FMmagenta eq
+				{pop pop 1.0 exch sub exch pop } {
+				FrameSepIs FMcyan eq
+				{pop pop pop 1.0 exch sub } 
+				{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+			} ifelse
+			RealSetgray
+		}
+		ifelse
+		end
+	} bind put
+FMLevel1 not { 
+	
+	/patProcDict 5 dict dup begin
+		<0f1e3c78f0e1c387> { 3 setlinewidth -1 -1 moveto 9 9 lineto stroke 
+											4 -4 moveto 12 4 lineto stroke
+											-4 4 moveto 4 12 lineto stroke} bind def
+		<0f87c3e1f0783c1e> { 3 setlinewidth -1 9 moveto 9 -1 lineto stroke 
+											-4 4 moveto 4 -4 lineto stroke
+											4 12 moveto 12 4 lineto stroke} bind def
+		<8142241818244281> { 1 setlinewidth -1 9 moveto 9 -1 lineto stroke
+											-1 -1 moveto 9 9 lineto stroke } bind def
+		<03060c183060c081> { 1 setlinewidth -1 -1 moveto 9 9 lineto stroke 
+											4 -4 moveto 12 4 lineto stroke
+											-4 4 moveto 4 12 lineto stroke} bind def
+		<8040201008040201> { 1 setlinewidth -1 9 moveto 9 -1 lineto stroke 
+											-4 4 moveto 4 -4 lineto stroke
+											4 12 moveto 12 4 lineto stroke} bind def
+	end def
+	/patDict 15 dict dup begin
+		/PatternType 1 def		
+		/PaintType 2 def		
+		/TilingType 3 def		
+		/BBox [ 0 0 8 8 ] def 	
+		/XStep 8 def			
+		/YStep 8 def			
+		/PaintProc {
+			begin
+			patProcDict bstring known {
+				patProcDict bstring get exec
+			} {
+				8 8 true [1 0 0 -1 0 8] bstring imagemask
+			} ifelse
+			end
+		} bind def
+	end def
+} if
+/combineColor {
+    FrameSepIs FMnone eq
+	{
+		graymode FMLevel1 or not {
+			
+			[/Pattern [/DeviceCMYK]] setcolorspace
+			FrameCurColors 0 4 getinterval aload pop FrameCurPat setcolor
+		} {
+			FrameCurColors 3 get 1.0 ge {
+				FrameCurGray RealSetgray
+			} {
+				FMPColor graymode and {
+					0 1 3 { 
+						FrameCurColors exch get
+						1 FrameCurGray sub mul
+					} for
+					RealSetcmykcolor
+				} {
+					4 1 6 {
+						FrameCurColors exch get
+						graymode {
+							1 exch sub 1 FrameCurGray sub mul 1 exch sub
+						} {
+							1.0 lt {FrameCurGray} {1} ifelse
+						} ifelse
+					} for
+					RealSetrgbcolor
+				} ifelse
+			} ifelse
+		} ifelse
+	} { 
+		FrameCurColors 0 4 getinterval aload
+		FrameColorInSepListCMYK {
+			FrameSepBlack eq exch 
+			FrameSepYellow eq and exch 
+			FrameSepMagenta eq and exch 
+			FrameSepCyan eq and
+			FrameSepIs FMcustom eq and
+			{ FrameCurGray } { 1 } ifelse
+		} {
+			FrameSepIs FMblack eq
+			{FrameCurGray 1.0 exch sub mul 1.0 exch sub 4 1 roll pop pop pop} {
+			FrameSepIs FMyellow eq
+			{pop FrameCurGray 1.0 exch sub mul 1.0 exch sub 3 1 roll pop pop} {
+			FrameSepIs FMmagenta eq
+			{pop pop FrameCurGray 1.0 exch sub mul 1.0 exch sub exch pop } {
+			FrameSepIs FMcyan eq
+			{pop pop pop FrameCurGray 1.0 exch sub mul 1.0 exch sub } 
+			{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+		} ifelse
+		graymode FMLevel1 or not {
+			
+			[/Pattern [/DeviceGray]] setcolorspace
+			FrameCurPat setcolor
+		} { 
+			graymode not FMLevel1 and {
+				
+				dup 1 lt {pop FrameCurGray} if
+			} if
+			RealSetgray
+		} ifelse
+	} ifelse
+} bind def
+/savematrix {
+	orgmatrix currentmatrix pop
+	} bind def
+/restorematrix {
+	orgmatrix setmatrix
+	} bind def
+/dmatrix matrix def
+/dpi    72 0 dmatrix defaultmatrix dtransform
+    dup mul exch   dup mul add   sqrt def
+	
+/freq dpi dup 72 div round dup 0 eq {pop 1} if 8 mul div def
+/sangle 1 0 dmatrix defaultmatrix dtransform exch atan def
+/dpiranges   [  2540    2400    1693     1270    1200     635      600      0      ] def
+/CMLowFreqs  [ 100.402  94.8683 89.2289 100.402  94.8683  66.9349  63.2456 47.4342 ] def
+/YLowFreqs   [  95.25   90.0    84.65    95.25   90.0     70.5556  66.6667 50.0    ] def
+/KLowFreqs   [  89.8026 84.8528 79.8088  89.8026 84.8528  74.8355  70.7107 53.033  ] def
+/CLowAngles  [  71.5651 71.5651 71.5651 71.5651  71.5651  71.5651  71.5651 71.5651 ] def
+/MLowAngles  [  18.4349 18.4349 18.4349 18.4349  18.4349  18.4349  18.4349 18.4349 ] def
+/YLowTDot    [  true    true    false    true    true     false    false   false   ] def
+/CMHighFreqs [ 133.87  126.491 133.843  108.503 102.523  100.402   94.8683 63.2456 ] def
+/YHighFreqs  [ 127.0   120.0   126.975  115.455 109.091   95.25    90.0    60.0    ] def
+/KHighFreqs  [ 119.737 113.137 119.713  128.289 121.218   89.8026  84.8528 63.6395 ] def
+/CHighAngles [  71.5651 71.5651 71.5651  70.0169 70.0169  71.5651  71.5651 71.5651 ] def
+/MHighAngles [  18.4349 18.4349 18.4349  19.9831 19.9831  18.4349  18.4349 18.4349 ] def
+/YHighTDot   [  false   false   true     false   false    true     true    false   ] def
+/PatFreq     [	10.5833 10.0     9.4055  10.5833 10.0	  10.5833  10.0	   9.375   ] def
+/screenIndex {
+	0 1 dpiranges length 1 sub { dup dpiranges exch get 1 sub dpi le {exit} {pop} ifelse } for
+} bind def
+/getCyanScreen {
+	FMUseHighFrequencyScreens { CHighAngles CMHighFreqs} {CLowAngles CMLowFreqs} ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get /FMSpotFunction load
+} bind def
+/getMagentaScreen {
+	FMUseHighFrequencyScreens { MHighAngles CMHighFreqs } {MLowAngles CMLowFreqs} ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get /FMSpotFunction load
+} bind def
+/getYellowScreen {
+	FMUseHighFrequencyScreens { YHighTDot YHighFreqs} { YLowTDot YLowFreqs } ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get { 3 div
+			{2 { 1 add 2 div 3 mul dup floor sub 2 mul 1 sub exch} repeat
+			FMSpotFunction } } {/FMSpotFunction load } ifelse
+			0.0 exch
+} bind def
+/getBlackScreen  {
+	FMUseHighFrequencyScreens { KHighFreqs } { KLowFreqs } ifelse
+		screenIndex get 45.0 /FMSpotFunction load 
+} bind def
+/getSpotScreen {
+	getBlackScreen
+} bind def
+/getCompositeScreen {
+	getBlackScreen
+} bind def
+/FMSetScreen 
+	FMLevel1 { /setscreen load 
+	}{ {
+		8 dict begin
+		/HalftoneType 1 def
+		/SpotFunction exch def
+		/Angle exch def
+		/Frequency exch def
+		/AccurateScreens FMUseAcccurateScreens def
+		currentdict end sethalftone
+	} bind } ifelse
+def
+/setDefaultScreen {
+	FMPColor {
+		orgrxfer cvx orggxfer cvx orgbxfer cvx orgxfer cvx setcolortransfer
+	}
+	{
+		orgxfer cvx settransfer
+	} ifelse
+	orgfreq organgle orgproc cvx setscreen
+} bind def
+/setCurrentScreen {
+	FrameSepIs FMnone eq {
+		FMUseDefaultNoSeparationScreen {
+			setDefaultScreen
+		} {
+			getCompositeScreen FMSetScreen
+		} ifelse
+	} {
+		FrameSepIs FMcustom eq {
+			FMUseDefaultSpotSeparationScreen {
+				setDefaultScreen
+			} {
+				getSpotScreen FMSetScreen
+			} ifelse
+		} {
+			FMUseDefaultProcessSeparationScreen {
+				setDefaultScreen
+			} {
+				FrameSepIs FMcyan eq {
+					getCyanScreen FMSetScreen
+				} {
+					FrameSepIs FMmagenta eq {
+						getMagentaScreen FMSetScreen
+					} {
+						FrameSepIs FMyellow eq {
+							getYellowScreen FMSetScreen
+						} {
+							getBlackScreen FMSetScreen
+						} ifelse
+					} ifelse
+				} ifelse
+			} ifelse
+		} ifelse
+	} ifelse 
+} bind def
+end
+	/gstring FMLOCAL
+	/gfile FMLOCAL
+	/gindex FMLOCAL
+	/orgrxfer FMLOCAL
+	/orggxfer FMLOCAL
+	/orgbxfer FMLOCAL
+	/orgxfer FMLOCAL
+	/orgproc FMLOCAL
+	/orgrproc FMLOCAL
+	/orggproc FMLOCAL
+	/orgbproc FMLOCAL
+	/organgle FMLOCAL
+	/orgrangle FMLOCAL
+	/orggangle FMLOCAL
+	/orgbangle FMLOCAL
+	/orgfreq FMLOCAL
+	/orgrfreq FMLOCAL
+	/orggfreq FMLOCAL
+	/orgbfreq FMLOCAL
+	/yscale FMLOCAL
+	/xscale FMLOCAL
+	/edown FMLOCAL
+	/manualfeed FMLOCAL
+	/paperheight FMLOCAL
+	/paperwidth FMLOCAL
+/FMDOCUMENT { 
+	array /FMfonts exch def 
+	/#copies exch def
+	FrameDict begin
+	0 ne /manualfeed exch def
+	/paperheight exch def
+	/paperwidth exch def
+	0 ne /FrameNegative exch def 
+	0 ne /edown exch def 
+	/yscale exch def
+	/xscale exch def
+	FMLevel1 {
+		manualfeed {setmanualfeed} if
+		/FMdicttop countdictstack 1 add def 
+		/FMoptop count def 
+		setpapername 
+		manualfeed {true} {papersize} ifelse 
+		{manualpapersize} {false} ifelse 
+		{desperatepapersize} {false} ifelse 
+		{ (Can't select requested paper size for Frame print job!) FMFAILURE } if
+		count -1 FMoptop {pop pop} for
+		countdictstack -1 FMdicttop {pop end} for 
+		}
+		{{1 dict dup /PageSize [paperwidth paperheight]put setpagedevice}stopped
+		{ (Can't select requested paper size for Frame print job!) FMFAILURE } if
+		 {1 dict dup /ManualFeed manualfeed put setpagedevice } stopped pop }
+	ifelse 
+	
+	FMPColor {
+		currentcolorscreen
+			cvlit /orgproc exch def
+				  /organgle exch def 
+				  /orgfreq exch def
+			cvlit /orgbproc exch def
+				  /orgbangle exch def 
+				  /orgbfreq exch def
+			cvlit /orggproc exch def
+				  /orggangle exch def 
+				  /orggfreq exch def
+			cvlit /orgrproc exch def
+				  /orgrangle exch def 
+				  /orgrfreq exch def
+			currentcolortransfer 
+			FrameNegative {
+				1 1 4 { 
+					pop { 1 exch sub } concatprocs 4 1 roll
+				} for
+				4 copy
+				setcolortransfer
+			} if
+			cvlit /orgxfer exch def
+			cvlit /orgbxfer exch def
+			cvlit /orggxfer exch def
+			cvlit /orgrxfer exch def
+	} {
+		currentscreen 
+			cvlit /orgproc exch def
+				  /organgle exch def 
+				  /orgfreq exch def
+				  
+		currenttransfer 
+		FrameNegative {
+			{ 1 exch sub } concatprocs
+			dup settransfer
+		} if 
+		cvlit /orgxfer exch def
+	} ifelse
+	end 
+} def 
+/pagesave FMLOCAL
+/orgmatrix FMLOCAL
+/landscape FMLOCAL
+/pwid FMLOCAL
+/FMBEGINPAGE { 
+	FrameDict begin 
+	/pagesave save def
+	3.86 setmiterlimit
+	/landscape exch 0 ne def
+	landscape { 
+		90 rotate 0 exch dup /pwid exch def neg translate pop 
+	}{
+		pop /pwid exch def
+	} ifelse
+	edown { [-1 0 0 1 pwid 0] concat } if
+	0 0 moveto paperwidth 0 lineto paperwidth paperheight lineto 
+	0 paperheight lineto 0 0 lineto 1 setgray fill
+	xscale yscale scale
+	/orgmatrix matrix def
+	gsave 
+} def 
+/FMENDPAGE {
+	grestore 
+	pagesave restore
+	end 
+	showpage
+	} def 
+/FMFONTDEFINE { 
+	FrameDict begin
+	findfont 
+	ReEncode 
+	1 index exch 
+	definefont 
+	FMfonts 3 1 roll 
+	put
+	end 
+	} def 
+/FMFILLS {
+	FrameDict begin dup
+	array /fillvals exch def
+	dict /patCache exch def
+	end 
+	} def 
+/FMFILL {
+	FrameDict begin
+	 fillvals 3 1 roll put
+	end 
+	} def 
+/FMNORMALIZEGRAPHICS { 
+	newpath
+	0.0 0.0 moveto
+	1 setlinewidth
+	0 setlinecap
+	0 0 0 sethsbcolor
+	0 setgray 
+	} bind def
+	/fx FMLOCAL
+	/fy FMLOCAL
+	/fh FMLOCAL
+	/fw FMLOCAL
+	/llx FMLOCAL
+	/lly FMLOCAL
+	/urx FMLOCAL
+	/ury FMLOCAL
+/FMBEGINEPSF { 
+	end 
+	/FMEPSF save def 
+	/showpage {} def 
+% See Adobe's "PostScript Language Reference Manual, 2nd Edition", page 714.
+% "...the following operators MUST NOT be used in an EPS file:" (emphasis ours)
+	/banddevice {(banddevice) FMBADEPSF} def
+	/clear {(clear) FMBADEPSF} def
+	/cleardictstack {(cleardictstack) FMBADEPSF} def 
+	/copypage {(copypage) FMBADEPSF} def
+	/erasepage {(erasepage) FMBADEPSF} def
+	/exitserver {(exitserver) FMBADEPSF} def
+	/framedevice {(framedevice) FMBADEPSF} def
+	/grestoreall {(grestoreall) FMBADEPSF} def
+	/initclip {(initclip) FMBADEPSF} def
+	/initgraphics {(initgraphics) FMBADEPSF} def
+	/initmatrix {(initmatrix) FMBADEPSF} def
+	/quit {(quit) FMBADEPSF} def
+	/renderbands {(renderbands) FMBADEPSF} def
+	/setglobal {(setglobal) FMBADEPSF} def
+	/setpagedevice {(setpagedevice) FMBADEPSF} def
+	/setshared {(setshared) FMBADEPSF} def
+	/startjob {(startjob) FMBADEPSF} def
+	/lettertray {(lettertray) FMBADEPSF} def
+	/letter {(letter) FMBADEPSF} def
+	/lettersmall {(lettersmall) FMBADEPSF} def
+	/11x17tray {(11x17tray) FMBADEPSF} def
+	/11x17 {(11x17) FMBADEPSF} def
+	/ledgertray {(ledgertray) FMBADEPSF} def
+	/ledger {(ledger) FMBADEPSF} def
+	/legaltray {(legaltray) FMBADEPSF} def
+	/legal {(legal) FMBADEPSF} def
+	/statementtray {(statementtray) FMBADEPSF} def
+	/statement {(statement) FMBADEPSF} def
+	/executivetray {(executivetray) FMBADEPSF} def
+	/executive {(executive) FMBADEPSF} def
+	/a3tray {(a3tray) FMBADEPSF} def
+	/a3 {(a3) FMBADEPSF} def
+	/a4tray {(a4tray) FMBADEPSF} def
+	/a4 {(a4) FMBADEPSF} def
+	/a4small {(a4small) FMBADEPSF} def
+	/b4tray {(b4tray) FMBADEPSF} def
+	/b4 {(b4) FMBADEPSF} def
+	/b5tray {(b5tray) FMBADEPSF} def
+	/b5 {(b5) FMBADEPSF} def
+	FMNORMALIZEGRAPHICS 
+	[/fy /fx /fh /fw /ury /urx /lly /llx] {exch def} forall 
+	fx fw 2 div add fy fh 2 div add  translate
+	rotate
+	fw 2 div neg fh 2 div neg translate
+	fw urx llx sub div fh ury lly sub div scale 
+	llx neg lly neg translate 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count def 
+	} bind def
+/FMENDEPSF {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMEPSF restore
+	FrameDict begin 
+	} bind def
+FrameDict begin 
+/setmanualfeed {
+%%BeginFeature *ManualFeed True
+	 statusdict /manualfeed true put
+%%EndFeature
+	} bind def
+/max {2 copy lt {exch} if pop} bind def
+/min {2 copy gt {exch} if pop} bind def
+/inch {72 mul} def
+/pagedimen { 
+	paperheight sub abs 16 lt exch 
+	paperwidth sub abs 16 lt and
+	{/papername exch def} {pop} ifelse
+	} bind def
+	/papersizedict FMLOCAL
+/setpapername { 
+	/papersizedict 14 dict def 
+	papersizedict begin
+	/papername /unknown def 
+		/Letter 8.5 inch 11.0 inch pagedimen
+		/LetterSmall 7.68 inch 10.16 inch pagedimen
+		/Tabloid 11.0 inch 17.0 inch pagedimen
+		/Ledger 17.0 inch 11.0 inch pagedimen
+		/Legal 8.5 inch 14.0 inch pagedimen
+		/Statement 5.5 inch 8.5 inch pagedimen
+		/Executive 7.5 inch 10.0 inch pagedimen
+		/A3 11.69 inch 16.5 inch pagedimen
+		/A4 8.26 inch 11.69 inch pagedimen
+		/A4Small 7.47 inch 10.85 inch pagedimen
+		/B4 10.125 inch 14.33 inch pagedimen
+		/B5 7.16 inch 10.125 inch pagedimen
+	end
+	} bind def
+/papersize {
+	papersizedict begin
+		/Letter {lettertray letter} def
+		/LetterSmall {lettertray lettersmall} def
+		/Tabloid {11x17tray 11x17} def
+		/Ledger {ledgertray ledger} def
+		/Legal {legaltray legal} def
+		/Statement {statementtray statement} def
+		/Executive {executivetray executive} def
+		/A3 {a3tray a3} def
+		/A4 {a4tray a4} def
+		/A4Small {a4tray a4small} def
+		/B4 {b4tray b4} def
+		/B5 {b5tray b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	statusdict begin stopped end 
+	} bind def
+/manualpapersize {
+	papersizedict begin
+		/Letter {letter} def
+		/LetterSmall {lettersmall} def
+		/Tabloid {11x17} def
+		/Ledger {ledger} def
+		/Legal {legal} def
+		/Statement {statement} def
+		/Executive {executive} def
+		/A3 {a3} def
+		/A4 {a4} def
+		/A4Small {a4small} def
+		/B4 {b4} def
+		/B5 {b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	stopped 
+	} bind def
+/desperatepapersize {
+	statusdict /setpageparams known
+		{
+		paperwidth paperheight 0 1 
+		statusdict begin
+		{setpageparams} stopped 
+		end
+		} {true} ifelse 
+	} bind def
+/DiacriticEncoding [
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /space /exclam /quotedbl
+/numbersign /dollar /percent /ampersand /quotesingle /parenleft
+/parenright /asterisk /plus /comma /hyphen /period /slash /zero /one
+/two /three /four /five /six /seven /eight /nine /colon /semicolon
+/less /equal /greater /question /at /A /B /C /D /E /F /G /H /I /J /K
+/L /M /N /O /P /Q /R /S /T /U /V /W /X /Y /Z /bracketleft /backslash
+/bracketright /asciicircum /underscore /grave /a /b /c /d /e /f /g /h
+/i /j /k /l /m /n /o /p /q /r /s /t /u /v /w /x /y /z /braceleft /bar
+/braceright /asciitilde /.notdef /Adieresis /Aring /Ccedilla /Eacute
+/Ntilde /Odieresis /Udieresis /aacute /agrave /acircumflex /adieresis
+/atilde /aring /ccedilla /eacute /egrave /ecircumflex /edieresis
+/iacute /igrave /icircumflex /idieresis /ntilde /oacute /ograve
+/ocircumflex /odieresis /otilde /uacute /ugrave /ucircumflex
+/udieresis /dagger /.notdef /cent /sterling /section /bullet
+/paragraph /germandbls /registered /copyright /trademark /acute
+/dieresis /.notdef /AE /Oslash /.notdef /.notdef /.notdef /.notdef
+/yen /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/ordfeminine /ordmasculine /.notdef /ae /oslash /questiondown
+/exclamdown /logicalnot /.notdef /florin /.notdef /.notdef
+/guillemotleft /guillemotright /ellipsis /.notdef /Agrave /Atilde
+/Otilde /OE /oe /endash /emdash /quotedblleft /quotedblright
+/quoteleft /quoteright /.notdef /.notdef /ydieresis /Ydieresis
+/fraction /currency /guilsinglleft /guilsinglright /fi /fl /daggerdbl
+/periodcentered /quotesinglbase /quotedblbase /perthousand
+/Acircumflex /Ecircumflex /Aacute /Edieresis /Egrave /Iacute
+/Icircumflex /Idieresis /Igrave /Oacute /Ocircumflex /.notdef /Ograve
+/Uacute /Ucircumflex /Ugrave /dotlessi /circumflex /tilde /macron
+/breve /dotaccent /ring /cedilla /hungarumlaut /ogonek /caron
+] def
+/ReEncode { 
+	dup 
+	length 
+	dict begin 
+	{
+	1 index /FID ne 
+		{def} 
+		{pop pop} ifelse 
+	} forall 
+	0 eq {/Encoding DiacriticEncoding def} if 
+	currentdict 
+	end 
+	} bind def
+FMPColor 
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPCOLOR} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPCOLORc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUECOLOR } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUECOLORc } def
+	}
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPGRAY} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPGRAYc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUEGRAY } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUEGRAYc } def
+	}
+ifelse
+/K { 
+	FMPrintAllColorsAsBlack {
+		dup 1 eq 2 index 1 eq and 3 index 1 eq and not
+			{7 {pop} repeat 0 0 0 1 0 0 0} if
+	} if 
+	FrameCurColors astore 
+	pop combineColor
+} bind def
+/graymode true def
+	/bwidth FMLOCAL
+	/bpside FMLOCAL
+	/bstring FMLOCAL
+	/onbits FMLOCAL
+	/offbits FMLOCAL
+	/xindex FMLOCAL
+	/yindex FMLOCAL
+	/x FMLOCAL
+	/y FMLOCAL
+/setPatternMode {
+	FMLevel1 {
+		/bwidth  exch def
+		/bpside  exch def
+		/bstring exch def
+		/onbits 0 def  /offbits 0 def
+		freq sangle landscape {90 add} if 
+			{/y exch def
+			 /x exch def
+			 /xindex x 1 add 2 div bpside mul cvi def
+			 /yindex y 1 add 2 div bpside mul cvi def
+			 bstring yindex bwidth mul xindex 8 idiv add get
+			 1 7 xindex 8 mod sub bitshift and 0 ne FrameNegative {not} if
+			 {/onbits  onbits  1 add def 1}
+			 {/offbits offbits 1 add def 0}
+			 ifelse
+			}
+			setscreen
+		offbits offbits onbits add div FrameNegative {1.0 exch sub} if
+		/FrameCurGray exch def
+	} { 
+		pop pop
+		dup patCache exch known {
+			patCache exch get
+		} { 
+			dup
+			patDict /bstring 3 -1 roll put
+			patDict 
+			9 PatFreq screenIndex get div dup matrix scale
+			makepattern
+			dup 
+			patCache 4 -1 roll 3 -1 roll put
+		} ifelse
+		/FrameCurGray 0 def
+		/FrameCurPat exch def
+	} ifelse
+	/graymode false def
+	combineColor
+} bind def
+/setGrayScaleMode {
+	graymode not {
+		/graymode true def
+		FMLevel1 {
+			setCurrentScreen
+		} if
+	} if
+	/FrameCurGray exch def
+	combineColor
+} bind def
+/normalize {
+	transform round exch round exch itransform
+	} bind def
+/dnormalize {
+	dtransform round exch round exch idtransform
+	} bind def
+/lnormalize { 
+	0 dtransform exch cvi 2 idiv 2 mul 1 add exch idtransform pop
+	} bind def
+/H { 
+	lnormalize setlinewidth
+	} bind def
+/Z {
+	setlinecap
+	} bind def
+	
+/PFill {
+	graymode FMLevel1 or not {
+		gsave 1 setgray eofill grestore
+	} if
+} bind def
+/PStroke {
+	graymode FMLevel1 or not {
+		gsave 1 setgray stroke grestore
+	} if
+	stroke
+} bind def
+	/fillvals FMLOCAL
+/X { 
+	fillvals exch get
+	dup type /stringtype eq
+	{8 1 setPatternMode} 
+	{setGrayScaleMode}
+	ifelse
+	} bind def
+/V { 
+	PFill gsave eofill grestore
+	} bind def
+/Vclip {
+	clip
+	} bind def
+/Vstrk {
+	currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/N { 
+	PStroke
+	} bind def
+/Nclip {
+	strokepath clip newpath
+	} bind def
+/Nstrk {
+	currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/M {newpath moveto} bind def
+/E {lineto} bind def
+/D {curveto} bind def
+/O {closepath} bind def
+	/n FMLOCAL
+/L { 
+ 	/n exch def
+	newpath
+	normalize
+	moveto 
+	2 1 n {pop normalize lineto} for
+	} bind def
+/Y { 
+	L 
+	closepath
+	} bind def
+	/x1 FMLOCAL
+	/x2 FMLOCAL
+	/y1 FMLOCAL
+	/y2 FMLOCAL
+/R { 
+	/y2 exch def
+	/x2 exch def
+	/y1 exch def
+	/x1 exch def
+	x1 y1
+	x2 y1
+	x2 y2
+	x1 y2
+	4 Y 
+	} bind def
+	/rad FMLOCAL
+/rarc 
+	{rad 
+	 arcto
+	} bind def
+/RR { 
+	/rad exch def
+	normalize
+	/y2 exch def
+	/x2 exch def
+	normalize
+	/y1 exch def
+	/x1 exch def
+	mark
+	newpath
+	{
+	x1 y1 rad add moveto
+	x1 y2 x2 y2 rarc
+	x2 y2 x2 y1 rarc
+	x2 y1 x1 y1 rarc
+	x1 y1 x1 y2 rarc
+	closepath
+	} stopped {x1 y1 x2 y2 R} if 
+	cleartomark
+	} bind def
+/RRR { 
+	/rad exch def
+	normalize /y4 exch def /x4 exch def
+	normalize /y3 exch def /x3 exch def
+	normalize /y2 exch def /x2 exch def
+	normalize /y1 exch def /x1 exch def
+	newpath
+	normalize moveto 
+	mark
+	{
+	x2 y2 x3 y3 rarc
+	x3 y3 x4 y4 rarc
+	x4 y4 x1 y1 rarc
+	x1 y1 x2 y2 rarc
+	closepath
+	} stopped
+	 {x1 y1 x2 y2 x3 y3 x4 y4 newpath moveto lineto lineto lineto closepath} if
+	cleartomark
+	} bind def
+/C { 
+	grestore
+	gsave
+	R 
+	clip
+	setCurrentScreen
+} bind def
+/CP { 
+	grestore
+	gsave
+	Y 
+	clip
+	setCurrentScreen
+} bind def
+	/FMpointsize FMLOCAL
+/F { 
+	FMfonts exch get
+	FMpointsize scalefont
+	setfont
+	} bind def
+/Q { 
+	/FMpointsize exch def
+	F 
+	} bind def
+/T { 
+	moveto show
+	} bind def
+/RF { 
+	rotate
+	0 ne {-1 1 scale} if
+	} bind def
+/TF { 
+	gsave
+	moveto 
+	RF
+	show
+	grestore
+	} bind def
+/P { 
+	moveto
+	0 32 3 2 roll widthshow
+	} bind def
+/PF { 
+	gsave
+	moveto 
+	RF
+	0 32 3 2 roll widthshow
+	grestore
+	} bind def
+/S { 
+	moveto
+	0 exch ashow
+	} bind def
+/SF { 
+	gsave
+	moveto
+	RF
+	0 exch ashow
+	grestore
+	} bind def
+/B { 
+	moveto
+	0 32 4 2 roll 0 exch awidthshow
+	} bind def
+/BF { 
+	gsave
+	moveto
+	RF
+	0 32 4 2 roll 0 exch awidthshow
+	grestore
+	} bind def
+/G { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	PFill fill
+	grestore
+	} bind def
+/Gstrk {
+	savematrix
+    newpath
+    2 index 2 div add exch 3 index 2 div sub exch 
+    normalize 2 index 2 div sub exch 3 index 2 div add exch 
+    translate
+    scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    restorematrix
+    currentlinewidth exch setlinewidth PStroke setlinewidth
+    } bind def
+/Gclip { 
+	newpath
+	savematrix
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	clip newpath
+	restorematrix
+	} bind def
+/GG { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	rotate 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath
+	PFill
+	fill
+	grestore
+	} bind def
+/GGclip { 
+	savematrix
+	newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath
+	clip newpath
+	restorematrix
+	} bind def
+/GGstrk { 
+	savematrix
+    newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath 
+	restorematrix
+    currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/A { 
+	gsave
+	savematrix
+	newpath
+	2 index 2 div add exch 3 index 2 div sub exch 
+	normalize 2 index 2 div sub exch 3 index 2 div add exch 
+	translate 
+	scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	restorematrix
+	PStroke
+	grestore
+	} bind def
+/Aclip {
+	newpath
+	savematrix
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	strokepath clip newpath
+	restorematrix
+} bind def
+/Astrk {
+	Gstrk
+} bind def
+/AA { 
+	gsave
+	savematrix
+	newpath
+	
+	3 index 2 div add exch 4 index 2 div sub exch 
+	
+	normalize 3 index 2 div sub exch 4 index 2 div add exch
+	translate 
+	rotate 
+	scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	restorematrix
+	PStroke
+	grestore
+	} bind def
+/AAclip {
+	savematrix
+	newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath
+	strokepath clip newpath
+	restorematrix
+} bind def
+/AAstrk {
+	GGstrk
+} bind def
+	/x FMLOCAL
+	/y FMLOCAL
+	/w FMLOCAL
+	/h FMLOCAL
+	/xx FMLOCAL
+	/yy FMLOCAL
+	/ww FMLOCAL
+	/hh FMLOCAL
+	/FMsaveobject FMLOCAL
+	/FMoptop FMLOCAL
+	/FMdicttop FMLOCAL
+/BEGINPRINTCODE { 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count 7 sub def 
+	/FMsaveobject save def
+	userdict begin 
+	/showpage {} def 
+	FMNORMALIZEGRAPHICS 
+	3 index neg 3 index neg translate
+	} bind def
+/ENDPRINTCODE {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMsaveobject restore 
+	} bind def
+/gn { 
+	0 
+	{	46 mul 
+		cf read pop 
+		32 sub 
+		dup 46 lt {exit} if 
+		46 sub add 
+		} loop
+	add 
+	} bind def
+	/str FMLOCAL
+/cfs { 
+	/str sl string def 
+	0 1 sl 1 sub {str exch val put} for 
+	str def 
+	} bind def
+/ic [ 
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0
+	{0 hx} {1 hx} {2 hx} {3 hx} {4 hx} {5 hx} {6 hx} {7 hx} {8 hx} {9 hx}
+	{10 hx} {11 hx} {12 hx} {13 hx} {14 hx} {15 hx} {16 hx} {17 hx} {18 hx}
+	{19 hx} {gn hx} {0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12}
+	{13} {14} {15} {16} {17} {18} {19} {gn} {0 wh} {1 wh} {2 wh} {3 wh}
+	{4 wh} {5 wh} {6 wh} {7 wh} {8 wh} {9 wh} {10 wh} {11 wh} {12 wh}
+	{13 wh} {14 wh} {gn wh} {0 bl} {1 bl} {2 bl} {3 bl} {4 bl} {5 bl} {6 bl}
+	{7 bl} {8 bl} {9 bl} {10 bl} {11 bl} {12 bl} {13 bl} {14 bl} {gn bl}
+	{0 fl} {1 fl} {2 fl} {3 fl} {4 fl} {5 fl} {6 fl} {7 fl} {8 fl} {9 fl}
+	{10 fl} {11 fl} {12 fl} {13 fl} {14 fl} {gn fl}
+	] def
+	/sl FMLOCAL
+	/val FMLOCAL
+	/ws FMLOCAL
+	/im FMLOCAL
+	/bs FMLOCAL
+	/cs FMLOCAL
+	/len FMLOCAL
+	/pos FMLOCAL
+/ms { 
+	/sl exch def 
+	/val 255 def 
+	/ws cfs 
+	/im cfs 
+	/val 0 def 
+	/bs cfs 
+	/cs cfs 
+	} bind def
+400 ms 
+/ip { 
+	is 
+	0 
+	cf cs readline pop 
+	{	ic exch get exec 
+		add 
+		} forall 
+	pop 
+	
+	} bind def
+/rip { 
+	   
+	  
+	  bis ris copy pop 
+      is
+      0
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop 
+	  ris gis copy pop 
+	  dup is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop
+	  gis bis copy pop 
+	  dup add is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+      pop 
+      
+      } bind def
+/wh { 
+	/len exch def 
+	/pos exch def 
+	ws 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/bl { 
+	/len exch def 
+	/pos exch def 
+	bs 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/s1 1 string def
+/fl { 
+	/len exch def 
+	/pos exch def 
+	/val cf s1 readhexstring pop 0 get def
+	pos 1 pos len add 1 sub {im exch val put} for
+	pos len 
+	} bind def
+/hx { 
+	3 copy getinterval 
+	cf exch readhexstring pop pop 
+	} bind def
+	/h FMLOCAL
+	/w FMLOCAL
+	/d FMLOCAL
+	/lb FMLOCAL
+	/bitmapsave FMLOCAL
+	/is FMLOCAL
+	/cf FMLOCAL
+/wbytes { 
+      dup dup
+      24 eq { pop pop 3 mul }
+      { 8 eq {pop} {1 eq {7 add 8 idiv} {3 add 4 idiv} ifelse} ifelse } ifelse
+	} bind def
+/BEGINBITMAPBWc { 
+	1 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAPGRAYc { 
+	8 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAP2BITc { 
+	2 {} COMMONBITMAPc
+	} bind def
+/COMMONBITMAPc { 
+		 
+	/r exch def
+	/d exch def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	r                    
+	/is im 0 lb getinterval def 
+	ws 0 lb getinterval is copy pop 
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{ip} image 
+	bitmapsave restore 
+	grestore
+	} bind def
+/BEGINBITMAPBW { 
+	1 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAPGRAY { 
+	8 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAP2BIT { 
+	2 {} COMMONBITMAP
+	} bind def
+/COMMONBITMAP { 
+	/r exch def
+	/d exch def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/bitmapsave save def 
+	r                    
+	/is w d wbytes string def
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{cf is readhexstring pop} image
+	bitmapsave restore 
+	grestore
+	} bind def
+/ngrayt 256 array def
+/nredt 256 array def
+/nbluet 256 array def
+/ngreent 256 array def
+	/gryt FMLOCAL
+	/blut FMLOCAL
+	/grnt FMLOCAL
+	/redt FMLOCAL
+	/indx FMLOCAL
+	/cynu FMLOCAL
+	/magu FMLOCAL
+	/yelu FMLOCAL
+	/k FMLOCAL
+	/u FMLOCAL
+FMLevel1 {
+/colorsetup {
+	currentcolortransfer
+	/gryt exch def
+	/blut exch def
+	/grnt exch def
+	/redt exch def
+	0 1 255 {
+		/indx exch def
+		/cynu 1 red indx get 255 div sub def
+		/magu 1 green indx get 255 div sub def
+		/yelu 1 blue indx get 255 div sub def
+		/k cynu magu min yelu min def
+		/u k currentundercolorremoval exec def
+%		/u 0 def
+		nredt indx 1 0 cynu u sub max sub redt exec put
+		ngreent indx 1 0 magu u sub max sub grnt exec put
+		nbluet indx 1 0 yelu u sub max sub blut exec put
+		ngrayt indx 1 k currentblackgeneration exec sub gryt exec put
+	} for
+	{255 mul cvi nredt exch get}
+	{255 mul cvi ngreent exch get}
+	{255 mul cvi nbluet exch get}
+	{255 mul cvi ngrayt exch get}
+	setcolortransfer
+	{pop 0} setundercolorremoval
+	{} setblackgeneration
+	} bind def
+}
+{
+/colorSetup2 {
+	[ /Indexed /DeviceRGB 255 
+		{dup red exch get 255 div 
+		 exch dup green exch get 255 div 
+		 exch blue exch get 255 div}
+	] setcolorspace
+} bind def
+} ifelse
+	/tran FMLOCAL
+/fakecolorsetup {
+	/tran 256 string def
+	0 1 255 {/indx exch def 
+		tran indx
+		red indx get 77 mul
+		green indx get 151 mul
+		blue indx get 28 mul
+		add add 256 idiv put} for
+	currenttransfer
+	{255 mul cvi tran exch get 255.0 div}
+	exch concatprocs settransfer
+} bind def
+/BITMAPCOLOR { 
+	/d 8 def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/bitmapsave save def
+	FMLevel1 {	
+		colorsetup
+		/is w d wbytes string def
+		/cf currentfile def 
+		w h d [w 0 0 h neg 0 h] 
+		{cf is readhexstring pop} {is} {is} true 3 colorimage 
+	} {
+		colorSetup2
+		/is w d wbytes string def
+		/cf currentfile def 
+		7 dict dup begin
+			/ImageType 1 def
+			/Width w def
+			/Height h def
+			/ImageMatrix [w 0 0 h neg 0 h] def
+			/DataSource {cf is readhexstring pop} bind def
+			/BitsPerComponent d def
+			/Decode [0 255] def
+		end image	
+	} ifelse
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPCOLORc { 
+	/d 8 def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	FMLevel1 {	
+		colorsetup
+		/is im 0 lb getinterval def 
+		ws 0 lb getinterval is copy pop 
+		/cf currentfile def 
+		w h d [w 0 0 h neg 0 h] 
+		{ip} {is} {is} true 3 colorimage
+	} {
+		colorSetup2
+		/is im 0 lb getinterval def 
+		ws 0 lb getinterval is copy pop 
+		/cf currentfile def 
+		7 dict dup begin
+			/ImageType 1 def
+			/Width w def
+			/Height h def
+			/ImageMatrix [w 0 0 h neg 0 h] def
+			/DataSource {ip} bind def
+			/BitsPerComponent d def
+			/Decode [0 255] def
+		end image	
+	} ifelse
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPTRUECOLORc { 
+	/d 24 def
+        gsave
+ 	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+        /bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/ris im 0 w getinterval def	
+	/gis im w w getinterval def	
+	/bis im w 2 mul w getinterval def 
+        
+        ws 0 lb getinterval is copy pop 
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        {w rip pop ris} {gis} {bis} true 3 colorimage
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUECOLOR { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/h exch def /w exch def
+        /bitmapsave save def 
+        /is w string def
+        /gis w string def
+        /bis w string def
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        { cf is readhexstring pop } 
+        { cf gis readhexstring pop } 
+        { cf bis readhexstring pop } 
+        true 3 colorimage 
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUEGRAYc { 
+	/d 24 def
+        gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+        /bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/ris im 0 w getinterval def	
+	/gis im w w getinterval def	
+	/bis im w 2 mul w getinterval def 
+        ws 0 lb getinterval is copy pop 
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        {w rip pop ris gis bis w gray} image
+        bitmapsave restore 
+        grestore
+        } bind def
+/ww FMLOCAL
+/r FMLOCAL
+/g FMLOCAL
+/b FMLOCAL
+/i FMLOCAL
+/gray { 
+        /ww exch def
+        /b exch def
+        /g exch def
+        /r exch def
+        0 1 ww 1 sub { /i exch def r i get .299 mul g i get .587 mul
+			b i get .114 mul add add r i 3 -1 roll floor cvi put } for
+        r
+        } bind def
+/BITMAPTRUEGRAY { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/h exch def /w exch def
+        /bitmapsave save def 
+        /is w string def
+        /gis w string def
+        /bis w string def
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        { cf is readhexstring pop 
+          cf gis readhexstring pop 
+          cf bis readhexstring pop w gray}  image
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPGRAY { 
+	8 {fakecolorsetup} COMMONBITMAP
+	} bind def
+/BITMAPGRAYc { 
+	8 {fakecolorsetup} COMMONBITMAPc
+	} bind def
+/ENDBITMAP {
+	} bind def
+end 
+	/ALDsave FMLOCAL
+	/ALDmatrix matrix def ALDmatrix currentmatrix pop
+/StartALD {
+	/ALDsave save def
+	 savematrix
+	 ALDmatrix setmatrix
+	} bind def
+/InALD {
+	 restorematrix
+	} bind def
+/DoneALD {
+	 ALDsave restore
+	} bind def
+/I { setdash } bind def
+/J { [] 0 setdash } bind def
+%%EndProlog
+%%BeginSetup
+(4.0) FMVERSION
+1 1 0 0 612 792 0 1 14 FMDOCUMENT
+0 0 /Times-Roman FMFONTDEFINE
+1 0 /Times-Bold FMFONTDEFINE
+2 0 /Times-Italic FMFONTDEFINE
+3 0 /Times-BoldItalic FMFONTDEFINE
+4 0 /Helvetica FMFONTDEFINE
+5 1 /Symbol FMFONTDEFINE
+32 FMFILLS
+0 0 FMFILL
+1 0.1 FMFILL
+2 0.3 FMFILL
+3 0.5 FMFILL
+4 0.7 FMFILL
+5 0.9 FMFILL
+6 0.97 FMFILL
+7 1 FMFILL
+8 <0f1e3c78f0e1c387> FMFILL
+9 <0f87c3e1f0783c1e> FMFILL
+10 <cccccccccccccccc> FMFILL
+11 <ffff0000ffff0000> FMFILL
+12 <8142241818244281> FMFILL
+13 <03060c183060c081> FMFILL
+14 <8040201008040201> FMFILL
+16 1 FMFILL
+17 0.9 FMFILL
+18 0.7 FMFILL
+19 0.5 FMFILL
+20 0.3 FMFILL
+21 0.1 FMFILL
+22 0.03 FMFILL
+23 0 FMFILL
+24 <f0e1c3870f1e3c78> FMFILL
+25 <f0783c1e0f87c3e1> FMFILL
+26 <3333333333333333> FMFILL
+27 <0000ffff0000ffff> FMFILL
+28 <7ebddbe7e7dbbd7e> FMFILL
+29 <fcf9f3e7cf9f3f7e> FMFILL
+30 <7fbfdfeff7fbfdfe> FMFILL
+%%EndSetup
+%%Page: "12" 1
+%%BeginPaperSize: Letter
+%%EndPaperSize
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+J
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(CLAS Event Format with BOS V) 108 41.84 T
+(ersion 1.00 \050October 1, 1994\051) 214.9 41.84 T
+(                                            March 20, 1995) 309.54 41.84 T
+(12) 532 41.84 T
+1 14 Q
+(8.2  Contents of Monte Carlo Input Bank) 108 710.67 T
+0 12 Q
+-0.47 (T) 108 684 P
+-0.47 (o evaluate the combined ef) 114.49 684 P
+-0.47 (fect of detector emulation and event reconstruction, the Monte) 241.67 684 P
+(Carlo procedures should supply the kinematic track parameters obtained from the event) 108 670 T
+(generator) 108 656 T
+(. This information has to be stored in the \324MCIN\325 bank which has the following) 152.65 656 T
+(structure:) 108 642 T
+1 14 Q
+(MCIN) 108 614.67 T
+0 12 Q
+(:) 146.88 614.67 T
+0 14 Q
+( X) 159.21 614.67 T
+0 11.2 Q
+(1) 172.82 611.17 T
+0 14 Q
+(   X) 178.42 614.67 T
+0 11.2 Q
+(2) 199.03 611.17 T
+0 14 Q
+(   X) 204.63 614.67 T
+0 11.2 Q
+(3) 225.24 611.17 T
+0 14 Q
+(   C) 230.84 614.67 T
+0 11.2 Q
+(1) 250.68 611.17 T
+0 14 Q
+(   C) 256.28 614.67 T
+0 11.2 Q
+(2) 276.11 611.17 T
+0 14 Q
+(   C) 281.71 614.67 T
+0 11.2 Q
+(3) 301.55 611.17 T
+0 14 Q
+(   P   M   Q   LID) 307.15 614.67 T
+0 12 Q
+(                  with  X) 108 597.43 T
+0 9.6 Q
+(i) 198 594.43 T
+0 12 Q
+(    =  event coordinate at tar) 203.07 597.43 T
+(get location  \050x, y) 334.59 597.43 T
+(, z in section 2\051) 418.13 597.43 T
+(                           C) 108 581.23 T
+0 9.6 Q
+(i) 197 578.23 T
+0 12 Q
+(    =  direction cosines) 202.07 581.23 T
+(                           P      =  momentum) 108 565.03 T
+(                           M     =  mass) 108 551.03 T
+(                           Q      =  char) 108 537.03 T
+(ge) 248.87 537.03 T
+(                           LID  =  Lund particle ID) 108 523.03 T
+-0.12 (For n generated particles there are n such rows in the MCIN bank. The format of the bank) 108 497.03 P
+(has to be declared as \3249F) 108 483.03 T
+(,I\325. The particle ID for the electron for example can be obtained) 226.01 483.03 T
+-0.23 (by the function call LID = JPCODE\050\324e-\325\051. This function is an Entry to the PMASS subrou-) 108 469.03 P
+(tine in libh1util.a. Other standard particle character strings are \324e+\325, \324pi-\325, \324pi+\325, \324p+\325, \324n\325,) 108 455.03 T
+(\324gamma\325 etc.) 108 441.03 T
+FMENDPAGE
+%%EndPage: "12" 1
+%%Page: "11" 2
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(CLAS Event Format with BOS V) 108 41.84 T
+(ersion 1.00 \050October 1, 1994\051) 214.9 41.84 T
+(                                            March 20, 1995) 309.54 41.84 T
+(1) 532.3 41.84 T
+(1) 536 41.84 T
+0 12 Q
+(The HEAD bank consists only of Integers and is followed by other banks. The V) 108 168.68 T
+(ersion) 494.94 168.68 T
+-0.31 (Number will initially be set to zero. Experimentally triggered and simulated events supply) 108 154.68 P
+(the raw event banks discussed above. In the experimental setting one will have a number) 108 140.68 T
+(of \322control\323 events interspersed with \322physics\323 events \050raw data\051. Some of these control) 108 126.68 T
+-0.37 (events may arise from the CODA control sequence and are identi\336ed as shown in the table) 108 112.68 P
+(above.) 108 98.68 T
+1 F
+(Column) 121.78 659.68 T
+( \050word\051) 121.78 640.68 T
+(Parameter) 175.78 659.68 T
+(Format) 276.58 659.68 T
+(Description) 330.58 659.68 T
+0 F
+(      1) 121.78 622.68 T
+(      2) 121.78 603.68 T
+(      3) 121.78 584.68 T
+(      4) 121.78 565.68 T
+(      5) 121.78 546.68 T
+(      6) 121.78 428.68 T
+(      7) 121.78 409.68 T
+(      8) 121.78 250.68 T
+(V) 175.78 622.68 T
+(ersion Number) 183.11 622.68 T
+(Run Number) 175.78 603.68 T
+(Event Number) 175.78 584.68 T
+(Event T) 175.78 565.68 T
+(ime) 213.68 565.68 T
+(Event T) 175.78 546.68 T
+(ype) 213.26 546.68 T
+(ROC Status) 175.78 428.68 T
+(Event Class) 175.78 409.68 T
+(Event W) 175.78 250.68 T
+(eight) 217.14 250.68 T
+(    I) 276.58 622.68 T
+(    I) 276.58 603.68 T
+(    I) 276.58 584.68 T
+(    I) 276.58 565.68 T
+(    I) 276.58 546.68 T
+(    I) 276.58 428.68 T
+(    I) 276.58 409.68 T
+(    I) 276.58 250.68 T
+(V) 330.58 622.68 T
+(ersion of event format) 337.91 622.68 T
+(Monotonically increasing) 330.58 603.68 T
+(Starting with 1 at run begin) 330.58 584.68 T
+-0.05 (Unix time = seconds as of January 1, 1970) 330.58 565.68 P
+(De\336ned by on-line system or MC run:) 330.58 546.68 T
+(=0   Control Records) 330.58 527.68 T
+(>0  T) 330.58 508.68 T
+(riggered \050Physics\051 Events) 356.26 508.68 T
+(<0  Monte Carlo Events:) 330.58 489.68 T
+(-1 = SDA) 330.58 475.68 T
+(-2 = GEANT) 330.58 461.68 T
+(-3 = ClasSim) 330.58 447.68 T
+(32 bit readout controller status*) 330.58 428.68 T
+(Event Classi\336cation from event builder) 330.58 409.68 T
+(containing the 4 bit trigger code plus user) 330.58 395.68 T
+(de\336ned bits.* This translates into physics) 330.58 381.68 T
+(events from 1 to 15 and CODA control) 330.58 367.68 T
+(\337ow records with values greater than 15.) 330.58 353.68 T
+(1-15  Physics Events) 330.58 339.68 T
+(    16  Sync Event) 330.58 325.68 T
+(    17  Prestart Event) 330.58 311.68 T
+(    18  Go Event) 330.58 297.68 T
+(    19  Pause Event) 330.58 283.68 T
+(    20  End Event) 330.58 269.68 T
+(Prescale factor for this Event Class \050T) 330.58 250.68 T
+(rig-) 512.78 250.68 T
+(ger T) 330.58 236.68 T
+(ype\051 = Number of triggers to get an) 355.39 236.68 T
+(event.) 330.58 222.68 T
+115.78 671.43 115.78 216.93 2 L
+V
+0.5 H
+0 Z
+N
+169.78 671.93 169.78 216.43 2 L
+V
+N
+270.58 671.93 270.58 216.43 2 L
+V
+N
+324.58 671.93 324.58 216.43 2 L
+V
+N
+540.58 671.43 540.58 216.93 2 L
+V
+N
+115.53 671.68 540.83 671.68 2 L
+V
+N
+115.53 634.68 540.83 634.68 2 L
+V
+N
+115.53 216.68 540.83 216.68 2 L
+V
+N
+108 63 540 720 C
+280.07 683.68 367.93 708 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 14 Q
+0 X
+0 0 0 1 0 0 0 K
+(HEAD Bank) 286.07 692.62 T
+108 63 540 720 C
+0 -208 1000 792 C
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(* See the Appendices in the CODA manual for details.) 183.71 198.82 T
+FMENDPAGE
+%%EndPage: "11" 2
+%%Page: "10" 3
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(CLAS Event Format with BOS V) 108 41.84 T
+(ersion 1.00 \050October 1, 1994\051) 214.9 41.84 T
+(                                            March 20, 1995) 309.54 41.84 T
+(10) 532 41.84 T
+1 16 Q
+(8.0  De\336nition of Related Banks) 108 709.33 T
+0 12 Q
+(An important feature of BOS/FP) 108 682 T
+(ACK is to access events or other data selectively) 263.56 682 T
+(. On an) 496.73 682 T
+-0.19 (external medium \050disk or tape\051 the events carry a logical records header) 108 668 P
+-0.19 (, followed by a set) 449.64 668 P
+(\050group\051 of data segments \050see FP) 108 654 T
+(ACK manual\051. W) 265.2 654 T
+(ith the data segment headers stripped) 349.7 654 T
+(of) 108 640 T
+(f and converted to bank headers, this set \050list\051 of banks is presented to the user in the) 117.78 640 T
+(Common BCS as an event or other collection of data elements. The selection process can) 108 626 T
+(occur before the event is read in completely by using information in the logical record) 108 612 T
+(header) 108 598 T
+(. This information consists of the run type, run number) 139.32 598 T
+(, event number and event) 401.82 598 T
+(classi\336cation. The run type is a string of up to 8 characters, e.g. \324RUNEVENT\325, \324RUN-) 108 584 T
+(CALIB\325, \324RUNTEST\325, \324MCEVENT\325 etc.. Run and event numbers are integers and the) 108 570 T
+(event classi\336cation is a bit string \050up to 31\051 which will be de\336ned later and may contain) 108 556 T
+(some hardware and software \322trigger\323 bits.) 108 542 T
+(Some of the information in the logical record header is available to the user in the Event) 108 516 T
+(Header Bank which by convention is the \336rst bank to be packed into or extracted from a) 108 502 T
+(logical record. This HEAD bank contains additional information which is of central) 108 488 T
+(importance for the event and which can be used to further classify or select the events.) 108 474 T
+-0.04 (In the following, the contents of the HEAD bank will be presented as well as the contents) 108 448 P
+-0.29 (of the MCIN bank which describes the kinematic input to Monte Carlo programs which in) 108 434 P
+(turn produce \322simulated\323 raw event banks.) 108 420 T
+1 14 Q
+(8.1  Contents of the Event Header Bank) 108 386.67 T
+0 12 Q
+(This section describes the format of the event headers to be used with CLAS events writ-) 108 360 T
+(ten in the BOS format. The major considerations involved in setting this format are pro-) 108 346 T
+-0.39 (viding for the begin-run, end-run and control data processing desired and being able to use) 108 332 P
+-0.23 (some of the functionality for automatic event sequencing provided by the FSEQx routines) 108 318 P
+(\050x = R or W for Read or W) 108 304 T
+(rite\051.) 237.59 304 T
+(BOS treats records as the basic building blocks for I/O on secondary storage, CODA I/O) 108 278 T
+-0.26 (operates over network links where it uses event streams which contain event banks. In our) 108 264 P
+(event processing applications we deal with logical records, which contain a collection or) 108 250 T
+(set of banks, which we refer to as \322events\323.) 108 236 T
+(The FSEQx routines place some restrictions on the contents of event headers, namely) 108 210 T
+(,) 517.49 210 T
+(they must contain the Run number and the event number) 108 196 T
+(. CODA puts several dif) 379.64 196 T
+(ferent) 495.74 196 T
+(types of events in the event stream. These include physics events, prestart events, go) 108 182 T
+-0.45 (events, pause events and end events. Which of these events ends up on the output stream is) 108 168 P
+(user con\336gurable and will be decided by the on-line standard operating procedures.) 108 154 T
+-0.34 (T) 108 128 P
+-0.34 (o accommodate all of these event types, the BOS bank contents shown in the table on the) 114.49 128 P
+1 F
+(next page) 108 114 T
+0 F
+( will be used. This bank is named \324HEAD\325, and by convention is the \336rst bank) 157 114 T
+(in a logical record.) 108 100 T
+FMENDPAGE
+%%EndPage: "10" 3
+%%Page: "9" 4
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(CLAS Event Format with BOS V) 108 41.84 T
+(ersion 1.00 \050October 1, 1994\051) 214.9 41.84 T
+(                                            March 20, 1995) 309.54 41.84 T
+(9) 536 41.84 T
+0 12 Q
+(#---------------------------------------------------------------------) 108 698 T
+(# This variable lists ALL libraries that must be loaded.) 108 684 T
+(     LIBS = $\050BOSLIBS\051 $\050CERNLIBS\051 $\050STDLIBS\051) 108 656 T
+(#---------------------------------------------------) 108 628 T
+(#program  name) 108 614 T
+(     PROGRAM = ber) 108 586 T
+(#---------------------------------------------------------------------) 108 558 T
+(#the source \336les that make up the application) 108 544 T
+(     SRCS = bos_main.c bos_utilities.c bos_event.c) 108 516 T
+(#---------------------------------------------------------------------) 108 488 T
+(# The object \336les \050via macro substitution\051) 108 474 T
+(     OBJS = ${SRCS:.c=.o}) 108 446 T
+(#---------------------------------------------------------------------) 108 418 T
+(#how to make a .o \336le from a .c \336le) 108 404 T
+(.c.o :) 108 376 T
+($\050CC\051 $\050INCLUDES\051 $\050CFLAGS\051 $<) 144 362 T
+(#---------------------------------------------------------------------) 108 334 T
+(# This rule generates the \050optimized\051 executable using the object \336les and libraries.) 108 320 T
+(     $\050PROGRAM\051: $\050OBJS\051) 108 292 T
+(cc -o $@ $\050OBJS\051 $\050LIBS\051) 144 278 T
+(#---------------------------------------------------------------------) 108 250 T
+(#additional dependencies) 108 236 T
+(bos_main.o:) 108 208 T
+( bos.h) 189 208 T
+(bos_utilities.o:) 108 194 T
+( bos.h) 189 194 T
+(bos_event.o:) 108 180 T
+( bos.h) 189 180 T
+FMENDPAGE
+%%EndPage: "9" 4
+%%Page: "8" 5
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(CLAS Event Format with BOS V) 108 41.84 T
+(ersion 1.00 \050October 1, 1994\051) 214.9 41.84 T
+(                                            March 20, 1995) 309.54 41.84 T
+(8) 536 41.84 T
+2 12 Q
+(ber) 108 712 T
+0 F
+( consists of the three \336les:) 124 712 T
+2 F
+(bos_main.c,  bos_utilities.c, and  bos_event.c.) 251.99 712 T
+0 F
+(The) 475.31 712 T
+2 F
+(Make\336le) 496.97 712 T
+0 F
+(shows how the BOS/FP) 108 698 T
+(ACK libraries) 221.24 698 T
+2 F
+(libh1util.a, libbos.a, libfpack.a) 291.9 698 T
+0 F
+(, as well as the) 439.58 698 T
+(CERN library) 108 684 T
+2 F
+(libpacklib.a) 178 684 T
+0 F
+( are linked.) 235 684 T
+-0.15 (This) 108 656 P
+2 F
+-0.15 (Make\336le) 132.19 656 P
+0 F
+-0.15 ( has been tested only on the HP system. Potential machine dependencies are:) 173.5 656 P
+(1\051) 144 628 T
+(The library) 162 628 T
+2 F
+( libcl.a) 215.65 628 T
+0 F
+( is an HP-speci\336c library required by \322C\323 programs that) 248.99 628 T
+(make FOR) 144 614 T
+(TRAN calls.) 195.61 614 T
+(2\051) 144 586 T
+(On some systems, it may be necessary to use f77 rather than cc to link all the) 162 586 T
+(object modules into an executable.) 144 572 T
+(#---------------------------------------------------------------------) 108 544 T
+(#de\336ne the C compiler) 108 530 T
+(     CC = cc) 108 502 T
+(#---------------------------------------------------------------------) 108 488 T
+(# This variable contains the \337ags passed to cc) 108 474 T
+(     CFLAGS = -O -c) 108 446 T
+(#---------------------------------------------------------------------) 108 432 T
+(# This variable points to the main library directory) 108 418 T
+(     LIBDIR = /usr/lib) 108 390 T
+(#---------------------------------------------------------------------) 108 362 T
+(# This variable points to the main include directory) 108 348 T
+(     INCLUDEDIR = /usr/include) 108 320 T
+(#---------------------------------------------------------------------) 108 292 T
+(# This variable lists the standard C libraries that must be loaded. \050note that libcl.a) 108 278 T
+(  is required for the fortran-C interface\051) 108 264 T
+(     STDLIBS =  -lcl -lm) 108 236 T
+(#---------------------------------------------------------------------) 108 208 T
+(# These variables list bos path and libraries) 108 194 T
+-0.12 (    BOSP) 108 166 P
+-0.12 (A) 148.41 166 P
+-0.12 (TH = /usr/site4/classw/bosfp/lib.hp [to be changed with new directory structure]) 155.74 166 P
+(    BOSLIBS =  -L$\050BOSP) 108 152 T
+(A) 235.34 152 T
+(TH\051 -lh1util -lbos -lfpack) 242.68 152 T
+(#---------------------------------------------------------------------) 108 124 T
+(# These variables list cern path and libraries.) 108 110 T
+(    CERNP) 108 82 T
+(A) 157.57 82 T
+(TH = /usr/site3/cern/hp700_ux90/94a/lib) 164.9 82 T
+(    CERNLIBS = -L$\050CERNP) 108 68 T
+(A) 249.67 68 T
+(TH\051 -lpacklib) 257 68 T
+FMENDPAGE
+%%EndPage: "8" 5
+%%Page: "7" 6
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(CLAS Event Format with BOS V) 108 41.84 T
+(ersion 1.00 \050October 1, 1994\051) 214.9 41.84 T
+(                                            March 20, 1995) 309.54 41.84 T
+(7) 536 41.84 T
+0 12 Q
+(fseqr_\050dataname, &iret, strlen\050dataname\051;  /* calls FP) 126 698 T
+(ACK FESQR */) 382.85 698 T
+(ind  = nlink_\050\322DC  \323,  &j, 4\051;  /* calls BOS NLINK to get index to j\325) 126 670 T
+(th named bank */) 455.21 670 T
+(fparm_\050command, strlen\050command\051\051;   /*call the FP) 126 642 T
+(ACK interpreter FP) 375.86 642 T
+(ARM*/) 469.42 642 T
+2 F
+(7.2.1.3 Effective use of pointer casting for easy data access.) 108 614 T
+0 F
+(The data in the banks can be accessed elegantly by declaring a structure that matches the) 108 586 T
+-0.02 (de\336nitions of the banks. However) 108 572 P
+-0.02 (, some knowledge of the byte ordering is necessary) 269.74 572 P
+-0.02 (. For) 514.38 572 P
+(example, the declaration) 108 558 T
+(typedef struct dcdata  *DCDataPtr;) 126 530 T
+(typedef struct dcdata) 126 502 T
+({) 126 488 T
+(  unsigned char  layer;) 126 474 T
+(  unsigned char  wire;) 126 460 T
+(  unsigned short tdc;) 126 446 T
+(  unsigned short adc;) 126 432 T
+(} DCData;) 126 418 T
+(allows us to do the following:) 108 390 T
+(DCDataPtr) 144 362 T
+(dchits;) 216 362 T
+(int) 144 348 T
+(ind;) 216 348 T
+(int) 144 334 T
+(i, j;) 216 334 T
+(int) 144 320 T
+(banksize;) 216 320 T
+(int) 144 306 T
+(numhits;) 216 306 T
+(ind  = nlink_\050\322DC  \323,  &j, 4\051;                /*  index to jth bank */) 144 278 T
+(banksize = bcs_.iw[ind-1];                    /*get the bank size*/) 144 264 T
+(numhits = banksize/sizeof\050DCData\051;   /*see how many hits*/) 144 250 T
+(dchits = \050DCDataPtr\051bcs_.iw[ind];      /* cast  \336rst data word*/) 144 236 T
+(then the data for the i\325) 108 208 T
+(th hit can be accessed as:) 214.09 208 T
+(dchits[i].layer) 108 180 T
+(dchits[i].wire) 108 166 T
+(dchits[i].tdc) 108 152 T
+(dchits[i].adc) 108 138 T
+1 F
+(7.2.2 Sample) 108 98 T
+3 F
+(Make\336le) 176 98 T
+1 F
+( for linking BOS and FP) 219.34 98 T
+(ACK to a \322C\323 pr) 342.82 98 T
+(ogram) 429.92 98 T
+0 F
+(Listed below is a) 108 67 T
+2 F
+(Make\336le) 192.66 67 T
+0 F
+( for creating the application) 233.98 67 T
+2 F
+(ber) 369.61 67 T
+0 F
+(, a bOS eVENT rEADER.) 385.13 67 T
+FMENDPAGE
+%%EndPage: "7" 6
+%%Page: "6" 7
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(CLAS Event Format with BOS V) 108 41.84 T
+(ersion 1.00 \050October 1, 1994\051) 214.9 41.84 T
+(                                            March 20, 1995) 309.54 41.84 T
+(6) 536 41.84 T
+0 12 Q
+(ar) 144 712 T
+(gument in the FOR) 153.11 712 T
+(TRAN subroutine the \322C\323 implementation must add an addi-) 244.73 712 T
+(tional ar) 144 698 T
+(gument: the length of the string. The lengths which are) 183.44 698 T
+525.73 696.69 449.75 696.69 2 L
+V
+0.59 H
+0 Z
+N
+(passed by value) 449.75 698 T
+(,) 525.73 698 T
+-0.06 (always appear at the end of the ar) 144 684 P
+-0.06 (gument list in the same order as the strings them-) 304.27 684 P
+(selves. For example) 144 670 T
+(SUBROUTINE MySub\050STR1, ARG2, ARG3, STR2\051 in FOR) 153 642 T
+(TRAN is called) 449.96 642 T
+(via:) 153 628 T
+(mysub_\050str1, &ar) 153 600 T
+(g2, &ar) 237.44 600 T
+(g3, str2, strlen\050str1\051, strlen\050str2\051\051 in \322C\323.) 273.89 600 T
+(5\051 COMMON blocks in FOR) 144 572 T
+(TRAN become global structures in \322C\323.) 284.62 572 T
+-0.18 (6\051 \050Not applicable for BOS/FP) 144 546 P
+-0.18 (ACK but included for completeness\051 The storage of) 289.5 546 P
+(arrays is column-major in FOR) 144 532 T
+(TRAN and row-major in \322C\323. Thus the indices) 293.27 532 T
+(must be reversed.) 144 518 T
+(In the next subsection we provide some examples of these rules.) 108 487 T
+1 F
+(7.2.1 Sample of \322C\323 code calling BOS and FP) 108 447 T
+(ACK subr) 339.13 447 T
+(outines) 391.92 447 T
+2 F
+(7.2.1.1 BOS Banks and COMMON Blocks) 108 416 T
+0 F
+(Here is how the main BOS bank, which is stored in a COMMON block named BCS, can) 108 388 T
+(be implemented in \322C\323.) 108 374 T
+(a\051 First de\336ne a BOSBank data type:) 108 346 T
+(#de\336ne  NDIM 20000) 108 318 T
+(typedef struct bosbank {) 108 304 T
+(  int    iw[NDIM];) 108 290 T
+(} BOSBank;) 108 276 T
+(then declare a global variable:) 108 248 T
+(BOSBank  bcs_;   /* corresponds to COMMON BCS */) 108 220 T
+(Data can then be accessed directly) 108 192 T
+(, e.g. bcs_.iw[9] gives the tenth word stored in the) 272.16 192 T
+(COMMON block. The size of a bank whose index is) 108 178 T
+2 F
+(ind) 364.3 178 T
+0 F
+( is in bcs_.iw[) 379.63 178 T
+2 F
+(ind) 446.96 178 T
+0 F
+( - 1].) 462.3 178 T
+2 F
+(7.2.1.2  Thr) 108 150 T
+(ee mor) 163.9 150 T
+(e examples) 196.44 150 T
+0 F
+(char   *dataname = \322BOSINPUT) 126 122 T
+(.DA) 283.51 122 T
+(T\323;) 302.51 122 T
+(char   *command;) 126 108 T
+(int       iret, ind;) 126 94 T
+(int       j = 3;) 126 80 T
+FMENDPAGE
+%%EndPage: "6" 7
+%%Page: "5" 8
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(CLAS Event Format with BOS V) 108 41.84 T
+(ersion 1.00 \050October 1, 1994\051) 214.9 41.84 T
+(                                            March 20, 1995) 309.54 41.84 T
+(5) 536 41.84 T
+1 14 Q
+(7.1  Using BOS and FP) 108 710.67 T
+(ACK fr) 243.88 710.67 T
+(om Fortran Pr) 289.12 710.67 T
+(ograms) 376.73 710.67 T
+0 12 Q
+(In this example we use the high-level routine FSEQR - for sequential reading of events -) 108 684 T
+(to illustrate the basic use of BOS:) 108 670 T
+4 F
+(       P) 108 644 T
+(ARAMETR  NBCS=500000) 138.47 644 T
+(       COMMON /BCS/ IW\050NBCS\051) 108 630 T
+(       EQUIV) 108 616 T
+(ALENCE \050IW\0501\051,R) 167.81 616 T
+(W\0501\051\051) 264.26 616 T
+(       CALL BOS\050IW) 108 590 T
+(,NBCS\051) 208.04 590 T
+(                                                               ! initialize BOS) 248.71 590 T
+(       CALL FP) 108 576 T
+(ARM\050\324OPEN BOSINPUT  FILE=\323...\323 READ ....  \324\051       ! open for input) 179.15 576 T
+(10   CALL FSEQR\050\324BOSINPUT\325,IRET\051         ! read event) 108 550 T
+(       IF \050IRET) 108 536 T
+(.lt.0\051 GOT) 175.36 536 T
+(O 100) 227.82 536 T
+(          IND  = NLINK\050\324MCIN\325,0\051      ! \336nd MC input track bank) 108 510 T
+(          ND   = IW\050IND\051                    ! get length of data array inside of bank) 108 496 T
+-0.25 (           FIRST = R) 108 482 P
+-0.25 (W\050IND+1\051            ! access \336rst word in data array as \337oating point) 198.19 482 P
+(         .......) 108 456 T
+(       GOT) 108 430 T
+(O 10) 157.14 430 T
+(100 CALL FP) 108 404 T
+(ARM\050\324CLOSE\325\051        ! close \336les) 179.15 404 T
+1 14 Q
+(7.2 Calling BOS and FP) 108 348.67 T
+(ACK fr) 249.72 348.67 T
+(om \322C\323 Pr) 294.96 348.67 T
+(ograms) 359.24 348.67 T
+0 12 Q
+(It is possible to make direct calls from \322C\323 to the BOS/FP) 108 314 T
+(ACK libraries. By \322direct\323 call-) 385.22 314 T
+(ing we mean that no additional FOR) 108 300 T
+(TRAN wrapper is required.) 281.94 300 T
+(There are six rules to keep in mind:) 108 272 T
+(1\051) 144 244 T
+(All FOR) 162 244 T
+(TRAN names, including subroutine, function) 202.96 244 T
+528.6 242.69 423.28 242.69 2 L
+V
+0.59 H
+0 Z
+N
+(and COMMON block) 423.28 244 T
+-0.11 (names are converted by a preprocessor to lower case. Thus regardless of how they) 144 230 P
+(appear in the BOS and FP) 144 216 T
+(ACK user manuals, the \322C\323 code must access them via) 267.89 216 T
+(exclusively lower case names.) 144 202 T
+(2\051) 144 174 T
+(All FOR) 162 174 T
+(TRAN names, including subroutine, function) 202.96 174 T
+528.6 172.69 423.28 172.69 2 L
+V
+N
+(and COMMON block) 423.28 174 T
+(names receive an appended underscore character  \322_\323 . The \322C\323 code must explic-) 144 160 T
+(itly attach the underscore.) 144 146 T
+(3\051 FOR) 144 118 T
+(TRAN expects all ar) 179.62 118 T
+(guments to be passed by reference, thus the \322C\323 calls) 278.38 118 T
+(must use pointers.) 144 104 T
+-0.15 (4\051 Character strings must be handled with extreme care. For every character string) 144 76 P
+FMENDPAGE
+%%EndPage: "5" 8
+%%Page: "4" 9
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(CLAS Event Format with BOS V) 108 41.84 T
+(ersion 1.00 \050October 1, 1994\051) 214.9 41.84 T
+(                                            March 20, 1995) 309.54 41.84 T
+(4) 536 41.84 T
+1 16 Q
+(6.0  Bank Format and T) 108 709.33 T
+(able Dimensions) 270.99 709.33 T
+0 12 Q
+(The raw event data - as described in the previous section - are always packed in 16-bit) 108 682 T
+-0.04 (words, or in the parlance of BOS have the format B16. It is anticipated that all reconstruc-) 108 668 P
+(tion and analysis results will be stored in 32-bit words, either integer or \337oating point -) 108 654 T
+(and, of course, one can mix integer and \337oating point in one bank. However) 108 640 T
+(, it is impor-) 472.79 640 T
+-0.11 (tant that one declares - by a call to BKFMT\050Name,Fmt\051 - the format of any newly created) 108 626 P
+-0.07 (bank if one wants to store it on disk or tape. FP) 108 612 P
+-0.07 (ACK) 332.74 612 P
+1 F
+-0.07 ( needs) 358.07 612 P
+0 F
+-0.07 ( this information to make the) 389.67 612 P
+(I/O truly platform-independent.) 108 598 T
+(All experimental data will be kept in tabular form. W) 108 572 T
+(e already discussed this for the raw) 363 572 T
+-0.45 (data in the previous section. The important parameter for a bank is the number of columns,) 108 558 P
+(NCol, which determines the number of parameters per hit, track, cluster and so on. The) 108 544 T
+(number of rows - which can be derived from NCol and the total number of data words,) 108 530 T
+(ND, in a bank - simply gives the number of hits, tracks or clusters. One can declare NCol) 108 516 T
+(for a bank by a call to BKCOL\050Name,NCol\051 [routine to be written]. If one wants to \336nd) 108 502 T
+(out the number of columns in a bank, one can use the function NCol = NBCOL\050Name\051) 108 488 T
+([function to be written].) 108 474 T
+-0.07 (When one declares the format \050integer and/or \337oating point\051 of a bank, one) 108 448 P
+2 F
+-0.07 (only) 470.3 448 P
+0 F
+-0.07 ( has to do) 490.96 448 P
+(it for NCol items in the \336rst row) 108 434 T
+(. BOS/FP) 262.22 434 T
+(ACK implies that this format is repeated inde\336-) 307.14 434 T
+(nitely for all the hits, tracks etc. in a bank. One should also keep in mind that all banks) 108 420 T
+-0.4 (with the same name \050but dif) 108 406 P
+-0.4 (ferent numbers\051 can only have one format and always have the) 240.12 406 P
+-0.25 (same number of columns. From an or) 108 392 P
+-0.25 (ganizational point of view it is, of course, simplest if) 286.57 392 P
+(one avoids mixed formats and declares a bank to be either integer or \337oating point. Then) 108 378 T
+(one only needs a single character - I or F - to declare the format of a whole bank.) 108 364 T
+1 16 Q
+(7.0  Linking Libraries and a Simple Examples) 108 297.33 T
+0 12 Q
+(T) 108 270 T
+(o build a program with BOS/FP) 114.49 270 T
+(ACK calls, one needs the libraries libh1util.a, libbos.a) 266.4 270 T
+(and libfpack.a in CLAS_lib \050one of the symbolic Unix links de\336ning the CLAS environ-) 108 256 T
+(ment\051. There are several high-level routines which presently reside in libh1util and com-) 108 242 T
+(bine a number of functional calls to libbos and libfpack. These can be used to custom-) 108 228 T
+-0.28 (tailor the management of data structures for CLAS. For instance, one may want to custom-) 108 214 P
+(ize the print-out of the collection of banks in an event.) 108 200 T
+-0.39 (In the following two sections we shall discuss how to use BOS/FP) 108 174 P
+-0.39 (ACK within Fortran and) 420.91 174 P
+(\322C\323 programs. The Fortran example is shorter because BOS/FP) 108 160 T
+(ACK was designed for a) 411.85 160 T
+-0.05 (Fortran environment. But the \322C\323 example is quite instructive and shows how convenient) 108 146 P
+(C structures can be.) 108 132 T
+FMENDPAGE
+%%EndPage: "4" 9
+%%Page: "3" 10
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(CLAS Event Format with BOS V) 108 41.84 T
+(ersion 1.00 \050October 1, 1994\051) 214.9 41.84 T
+(                                            March 20, 1995) 309.54 41.84 T
+(3) 536 41.84 T
+1 16 Q
+(5.0  Contents of Raw Event Banks) 108 709.33 T
+0 12 Q
+(The experimental data are stored inside the banks in tabular form, where the number of) 108 682 T
+-0.2 (columns NCOL is determined by the number of parameters, which characterize a detector) 108 668 P
+(component, and successive rows are \336lled with successive hits in that particular detector) 108 654 T
+(volume. The size of the table \050NCOL,NROW\051 is kept in the data segment header of that) 108 640 T
+(bank. All raw event data are packed/stored as 16-bit integers.) 108 626 T
+(Here we list the above bank names again, followed by the parameters for the detector ele-) 108 600 T
+(ments. NCOL is either 3 or 5 for the banks considered. The \336rst column always contains) 108 586 T
+(the address ID of the hit detector element.) 108 572 T
+1 14 Q
+(DC) 108 542.67 T
+0 F
+(:) 128.22 542.67 T
+(ID   TDC   ADC) 146.11 542.67 T
+0 12 Q
+(              with  ID = 256*L + W   &   L = 1...36 \050layer #\051, W = 1...192 \050wire #\051) 108 527 T
+1 F
+(Note) 150 512 T
+0 F
+(: Superlayers are made up of 6 Layers \050however L = 5 & 6 do not exist\051.) 173.99 512 T
+(                       W) 108 497 T
+(ires with the same number are intended to line up radially in the same) 187.85 497 T
+(                       superlayer) 108 482 T
+(. T) 226.32 482 T
+(o achieve this, the numbering starts with W=4 for L=1&7,) 238.81 482 T
+-0.27 (                         W=3 for L=2,3,8,9 and W=2 for L=4,10,1) 108 465.67 P
+-0.27 (1. All other layers start with W=1.) 376.88 465.67 P
+1 14 Q
+(CC) 108 436.67 T
+0 F
+(:     ID   TDC   ADC) 128.22 436.67 T
+0 12 Q
+-0.15 (              with   ID = 1...36   &   Odd/Even = Left/Right \050Low) 108 422 P
+5 F
+-0.15 (F) 399.26 422 P
+0 F
+-0.15 ( / High) 408.41 422 P
+5 F
+-0.15 (F) 444.31 422 P
+0 F
+-0.15 (seen along beam\051) 456.32 422 P
+1 14 Q
+(CC1) 108 394.67 T
+0 F
+(:   same format as for CC) 135.22 394.67 T
+1 F
+(SC) 108 366.67 T
+0 F
+(:     ID   TDC) 125.89 366.67 T
+0 11.2 Q
+(L) 200.55 363.17 T
+0 14 Q
+(ADC) 215.8 366.67 T
+0 11.2 Q
+(L) 245.35 363.17 T
+0 14 Q
+(   TDC) 252.19 366.67 T
+0 11.2 Q
+(R) 290.69 363.17 T
+0 14 Q
+(   ADC) 298.16 366.67 T
+0 11.2 Q
+(R) 338.22 363.17 T
+0 12 Q
+(              with   ID = 1....48) 108 349.43 T
+1 14 Q
+(EC) 108 320.1 T
+0 F
+(:     ID   TDC   ADC) 127.45 320.1 T
+0 12 Q
+(              with   ID = 256*L + S   &   L = 1....6   \050ganged layers u,v) 108 304.43 T
+(,w) 424.5 304.43 T
+(,u,v) 435.38 304.43 T
+(,w\051) 452.6 304.43 T
+(                                                           S = 1....36  \050strip #\051) 108 289.43 T
+1 14 Q
+(EC1) 108 259.1 T
+0 F
+(:   ID   TDC) 134.45 259.1 T
+0 11.2 Q
+(L) 202.11 255.6 T
+0 14 Q
+(   ADC) 208.95 259.1 T
+0 11.2 Q
+(L) 249.01 255.6 T
+0 14 Q
+(   TDC) 255.85 259.1 T
+0 11.2 Q
+(R) 294.35 255.6 T
+0 14 Q
+(   ADC) 301.82 259.1 T
+0 11.2 Q
+(R) 341.87 255.6 T
+0 12 Q
+(              with   ID = 256*L + S   &   L = 1....4     \050ganged layers x,y) 108 240.87 T
+(,x,y\051) 430.5 240.87 T
+(                                                           S =  1....40  \050x strips for L odd\051) 108 225.87 T
+(                                                          S =  1... 24  \050y strips for L even\051) 111.5 209.53 T
+1 14 Q
+(TG) 108 178.53 T
+0 F
+(:     ***  format to be decided later  ***) 128.23 178.53 T
+1 F
+(T) 108 147.53 T
+(A) 116.3 147.53 T
+0 F
+(:     ***  format to be decided later  ***) 126.41 147.53 T
+FMENDPAGE
+%%EndPage: "3" 10
+%%Page: "2" 11
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(CLAS Event Format with BOS V) 108 41.84 T
+(ersion 1.00 \050October 1, 1994\051) 214.9 41.84 T
+(                                            March 20, 1995) 309.54 41.84 T
+(2) 536 41.84 T
+0 12 Q
+(The communication between modules will be done exclusively by BOS banks; and if an) 108 712 T
+(application produces information for any CLAS data stream or data set, it has to be in the) 108 698 T
+(form of BOS banks. In order to achieve and maintain a modular structure of the CLAS) 108 684 T
+(software, one should strictly avoid to exchange information between application modules) 108 670 T
+-0.02 (by passing parameters in function or subroutine calls or by using special common blocks.) 108 656 P
+(Never should any experiment-speci\336c information be buried in Fortran data statements.) 108 642 T
+164.66 614.69 111 614.69 2 L
+V
+0.59 H
+0 Z
+N
+(The CREA) 111 616 T
+502.96 614.69 163.33 614.69 2 L
+V
+N
+(TION of banks is assigned to speci\336cally designated program modules) 163.33 616 T
+( and) 502.96 616 T
+-0.04 (other modules should) 108 602 P
+3 F
+-0.04 (never) 214.22 602 P
+0 F
+-0.04 ( change a bank received for input. The raw data banks are cre-) 241.55 602 P
+(ated by the on-line \322Event Builder\323, or in case of detector simulation by the originating) 108 588 T
+(Monte Carlo program.) 108 574 T
+1 16 Q
+(4.0  T) 108 507.33 T
+(ypes of Raw Event Banks) 145.49 507.33 T
+0 12 Q
+(It is customary to start the array of raw data banks with a header bank \050name: HEAD,) 108 480 T
+(number: 0\051. The contents of the header bank will be discussed in section 8.1 where the) 108 466 T
+(control and status information is reviewed which accompanies individual events.) 108 452 T
+-0.12 (For CLAS the various detector components are associated with the following bank names) 108 426 P
+(and numbers. Further banks are added as needed.) 108 412 T
+(An event is then given by a set \050ensemble\051 of banks with at least one data item \050hit\051 each.) 108 205 T
+(Empty banks are omitted.) 108 191 T
+(For Input/Output to external media the banks are packed in data segments and the set of) 108 165 T
+(data segments, which form an \322event\323, are preceded by a logical record header \050see) 108 151 T
+(FP) 108 137 T
+(ACK manual\051. This logical record header contains - as part of a search key - the run) 120.24 137 T
+(type \050up to 8 characters\051, e.g. \324RUNEVENT\325 or \324MCEVENT\325, as well as the run number) 108 123 T
+(and event number) 108 109 T
+(.) 193.32 109 T
+1 F
+(Detector Components) 121.78 384 T
+(  NAME) 337.78 384 T
+( NR.) 413.5 384 T
+0 F
+( \050sectors\051) 439.83 384 T
+(Drift Chamber) 121.78 366 T
+(Cerenkov Counter \050forward\051) 121.78 347 T
+(Cerenkov Counter \050lar) 121.78 328 T
+(ge angle\051) 229.54 328 T
+(Scintillation Counter \050time-of-\337ight\051) 121.78 309 T
+(Electromagnetic Calorimeter \050forward\051) 121.78 290 T
+(Electrom. Calorimeter \050lar) 121.78 271 T
+(ge angle\051) 248.53 271 T
+(T) 121.78 252 T
+(riGger) 128.69 252 T
+(T) 121.78 233 T
+(Agger) 128.15 233 T
+(    DC) 337.78 366 T
+(    CC) 337.78 347 T
+(    CC1) 337.78 328 T
+(    SC) 337.78 309 T
+(    EC) 337.78 290 T
+(    EC1) 337.78 271 T
+(    TG) 337.78 252 T
+(    T) 337.78 233 T
+(A) 356.15 233 T
+(    1....6) 411 366 T
+(    1....6) 411 347 T
+(    1....6) 411 328 T
+(    1....6) 411 309 T
+(    1....6) 411 290 T
+(    1....6) 411 271 T
+(    0) 411 252 T
+(    0) 411 233 T
+115.78 395 115.78 228 2 L
+V
+2 H
+N
+331.78 397 331.78 226 2 L
+V
+N
+405 397 405 226 2 L
+V
+N
+513 395 513 228 2 L
+V
+N
+114.78 396 514 396 2 L
+V
+N
+114.78 378 514 378 2 L
+V
+N
+114.78 227 514 227 2 L
+V
+N
+252 117 238 119 226 125 3 L
+FMENDPAGE
+%%EndPage: "2" 11
+%%Page: "1" 12
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+108 54 540 54 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(CLAS Event Format with BOS V) 108 41.84 T
+(ersion 1.00 \050October 1, 1994\051) 214.9 41.84 T
+(                                            March 20, 1995) 309.54 41.84 T
+(1) 536 41.84 T
+0 24 Q
+(CLAS Event Format with BOS) 173.99 704 T
+0 14 Q
+(V) 235.16 680.67 T
+(ersion 1.00  \050October 1, 1994\051) 243.71 680.67 T
+1 12 Q
+(Dieter Cords) 153.74 640.8 T
+1 9.6 Q
+(1) 220.05 645.6 T
+1 12 Q
+(, Larry Dennis) 224.85 640.8 T
+1 9.6 Q
+(3) 299.85 645.6 T
+1 12 Q
+(, Dave Heddle) 304.65 640.8 T
+1 9.6 Q
+(2) 376.31 645.6 T
+1 12 Q
+(, Bogdan Niczyporuk) 381.11 640.8 T
+1 9.6 Q
+(1) 489.46 645.6 T
+(1) 143.96 626.4 T
+1 12 Q
+(CEBAF) 151.16 621.6 T
+(,) 190.73 621.6 T
+1 9.6 Q
+(2) 196.73 626.4 T
+1 12 Q
+(Christopher Newport University) 203.93 621.6 T
+(,) 369.91 621.6 T
+1 9.6 Q
+(3) 375.91 626.4 T
+1 12 Q
+(Florida State University) 380.71 621.6 T
+1 16 Q
+(1.0  Intr) 108 552.93 T
+(oduction) 163.26 552.93 T
+0 12 Q
+(For a detector of the complexity of CLAS, which is expected to operate over many years,) 108 525.6 T
+(one needs a scheme for dynamically managing data structures. These data structures, in) 108 511.6 T
+(the end, will contain information on raw events, detector status, geometry and calibration) 108 497.6 T
+-0.19 (constants, reconstruction results for tracks and clusters, as well as analysis results the user) 108 483.6 P
+(chooses to append. This note describes the structure of raw events, i.e. a naming conven-) 108 469.6 T
+(tion for major detector components and a numbering scheme which re\337ects the arrange-) 108 455.6 T
+(ment of the smallest detector elements.) 108 441.6 T
+1 16 Q
+(2.0  Numbering Scheme) 108 374.93 T
+0 12 Q
+(The numbering scheme follows the convention adopted by the CLAS collaboration some) 108 347.6 T
+-0.25 (time ago. Based on a right-handed coordinate system with Z along the beam and Y up, the) 108 333.6 P
+(detector elements are numbered in the order of increasing R, polar) 108 319.6 T
+(angle) 429.25 319.6 T
+5 F
+(Q) 458.24 319.6 T
+0 F
+(, and azimuth) 467.14 319.6 T
+-0.32 (angle) 108 305.6 P
+5 F
+-0.32 (F) 136.67 305.6 P
+0 F
+-0.32 ( \050ranging from 0 to 2) 145.83 305.6 P
+5 F
+-0.32 (p) 244.55 305.6 P
+0 F
+-0.32 (\051. As usual,) 251.14 305.6 P
+5 F
+-0.32 (Q) 307.85 305.6 P
+0 F
+-0.32 ( counts from the Z-axis and) 316.74 305.6 P
+5 F
+-0.32 (F) 450.14 305.6 P
+0 F
+-0.32 ( from the X-axis) 459.29 305.6 P
+(\050in a clockwise sense when viewed along the Z-axis\051) 108 291.6 T
+(.) 108 265.6 T
+1 16 Q
+(3.0  Management of Data Structur) 108 224.93 T
+(es) 342.34 224.93 T
+0 12 Q
+(The package for managing data structures for CLAS is BOS with FP) 108 197.6 T
+(ACK as its I/O front) 436.52 197.6 T
+-0.39 (end. The basic unit of information is contained in a) 108 183.6 P
+3 F
+-0.39 (bank) 352.44 183.6 P
+0 F
+-0.39 ( which is identi\336ed by a name \050up) 377.11 183.6 P
+(to 4 characters\051 and optionally a number) 108 169.6 T
+(. For details the reader is referred to the manuals) 301.3 169.6 T
+(in CLAS_doc \050one of the symbolic Unix links de\336ning the CLAS environment\051. The) 108 155.6 T
+(module libraries dif) 108 141.6 T
+(fer for various machine architectures and can be found in CLAS_lib) 202.44 141.6 T
+(which points to a platform-dependent section of the Unix directory) 108 127.6 T
+(.) 428.17 127.6 T
+(It is anticipated that application modules - ranging in seize from a small set of routines) 108 101.6 T
+(\050e.g. for histogramming detector hits\051 to complex packages \050for track or cluster recon-) 108 87.6 T
+(struction\051 - will receive all experiment-speci\336c information in the form of BOS banks.) 108 73.6 T
+1 16 Q
+(CLAS-NOTE  94-012) 387 759.36 T
+FMENDPAGE
+%%EndPage: "1" 12
+%%Trailer
+%%BoundingBox: 0 0 612 792
+%%PageOrder: Descend
+%%Pages: 12
+%%DocumentFonts: Times-Roman
+%%+ Times-Bold
+%%+ Times-Italic
+%%+ Times-BoldItalic
+%%+ Helvetica
+%%+ Symbol
+%%EOF
