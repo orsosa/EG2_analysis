@@ -123,7 +123,7 @@ void pi0_corr4a::Init(TTree *tree)
 
    outfile = new TFile("corr2pi0_DQ_Dq.root","recreate");
    
-   out_tree = new TNtuple("out_tree","Q and q difference","DQ2_bk:DQ2:DQ:Dq:DQ_bk:Dq_bk");
+   out_tree = new TNtuple("out_tree","Q and q difference","DQ2_bk:DQ2:DQ:Dq:DQ_bk:Dq_bk:DQE:DQE_bk");
    fChain = tree;
    fChain->SetMakeClass(1);
    

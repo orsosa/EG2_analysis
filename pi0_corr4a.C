@@ -28,7 +28,6 @@
 #include <TH2.h>
 #include <TStyle.h>
 
-
 void pi0_corr4a::Begin(TTree * /*tree*/)
 {
    // The Begin() function is called at the start of the query.
@@ -105,20 +104,28 @@ Bool_t pi0_corr4a::Process(Long64_t entry)
       Float_t DiffQ =  (DiffQ2>0)?TMath::Sqrt(DiffQ2):-1;
 
       Float_t DiffQ2_bk= (DPx2_bk + DPy2_bk + DPz2_bk - DE2_bk);
-      Float_t DiffQ_bk =  (DiffQ_bk>0)?TMath::Sqrt(DiffQ2_bk):-1;
+      Float_t DiffQ_bk =  (DiffQ2_bk>0)?TMath::Sqrt(DiffQ2_bk):-1;
+
+      Float_t DiffQ2E =  2*(P0_0*P0_1 + P0_0*P0_2 + P0_0*P0_3 \
+			    + P0_1*P0_2 + P0_1*P0_3\
+			    + P0_2*P0_3);
+
+      Float_t DiffQ2E_bk =  2*(P0_0*P1_1 + P0_0*P1_2 + P0_0*P1_3 \
+			    + P0_1*P1_2 + P0_1*P1_3\
+			    + P0_2*P1_3);
+
+      Float_t DiffQE = (DiffQ2E>0)?TMath::Sqrt(DiffQ2E):-1;
+      Float_t DiffQE_bk = (DiffQ2E_bk>0)?TMath::Sqrt(DiffQ2E_bk):-1;
 
       Float_t Dq=DQ.P();
       Float_t Dq_bk=DQ_bk.P();
 
       if (DiffQ2>0 &&  DiffQ2_bk>0)
-         out_tree->Fill(DiffQ2_bk, DiffQ2, DiffQ, Dq,DiffQ_bk, Dq_bk);
+	out_tree->Fill(DiffQ2_bk, DiffQ2, DiffQ, Dq,DiffQ_bk, Dq_bk, DiffQE, DiffQE_bk);
       else
          out_tree->Fill(DiffQ2_bk, DiffQ2, -1, Dq,-1, Dq_bk);
-
     }
-
   }
-
    return kTRUE;
 }
 

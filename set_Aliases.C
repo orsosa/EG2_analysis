@@ -98,8 +98,6 @@
   outdata->Draw("meta>>h0n",pi0cut&&planecut,"same");
   outdata->Draw("Dm>>hmn",pi0cut&&planecut,"same");
 
-  
-
   Float_t max=h0->GetMaximum();
   if (max<hm->GetMaximum())
      max=hm->GetMaximum();
@@ -146,6 +144,19 @@
   l->AddEntry(hpim,"#pi^{-}","lp");
   l->Draw();
   hpi0->GetXaxis()->SetTitle("Pz_CM");
+
+outdata->SetAlias("Epi0_0","fE[0] + fE[1]");
+outdata->SetAlias("Epi0_1","fE[2] + fE[3]");
+outdata->SetAlias("Pxpi0_0","fX[0] + fX[1]");
+outdata->SetAlias("Pypi0_0","fY[0] + fY[1]");
+outdata->SetAlias("Pypi0_0","f[0] + fZ[1]");
+outdata->SetAlias("Pzpi0_0","fZ[0] + fZ[1]");
+outdata->SetAlias("Pzpi0_1","fZ[2] + fZ[3]");
+outdata->SetAlias("Pypi0_1","fY[2] + fY[3]");
+outdata->SetAlias("Pxpi0_1","fX[2] + fX[3]");
+outdata->SetAlias("mpi0_1","TMath::Sqrt(2*(fE[2]*fE[3] - fX[2]*fX[3] - fY[2]*fY[3] - fZ[2]*fZ[3]))");
+outdata->SetAlias("mpi0_0","TMath::Sqrt(2*(fE[0]*fE[1] - fX[0]*fX[1] - fY[0]*fY[1] - fZ[0]*fZ[1]))");
+
 */
 
 }
