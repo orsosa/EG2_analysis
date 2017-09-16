@@ -120,10 +120,19 @@ Bool_t pi0_corr4a::Process(Long64_t entry)
       Float_t Dq=DQ.P();
       Float_t Dq_bk=DQ_bk.P();
 
+      Float_t DqE2=P0_0.E()*P0_0.E() + P0_1.E()*P0_1.E() \
+	+ P0_2.E()*P0_2.E() + P0_3.E()*P0_3.E() \
+	+ 2*( P0_0*P0_1 -P0_0.E()*P0_1.E() - (P0_0*P0_2 -P0_0.E()*P0_2.E()) - (P0_0*P0_3 -P0_0.E()*P0_3.E()) - (P0_1*P0_2 -P0_1.E()*P0_2.E()) - (P0_1*P0_3 -P0_1.E()*P0_3.E()) + (P0_2*P0_3 -P0_2.E()*P0_3.E()) );
+      Float_t DqE2_bk=P0_0.E()*P0_0.E() + P0_1.E()*P0_1.E()	\
+	+ P1_2.E()*P1_2.E() + P1_3.E()*P1_3.E() \
+	+ 2*( P0_0*P0_1 -P0_0.E()*P0_1.E() - (P0_0*P1_2 -P0_0.E()*P1_2.E()) - (P0_0*P1_3 -P0_0.E()*P1_3.E()) - (P0_1*P1_2 -P0_1.E()*P1_2.E()) - (P0_1*P1_3 -P0_1.E()*P1_3.E()) + (P1_2*P1_3 -P1_2.E()*P1_3.E()) );
+      Float_t DqE=(DqE2>0)?TMath::Sqrt(DqE2):-1;
+      Float_t DqE_bk=(DqE2_bk>0)?TMath::Sqrt(DqE2_bk):-1;
+
       if (DiffQ2>0 &&  DiffQ2_bk>0)
-	out_tree->Fill(DiffQ2_bk, DiffQ2, DiffQ, Dq,DiffQ_bk, Dq_bk, DiffQE, DiffQE_bk);
+	out_tree->Fill(DiffQ2_bk, DiffQ2, DiffQ, Dq,DiffQ_bk, Dq_bk, DiffQE, DiffQE_bk, DqE, DqE_bk,primary_vzec);
       else
-         out_tree->Fill(DiffQ2_bk, DiffQ2, -1, Dq,-1, Dq_bk);
+	out_tree->Fill(DiffQ2_bk, DiffQ2, -1, Dq,-1, Dq_bk, -1, -1,primary_vzec);
     }
   }
    return kTRUE;
