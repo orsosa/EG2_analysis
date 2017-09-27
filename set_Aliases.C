@@ -88,19 +88,20 @@
   TCut mrhocut = "0.7<mrho&&mrho<0.85";
   TCut mK0cut = "0.48<mrho&&mrho<0.51";
   TCut planecut = "-0.1<crossDot&&crossDot<0.1";
+  TCut metacut = "0.52<Dm&&Dm<0.6";
+  TCut momegacut = "0.74<Dm&&Dm<0.82";
 
   outdata->Draw("meta>>h0",pi0cut,"");
   outdata->Draw("Dm>>hm",pi0cut,"same");
   //  outdata->Draw("meta>>h0n",pi0cut&&!mK0cut&&!mrhocut,"same");
   //outdata->Draw("Dm>>hmn",pi0cut&&!mK0cut&&!mrhocut,"same");
 
-
   outdata->Draw("meta>>h0n",pi0cut&&planecut,"same");
   outdata->Draw("Dm>>hmn",pi0cut&&planecut,"same");
 
   Float_t max=h0->GetMaximum();
   if (max<hm->GetMaximum())
-     max=hm->GetMaximum();
+    max=hm->GetMaximum();
   if (max<h0n->GetMaximum())
     max=h0n->GetMaximum();
   if (max<hmn->GetMaximum())
@@ -122,11 +123,33 @@
   l->AddEntry(h0n,"m(#pi^{+}#pi^{-}#pi^{0}(#gamma#gamma)) no K^{0} nor #rho");
   l->AddEntry(hmn,"#Delta m no K^{0} nor #rho");
   l->Draw();
+  
+  TH1F *hpi0=new TH1F("hpi0","Momentum in CM frame",500,-2,2);
+  hpi0->SetLineWidth(2);
+  TH1F* hpip= (TH1F*)hpi0->Clone("hpip");
+  TH1F* hpim= (TH1F*)hpi0->Clone("hpim");
+  
+  hpi0->SetLineColor(kRed);
+  hpip->SetLineColor(kBlue);
+  hpim->SetLineColor(kBlack);
+  outdata->Draw("Pypi0_b>>hpi0",pi0cut&&!mrhocut&&!mK0cut&&(metacut||momegacut));
+  outdata->Draw("Pypip_b>>hpip",pi0cut&&!mrhocut&&!mK0cut&&(metacut||momegacut),"same");
+  outdata->Draw("Pypim_b>>hpim",pi0cut&&!mrhocut&&!mK0cut&&(metacut||momegacut),"same");
+  TLegend *l = new TLegend(0.6,0.5,0.7,0.8);
+  l->AddEntry(hpi0,"#pi^{0}","lp");
+  l->AddEntry(hpip,"#pi^{+}","lp");
+  l->AddEntry(hpim,"#pi^{-}","lp");
+  l->Draw();
+  
+
+
 /*
   outdata->Draw("Dm>>h(500,0,2)",pi0cut,"");
   outdata->Draw("Dm>>hp(500,0,2)",pi0cut&&planecut,"same");
   outdata->Draw("Dm>>hnp(500,0,2)",pi0cut&&!planecut,"same");
 */
+
+
 /*
   outdata->Draw("Pzpi0_b>>hpi0(500,-2,2)",pi0cut&&!mK0cut&&!mrhocut,"");
   outdata->Draw("Pzpip_b>>hpip(500,-2,2)",pi0cut&&!mK0cut&&!mrhocut,"same");
