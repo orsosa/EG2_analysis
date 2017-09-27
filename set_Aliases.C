@@ -1,5 +1,4 @@
 {
-  
   if (gROOT->FindObject("c")!=0)
     delete c;
   if (gROOT->FindObject("h0")!=0)
