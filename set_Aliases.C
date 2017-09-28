@@ -131,16 +131,36 @@
   hpi0->SetLineColor(kRed);
   hpip->SetLineColor(kBlue);
   hpim->SetLineColor(kBlack);
-  outdata->Draw("Pypi0_b>>hpi0",pi0cut&&!mrhocut&&!mK0cut&&(metacut||momegacut));
-  outdata->Draw("Pypip_b>>hpip",pi0cut&&!mrhocut&&!mK0cut&&(metacut||momegacut),"same");
-  outdata->Draw("Pypim_b>>hpim",pi0cut&&!mrhocut&&!mK0cut&&(metacut||momegacut),"same");
+  outdata->Draw("Pypi0_b>>hpi0",pi0cut&&!mrhocut&&!mK0cut);
+  outdata->Draw("Pypip_b>>hpip",pi0cut&&!mrhocut&&!mK0cut,"same");
+  outdata->Draw("Pypim_b>>hpim",pi0cut&&!mrhocut&&!mK0cut,"same");
   TLegend *l = new TLegend(0.6,0.5,0.7,0.8);
   l->AddEntry(hpi0,"#pi^{0}","lp");
   l->AddEntry(hpip,"#pi^{+}","lp");
   l->AddEntry(hpim,"#pi^{-}","lp");
   l->Draw();
-  
+  hpi0->GetXaxis()->SetTitle("P_{y} CM (GeV)");
+  hpi0->GetYaxis()->SetTitle("dN/dP_{y}");
 
+  c->SaveAs("Py_CM_noK0rho_gsim.gif");
+  c->SaveAs("Py_CM_noK0rho_gsim.C");
+  
+  outdata->Draw("Pxpi0_b>>hpi0",pi0cut&&!mrhocut&&!mK0cut);
+  outdata->Draw("Pxpip_b>>hpip",pi0cut&&!mrhocut&&!mK0cut,"same");
+  outdata->Draw("Pxpim_b>>hpim",pi0cut&&!mrhocut&&!mK0cut,"same");
+  hpi0->GetXaxis()->SetTitle("P_{x} CM (GeV)");
+  hpi0->GetYaxis()->SetTitle("dN/dP_{x}");
+  c->SaveAs("Px_CM_noK0rho_gsim.gif");
+  c->SaveAs("Px_CM_noK0rho_gsim.C");
+
+
+  outdata->Draw("Pzpi0_b>>hpi0",pi0cut&&!mrhocut&&!mK0cut);
+  outdata->Draw("Pzpip_b>>hpip",pi0cut&&!mrhocut&&!mK0cut,"same");
+  outdata->Draw("Pzpim_b>>hpim",pi0cut&&!mrhocut&&!mK0cut,"same");
+  hpi0->GetXaxis()->SetTitle("P_{z} CM (GeV)");
+  hpi0->GetYaxis()->SetTitle("dN/dP_{z}");
+  c->SaveAs("Pz_CM_noK0rho_gsim.gif");
+  c->SaveAs("Pz_CM_noK0rho_gsim.C");
 
 /*
   outdata->Draw("Dm>>h(500,0,2)",pi0cut,"");
@@ -150,9 +170,9 @@
 
 
 /*
-  outdata->Draw("Pzpi0_b>>hpi0(500,-2,2)",pi0cut&&!mK0cut&&!mrhocut,"");
-  outdata->Draw("Pzpip_b>>hpip(500,-2,2)",pi0cut&&!mK0cut&&!mrhocut,"same");
-  outdata->Draw("Pzpim_b>>hpim(500,-2,2)",pi0cut&&!mK0cut&&!mrhocut,"same");
+  outdata->Draw("Pzpi0_b>>hpi0",pi0cut&&!mK0cut&&!mrhocut,"");
+  outdata->Draw("Pzpip_b>>hpip",pi0cut&&!mK0cut&&!mrhocut,"same");
+  outdata->Draw("Pzpim_b>>hpim",pi0cut&&!mK0cut&&!mrhocut,"same");
   hpi0->SetLineColor(kRed);
   hpi0->SetLineWidth(2);
   hpip->SetLineColor(kBlue);
