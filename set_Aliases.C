@@ -31,6 +31,19 @@
 
 
   outdata->SetAlias("meta","TMath::Sqrt(Eeta*Eeta - Pxeta*Pxeta - Pyeta*Pyeta - Pzeta*Pzeta) ");
+
+
+  outdata->SetAlias("p0p1","fE[0]*fE[1] - (fX[0]*fX[1] + fY[0]*fY[1] + fZ[0]*fZ[1])");
+  outdata->SetAlias("p0p2","fE[0]*fE[2] - (fX[0]*fX[2] + fY[0]*fY[2] + fZ[0]*fZ[2])");
+  outdata->SetAlias("p0p3","fE[0]*fE[3] - (fX[0]*fX[3] + fY[0]*fY[3] + fZ[0]*fZ[3])");
+  outdata->SetAlias("p1p2","fE[1]*fE[2] - (fX[1]*fX[2] + fY[1]*fY[2] + fZ[1]*fZ[2])");
+  outdata->SetAlias("p1p3","fE[1]*fE[3] - (fX[1]*fX[3] + fY[1]*fY[3] + fZ[1]*fZ[3])");
+  outdata->SetAlias("p2p3","fE[2]*fE[3] - (fX[2]*fX[3] + fY[2]*fY[3] + fZ[2]*fZ[3])");
+
+  outdata->SetAlias("meta0","TMath::Sqrt( 2*0.13957*0.13957  + 2*(p0p1 + p0p2 + p0p3 + p1p2 + p1p3 + p2p3) )");
+
+
+
   outdata->SetAlias("ct","(fX[0]*fX[1] + fY[0]*fY[1] + fZ[0]*fZ[1])/(fE[0]*fE[1])");
 
   outdata->SetAlias("Epi0","fE[0] + fE[1]");
@@ -81,8 +94,8 @@
   outdata->SetAlias("mpip","TMath::Sqrt(Epip*Epip - (fX[2]*fX[2] + fY[2]*fY[2] +  fZ[2]*fZ[2]))");
   outdata->SetAlias("mpim","TMath::Sqrt(Epim*Epim - (fX[3]*fX[3] + fY[3]*fY[3] +  fZ[3]*fZ[3]))");
 
-  outdata->SetAlias("Dm","meta-mpi0-mpip-mpim+0.135+0.140+0.140");
-  outdata->SetAlias("DDm","meta-mpi0-mpip-mpim+0.135+0.140+0.140");
+  outdata->SetAlias("Dm","meta-mpi0-mpip-mpim+0.135+0.13957+0.13957");
+  outdata->SetAlias("DDm","meta0-mpi0-mpip-mpim+0.135+0.13957+0.13957");
   TCut pi0cut = "0.1<mpi0&&mpi0<0.18";
   TCut mrhocut = "0.7<mrho&&mrho<0.85";
   TCut mK0cut = "0.48<mrho&&mrho<0.51";
@@ -116,6 +129,11 @@
   hmn->SetLineWidth(2);
   hmn->SetLineColor(kBlack);
 
+  outdata->Draw("Dm>>h0",pi0cut&&!mK0cut&&!mrhocut,"");
+  outdata->Draw("DDm>>hm",pi0cut&&!mK0cut&&!mrhocut,"same");
+
+
+  /*
   TLegend *l = new TLegend(0.6,0.5,0.95,0.65);
   l->AddEntry(h0,"m(#pi^{+}#pi^{-}#pi^{0}(#gamma#gamma))");
   l->AddEntry(hm,"#Delta m");
@@ -139,19 +157,19 @@
   l->AddEntry(hpip,"#pi^{+}","lp");
   l->AddEntry(hpim,"#pi^{-}","lp");
   l->Draw();
-  hpi0->GetXaxis()->SetTitle("P_{y} CM (GeV)");
-  hpi0->GetYaxis()->SetTitle("dN/dP_{y}");
+  //  hpi0->GetXaxis()->SetTitle("P_{y} CM (GeV)");
+  //hpi0->GetYaxis()->SetTitle("dN/dP_{y}");
 
-  c->SaveAs("Py_CM_noK0rho_gsim.gif");
-  c->SaveAs("Py_CM_noK0rho_gsim.C");
+  //  c->SaveAs("Py_CM_noK0rho_gsim.gif");
+  //c->SaveAs("Py_CM_noK0rho_gsim.C");
   
   outdata->Draw("Pxpi0_b>>hpi0",pi0cut&&!mrhocut&&!mK0cut);
   outdata->Draw("Pxpip_b>>hpip",pi0cut&&!mrhocut&&!mK0cut,"same");
   outdata->Draw("Pxpim_b>>hpim",pi0cut&&!mrhocut&&!mK0cut,"same");
   hpi0->GetXaxis()->SetTitle("P_{x} CM (GeV)");
   hpi0->GetYaxis()->SetTitle("dN/dP_{x}");
-  c->SaveAs("Px_CM_noK0rho_gsim.gif");
-  c->SaveAs("Px_CM_noK0rho_gsim.C");
+  //c->SaveAs("Px_CM_noK0rho_gsim.gif");
+  //c->SaveAs("Px_CM_noK0rho_gsim.C");
 
 
   outdata->Draw("Pzpi0_b>>hpi0",pi0cut&&!mrhocut&&!mK0cut);
@@ -159,9 +177,11 @@
   outdata->Draw("Pzpim_b>>hpim",pi0cut&&!mrhocut&&!mK0cut,"same");
   hpi0->GetXaxis()->SetTitle("P_{z} CM (GeV)");
   hpi0->GetYaxis()->SetTitle("dN/dP_{z}");
-  c->SaveAs("Pz_CM_noK0rho_gsim.gif");
-  c->SaveAs("Pz_CM_noK0rho_gsim.C");
+  //c->SaveAs("Pz_CM_noK0rho_gsim.gif");
+  //c->SaveAs("Pz_CM_noK0rho_gsim.C");
 
+
+*/
 /*
   outdata->Draw("Dm>>h(500,0,2)",pi0cut,"");
   outdata->Draw("Dm>>hp(500,0,2)",pi0cut&&planecut,"same");
