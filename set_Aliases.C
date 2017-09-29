@@ -89,6 +89,26 @@
 
   outdata->SetAlias("crossDot_b","crossX_b*Pxpi0_b + crossY_b*Pypi0_b + crossZ_b*Pzpi0_b");
 
+  outdata->SetAlias("Pxpip","fX[2]");
+  outdata->SetAlias("Pypip","fY[2]");
+  outdata->SetAlias("Pzpip","fZ[2]");
+  outdata->SetAlias("Pxpim","fX[3]");
+  outdata->SetAlias("Pypim","fY[3]");
+  outdata->SetAlias("Pzpim","fZ[3]");
+
+
+  outdata->SetAlias("Mpi0pip","TMath::Sqrt((Epi0+Epip)*(Epi0+Epip) - (Pxpi0+Pxpip)*(Pxpi0+Pxpip)  - (Pypi0+Pypip)*(Pypi0+Pypip) - (Pzpi0+Pzpip)*(Pzpi0+Pzpip))");
+  outdata->SetAlias("Mpimpip","TMath::Sqrt((Epim+Epip)*(Epim+Epip) - (Pxpim+Pxpip)*(Pxpim+Pxpip)  - (Pypim+Pypip)*(Pypim+Pypip) - (Pzpim+Pzpip)*(Pzpim+Pzpip))");
+
+  outdata->SetAlias("Tpip","Epip_b-0.13957");
+  outdata->SetAlias("Tpim","Epim_b-0.13957");
+  outdata->SetAlias("Tpi0","Epi0_b-mpi0");
+  outdata->SetAlias("Qeta","Tpip+Tpim+Tpi0");
+  outdata->SetAlias("X","sqrt(3)*(Tpip-Tpim)/Qeta");
+  outdata->SetAlias("Y","3*Tpi0/Qeta-1");
+  
+
+
   //////////////////
   outdata->SetAlias("mpi0","TMath::Sqrt(2*fE[0]*fE[1]*(1-ct))");
   outdata->SetAlias("mpip","TMath::Sqrt(Epip*Epip - (fX[2]*fX[2] + fY[2]*fY[2] +  fZ[2]*fZ[2]))");
@@ -103,13 +123,17 @@
   TCut metacut = "0.52<Dm&&Dm<0.6";
   TCut momegacut = "0.74<Dm&&Dm<0.82";
 
-  outdata->Draw("meta>>h0",pi0cut,"");
-  outdata->Draw("Dm>>hm",pi0cut,"same");
+
+
+  //  outdata->Draw("meta>>h0",pi0cut,"");
+  //outdata->Draw("Dm>>hm",pi0cut,"same");
+
+
   //  outdata->Draw("meta>>h0n",pi0cut&&!mK0cut&&!mrhocut,"same");
   //outdata->Draw("Dm>>hmn",pi0cut&&!mK0cut&&!mrhocut,"same");
 
-  outdata->Draw("meta>>h0n",pi0cut&&planecut,"same");
-  outdata->Draw("Dm>>hmn",pi0cut&&planecut,"same");
+  //outdata->Draw("meta>>h0n",pi0cut&&planecut,"same");
+  //outdata->Draw("Dm>>hmn",pi0cut&&planecut,"same");
 
   Float_t max=h0->GetMaximum();
   if (max<hm->GetMaximum())
@@ -129,8 +153,8 @@
   hmn->SetLineWidth(2);
   hmn->SetLineColor(kBlack);
 
-  outdata->Draw("Dm>>h0",pi0cut&&!mK0cut&&!mrhocut,"");
-  outdata->Draw("DDm>>hm",pi0cut&&!mK0cut&&!mrhocut,"same");
+  // outdata->Draw("Dm>>h0",pi0cut&&!mK0cut&&!mrhocut,"");
+  // outdata->Draw("DDm>>hm",pi0cut&&!mK0cut&&!mrhocut,"same");
 
 
   /*
