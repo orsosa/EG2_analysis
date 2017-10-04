@@ -9,7 +9,12 @@
     delete hm;
   if (gROOT->FindObject("hmn")!=0)
     delete hmn;
+  if (gROOT->FindObject("hdz")!=0)
+    delete hdz;
+
   TCanvas *c =  new TCanvas("c","c",1024,768);
+
+  TH2F *hdz = new TH2F("hdz","dalitz plot",300,0,1,300,0,1);
   TH1F *h0 = new TH1F("h0","dm",500,0,2);
   TH1F *hm = (TH1F*) h0->Clone("hm");
   TH1F *h0n = (TH1F*) h0->Clone("h0n");
@@ -105,17 +110,23 @@
   //outdata->SetAlias("yd","Mpi0pip-0.39");
   //TCut dalitzCut = "xd*xd+yd*yd<0.05*0.05";
 
-  Float_t xc=3.15276e-01,rx=7.02903e-02,yc=3.44368e-01,ry=6.53304e-02;
-  outdata->SetAlias("xd0",Form("%f",xc));
-  outdata->SetAlias("yd0",Form("%f",yc));
-  outdata->SetAlias("rx",Form("%f",rx));
-  outdata->SetAlias("ry",Form("%f",ry));
+  Float_t xc=9.32886e-02,rx= 3.*1.41376e-02,yc=1.16822e-01,ry=3.*2.20606e-02;
 
-  outdata->SetAlias("xd",Form("Mpi0pip-%f",xc));
-  outdata->SetAlias("yd",Form("Mpi0pip-%f",yc));
+  //  Float_t xc=3.15276e-01,rx=7.02903e-02,yc=3.44368e-01,ry=6.53304e-02;
+  outdata->SetAlias("xd_r",Form("(Mpi0pim*Mpi0pim-%f)/%f",xc,rx));
+  outdata->SetAlias("yd_r",Form("(Mpi0pip*Mpi0pip-%f)/%f",yc,ry));
 
-  TCut dalitzCut = Form("xd*xd/(%f*%f)+yd*yd/(%f*%f)<1",rx,rx,ry,ry);
+  TCut dalitzCut = Form("xd_r*xd_r + yd_r*yd_r <1",rx,rx,ry,ry);
 
+  TEllipse *el= new TEllipse(xc,yc,rx,ry);
+  el->SetFillStyle(0);
+  el->SetLineWidth(3);
+  outdata->Draw("Mpi0pip*Mpi0pip:Mpi0pim*Mpi0pim>>hdz",pi0cut,"colz");
+
+  el->Draw();
+  //TH2D *hx = hdz->ProjectionX();
+  //TH2D *hy = hdz->ProjectionY();
+  
   outdata->SetAlias("Tpip","Epip_b-0.13957");
   outdata->SetAlias("Tpim","Epim_b-0.13957");
   outdata->SetAlias("Tpi0","Epi0_b-mpi0");
@@ -137,8 +148,6 @@
   TCut metacut = "0.52<Dm&&Dm<0.6";
   TCut momegacut = "0.74<Dm&&Dm<0.82";
   
-
-
 
   //  outdata->Draw("meta>>h0",pi0cut,"");
   //outdata->Draw("Dm>>hm",pi0cut,"same");
