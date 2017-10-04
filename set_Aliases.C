@@ -99,6 +99,22 @@
 
   outdata->SetAlias("Mpi0pip","TMath::Sqrt((Epi0+Epip)*(Epi0+Epip) - (Pxpi0+Pxpip)*(Pxpi0+Pxpip)  - (Pypi0+Pypip)*(Pypi0+Pypip) - (Pzpi0+Pzpip)*(Pzpi0+Pzpip))");
   outdata->SetAlias("Mpimpip","TMath::Sqrt((Epim+Epip)*(Epim+Epip) - (Pxpim+Pxpip)*(Pxpim+Pxpip)  - (Pypim+Pypip)*(Pypim+Pypip) - (Pzpim+Pzpip)*(Pzpim+Pzpip))");
+  outdata->SetAlias("Mpi0pim","TMath::Sqrt((Epi0+Epim)*(Epi0+Epim) - (Pxpi0+Pxpim)*(Pxpi0+Pxpim)  - (Pypi0+Pypim)*(Pypi0+Pypim) - (Pzpi0+Pzpim)*(Pzpi0+Pzpim))");
+
+  //  outdata->SetAlias("xd","Mpi0pip-0.31");
+  //outdata->SetAlias("yd","Mpi0pip-0.39");
+  //TCut dalitzCut = "xd*xd+yd*yd<0.05*0.05";
+
+  Float_t xc=3.15276e-01,rx=7.02903e-02,yc=3.44368e-01,ry=6.53304e-02;
+  outdata->SetAlias("xd0",Form("%f",xc));
+  outdata->SetAlias("yd0",Form("%f",yc));
+  outdata->SetAlias("rx",Form("%f",rx));
+  outdata->SetAlias("ry",Form("%f",ry));
+
+  outdata->SetAlias("xd",Form("Mpi0pip-%f",xc));
+  outdata->SetAlias("yd",Form("Mpi0pip-%f",yc));
+
+  TCut dalitzCut = Form("xd*xd/(%f*%f)+yd*yd/(%f*%f)<1",rx,rx,ry,ry);
 
   outdata->SetAlias("Tpip","Epip_b-0.13957");
   outdata->SetAlias("Tpim","Epim_b-0.13957");
@@ -106,8 +122,6 @@
   outdata->SetAlias("Qeta","Tpip+Tpim+Tpi0");
   outdata->SetAlias("X","sqrt(3)*(Tpip-Tpim)/Qeta");
   outdata->SetAlias("Y","3*Tpi0/Qeta-1");
-  
-
 
   //////////////////
   outdata->SetAlias("mpi0","TMath::Sqrt(2*fE[0]*fE[1]*(1-ct))");
@@ -122,6 +136,7 @@
   TCut planecut = "-0.1<crossDot&&crossDot<0.1";
   TCut metacut = "0.52<Dm&&Dm<0.6";
   TCut momegacut = "0.74<Dm&&Dm<0.82";
+  
 
 
 
