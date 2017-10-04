@@ -106,6 +106,13 @@
   outdata->SetAlias("Mpimpip","TMath::Sqrt((Epim+Epip)*(Epim+Epip) - (Pxpim+Pxpip)*(Pxpim+Pxpip)  - (Pypim+Pypip)*(Pypim+Pypip) - (Pzpim+Pzpip)*(Pzpim+Pzpip))");
   outdata->SetAlias("Mpi0pim","TMath::Sqrt((Epi0+Epim)*(Epi0+Epim) - (Pxpi0+Pxpim)*(Pxpi0+Pxpim)  - (Pypi0+Pypim)*(Pypi0+Pypim) - (Pzpi0+Pzpim)*(Pzpi0+Pzpim))");
 
+
+
+  outdata->SetAlias("Mpi0pip_b","TMath::Sqrt((Epi0_b+Epip_b)*(Epi0_b+Epip_b) - (Pxpi0_b+Pxpip_b)*(Pxpi0_b+Pxpip_b)  - (Pypi0_b+Pypip_b)*(Pypi0_b+Pypip_b) - (Pzpi0_b+Pzpip_b)*(Pzpi0_b+Pzpip_b))");
+  outdata->SetAlias("Mpimpip_b","TMath::Sqrt((Epim_b+Epip_b)*(Epim_b+Epip_b) - (Pxpim_b+Pxpip_b)*(Pxpim_b+Pxpip_b)  - (Pypim_b+Pypip_b)*(Pypim_b+Pypip_b) - (Pzpim_b+Pzpip_b)*(Pzpim_b+Pzpip_b))");
+  outdata->SetAlias("Mpi0pim_b","TMath::Sqrt((Epi0_b+Epim_b)*(Epi0_b+Epim_b) - (Pxpi0_b+Pxpim_b)*(Pxpi0_b+Pxpim_b)  - (Pypi0_b+Pypim_b)*(Pypi0_b+Pypim_b) - (Pzpi0_b+Pzpim_b)*(Pzpi0_b+Pzpim_b))");
+
+
   //  outdata->SetAlias("xd","Mpi0pip-0.31");
   //outdata->SetAlias("yd","Mpi0pip-0.39");
   //TCut dalitzCut = "xd*xd+yd*yd<0.05*0.05";
@@ -121,9 +128,7 @@
   TEllipse *el= new TEllipse(xc,yc,rx,ry);
   el->SetFillStyle(0);
   el->SetLineWidth(3);
-  outdata->Draw("Mpi0pip*Mpi0pip:Mpi0pim*Mpi0pim>>hdz",pi0cut,"colz");
-
-  el->Draw();
+ 
   //TH2D *hx = hdz->ProjectionX();
   //TH2D *hy = hdz->ProjectionY();
   
@@ -177,7 +182,13 @@
   hmn->SetLineWidth(2);
   hmn->SetLineColor(kBlack);
 
-  // outdata->Draw("Dm>>h0",pi0cut&&!mK0cut&&!mrhocut,"");
+ 
+  //outdata->Draw("Mpi0pip*Mpi0pip:Mpi0pim*Mpi0pim>>hdz",pi0cut,"colz");
+  //  outdata->Draw("Mpi0pip_b*Mpi0pip_b:Mpi0pim_b*Mpi0pim_b>>hdz",pi0cut,"colz");
+
+  el->Draw();
+
+ // outdata->Draw("Dm>>h0",pi0cut&&!mK0cut&&!mrhocut,"");
   // outdata->Draw("DDm>>hm",pi0cut&&!mK0cut&&!mrhocut,"same");
 
 
