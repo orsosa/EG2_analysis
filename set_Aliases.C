@@ -123,7 +123,11 @@
   outdata->SetAlias("xd_r",Form("(Mpi0pim*Mpi0pim-%f)/%f",xc,rx));
   outdata->SetAlias("yd_r",Form("(Mpi0pip*Mpi0pip-%f)/%f",yc,ry));
 
-  TCut dalitzCut = Form("xd_r*xd_r + yd_r*yd_r <1",rx,rx,ry,ry);
+  outdata->SetAlias("xd2","Mpi0pim*Mpi0pim");
+  outdata->SetAlias("yd2","Mpi0pip*Mpi0pip");
+
+  //  TCut dalitzCut = Form("xd_r*xd_r + yd_r*yd_r <1",rx,rx,ry,ry);
+  TCut dalitzCut = "0<xd2&&xd2<0.16&&0<yd2&&yd2<0.2";
 
   TEllipse *el= new TEllipse(xc,yc,rx,ry);
   el->SetFillStyle(0);
@@ -186,7 +190,7 @@
   //outdata->Draw("Mpi0pip*Mpi0pip:Mpi0pim*Mpi0pim>>hdz",pi0cut,"colz");
   //  outdata->Draw("Mpi0pip_b*Mpi0pip_b:Mpi0pim_b*Mpi0pim_b>>hdz",pi0cut,"colz");
 
-  el->Draw();
+  //el->Draw();
 
  // outdata->Draw("Dm>>h0",pi0cut&&!mK0cut&&!mrhocut,"");
   // outdata->Draw("DDm>>hm",pi0cut&&!mK0cut&&!mrhocut,"same");
