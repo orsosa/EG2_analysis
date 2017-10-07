@@ -157,12 +157,10 @@
   TCut metacut = "0.52<Dm&&Dm<0.6";
   TCut momegacut = "0.74<Dm&&Dm<0.82";
   
-
-  //  outdata->Draw("meta>>h0",pi0cut,"");
+  //outdata->Draw("meta>>h0",pi0cut,"");
   //outdata->Draw("Dm>>hm",pi0cut,"same");
 
-
-  //  outdata->Draw("meta>>h0n",pi0cut&&!mK0cut&&!mrhocut,"same");
+  //outdata->Draw("meta>>h0n",pi0cut&&!mK0cut&&!mrhocut,"same");
   //outdata->Draw("Dm>>hmn",pi0cut&&!mK0cut&&!mrhocut,"same");
 
   //outdata->Draw("meta>>h0n",pi0cut&&planecut,"same");
@@ -188,7 +186,15 @@
 
  
   //outdata->Draw("Mpi0pip*Mpi0pip:Mpi0pim*Mpi0pim>>hdz",pi0cut,"colz");
-  //  outdata->Draw("Mpi0pip_b*Mpi0pip_b:Mpi0pim_b*Mpi0pim_b>>hdz",pi0cut,"colz");
+
+
+  TBox *bx = new TBox(0,0,0.16,0.2);
+  bx->SetLineWidth(3);
+  bx->SetFillStyle(0);
+  hdz->GetYaxis()->SetTitle("m^{2}(#pi^{0},#pi^{+})");
+  hdz->GetXaxis()->SetTitle("m^{2}(#pi^{0},#pi^{-})");
+  outdata->Draw("yd2:xd2>>hdz",pi0cut,"colz");
+  bx->Draw();
 
   //el->Draw();
 
