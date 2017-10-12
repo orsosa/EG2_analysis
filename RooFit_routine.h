@@ -1,0 +1,16 @@
+#include "Riostream.h"
+#include "TCanvas.h"
+#include "TH1F.h"
+#include "RooGaussian.h"
+#include "RooRealVar.h"
+#include "RooFormulaVar.h"
+#include "RooConstVar.h"
+#include "RooPolynomial.h"
+#include "RooChebychev.h"
+#include "RooDataHist.h"
+#include "RooFitResult.h"
+#include "RooAddPdf.h"
+#include "RooPlot.h"
+#include "RooArgList.h"
+
+TCanvas * RooFit_routine(TH1F* hM_bin0);
