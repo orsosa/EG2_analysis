@@ -2,7 +2,7 @@ using namespace RooFit;
 RooRealVar Ns("Ns","signal number",100.,0,10000);
 RooRealVar Nb("Nb","background number",300.,0,10000);
 Float_t err;
-inline RooFitResult* fit_pdf(TH1F *histo,Float_t minRange0, Float_t maxRange0,Float_t& err=err, RooRealVar& Ns=Ns, RooRealVar& Nb=Nb, int bin, int Ni = 1, Float_t kMP=0.53, Float_t kSP=0.1)
+inline RooPlot* fit_pdf(TH1F *histo,Float_t minRange0, Float_t maxRange0,Float_t& err=err, RooRealVar& Ns=Ns, RooRealVar& Nb=Nb, int bin, int Ni = 1, Float_t kMP=0.53, Float_t kSP=0.05)
 {
 
   //  TH1F *histo = hM_bin0;
@@ -15,7 +15,7 @@ inline RooFitResult* fit_pdf(TH1F *histo,Float_t minRange0, Float_t maxRange0,Fl
 
   //Signal
   RooRealVar x("x","x",xmin,xmax); 
-  RooRealVar s("s","#sigma",kSP,0.,kSP*1.); 
+  RooRealVar s("s","#sigma",kSP,0.,kSP); 
   RooRealVar m("m","mean",kMP,kMP*0.95,1.05*kMP); 
   RooGaussian sig("sig","eta mass",x,m,s);
   ///////////////////
@@ -58,5 +58,5 @@ inline RooFitResult* fit_pdf(TH1F *histo,Float_t minRange0, Float_t maxRange0,Fl
   xframe->Draw();
   //c->SaveAs(Form("%s/hM1_%d.gif",picdir,bin));
   //c->SaveAs(Form("%s/hM1_%d.C",picdir,bin)); 
-  return res;
+  return xframe;
 }
