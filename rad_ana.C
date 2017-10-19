@@ -70,6 +70,30 @@
   l->Draw();
   cNu->cd();
   lNu->Draw();
-
-
+  
+  TCanvas *c0 = new TCanvas("c0","c0",1024,768);
+  TH2F *h2 = new TH2F("h2","h2",20,xB,20,Nu);
+  Int_t Np = tpb->Draw(Form("x:Nu:rf/rfd"),"","goff");
+  for (int k=0;k<Np;k++)
+  {
+    h2->Fill(tpb->GetV1()[k],tpb->GetV2()[k],tpb->GetV3()[k]);
+  }
+  for (int k=0;k<20;k++)
+    for (int kk=0;kk<20;kk++)
+    {
+      if (h2->GetBinContent(k+1,kk+1)==0)
+	h2->SetBinContent(k+1,kk+1,-10);
+    }
+    
+  
+  h2->SetMinimum(.94);
+  h2->GetXaxis()->SetTitle("xB");
+  h2->GetYaxis()->SetTitle("#nu");
+  h2->GetYaxis()->SetTitleOffset(1.5);
+  h2->GetXaxis()->SetTitleOffset(1.5);
+  h2->GetZaxis()->SetTitleOffset(1.2);
+  h2->GetZaxis()->SetTitle("#frac{#sigma^{Pb}_{rad}/#sigma^{Pb}_{born}}{#sigma^{D}_{rad}/#sigma^{D}_{born}}");
+  h2->SetContour(99);
+  h2->SetTitle("Radiative correction Pb over D2");
+  h2->Draw("lego2");
 }
