@@ -1,21 +1,21 @@
 {
 //=========Macro generated from canvas: c0/c0
-//=========  (Thu Oct 19 01:12:29 2017) by ROOT version5.34/34
+//=========  (Thu Oct 19 01:21:17 2017) by ROOT version5.34/34
    TCanvas *c0 = new TCanvas("c0", "c0",0,66,1280,734);
    gStyle->SetOptStat(0);
-   c0->Range(-1.02053,-1.223161,1.02053,1.223161);
+   c0->Range(-1.012833,-1.144818,1.012833,1.144818);
    TView *view = TView::CreateView(1);
    view->SetRange(0.14,2.2,0.94,0.55,4.25,1.01972);
    c0->SetFillColor(0);
    c0->SetBorderMode(0);
    c0->SetBorderSize(2);
-   c0->SetTheta(42.85489);
-   c0->SetPhi(45.76575);
+   c0->SetTheta(31.53231);
+   c0->SetPhi(52.08239);
    c0->SetFrameBorderMode(0);
-   Double_t xAxis2[21] = {0.14, 0.1605, 0.181, 0.2015, 0.222, 0.2425, 0.263, 0.2835, 0.304, 0.3245, 0.345, 0.3655, 0.386, 0.4065, 0.427, 0.4475, 0.468, 0.4885, 0.509, 0.5295, 0.55}; 
-   Double_t yAxis2[21] = {2.2, 2.45, 2.66, 2.82, 2.96, 3, 3.17, 3.27, 3.37, 3.46, 3.55, 3.64, 3.72, 3.8, 3.87, 3.94, 4.01, 4.07, 4.12, 4.18, 4.25}; 
+   Double_t xAxis1[21] = {0.14, 0.1605, 0.181, 0.2015, 0.222, 0.2425, 0.263, 0.2835, 0.304, 0.3245, 0.345, 0.3655, 0.386, 0.4065, 0.427, 0.4475, 0.468, 0.4885, 0.509, 0.5295, 0.55}; 
+   Double_t yAxis1[21] = {2.2, 2.45, 2.66, 2.82, 2.96, 3, 3.17, 3.27, 3.37, 3.46, 3.55, 3.64, 3.72, 3.8, 3.87, 3.94, 4.01, 4.07, 4.12, 4.18, 4.25}; 
    
-   TH2F *h2 = new TH2F("h2","Radiative correction Pb over D2",20, xAxis2,20, yAxis2);
+   TH2F *h2 = new TH2F("h2","Radiative correction Pb over D2",20, xAxis1,20, yAxis1);
    h2->SetBinContent(23,-10);
    h2->SetBinContent(24,-10);
    h2->SetBinContent(25,-10);
@@ -544,7 +544,7 @@
    h2->GetZaxis()->SetTitleFont(42);
    h2->Draw("lego2");
    
-   TPaveText *pt = new TPaveText(0.4689628,0.94,0.9138454,0.995,"blNDC");
+   TPaveText *pt = new TPaveText(0.2096673,0.94,0.7903327,0.995,"blNDC");
    pt->SetName("title");
    pt->SetBorderSize(0);
    pt->SetFillColor(0);
