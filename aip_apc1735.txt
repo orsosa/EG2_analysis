@@ -1,0 +1,129 @@
+
+
+
+
+
+AU  - The GlueX Collaboration
+AU  - H. Al Ghoul
+AU  - E. G. Anassontzis
+AU  - F. Barbosa
+AU  - A. Barnes
+AU  - T. D. Beattie
+AU  - D. W. Bennett
+AU  - V. V. Berdnikov
+AU  - T. Black
+AU  - W. Boeglin
+AU  - W. K. Brooks
+AU  - B. Cannon
+AU  - O. Chernyshov
+AU  - E. Chudakov
+AU  - V. Crede
+AU  - M. M. Dalton
+AU  - A. Deur
+AU  - S. Dobbs
+AU  - A. Dolgolenko
+AU  - M. Dugger
+AU  - H. Egiyan
+AU  - P. Eugenio
+AU  - A. M. Foda
+AU  - J. Frye
+AU  - S. Furletov
+AU  - L. Gan
+AU  - A. Gasparian
+AU  - A. Gerasimov
+AU  - N. Gevorgyan
+AU  - V. S. Goryachev
+AU  - B. Guegan
+AU  - L. Guo
+AU  - H. Hakobyan
+AU  - H. Hakobyan
+AU  - J. Hardin
+AU  - G. M. Huber
+AU  - D. Ireland
+AU  - M. M. Ito
+AU  - N. S. Jarvis
+AU  - R. T. Jones
+AU  - V. Kakoyan
+AU  - M. Kamel
+AU  - F. J. Klein
+AU  - C. Kourkoumeli
+AU  - S. Kuleshov
+AU  - M. Lara
+AU  - I. Larin
+AU  - D. Lawrence
+AU  - J. Leckey
+AU  - W. I. Levine
+AU  - K. Livingston
+AU  - G. J. Lolos
+AU  - D. Mack
+AU  - P. T. Mattione
+AU  - V. Matveev
+AU  - M. McCaughan
+AU  - W. McGinley
+AU  - J. McIntyre
+AU  - R. Mendez
+AU  - C. A. Meyer
+AU  - R. Miskimen
+AU  - R. E. Mitchell
+AU  - F. Mokaya
+AU  - K. Moriya
+AU  - G. Nigmatkulov
+AU  - N. Ochoa
+AU  - A. I. Ostrovidov
+AU  - Z. Papandreou
+AU  - R. Pedroni
+AU  - M. Pennington
+AU  - L. Pentchev
+AU  - A. Ponosov
+AU  - E. Pooser
+AU  - B. Pratt
+AU  - Y. Qiang
+AU  - J. Reinhold
+AU  - B. G. Ritchie
+AU  - L. Robison
+AU  - D. Romanov
+AU  - C. Salgado
+AU  - R. A. Schumacher
+AU  - A. Yu. Semenov
+AU  - I. A. Semenova
+AU  - I. Senderovich
+AU  - K. K. Seth
+AU  - M. R. Shepherd
+AU  - E. S. Smith
+AU  - D. I. Sober
+AU  - A. Somov
+AU  - S. Somov
+AU  - O. Soto
+AU  - N. Sparks
+AU  - M. J. Staib
+AU  - J. R. Stevens
+AU  - A. Subedi
+AU  - V. Tarasov
+AU  - S. Taylor
+AU  - I. Tolstukhin
+AU  - A. Tomaradze
+AU  - A. Toro
+AU  - A. Tsaris
+AU  - G. Vasileiadis
+AU  - I. Vega
+AU  - G. Voulgaris
+AU  - N. K. Walford
+AU  - T. Whitlatch
+AU  - M. Williams
+AU  - E. Wolin
+AU  - T. Xiao
+AU  - J. Zarling
+AU  - B. Zihlmann
+TI  - First results from the GlueX experiment
+PT  - Journal Article
+DP  - 2016
+TA  - AIP Conference Proceedings
+PG  - 020001
+VI  - 1735
+IP  - 1
+AID  - 10.1063/1.4949369 [doi]
+4099  - http://aip.scitation.org/doi/abs/10.1063/1.4949369
+4100  - http://aip.scitation.org/doi/full/10.1063/1.4949369
+SO  - AIP Conference Proceedings May 2016 1735(1):
+
+
