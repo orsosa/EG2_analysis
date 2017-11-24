@@ -3,11 +3,16 @@
   TCanvas *cxB = new TCanvas("cxB","cxB",1024,768);
   cNu->SetGrid();  
   cxB->SetGrid();
-  TFile *f = new TFile("rad_data.root","read");
+  TFile *f = new TFile("rad_data.root","update");
   TNtuple *tall = (TNtuple *)f->Get("tall");
   Int_t NbinNu=20;
   Int_t NbinX =20;
   //
+  /*
+  In any case here are the files! Each line is ee[X][Y] with X the
+target (0 for deuterium and 1 for the solid target indicated in the
+title of the file) and with the bin number Y = bin(xB)+20xbin(Nu) (see
+table below).*/
   Float_t Nu[21] = {2.25, 2.45, 2.66, 2.82, 2.96, 3.07, 3.17, 3.27, 3.37, 3.46, 3.55, 3.64, 3.72, 3.80, 3.87, 3.94, 4.01, 4.07, 4.12, 4.18, 4.25};
   
   Float_t xB[21]= {0.12, 0.15, 0.17, 0.18, 0.19, 0.20, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.30, 0.33, 0.36, 0.39, 0.43, 0.48, 0.56};
@@ -66,10 +71,10 @@
   
   TCanvas *c0 = new TCanvas("c0","c0",1024,768);
   TH2F *h2 = new TH2F("h2","h2",20,xB,20,Nu);
-  Int_t Np = tpb->Draw(Form("x:Nu:rf/rfd"),"","goff");
+  Int_t Np = tall->Draw(Form("x:Nu:rfPb/rfd"),"","goff");
   for (int k=0;k<Np;k++)
   {
-    h2->Fill(tpb->GetV1()[k],tpb->GetV2()[k],tpb->GetV3()[k]);
+    h2->Fill(tall->GetV1()[k],tall->GetV2()[k],tall->GetV3()[k]);
   }
   for (int k=0;k<20;k++)
     for (int kk=0;kk<20;kk++)
@@ -90,10 +95,43 @@
   h2->SetTitle("Radiative correction Pb over D2");
   h2->Draw("lego2");
 
-  gSystem->Load("RadPimC.C");
-  gSystem->Load("RadPimFe.C");
-  gSystem->Load("RadPimPb.C");
-  Int_t bin =0;
-  
+  gROOT->ProcessLine(".x RadPimPb.C");
 
+  Int_t bin =0;
+  TH1F *hcmp = new TH1F("hcmp","Radiative correction relative difference",400,0,400);
+  gStyle->SetOptStat(1); 
+  TH1F *hcmp0 = new TH1F("hcmp0","Radiative correction relative difference",100,-10,10);
+  for (int kx=0;kx<20;kx++)
+  {
+    for (int kn=0;kn<20;kn++)
+    {
+      bin = kn*20 + kx;
+      Float_t nu=(Nu[kn] + Nu[kn+1])/2.;
+      Float_t x=(xB[kx] + xB[kx+1])/2.;
+      Int_t b=h2->FindBin(x,nu);
+      if (eePb[0][bin] !=0 && eePb[1][bin] !=0 && h2->GetBinContent(b%22,b/22) >0)
+      {
+	Float_t rd_corr=eePb[1][bin]/eePb[0][bin];
+	Float_t ex_corr=h2->GetBinContent(b%22,b/22);
+	hcmp->Fill(bin,(ex_corr-rd_corr)/ex_corr*100.);
+	hcmp0->Fill((ex_corr-rd_corr)/ex_corr*100);
+      }
+      else hcmp->Fill(bin,-100);
+    }
+  }
+  hcmp->SetMaximum(4.0);
+  hcmp->SetMinimum(-3.0);
+  
+  TCanvas *cmp=new TCanvas("cmp","cmp",1024,768);
+  hcmp->Write("",TObject::kOverwrite);
+  hcmp->SetMarkerStyle(kFullDotLarge);
+  hcmp->GetXaxis()->SetTitle("bin (bin_{x} + 20 bin_{#nu})");
+  hcmp->GetYaxis()->SetTitle("(ext - rd)/ext*100 (%)");
+  hcmp->Draw("p");
+  TCanvas *cmp0=new TCanvas("cmp0","cmp0",1024,768);
+  hcmp0->Write("",TObject::kOverwrite);
+  hcmp0->SetMarkerStyle(kFullDotLarge);
+  hcmp0->GetXaxis()->SetTitle("(ext - rd)/ext*100 (%)");
+  hcmp0->Draw("");
+  // f->Close();
 }
