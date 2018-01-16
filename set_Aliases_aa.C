@@ -135,7 +135,7 @@
   using namespace RooFit;
  
   RooRealVar m("m","mean",0.5,0.6);
-  RooRealVar s("s","sigma",0.0,0.7);
+  RooRealVar s("s","sigma",0.0,0.3);
   RooRealVar x("x","variable",0.45,0.8);
   RooRealVar meta("meta","M_{#eta}",0,1);
   RooGaussian sig("sig","eta mass",meta,m,s);
@@ -154,21 +154,21 @@
   RooFormulaVar minFunc("minFunc","Minimum formula","-a1/2./a2",RooArgList(a1,a2)); 
 
   RooGaussian parConst("parConst","Minimum constrain",minFunc,RooConst(1),RooConst(0.15));
-  RooRealVar Ns("Ns","mean",3000,0.,1000000);
-  RooRealVar Nb("Nb","mean",3000,0.,1000000);
+  RooRealVar Ns("Ns","mean",300,0.,1000000);
+  RooRealVar Nb("Nb","mean",300,0.,1000000);
   RooAddPdf model("model","sig + bkg",RooArgList(sig,bkg),RooArgList(Ns,Nb));
 
+RooFitResult* res;  
+/*
   Int_t nev=outdata->Draw("meta",ma0cut&&ma1cut&&"0.4<Z&&Z<0.5");
   Double_t *dataArr=outdata->GetV1();
   for (Long64_t i=0;i<nev; i++) {meta=(Float_t )dataArr[i];dsM.add(meta);}
-
-
-  
-  RooFitResult* res;
+*/
 
   RooCmdArg range=RooFit::Range(0.35,0.75);
   RooCmdArg save=RooFit::Save();
-  //  Float_t rangeFit[2]={0.42,0.75};
+  /*  
+//  Float_t rangeFit[2]={0.42,0.75};
   res  = model.fitTo(dsM,range,ExternalConstraints(parConst),save);  
   dsM.plotOn(pl);
 
@@ -176,7 +176,7 @@
   model.plotOn(pl,RooFit::Components(bkg),RooFit::LineStyle(kDashed));
   model.plotOn(pl,RooFit::LineColor(kRed)) ;
   pl->Draw();
-
+  */
   // outdata->Draw("Dm>>h0",pi0cut&&!mK0cut&&!mrhocut,"");
   // outdata->Draw("DDm>>hm",pi0cut&&!mK0cut&&!mrhocut,"same");
   /*
