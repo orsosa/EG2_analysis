@@ -47,7 +47,7 @@
   model.plotOn(pl,RooFit::Components(bkg),RooFit::LineStyle(kDashed));
   model.plotOn(pl,RooFit::LineColor(kRed)) ;
   dsM.plotOn(pl);  
-  pl->Draw();
+
 
   TCanvas *c = new TCanvas("c","c",1024,768);
   c->Divide(1,2);
@@ -60,5 +60,8 @@
   c->GetPad(2)->SetTopMargin(0);
   c->GetPad(2)->SetBottomMargin(0.15);
   c->GetPad(2)->SetGrid();
+
+  c->cd(1);
+  pl->Draw();
 
 }
