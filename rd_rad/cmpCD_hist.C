@@ -1,0 +1,80 @@
+{
+//=========Macro generated from canvas: cmp0/cmp0
+//=========  (Wed Jan 17 14:42:01 2018) by ROOT version5.34/36
+   TCanvas *cmp0 = new TCanvas("cmp0", "cmp0",12,181,1024,768);
+   cmp0->Range(-13.33333,-9.187501,13.33333,82.6875);
+   cmp0->SetFillColor(0);
+   cmp0->SetBorderMode(0);
+   cmp0->SetBorderSize(2);
+   cmp0->SetTickx(1);
+   cmp0->SetTicky(1);
+   cmp0->SetLeftMargin(0.125);
+   cmp0->SetRightMargin(0.125);
+   cmp0->SetFrameBorderMode(0);
+   cmp0->SetFrameBorderMode(0);
+   
+   TH1F *hcmp0 = new TH1F("hcmp0","Radiative correction relative difference C",100,-10,10);
+   hcmp0->SetBinContent(27,1);
+   hcmp0->SetBinContent(40,1);
+   hcmp0->SetBinContent(42,1);
+   hcmp0->SetBinContent(43,3);
+   hcmp0->SetBinContent(44,5);
+   hcmp0->SetBinContent(45,6);
+   hcmp0->SetBinContent(46,15);
+   hcmp0->SetBinContent(47,23);
+   hcmp0->SetBinContent(48,24);
+   hcmp0->SetBinContent(49,49);
+   hcmp0->SetBinContent(50,70);
+   hcmp0->SetBinContent(51,53);
+   hcmp0->SetBinContent(52,46);
+   hcmp0->SetBinContent(53,30);
+   hcmp0->SetBinContent(54,13);
+   hcmp0->SetBinContent(55,6);
+   hcmp0->SetBinContent(56,3);
+   hcmp0->SetBinContent(62,1);
+   hcmp0->SetEntries(350);
+   
+   TPaveStats *ptstats = new TPaveStats(0.78,0.835,0.98,0.995,"brNDC");
+   ptstats->SetName("stats");
+   ptstats->SetBorderSize(2);
+   ptstats->SetFillColor(0);
+   ptstats->SetTextAlign(12);
+   ptstats->SetTextFont(22);
+   TText *text = ptstats->AddText("hcmp0");
+   text->SetTextSize(0.0368);
+   text = ptstats->AddText("Entries = 350    ");
+   text = ptstats->AddText("Mean  = -0.1008");
+   text = ptstats->AddText("RMS   = 0.5697");
+   ptstats->SetOptStat(1111);
+   ptstats->SetOptFit(0);
+   ptstats->Draw();
+   hcmp0->GetListOfFunctions()->Add(ptstats);
+   ptstats->SetParent(hcmp0);
+   hcmp0->SetLineWidth(2);
+   hcmp0->SetMarkerStyle(8);
+   hcmp0->GetXaxis()->SetTitle("(ext - rd)/ext*100 (%)");
+   hcmp0->GetXaxis()->SetLabelFont(22);
+   hcmp0->GetXaxis()->SetLabelSize(0.03);
+   hcmp0->GetXaxis()->SetTitleSize(0.035);
+   hcmp0->GetXaxis()->SetTitleFont(22);
+   hcmp0->GetYaxis()->SetLabelFont(22);
+   hcmp0->GetYaxis()->SetLabelSize(0.03);
+   hcmp0->GetYaxis()->SetTitleSize(0.035);
+   hcmp0->GetYaxis()->SetTitleFont(22);
+   hcmp0->GetZaxis()->SetLabelFont(22);
+   hcmp0->GetZaxis()->SetLabelSize(0.03);
+   hcmp0->GetZaxis()->SetTitleSize(0.035);
+   hcmp0->GetZaxis()->SetTitleFont(22);
+   hcmp0->Draw("");
+   
+   TPaveText *pt = new TPaveText(0.01,0.945,0.695362,0.995,"blNDC");
+   pt->SetName("title");
+   pt->SetBorderSize(0);
+   pt->SetFillColor(0);
+   pt->SetTextFont(22);
+   text = pt->AddText("Radiative correction relative difference C");
+   pt->Draw();
+   cmp0->Modified();
+   cmp0->cd();
+   cmp0->SetSelected(cmp0);
+}
