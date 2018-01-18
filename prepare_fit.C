@@ -47,6 +47,7 @@
   model.plotOn(pl,RooFit::Components(bkg),RooFit::LineStyle(kDashed));
   model.plotOn(pl,RooFit::LineColor(kRed)) ;
   dsM.plotOn(pl);  
+  pl->SetTitle("");
   pl->Draw();
 
   TCanvas *c = new TCanvas("c","c",1024,768);
@@ -60,5 +61,29 @@
   c->GetPad(2)->SetTopMargin(0);
   c->GetPad(2)->SetBottomMargin(0.15);
   c->GetPad(2)->SetGrid();
+
+  c->cd(1);
+  pl->Draw();
+  
+  TH1F *hdata = (TH1F *)dsM.createHistogram("hdata",meta,Binning(100,0.2,0.8));
+
+  RooDataHist *modelhist = model.generateBinned(meta,0,true,true);
+  RooDataHist *modelhist0 = model.generateBinned(meta,0,true);
+
+  TH1F * hm0= (TH1F *)modelhist0->createHistogram("hm0",meta,Binning(100,0.2,0.8));
+  TH1F * hm= (TH1F *)modelhist->createHistogram("hm",meta,Binning(100,0.2,0.8));
+  
+  TH1F *hratio = (TH1F *) hdata->Clone("hratio");
+  for (int k=0;k<hratio->GetNbinsX();k++)
+  {
+    Float_t data=hdata->GetBinContent(k); 
+    Float_t mdata=hm->GetBinContent(k);
+    Float_t err=hdata->GetBinError(k);
+    hratio->SetBinContent(k,(data-mdata)/err);
+  }
+  
+  c->cd(2);
+  hratio->Draw("hist");
+  
 
 }
