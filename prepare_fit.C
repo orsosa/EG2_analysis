@@ -1,4 +1,6 @@
 {
+  gStyle->SetOptStat(0);
+  //  gStyle->SetHistMinimumZero();
   using namespace RooFit;
   
   RooRealVar m("m","mean",0.55,0.5,0.6);
@@ -6,7 +8,7 @@
   RooRealVar x("x","variable",0.45,0.8);
   Double_t ll,hl;
   RooRealVar metam("meta","#eta mass",0.55,"GeV");
-  RooDataSet *ds = (RooDataSet*) gROOT->FindObject("ds1_2");
+  RooDataSet *ds = (RooDataSet*) gROOT->FindObject("ds1_0");
   RooDataSet dsM = *ds;
 
   dsM.getRange(metam,ll,hl);
@@ -50,19 +52,20 @@
   pl->SetTitle("");
   pl->Draw();
 
-  TCanvas *c = new TCanvas("c","c",1024,768);
+  TCanvas *c = new TCanvas("c","c",920,690);
   c->Divide(1,2);
-  c->GetPad(1)->SetPad(0,0.3,1,1);
+  c->GetPad(1)->SetPad(0,0.4,1,1);
   c->GetPad(1)->SetBottomMargin(0.01);
   c->GetPad(1)->SetTopMargin(0.05);
   c->GetPad(1)->SetGrid();
 
-  c->GetPad(2)->SetPad(0,0,1,0.29);
-  c->GetPad(2)->SetTopMargin(0);
-  c->GetPad(2)->SetBottomMargin(0.15);
+  c->GetPad(2)->SetPad(0,0,1,0.38);
+  c->GetPad(2)->SetTopMargin(0.05);
+  c->GetPad(2)->SetBottomMargin(0.25);
   c->GetPad(2)->SetGrid();
 
   c->cd(1);
+  pl->GetYaxis()->SetTitleOffset(0.8);
   pl->Draw();
   
   TH1F *hdata = (TH1F *)dsM.createHistogram("hdata",meta,Binning(100,0.2,0.8));
@@ -76,14 +79,39 @@
   TH1F *hratio = (TH1F *) hdata->Clone("hratio");
   for (int k=0;k<hratio->GetNbinsX();k++)
   {
-    Float_t data=hdata->GetBinContent(k); 
-    Float_t mdata=hm->GetBinContent(k);
-    Float_t err=hdata->GetBinError(k);
-    hratio->SetBinContent(k,(data-mdata)/err);
+    Float_t data=hdata->GetBinContent(k+1); 
+    Float_t mdata=hm->GetBinContent(k+1);
+    Float_t err=hdata->GetBinError(k+1);
+    hratio->SetBinContent(k+1,(data-mdata)/err);
+    hratio->SetBinError(k+1,0.);
   }
   
   c->cd(2);
-  hratio->Draw("hist");
+  hratio->SetTitle("");
+  hratio->SetMaximum(5);
+  hratio->SetMinimum(-5);
+  //hratio->Draw("hist");
+  hratio->GetYaxis()->SetLabelSize(0.06);
+  hratio->GetXaxis()->SetLabelSize(0.06);
+  hratio->GetXaxis()->SetTitle("M(#gamma#gamma) (GeV)");
+  hratio->GetYaxis()->SetTitle("(data-model)/error");
+  hratio->GetXaxis()->SetTitleSize(0.09);
+  hratio->GetYaxis()->SetTitleSize(0.06);
+  hratio->GetYaxis()->SetTitleOffset(0.4);
   
+  //hratio->SetMarkerStyle(kFullDotLarge);
+  hratio->SetFillColor(kBlue-5);
+  hratio->SetMarkerColor(kBlue-5);
+  hratio->Draw("bar");
+  TLine *l = new TLine(0.35,3,0.75,3);
+  l->SetLineWidth(3);
+  l->SetLineStyle(2);
+  l->SetLineColor(kRed);
+  l->Draw();
+  l->DrawLine(0.35,-3,0.75,-3);
+
+  l->DrawLine(0.35,-5,0.35,5);
+  //l->SetLineColor(kBlue);
+  l->DrawLine(0.75,-5,0.75,5);
 
 }
