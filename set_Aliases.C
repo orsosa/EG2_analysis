@@ -186,7 +186,7 @@
  
   //outdata->Draw("Mpi0pip*Mpi0pip:Mpi0pim*Mpi0pim>>hdz",pi0cut,"colz");
 
-
+  
   TBox *bx = new TBox(0,0,0.16,0.2);
   bx->SetLineWidth(3);
   bx->SetFillStyle(0);
@@ -194,6 +194,102 @@
   hdz->GetXaxis()->SetTitle("m^{2}(#pi^{0},#pi^{-})");
   outdata->Draw("yd2:xd2>>hdz",pi0cut,"colz");
   bx->Draw();
+  
+
+  
+
+
+  using namespace RooFit;
+
+  //observable
+  RooRealVar meta("meta","M_{#eta}",0,1);
+
+  //gauss(meta,m,s)
+  RooRealVar m("m","mean gauss",0.55,0.53,0.57);
+  RooRealVar s("s","sigma gauss",0.01,0,0.02);
+  RooGaussian sig("sig","eta mass",meta,m,s);
+  
+ // gauss(meta,mg,sg) ;
+  RooRealVar mg("ml","mean gauss bkg",0.01,0,1);
+  RooRealVar sg("sl","sigma gauss bkg",0.05,0.,1);
+  RooGaussian gbkg("gbkg","gaussian background",meta,mg,sg);
+
+  // Construct landau(t,ml,sl) ;
+  RooRealVar ml("ml","mean landau bkg",5.,-20,20);
+  RooRealVar sl("sl","sigma landau bkg",1,0.1,10);
+  RooLandau lbkg("lbkg","landau background",meta,ml,sl);
+  
+  RooFFTConvPdf bkg_lxg("bkg_lxg","landau (X) gauss",meta,lbkg,gbkg);
+  
+  RooDataSet dsM("Mdata","Mass #eta #rightarrow #pi^{0}#pi^{+}#pi^{-} ",RooArgSet(meta));
+  RooPlot *pl =meta.frame();
+
+  RooRealVar a1("a1","linear term",-2.,-20000.,2.);
+  RooRealVar a2("a2","quadratic term",1,0.,20000.);  
+  //RooRealVar a3("a3","cubic term",0.1,-1000.,1000.);
+  //RooPolynomial bkg("bkg","background",meta,RooArgList(a1,a2,a3));
+  RooPolynomial bkg("bkg","background",meta,RooArgList(a1,a2));
+
+  //RooFormulaVar minFunc("minFunc","Minimum formula","(-a2 +TMath::Sqrt(a2*a2 - 3*a3*a1) )/(3*a3)",RooArgList(a1,a2,a3));
+  RooFormulaVar minFunc("minFunc","Minimum formula","-a1/2./a2",RooArgList(a1,a2)); 
+
+  RooGaussian parConst("parConst","Minimum constrain",minFunc,RooConst(1),RooConst(0.15));
+  RooRealVar Ns("Ns","mean",300,0.,1000000);
+  RooRealVar Nb("Nb","mean",300,0.,1000000);
+
+
+  // RooAddPdf model("model","sig + bkg",RooArgList(sig,bkg),RooArgList(Ns,Nb));
+  RooAddPdf model("model","@0 + @1",RooArgList(sig,bkg_lxg),RooArgList(Ns,Nb));
+  
+  RooFitResult* res;  
+
+  outdata->SetMaxEntryLoop(2e6);
+  Int_t nev=outdata->Draw("meta>>hm",dalitzCut&&pi0cut,"");
+  Double_t *dataArr=outdata->GetV1();
+  
+  for (Long64_t i=0;i<nev; i++) {meta=dataArr[i];dsM.add(meta);}
+
+
+ 
+  RooCmdArg range=RooFit::Range(0.35,0.75);
+  RooCmdArg save=RooFit::Save();
+    
+//  Float_t rangeFit[2]={0.42,0.75};
+  res  = model.fitTo(dsM,range,ExternalConstraints(parConst),save);  
+  dsM.plotOn(pl);
+
+  model.plotOn(pl,RooFit::VisualizeError(*res,1),RooFit::FillColor(kOrange)); 
+  model.plotOn(pl,RooFit::Components(bkg),RooFit::LineStyle(kDashed));
+  model.plotOn(pl,RooFit::LineColor(kRed)) ;
+  pl->Draw();
+  
+  // outdata->Draw("Dm>>h0",pi0cut&&!mK0cut&&!mrhocut,"");
+  // outdata->Draw("DDm>>hm",pi0cut&&!mK0cut&&!mrhocut,"same");
+  /*
+  outdata->Draw("meta>>hm",ma0cut&&ma1cut);
+  outdata->Draw("metaT>>hmT",ma0cut&&ma1cut);
+  hratio->Divide(hm,hmT);
+
+  TLegend *l = new TLegend(0.6,0.7,0.95,0.8);
+
+
+  l->AddEntry(hmT,"#sqrt{2*E0*E1*(1-cos(#theta_{#gamma#gamma}))}");
+  l->AddEntry(hm,"#sqrt{(E0+E1)^{2} - (P0+P1)^{2}}");
+  /////draw ratio
+  c->Divide(1,2,0,0);
+  c->GetPad(1)->SetBottomMargin(0);
+  c->GetPad(1)->SetRightMargin(0.01);
+  c->GetPad(2)->SetTopMargin(0);
+  c->GetPad(2)->SetRightMargin(0.01);
+  
+  c->cd(1);
+  hm->Draw();
+  hmT->Draw("same");
+  c->cd(2);
+  hratio->Draw();
+  */
+
+
 
   //el->Draw();
 
