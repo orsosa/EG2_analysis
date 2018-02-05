@@ -124,11 +124,12 @@
   t->SetAlias("xd_r",Form("(Mpi0pim*Mpi0pim-%f)/%f",xc,rx));
   t->SetAlias("yd_r",Form("(Mpi0pip*Mpi0pip-%f)/%f",yc,ry));
 
-  t->SetAlias("xd2","Mpi0pim*Mpi0pim");
+  t->SetAlias("xd2","Mpimpip*Mpimpip");
   t->SetAlias("yd2","Mpi0pip*Mpi0pip");
 
   //  TCut dalitzCut = Form("xd_r*xd_r + yd_r*yd_r <1",rx,rx,ry,ry);
-  TCut dalitzCut = "0<xd2&&xd2<0.16&&0<yd2&&yd2<0.2";
+  //TCut dalitzCut = "0<xd2&&xd2<0.16&&0<yd2&&yd2<0.2";
+  TCut dalitzCut = "0<xd2&&xd2<0.11&&0<yd2&&yd2<0.2";
 
   TEllipse *el= new TEllipse(xc,yc,rx,ry);
   el->SetFillStyle(0);
@@ -188,12 +189,16 @@
  
   //t->Draw("Mpi0pip*Mpi0pip:Mpi0pim*Mpi0pim>>hdz",pi0cut,"colz");
 
-  /*  
-  TBox *bx = new TBox(0,0,0.16,0.2);
+  //  t->Draw("Mpi0pip*Mpi0pip:Mpimpip*Mpimpip>>hdz",pi0cut,"colz");
+  //t->Draw("yd2:xd2>>hdz",pi0cut,"colz");
+  
+  /*
+   
+  TBox *bx = new TBox(0,0,0.11,0.2);
   bx->SetLineWidth(3);
   bx->SetFillStyle(0);
   hdz->GetYaxis()->SetTitle("m^{2}(#pi^{0},#pi^{+})");
-  hdz->GetXaxis()->SetTitle("m^{2}(#pi^{0},#pi^{-})");
+  hdz->GetXaxis()->SetTitle("m^{2}(#pi^{-},#pi^{+})");
   t->Draw("yd2:xd2>>hdz",pi0cut,"colz");
   bx->Draw();
   */ 
@@ -247,7 +252,7 @@
   // RooAddPdf model("model","sig + bkg",RooArgList(sig,bkg),RooArgList(Ns,Nb));
    RooAddPdf model("model","@0 + @1",RooArgList(sig,bkg_lxg),RooArgList(Ns,Nb));
    //RooAddPdf model("model","@0 + @1",RooArgList(sig,bkg_exg),RooArgList(Ns,Nb));
-  
+  /*
   RooFitResult* res;  
 
   t->SetMaxEntryLoop(2e6);
@@ -259,7 +264,8 @@
  
   RooCmdArg range=RooFit::Range(0.45,0.75);
   RooCmdArg save=RooFit::Save();
-      
+
+  
 //  Float_t rangeFit[2]={0.42,0.75};
   res  = model.fitTo(dsM,range,save);  
   dsM.plotOn(pl);
@@ -268,7 +274,7 @@
   model.plotOn(pl,RooFit::Components(bkg),RooFit::LineStyle(kDashed));
   model.plotOn(pl,RooFit::LineColor(kRed)) ;
   pl->Draw();
-  
+  */
   // t->Draw("Dm>>h0",pi0cut&&!mK0cut&&!mrhocut,"");
   // t->Draw("DDm>>hm",pi0cut&&!mK0cut&&!mrhocut,"same");
   /*
