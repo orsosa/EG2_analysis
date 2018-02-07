@@ -128,8 +128,8 @@
   t->SetAlias("yd2","Mpi0pip*Mpi0pip");
 
   //  TCut dalitzCut = Form("xd_r*xd_r + yd_r*yd_r <1",rx,rx,ry,ry);
-  //TCut dalitzCut = "0<xd2&&xd2<0.16&&0<yd2&&yd2<0.2";
-  TCut dalitzCut = "0<xd2&&xd2<0.11&&0<yd2&&yd2<0.2";
+  TCut dalitzCut = "0<xd2&&xd2<0.16&&0<yd2&&yd2<0.2";
+  //TCut dalitzCut = "0<xd2&&xd2<0.11&&0<yd2&&yd2<0.2";
 
   TEllipse *el= new TEllipse(xc,yc,rx,ry);
   el->SetFillStyle(0);
@@ -223,7 +223,7 @@
 
   // Construct landau(meta,ml,sl) ;
   RooRealVar ml("ml","mean landau bkg",.5,-20.,20.);
-  RooRealVar sl("sl","sigma landau bkg",0.01,0.0,1.);
+  RooRealVar sl("sl","sigma landau bkg",0.003,0.0,1.);
   RooLandau lbkg("lbkg","landau background",meta,ml,sl);
 
   // Construct exponential(meta,k) (exp(k*x)) ;
@@ -245,8 +245,8 @@
   //RooFormulaVar minFunc("minFunc","Minimum formula","(-a2 +TMath::Sqrt(a2*a2 - 3*a3*a1) )/(3*a3)",RooArgList(a1,a2,a3));
   RooFormulaVar minFunc("minFunc","Minimum formula","-a1/2./a2",RooArgList(a1,a2)); 
   RooGaussian parConst("parConst","Minimum constrain",minFunc,RooConst(1),RooConst(0.15));
-  RooRealVar Ns("Ns","mean",100,0.,1000000.);
-  RooRealVar Nb("Nb","mean",2000.,20.,1000000.);
+  RooRealVar Ns("Ns","mean",10000,0.,1000000.);
+  RooRealVar Nb("Nb","mean",550000.,20.,1000000.);
 
 
   // RooAddPdf model("model","sig + bkg",RooArgList(sig,bkg),RooArgList(Ns,Nb));
