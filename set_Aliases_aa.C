@@ -46,48 +46,48 @@
   hmT->SetLineColor(kRed);
 
 
+  TTree *t = (TTree *)_file0->Get("outdata");
+  t->SetAlias("Eeta","fE[0]+fE[1]");
+  t->SetAlias("Pxeta","fX[0]+fX[1]");
+  t->SetAlias("Pyeta","fY[0]+fY[1]");
+  t->SetAlias("Pzeta","fZ[0]+fZ[1]");
 
-  outdata->SetAlias("Eeta","fE[0]+fE[1]");
-  outdata->SetAlias("Pxeta","fX[0]+fX[1]");
-  outdata->SetAlias("Pyeta","fY[0]+fY[1]");
-  outdata->SetAlias("Pzeta","fZ[0]+fZ[1]");
-
-  outdata->SetAlias("meta","TMath::Sqrt(Eeta*Eeta - Pxeta*Pxeta - Pyeta*Pyeta - Pzeta*Pzeta)");
+  t->SetAlias("meta","TMath::Sqrt(Eeta*Eeta - Pxeta*Pxeta - Pyeta*Pyeta - Pzeta*Pzeta)");
 
 
-  outdata->SetAlias("p0p1","fE[0]*fE[1] - (fX[0]*fX[1] + fY[0]*fY[1] + fZ[0]*fZ[1])");
+  t->SetAlias("p0p1","fE[0]*fE[1] - (fX[0]*fX[1] + fY[0]*fY[1] + fZ[0]*fZ[1])");
 
-  outdata->SetAlias("meta0","TMath::Sqrt( 2*p0p1 )");
+  t->SetAlias("meta0","TMath::Sqrt( 2*p0p1 )");
 
-  outdata->SetAlias("ct","(fX[0]*fX[1] + fY[0]*fY[1] + fZ[0]*fZ[1])/(fE[0]*fE[1])");
-  outdata->SetAlias("metaT","TMath::Sqrt( 2*fE[0]*fE[1]*(1-ct) )");
-  outdata->SetAlias("metaT2","2*fE[0]*fE[1]*(1-ct)");
+  t->SetAlias("ct","(fX[0]*fX[1] + fY[0]*fY[1] + fZ[0]*fZ[1])/(fE[0]*fE[1])");
+  t->SetAlias("metaT","TMath::Sqrt( 2*fE[0]*fE[1]*(1-ct) )");
+  t->SetAlias("metaT2","2*fE[0]*fE[1]*(1-ct)");
 
   /// boost.
-  outdata->SetAlias("bX","Pxeta/Eeta");
-  outdata->SetAlias("bY","Pyeta/Eeta");
-  outdata->SetAlias("bZ","Pzeta/Eeta");
-  outdata->SetAlias("b","TMath::Sqrt(bX*bX + bY*bY + bZ*bZ)");
-  outdata->SetAlias("g","1.0/TMath::Sqrt(1-b*b)"); 
-  outdata->SetAlias("bDotr_a0","bX*fX[0] + bY*fY[0] + bZ*fZ[0]");
-  outdata->SetAlias("bDotr_a1","bX*fX[1] + bY*fY[1] + bZ*fZ[1]");
+  t->SetAlias("bX","Pxeta/Eeta");
+  t->SetAlias("bY","Pyeta/Eeta");
+  t->SetAlias("bZ","Pzeta/Eeta");
+  t->SetAlias("b","TMath::Sqrt(bX*bX + bY*bY + bZ*bZ)");
+  t->SetAlias("g","1.0/TMath::Sqrt(1-b*b)"); 
+  t->SetAlias("bDotr_a0","bX*fX[0] + bY*fY[0] + bZ*fZ[0]");
+  t->SetAlias("bDotr_a1","bX*fX[1] + bY*fY[1] + bZ*fZ[1]");
 
-  outdata->SetAlias("Ea0_b","g*(fE[0] - bDotr_a0)");
-  outdata->SetAlias("Ea1_b","g*(fE[1] - bDotr_a1)");
+  t->SetAlias("Ea0_b","g*(fE[0] - bDotr_a0)");
+  t->SetAlias("Ea1_b","g*(fE[1] - bDotr_a1)");
 
-  outdata->SetAlias("Pxa0_b","fX[0]+(g-1)/(b*b)*(bDotr_a0)*bX - g*fE[0]*bX");
-  outdata->SetAlias("Pya0_b","fY[0]+(g-1)/(b*b)*(bDotr_a0)*bY - g*fE[0]*bY");
-  outdata->SetAlias("Pza0_b","fZ[0]+(g-1)/(b*b)*(bDotr_a0)*bZ - g*fE[0]*bZ");
+  t->SetAlias("Pxa0_b","fX[0]+(g-1)/(b*b)*(bDotr_a0)*bX - g*fE[0]*bX");
+  t->SetAlias("Pya0_b","fY[0]+(g-1)/(b*b)*(bDotr_a0)*bY - g*fE[0]*bY");
+  t->SetAlias("Pza0_b","fZ[0]+(g-1)/(b*b)*(bDotr_a0)*bZ - g*fE[0]*bZ");
 
-  outdata->SetAlias("Pxa1_b","fX[1]+(g-1)/(b*b)*(bDotr_a1)*bX - g*fE[1]*bX");
-  outdata->SetAlias("Pya1_b","fY[1]+(g-1)/(b*b)*(bDotr_a1)*bY - g*fE[1]*bY");
-  outdata->SetAlias("Pza1_b","fZ[1]+(g-1)/(b*b)*(bDotr_a1)*bZ - g*fE[1]*bZ");
+  t->SetAlias("Pxa1_b","fX[1]+(g-1)/(b*b)*(bDotr_a1)*bX - g*fE[1]*bX");
+  t->SetAlias("Pya1_b","fY[1]+(g-1)/(b*b)*(bDotr_a1)*bY - g*fE[1]*bY");
+  t->SetAlias("Pza1_b","fZ[1]+(g-1)/(b*b)*(bDotr_a1)*bZ - g*fE[1]*bZ");
 
-  outdata->SetAlias("ma0","TMath::Sqrt(fE[0]*fE[0] - fX[0]*fX[0] - fY[0]*fY[0] - fZ[0]*fZ[0])");
-  outdata->SetAlias("ma1","TMath::Sqrt(fE[1]*fE[1] - fX[1]*fX[1] - fY[1]*fY[1] - fZ[1]*fZ[1])");
+  t->SetAlias("ma0","TMath::Sqrt(fE[0]*fE[0] - fX[0]*fX[0] - fY[0]*fY[0] - fZ[0]*fZ[0])");
+  t->SetAlias("ma1","TMath::Sqrt(fE[1]*fE[1] - fX[1]*fX[1] - fY[1]*fY[1] - fZ[1]*fZ[1])");
 
-  outdata->SetAlias("ma0_2","fE[0]*fE[0] - fX[0]*fX[0] - fY[0]*fY[0] - fZ[0]*fZ[0]");
-  outdata->SetAlias("ma1_2","fE[1]*fE[1] - fX[1]*fX[1] - fY[1]*fY[1] - fZ[1]*fZ[1]");
+  t->SetAlias("ma0_2","fE[0]*fE[0] - fX[0]*fX[0] - fY[0]*fY[0] - fZ[0]*fZ[0]");
+  t->SetAlias("ma1_2","fE[1]*fE[1] - fX[1]*fX[1] - fY[1]*fY[1] - fZ[1]*fZ[1]");
 
  
   //TH2D *hx = hdz->ProjectionX();
@@ -95,10 +95,10 @@
   
   //////////////////
 
-  outdata->SetAlias("Dm","meta-ma0-ma1");
-  outdata->SetAlias("Dm0","meta0-ma0-ma1");
+  t->SetAlias("Dm","meta-ma0-ma1");
+  t->SetAlias("Dm0","meta0-ma0-ma1");
 
-  outdata->SetAlias("minAngle","2*TMath::ATan(0.500/(TMath::Sqrt(Eeta*Eeta-0.540*0.500)))*TMath::RadToDeg()");
+  t->SetAlias("minAngle","2*TMath::ATan(0.500/(TMath::Sqrt(Eeta*Eeta-0.540*0.500)))*TMath::RadToDeg()");
 
 
   TCut pi0cut0 = "0.1<meta0&&meta0<0.18";
@@ -110,17 +110,17 @@
   TCut angle_cut = "minAngle<TMath::ACos(ct)*TMath::RadToDeg()";
 
   /*
-  outdata->Draw("meta>>hm",!pi0cut0,"");
-  outdata->Draw("meta0>>hm0",!pi0cut,"same");
-  outdata->Draw("Dm>>hdm",!pi0cut,"same");
-  outdata->Draw("Dm0>>hdm0",pi0cut,"same");
+  t->Draw("meta>>hm",!pi0cut0,"");
+  t->Draw("meta0>>hm0",!pi0cut,"same");
+  t->Draw("Dm>>hdm",!pi0cut,"same");
+  t->Draw("Dm0>>hdm0",pi0cut,"same");
   */
 
-  //outdata->Draw("meta>>h0n",pi0cut&&!mK0cut&&!mrhocut,"same");
-  //outdata->Draw("Dm>>hmn",pi0cut&&!mK0cut&&!mrhocut,"same");
+  //t->Draw("meta>>h0n",pi0cut&&!mK0cut&&!mrhocut,"same");
+  //t->Draw("Dm>>hmn",pi0cut&&!mK0cut&&!mrhocut,"same");
 
- //outdata->Draw("meta>>h0n",pi0cut&&planecut,"same");
-  //outdata->Draw("Dm>>hmn",pi0cut&&planecut,"same");
+ //t->Draw("meta>>h0n",pi0cut&&planecut,"same");
+  //t->Draw("Dm>>hmn",pi0cut&&planecut,"same");
 
   Float_t max=hm0->GetMaximum();
   if (max<hm->GetMaximum())
@@ -139,29 +139,45 @@
   RooRealVar x("x","variable",0.45,0.8);
   RooRealVar meta("meta","M_{#eta}",0,1);
   RooGaussian sig("sig","eta mass",meta,m,s);
+  //////////////////////// constructing background ///////////
+  // gauss(meta,mg,sg) ;
+  RooRealVar mg("mg","mean gauss bkg",0.0,-2,2.);
+  RooRealVar sg("sg","sigma gauss bkg",0.04,0.,.5);
+  RooGaussian gbkg("gbkg","gaussian background",meta,mg,sg);
+
+  // Construct landau(meta,ml,sl) ;
+  RooRealVar ml("ml","mean landau bkg",.5,-20.,20.);
+  RooRealVar sl("sl","sigma landau bkg",0.003,0.0,1.);
+  RooLandau lbkg("lbkg","landau background",meta,ml,sl);
+  /////////// bkg //////////
+  RooFFTConvPdf bkg_lxg("bkg_lxg","landau (X) gauss",meta,lbkg,gbkg);
+  meta->setBins(1000,"cache");
+  ///////////////////////////////////////////////////////////
 
   RooDataSet dsM("Mdata","Mass #eta #rightarrow #gamma #gamma",RooArgSet(meta));
   RooPlot *pl =meta.frame();
 
-  RooRealVar a1("a1","linear term",-2.,-20000.,2.);
-  RooRealVar a2("a2","quadratic term",1,0.,20000.);  
+  //RooRealVar a1("a1","linear term",-2.,-20000.,2.);
+  //RooRealVar a2("a2","quadratic term",1,0.,20000.);  
   //RooRealVar a3("a3","cubic term",0.1,-1000.,1000.);
   //RooPolynomial bkg("bkg","background",meta,RooArgList(a1,a2,a3));
-  RooPolynomial bkg("bkg","background",meta,RooArgList(a1,a2));
+  //  RooPolynomial bkg("bkg","background",meta,RooArgList(a1,a2));
 
 
   //RooFormulaVar minFunc("minFunc","Minimum formula","(-a2 +TMath::Sqrt(a2*a2 - 3*a3*a1) )/(3*a3)",RooArgList(a1,a2,a3));
-  RooFormulaVar minFunc("minFunc","Minimum formula","-a1/2./a2",RooArgList(a1,a2)); 
+  //  RooFormulaVar minFunc("minFunc","Minimum formula","-a1/2./a2",RooArgList(a1,a2)); 
 
-  RooGaussian parConst("parConst","Minimum constrain",minFunc,RooConst(1),RooConst(0.15));
+  //RooGaussian parConst("parConst","Minimum constrain",minFunc,RooConst(1),RooConst(0.15));
   RooRealVar Ns("Ns","mean",300,0.,1000000);
   RooRealVar Nb("Nb","mean",300,0.,1000000);
-  RooAddPdf model("model","sig + bkg",RooArgList(sig,bkg),RooArgList(Ns,Nb));
+
+
+  RooAddPdf model("model","sig + bkg",RooArgList(sig,bkg_lxg),RooArgList(Ns,Nb));
 
 RooFitResult* res;  
 /*
-  Int_t nev=outdata->Draw("meta",ma0cut&&ma1cut&&"0.4<Z&&Z<0.5");
-  Double_t *dataArr=outdata->GetV1();
+  Int_t nev=t->Draw("meta",ma0cut&&ma1cut&&"0.4<Z&&Z<0.5");
+  Double_t *dataArr=t->GetV1();
   for (Long64_t i=0;i<nev; i++) {meta=(Float_t )dataArr[i];dsM.add(meta);}
 */
 
@@ -177,11 +193,11 @@ RooFitResult* res;
   model.plotOn(pl,RooFit::LineColor(kRed)) ;
   pl->Draw();
   */
-  // outdata->Draw("Dm>>h0",pi0cut&&!mK0cut&&!mrhocut,"");
-  // outdata->Draw("DDm>>hm",pi0cut&&!mK0cut&&!mrhocut,"same");
+  // t->Draw("Dm>>h0",pi0cut&&!mK0cut&&!mrhocut,"");
+  // t->Draw("DDm>>hm",pi0cut&&!mK0cut&&!mrhocut,"same");
   /*
-  outdata->Draw("meta>>hm",ma0cut&&ma1cut);
-  outdata->Draw("metaT>>hmT",ma0cut&&ma1cut);
+  t->Draw("meta>>hm",ma0cut&&ma1cut);
+  t->Draw("metaT>>hmT",ma0cut&&ma1cut);
   hratio->Divide(hm,hmT);
 
   TLegend *l = new TLegend(0.6,0.7,0.95,0.8);
@@ -228,9 +244,9 @@ RooFitResult* res;
   hpi0->SetLineColor(kRed);
   hpip->SetLineColor(kBlue);
   hpim->SetLineColor(kBlack);
-  outdata->Draw("Pypi0_b>>hpi0",pi0cut&&!mrhocut&&!mK0cut);
-  outdata->Draw("Pypip_b>>hpip",pi0cut&&!mrhocut&&!mK0cut,"same");
-  outdata->Draw("Pypim_b>>hpim",pi0cut&&!mrhocut&&!mK0cut,"same");
+  t->Draw("Pypi0_b>>hpi0",pi0cut&&!mrhocut&&!mK0cut);
+  t->Draw("Pypip_b>>hpip",pi0cut&&!mrhocut&&!mK0cut,"same");
+  t->Draw("Pypim_b>>hpim",pi0cut&&!mrhocut&&!mK0cut,"same");
   TLegend *l = new TLegend(0.6,0.5,0.7,0.8);
   l->AddEntry(hpi0,"#pi^{0}","lp");
   l->AddEntry(hpip,"#pi^{+}","lp");
@@ -242,18 +258,18 @@ RooFitResult* res;
   //  c->SaveAs("Py_CM_noK0rho_gsim.gif");
   //c->SaveAs("Py_CM_noK0rho_gsim.C");
   
-  outdata->Draw("Pxpi0_b>>hpi0",pi0cut&&!mrhocut&&!mK0cut);
-  outdata->Draw("Pxpip_b>>hpip",pi0cut&&!mrhocut&&!mK0cut,"same");
-  outdata->Draw("Pxpim_b>>hpim",pi0cut&&!mrhocut&&!mK0cut,"same");
+  t->Draw("Pxpi0_b>>hpi0",pi0cut&&!mrhocut&&!mK0cut);
+  t->Draw("Pxpip_b>>hpip",pi0cut&&!mrhocut&&!mK0cut,"same");
+  t->Draw("Pxpim_b>>hpim",pi0cut&&!mrhocut&&!mK0cut,"same");
   hpi0->GetXaxis()->SetTitle("P_{x} CM (GeV)");
   hpi0->GetYaxis()->SetTitle("dN/dP_{x}");
   //c->SaveAs("Px_CM_noK0rho_gsim.gif");
   //c->SaveAs("Px_CM_noK0rho_gsim.C");
 
 
-  outdata->Draw("Pzpi0_b>>hpi0",pi0cut&&!mrhocut&&!mK0cut);
-  outdata->Draw("Pzpip_b>>hpip",pi0cut&&!mrhocut&&!mK0cut,"same");
-  outdata->Draw("Pzpim_b>>hpim",pi0cut&&!mrhocut&&!mK0cut,"same");
+  t->Draw("Pzpi0_b>>hpi0",pi0cut&&!mrhocut&&!mK0cut);
+  t->Draw("Pzpip_b>>hpip",pi0cut&&!mrhocut&&!mK0cut,"same");
+  t->Draw("Pzpim_b>>hpim",pi0cut&&!mrhocut&&!mK0cut,"same");
   hpi0->GetXaxis()->SetTitle("P_{z} CM (GeV)");
   hpi0->GetYaxis()->SetTitle("dN/dP_{z}");
   //c->SaveAs("Pz_CM_noK0rho_gsim.gif");
@@ -262,16 +278,16 @@ RooFitResult* res;
 
 */
 /*
-  outdata->Draw("Dm>>h(500,0,2)",pi0cut,"");
-  outdata->Draw("Dm>>hp(500,0,2)",pi0cut&&planecut,"same");
-  outdata->Draw("Dm>>hnp(500,0,2)",pi0cut&&!planecut,"same");
+  t->Draw("Dm>>h(500,0,2)",pi0cut,"");
+  t->Draw("Dm>>hp(500,0,2)",pi0cut&&planecut,"same");
+  t->Draw("Dm>>hnp(500,0,2)",pi0cut&&!planecut,"same");
 */
 
 
 /*
-  outdata->Draw("Pzpi0_b>>hpi0",pi0cut&&!mK0cut&&!mrhocut,"");
-  outdata->Draw("Pzpip_b>>hpip",pi0cut&&!mK0cut&&!mrhocut,"same");
-  outdata->Draw("Pzpim_b>>hpim",pi0cut&&!mK0cut&&!mrhocut,"same");
+  t->Draw("Pzpi0_b>>hpi0",pi0cut&&!mK0cut&&!mrhocut,"");
+  t->Draw("Pzpip_b>>hpip",pi0cut&&!mK0cut&&!mrhocut,"same");
+  t->Draw("Pzpim_b>>hpim",pi0cut&&!mK0cut&&!mrhocut,"same");
   hpi0->SetLineColor(kRed);
   hpi0->SetLineWidth(2);
   hpip->SetLineColor(kBlue);
@@ -286,17 +302,17 @@ RooFitResult* res;
   l->Draw();
   hpi0->GetXaxis()->SetTitle("Pz_CM");
 
-outdata->SetAlias("Epi0_0","fE[0] + fE[1]");
-outdata->SetAlias("Epi0_1","fE[2] + fE[3]");
-outdata->SetAlias("Pxpi0_0","fX[0] + fX[1]");
-outdata->SetAlias("Pypi0_0","fY[0] + fY[1]");
-outdata->SetAlias("Pypi0_0","f[0] + fZ[1]");
-outdata->SetAlias("Pzpi0_0","fZ[0] + fZ[1]");
-outdata->SetAlias("Pzpi0_1","fZ[2] + fZ[3]");
-outdata->SetAlias("Pypi0_1","fY[2] + fY[3]");
-outdata->SetAlias("Pxpi0_1","fX[2] + fX[3]");
-outdata->SetAlias("mpi0_1","TMath::Sqrt(2*(fE[2]*fE[3] - fX[2]*fX[3] - fY[2]*fY[3] - fZ[2]*fZ[3]))");
-outdata->SetAlias("mpi0_0","TMath::Sqrt(2*(fE[0]*fE[1] - fX[0]*fX[1] - fY[0]*fY[1] - fZ[0]*fZ[1]))");
+t->SetAlias("Epi0_0","fE[0] + fE[1]");
+t->SetAlias("Epi0_1","fE[2] + fE[3]");
+t->SetAlias("Pxpi0_0","fX[0] + fX[1]");
+t->SetAlias("Pypi0_0","fY[0] + fY[1]");
+t->SetAlias("Pypi0_0","f[0] + fZ[1]");
+t->SetAlias("Pzpi0_0","fZ[0] + fZ[1]");
+t->SetAlias("Pzpi0_1","fZ[2] + fZ[3]");
+t->SetAlias("Pypi0_1","fY[2] + fY[3]");
+t->SetAlias("Pxpi0_1","fX[2] + fX[3]");
+t->SetAlias("mpi0_1","TMath::Sqrt(2*(fE[2]*fE[3] - fX[2]*fX[3] - fY[2]*fY[3] - fZ[2]*fZ[3]))");
+t->SetAlias("mpi0_0","TMath::Sqrt(2*(fE[0]*fE[1] - fX[0]*fX[1] - fY[0]*fY[1] - fZ[0]*fZ[1]))");
 
 */
 

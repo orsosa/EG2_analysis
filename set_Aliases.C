@@ -196,6 +196,9 @@
   RooRealVar *m = w->var("m");
   RooRealVar *s = w->var("s");
   s->setConstant(0);
+  s->setRange(0,0.1);
+  *s=0.05;
+
   
   /////////smearing function////////
   RooRealVar ms("ms","mean smearing func",0.,-2.,2.);
@@ -215,7 +218,7 @@
   RooAbsPdf *sig = w->pdf("sig");
 
   ///////////model definition////////
-  RooAddPdf model("mean+sig","@0 + @1",RooArgList(*sig,bkg),RooArgList(*Ns,*Nb));
+  RooAddPdf model("model","@0 + @1",RooArgList(*sig,bkg),RooArgList(*Ns,*Nb));
 
   //////////////////////////////////
   RooDataSet dsM("Mdata","Mass #eta #rightarrow #pi^{0}#pi^{+}#pi^{-} ",RooArgSet(*meta));
@@ -223,6 +226,11 @@
   Double_t *dataArr=t->GetV1();
   for (Long64_t i=0;i<nev; i++) {*meta=dataArr[i];dsM.add(*meta);}
   RooPlot *pl =meta->frame();
+
+  ///fitting//////
+
+  // model.fitTo(dsM,RooFit::Range(0.48,0.7),RooFit::Extended());
+  ///////////////
   //////////////////////////////////////////////////////////////////////
 
 
