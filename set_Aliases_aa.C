@@ -134,19 +134,20 @@
 
   using namespace RooFit;
  
-  RooRealVar m("m","mean",0.5,0.6);
-  RooRealVar s("s","sigma",0.0,0.3);
+  // RooRealVar m("m","mean",0.5,0.6);
+  RooRealVar m("m","mean",0.135,0.125,0.145);
+  RooRealVar s("s","sigma",0.018,0.0,0.3);
   RooRealVar x("x","variable",0.45,0.8);
   RooRealVar meta("meta","M_{#eta}",0,1);
   RooGaussian sig("sig","eta mass",meta,m,s);
   //////////////////////// constructing background ///////////
   // gauss(meta,mg,sg) ;
   RooRealVar mg("mg","mean gauss bkg",0.0,-2,2.);
-  RooRealVar sg("sg","sigma gauss bkg",0.04,0.,.5);
+  RooRealVar sg("sg","sigma gauss bkg",0.02,0.,.5);
   RooGaussian gbkg("gbkg","gaussian background",meta,mg,sg);
 
   // Construct landau(meta,ml,sl) ;
-  RooRealVar ml("ml","mean landau bkg",.5,-20.,20.);
+  RooRealVar ml("ml","mean landau bkg",.13,-20.,20.);
   RooRealVar sl("sl","sigma landau bkg",0.003,0.0,1.);
   RooLandau lbkg("lbkg","landau background",meta,ml,sl);
   /////////// bkg //////////
@@ -175,24 +176,26 @@
   RooAddPdf model("model","sig + bkg",RooArgList(sig,bkg_lxg),RooArgList(Ns,Nb));
 
 RooFitResult* res;  
-/*
   Int_t nev=t->Draw("meta",ma0cut&&ma1cut&&"0.4<Z&&Z<0.5");
   Double_t *dataArr=t->GetV1();
   for (Long64_t i=0;i<nev; i++) {meta=(Float_t )dataArr[i];dsM.add(meta);}
-*/
 
-  RooCmdArg range=RooFit::Range(0.35,0.75);
-  RooCmdArg save=RooFit::Save();
-  /*  
+
+  //  RooCmdArg range=RooFit::Range(0.35,0.75);
+  // RooCmdArg save=RooFit::Save();
+    
 //  Float_t rangeFit[2]={0.42,0.75};
-  res  = model.fitTo(dsM,range,ExternalConstraints(parConst),save);  
+  s.setConstant();
+  //  res  = model.fitTo(dsM,range,ExternalConstraints(parConst),save);  
+  res=model.fitTo(dsM,RooFit::Extended(),RooFit::Range(0.05,0.4),RooFit::Save());
+  
   dsM.plotOn(pl);
 
   model.plotOn(pl,RooFit::VisualizeError(*res,1),RooFit::FillColor(kOrange)); 
-  model.plotOn(pl,RooFit::Components(bkg),RooFit::LineStyle(kDashed));
+  model.plotOn(pl,RooFit::Components(bkg_lxg),RooFit::LineStyle(kDashed));
   model.plotOn(pl,RooFit::LineColor(kRed)) ;
   pl->Draw();
-  */
+  
   // t->Draw("Dm>>h0",pi0cut&&!mK0cut&&!mrhocut,"");
   // t->Draw("DDm>>hm",pi0cut&&!mK0cut&&!mrhocut,"same");
   /*
