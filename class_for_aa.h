@@ -25,7 +25,7 @@ public :
    Int_t           fCurrent; //!current Tree number in a TChain
 
 // Fixed size dimensions of array or collections stored in the TTree if any.
-   static constexpr Int_t kMaxP4 = 2;
+   static const Int_t kMaxP4 = 2;
 
    // Declaration of leaf types
    Int_t           P4_;

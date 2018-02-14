@@ -1,4 +1,4 @@
-root{
+{
   if (gROOT->FindObject("c")!=0)
     delete c;
   if (gROOT->FindObject("h0")!=0)
@@ -174,7 +174,6 @@ root{
   //  RooPolynomial bkg("bkg","background",meta,RooArgList(a1,a2));
   RooPolynomial poly("poly","poly for gsim peak",meta,RooArgList(a0,a1),0);
   
-
   //RooFormulaVar minFunc("minFunc","Minimum formula","(-a2 +TMath::Sqrt(a2*a2 - 3*a3*a1) )/(3*a3)",RooArgList(a1,a2,a3));
   //  RooFormulaVar minFunc("minFunc","Minimum formula","-a1/2./a2",RooArgList(a1,a2)); 
 
@@ -185,7 +184,12 @@ root{
   RooRealVar Nm("Nm","Events on #pi^{0} model +bkg",290116,0.,1000000);
 
   RooBreitWigner BWpeak("BWpeak","gsim peak",meta,m1,s1);
-  RooAddPdf gspeak("gspeak","peak + pol1",RooArgList(BWpeak,poly),RooArgList(Neta,Nb));
+
+  RooFFTConvPdf peak_bwxg("peak_bwxg","BW (x) gauss",meta,BWpeak,gbkg);
+  meta.setBins(10000,"cache");
+
+  RooAddPdf gspeak("gspeak","peak_bwxg + pol1",RooArgList(peak_bwxg,poly),RooArgList(Neta,Nb));
+  //  RooAddPdf gspeak("gspeak","peak + pol1",RooArgList(BWpeak,poly),RooArgList(Neta,Nb));
   //RooAddPdf model("model","peak0 + peak1  + bkg",RooArgList(peak0,peak1,bkg_lxg),RooArgList(Npi0,Neta,Nb));
   RooAddPdf model("model","peak0 + bkg",RooArgList(peak0,bkg_lxg),RooArgList(Npi0,Nb));
 
