@@ -200,6 +200,8 @@ Int_t class_for_aa::Cut(Long64_t entry)
 
   GetEntry(entry);
   Float_t mpi0 =meta();
+  Float_t Z=primary_Z;
+  //if (0<=ma0_2()&&0<=ma1_2()&&0.7<Z&&Z<0.8)
   if (0<=ma0_2()&&0<=ma1_2())
     return 1;
   return -1;
