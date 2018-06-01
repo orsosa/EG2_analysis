@@ -96,7 +96,7 @@ public :
    virtual Float_t Pxeta(){return P4_fP_fX[0]+P4_fP_fX[1];}
    virtual Float_t Pyeta(){return P4_fP_fY[0]+P4_fP_fY[1];}
    virtual Float_t Pzeta(){return P4_fP_fZ[0]+P4_fP_fZ[1];}
-   virtual Float_t meta(){return TMath::Sqrt(Eeta()*Eeta() - Pxeta()*Pxeta() - Pyeta()*Pyeta() - Pzeta()*Pzeta());}
+   virtual Float_t get_meta(){return TMath::Sqrt(Eeta()*Eeta() - Pxeta()*Pxeta() - Pyeta()*Pyeta() - Pzeta()*Pzeta());}
    virtual Float_t ma0_2() { return P4_fE[0]*P4_fE[0] - P4_fP_fX[0]*P4_fP_fX[0] - P4_fP_fY[0]*P4_fP_fY[0] - P4_fP_fZ[0]*P4_fP_fZ[0];}
    virtual Float_t ma1_2() { return P4_fE[1]*P4_fE[1] - P4_fP_fX[1]*P4_fP_fX[1] - P4_fP_fY[1]*P4_fP_fY[1] - P4_fP_fZ[1]*P4_fP_fZ[1];}
   
@@ -199,7 +199,7 @@ Int_t class_for_aa::Cut(Long64_t entry)
 // returns -1 otherwise.
 
   GetEntry(entry);
-  Float_t mpi0 =meta();
+  Float_t mpi0 =get_meta();
   Float_t Z=primary_Z;
   //if (0<=ma0_2()&&0<=ma1_2()&&0.7<Z&&Z<0.8)
   if (0<=ma0_2()&&0<=ma1_2())

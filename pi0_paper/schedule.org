@@ -1,0 +1,5 @@
+* Redo plots with centroids on x axis.
+** TODO 
+** TODO R(pt2,(z,Nu)) 
+
+neglect Q2 dependency and show nu depencency.

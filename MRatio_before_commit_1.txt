@@ -1,0 +1,15 @@
+total 156K
+-rw-r--r-- 1 orsosa orsosa 4.8K Apr 16 17:23 BinMgr.cxx~
+-rw-r--r-- 1 orsosa orsosa 5.8K Apr 16 19:15 BinMgr.hxx~
+-rw-r--r-- 1 orsosa orsosa 5.8K Apr 16 20:13 BinMgr.cxx
+-rw-r--r-- 1 orsosa orsosa 5.9K Apr 16 20:18 BinMgr.hxx
+-rw------- 1 orsosa orsosa 1.1K Apr 16 20:21 Makefile~
+-rwxr-xr-x 1 orsosa orsosa 1.3K Apr 16 20:36 do_ratios.sh~
+-rw-r--r-- 1 orsosa orsosa  12K Apr 16 20:39 get_MRatio_new.cxx~
+-rw------- 1 orsosa orsosa  848 Apr 23 13:57 Makefile
+-rwxr-xr-x 1 orsosa orsosa 1.5K Apr 27 20:18 #do_ratios.sh#
+-rw-r--r-- 1 orsosa orsosa  14K May  7 20:50 get_MRatio_new.cxx
+-rwxr-xr-x 1 orsosa orsosa  65K May  7 20:51 get_MRatio_new
+-rwxr-xr-x 1 orsosa orsosa 1.5K May 10 16:32 do_ratios.sh
+-rw-r--r-- 1 orsosa orsosa 1.2K May 25 03:56 binning_info.txt
+-rw-r--r-- 1 orsosa orsosa   94 May 25 12:37 binning_info.txt_formatted.txt

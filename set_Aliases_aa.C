@@ -19,7 +19,6 @@
     delete hdz;
     
   gROOT->LoadMacro("class_for_aa.C");
-
   
   TCanvas *c =  new TCanvas("c","c",1024,768);
 
@@ -40,7 +39,6 @@
   TH1F *hratio = (TH1F*) h0->Clone("hratio");
   hratio->SetTitle("Ratio");
   hratio->GetYaxis()->SetTitle("R");
-
 
   hm0->SetLineColor(kRed);
   hm->SetLineColor(kBlue);
@@ -141,18 +139,36 @@
   // RooRealVar m("m","mean",0.5,0.6);
 
   //////// pi0 peak ////////////
-  RooRealVar m0("m0","mean pi0",0.135,0.125,0.145);
-  RooRealVar s0("s0","sigma pi0",0.018,0.0,0.3);
+  RooRealVar m0("m0","mean pi0",0.135076,0.12,0.145);
+  //  RooRealVar s0("s0","sigma pi0",0.018,0.0,0.3);//rec
+  RooRealVar s0("s0","sigma pi0",0.000173711,0.0,0.001);//gsim
+
+   
   RooRealVar m1("m1","mean eta",0.5467,0.543,0.55);
-  //RooRealVar s1("s1","sigma eta",0.045,0.0,0.3);
-  RooRealVar s1("s1","sigma eta",0.000113379,0.0,0.005);
+  RooRealVar s1("s1","sigma eta",0.045,0.0,0.3);//rec
+  //  RooRealVar s1("s1","sigma eta",0.000113379,0.0,0.005);//gsim
   RooGaussian peak0("peak0","pi0 mass",meta,m0,s0);
   RooGaussian peak1("peak1","eta mass",meta,m1,s1);
   //////////////////////// constructing background ///////////
   // gauss(meta,mg,sg) ;
-  RooRealVar mg("mg","mean gauss bkg",-0.000117099,-2,2.);
-  RooRealVar sg("sg","sigma gauss bkg",0.000528172,0.,.01);
+  //  RooRealVar mg("mg","mean gauss bkg",-0.000117099,-2,2.);//gsim
+  //RooRealVar sg("sg","sigma gauss bkg",0.000528172,0.,.01);//gsim
+  RooRealVar mg("mg","mean gauss bkg",-2.65183e-05 ,-2,2.);//gsim
+ 
+  RooRealVar sg("sg","sigma gauss bkg",0.000528172,0.,.2);//gsim
+
   RooGaussian gbkg("gbkg","gaussian background",meta,mg,sg);
+
+  //////////////////////// constructing background ///////////
+  // gauss(meta,mg,sg) ;
+  RooRealVar k("k","slope parameter",-5,-100,-0.1);
+  RooExponential exp_bkg("exp_bkg","gaussian background",meta,k);
+
+  /////////// bkg //////////
+  RooFFTConvPdf bkg_exg("bkg_exg","exp (X) gauss",meta,exp_bkg,gbkg);
+  meta.setBins(1000,"cache");
+  ///////////////////////////////////////////////////////////
+
 
   // Construct landau(meta,ml,sl) ;
   RooRealVar ml("ml","mean landau bkg",.13,-20.,20.);
@@ -165,14 +181,15 @@
 
   RooDataSet dsM("Mdata","Mass #eta #rightarrow #gamma #gamma",RooArgSet(meta));
 
-  RooRealVar a0("a0","constant term",1.,-10,1e4);
-  RooRealVar a1("a1","linear term",-1.,-1e4,1e4);
-  RooRealVar a2("a2","quadratic term",0.,-2e3,2e3);  
+  RooRealVar a0("a0","constant term",1.,-100,1e4);
+  RooRealVar a1("a1","linear term",-2.66155,-10,10);
+  RooRealVar a2("a2","quadratic term",0.01,-100,100);  
   //RooRealVar a3("a3","cubic term",0.1,-1000.,1000.);
   //RooPolynomial bkg("bkg","background",meta,RooArgList(a1,a2,a3));
   //  RooPolynomial bkg("bkg","background",meta,RooArgList(a1,a2));
   //RooPolynomial poly("poly","poly for gsim peak",meta,RooArgList(a0,a1),0);
-  RooChebychev poly("poly","poly for gsim peak",meta,RooArgList(a0,a1,a2));
+  //  RooChebychev poly("poly","poly for gsim peak",meta,RooArgList(a0,a1,a2),0);
+  RooChebychev poly("poly","poly for gsim peak",meta,RooArgList(a1));
   
   //RooFormulaVar minFunc("minFunc","Minimum formula","(-a2 +TMath::Sqrt(a2*a2 - 3*a3*a1) )/(3*a3)",RooArgList(a1,a2,a3));
   //  RooFormulaVar minFunc("minFunc","Minimum formula","-a1/2./a2",RooArgList(a1,a2)); 
@@ -180,38 +197,77 @@
   //RooGaussian parConst("parConst","Minimum constrain",minFunc,RooConst(1),RooConst(0.15));
   RooRealVar Npi0("Npi0","Events on #pi^{0}",107859.,0.,1000000);
   RooRealVar Neta("Neta","Events on #eta",6853.,0.,1000000);
-  RooRealVar Nb("Nb","Events on background",182499.,0.,1000000);
+  //  RooRealVar Nb("Nb","Events on background",182499.,0.,10000000);
+  RooRealVar Nb("Nb","Events on background",10.,-10,100.);
+
   RooRealVar Nm("Nm","Events on #pi^{0} model +bkg",290116,0.,1000000);
 
-  RooBreitWigner BWpeak("BWpeak","gsim peak",meta,m1,s1);
-
+  RooBreitWigner BWpeak("BWpeak","gsim peak",meta,m0,s0);
+  // RooBreitWigner BWpeak("BWpeak","gsim peak",meta,m1,s1);
+  
   RooFFTConvPdf peak_bwxg("peak_bwxg","BW (x) gauss",meta,BWpeak,gbkg);
   meta.setBins(10000,"cache");
-  Nb=526029.;Neta=20000.;
 
-  RooAddPdf gspeak("gspeak","peak_bwxg + pol1",RooArgList(peak_bwxg,poly),RooArgList(Neta,Nb));
+  //Nb=526029.;Neta=20000.;
+
+  //RooAddPdf gspeak("gspeak","peak_bwxg + pol1",RooArgList(peak_bwxg,poly),RooArgList(Neta,Nb));//eta
+  RooAddPdf gspeak("gspeak","peak_bwxg + pol1",RooArgList(peak_bwxg,poly),RooArgList(Npi0,Nb));//pi0
   //RooAddPdf gspeak("gspeak","peak + pol1",RooArgList(BWpeak,poly),RooArgList(Neta,Nb));
   //RooAddPdf model("model","peak0 + peak1  + bkg",RooArgList(peak0,peak1,bkg_lxg),RooArgList(Npi0,Neta,Nb));
-  RooAddPdf model("model","peak0 + bkg",RooArgList(peak0,bkg_lxg),RooArgList(Npi0,Nb));
+
+  //RooAddPdf model("model","peak0 + bkg",RooArgList(peak0,bkg_lxg),RooArgList(Npi0,Nb));
+  RooAddPdf model("model","peak0 + bkg",RooArgList(peak0,bkg_exg),RooArgList(Npi0,Nb));
 
   RooAddPdf model_full("model_full","peak1 + peak0 + bkg",RooArgList(peak1,model),RooArgList(Neta,Nm));
 
+  s0.setConstant();
+  m0.setConstant();
+  sg.setConstant();
+  mg.setConstant();
+
   RooFitResult* res;  
-  /*
+  
   RooPlot *pl =meta.frame();
+
+  /*
+//454489.72
+//455685.60
+  class_for_aa reader(t);
+  reader.Loop(&dsM,&meta);
+
+  res=model.fitTo(dsM,RooFit::Extended(),RooFit::Range(0.05,0.4),RooFit::Save());
+Nb=0.5;
+  res=gspeak.fitTo(dsM,RooFit::Range(0.12,0.15),RooFit::Extended(),RooFit::Save()); //pi0
+
+  res=peak_bwxg.fitTo(dsM,RooFit::Range(0.12,0.15),RooFit::Save()); //pi0
+
+
+  dsM.plotOn(pl,RooFit::Binning(1e4,0.1,0.16));
+  gspeak.plotOn(pl);
+  gspeak.plotOn(pl,RooFit::Components(poly),RooFit::LineColor(kRed),RooFit::LineStyle(kDashed));
+  pl->Draw();
+
+
+  */
+
+  
+  /*
   //TFile f("dataset_gsim_C_aa.root");
   //auto dst = (RooDataSet*)f.Get("dsM");
   TFile f("Zbin4.root");
   auto dst = (RooDataSet*)f.Get("ds");
   s1.setConstant();sg.setConstant();m1.setConstant();
-  gspeak.fitTo(*dst,RooFit::Range(0.48,0.62),RooFit::Extended());
-  */
+//  gspeak.fitTo(*dst,RooFit::Range(0.48,0.62),RooFit::Extended()); //eta
+  gspeak.fitTo(dsM,RooFit::Range(0.12,0.15),RooFit::Extended()); //pi0
+  gspeak.fitTo(dsM,RooFit::Range(0.5,0.6),RooFit::Extended()); //eta
+ 
+ */
 
 
 ///////////////// Perform fit ////////////////
   /*
 
-    ds->plotOn(pl,RooFit::Binning(1e4));
+    ds->plotOn(pl,RooFit::Binning(1e4,0.1,0.016));
     gspeak.plotOn(pl);
     pl->Draw();
 
@@ -219,9 +275,17 @@
 // Int_t nev=t->Draw("meta",ma0cut&&ma1cut&&"0.5<Z&&Z<0.6");
 //Int_t nev=t->Draw("meta",ma0cut&&ma1cut);
   //Double_t *dataArr=t->GetV1();
-//class_for_aa reader(t);
-//reader.Loop(&dsM,&meta);
 
+  /*
+
+  class_for_aa reader(t);
+  reader.Loop(&dsM,&meta);
+
+
+  res=model.fitTo(dsM,RooFit::Extended(),RooFit::Range(0.05,0.4),RooFit::Save());
+
+
+  */
  /*  
 
 

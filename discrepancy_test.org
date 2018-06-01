@@ -1,0 +1,6 @@
+* Study the Deuterium mass on banks [40%]
+** DONE Get mass spectrum from data files.
+** DONE apply cut on spectrum and look missing mass
+** TODO Check Energy differece.
+** TODO Check momentum difference
+** TODO Make small presentation.

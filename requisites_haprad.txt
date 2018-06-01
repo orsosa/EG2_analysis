@@ -1,0 +1,3 @@
+* cernlib
+* pdflib804 (libpdflib804-2-dev)
+* phtools (libphtools2-dev)
