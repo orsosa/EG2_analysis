@@ -79,10 +79,13 @@ public:
 
   void  setBinOrder(Int_t *ii)
   {
+    std::cout<<"setting bin order to: ";
     for (int k=0;k<Nf;k++)
     {
       bo[k]=ii[k];
+      std::cout<<bo[k]<<"\t";
     }
+    std::cout<<"\n";
     NY=Nb[bo[0]];
     for (int k=1;k<Nf-1;k++){NY*=Nb[bo[k]];};
 
@@ -209,6 +212,12 @@ public:
 
   void printIndexY()
   {
+    std::cout<<"k:::::::";
+    for (int l=0;l<Nf-1;l++)
+      {
+	std::cout<<BinName[bo[l]]<<"::";
+      }
+    std::cout<<"...\n";
    
     std::cout<<"k:::::::ind0/max0::ind1/max1::...\n";
     for (int k=0;k<NY;k++)
@@ -226,7 +235,12 @@ public:
 
   void printIndex()
   {
-   
+    std::cout<<"k:::::::";
+    for (int l=0;l<Nf;l++)
+      {
+	std::cout<<BinName[bo[l]]<<"::";
+      }
+    std::cout<<"...\n";
     std::cout<<"k:::::::ind0/max0::ind1/max1::...\n";
     for (int k=0;k<N;k++)
     {
@@ -262,7 +276,12 @@ public:
   
   void printIndexRaw()
   {
-   
+    std::cout<<"k:::::::";
+    for (int l=0;l<Nf;l++)
+      {
+	std::cout<<BinName[l]<<"::";
+      }
+    std::cout<<"...\n";
     std::cout<<"k:::::::ind0/max0::ind1/max1::...\n";
     for (int k=0;k<N;k++)
     {

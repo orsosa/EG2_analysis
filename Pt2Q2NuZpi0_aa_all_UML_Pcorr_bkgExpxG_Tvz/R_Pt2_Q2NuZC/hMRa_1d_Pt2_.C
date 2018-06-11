@@ -1,10 +1,10 @@
 void hMRa_1d_Pt2_()
 {
 //=========Macro generated from canvas: c/c
-//=========  (Fri May 25 03:57:41 2018) by ROOT version 6.12/06
+//=========  (Sat Jun  9 05:05:40 2018) by ROOT version 6.12/06
    TCanvas *c = new TCanvas("c", "c",0,0,1200,900);
    c->SetHighLightColor(2);
-   c->Range(-0.1875,0.7082756,1.6875,1.123071);
+   c->Range(-0.1875,0.7534262,1.6875,1.228915);
    c->SetFillColor(0);
    c->SetBorderMode(0);
    c->SetBorderSize(2);
@@ -15,19 +15,19 @@ void hMRa_1d_Pt2_()
    Double_t xAxis1[7] = {0, 0.1, 0.25, 0.4, 0.55, 0.75, 1.5}; 
    
    TH1D *hMR_C__1 = new TH1D("hMR_C__1","hMR_C",6, xAxis1);
-   hMR_C__1->SetBinContent(1,0.7897481);
-   hMR_C__1->SetBinContent(2,0.9482526);
-   hMR_C__1->SetBinContent(3,0.8538755);
-   hMR_C__1->SetBinContent(4,1.011565);
-   hMR_C__1->SetBinContent(5,0.8274184);
-   hMR_C__1->SetBinContent(6,0.944863);
-   hMR_C__1->SetBinError(1,0.02494365);
-   hMR_C__1->SetBinError(2,0.04187453);
-   hMR_C__1->SetBinError(3,0.03807254);
-   hMR_C__1->SetBinError(4,0.05422449);
-   hMR_C__1->SetBinError(5,0.03042153);
-   hMR_C__1->SetBinError(6,0.03908343);
-   hMR_C__1->SetEntries(3134.84);
+   hMR_C__1->SetBinContent(1,0.8444112);
+   hMR_C__1->SetBinContent(2,0.8823529);
+   hMR_C__1->SetBinContent(3,0.8966118);
+   hMR_C__1->SetBinContent(4,0.8995479);
+   hMR_C__1->SetBinContent(5,0.9289778);
+   hMR_C__1->SetBinContent(6,1.122414);
+   hMR_C__1->SetBinError(1,0.02618486);
+   hMR_C__1->SetBinError(2,0.0287421);
+   hMR_C__1->SetBinError(3,0.01609604);
+   hMR_C__1->SetBinError(4,0.02187043);
+   hMR_C__1->SetBinError(5,0.02397219);
+   hMR_C__1->SetBinError(6,0.0408387);
+   hMR_C__1->SetEntries(6917.993);
    hMR_C__1->SetStats(0);
 
    Int_t ci;      // for color index setting

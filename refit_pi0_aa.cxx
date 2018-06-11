@@ -1,11 +1,11 @@
 {
   
-  TString fname= "Pt2Q2NuZpi0_aa_all_UML_Pcorr_bkgExpxG_Tvz/data_CD_C/binned.root";
+  TString fname= "Pt2Q2NuZpi0_aa_all_UML_Pcorr_bkgExpxG_Tvz/sim_CD_C/binned.root";
   Nbins=54;
-  for (int kk=0;kk<Nbins;kk++)
+  /*  for (int kk=0;kk<Nbins;kk++)
   {
-    
-    int bin=kk;
+  */
+  int bin=0;
 
   /*
 
@@ -24,17 +24,23 @@
     
     RooPlot *pl = w->var("meta")->frame();
     RooRealVar *Npi0= w->var("Npi0");
+    *Npi0=300;
+    RooRealVar *Nb= w->var("Nb");
+    *Nb=300;
     RooRealVar *meta= w->var("meta");
+    meta->setRange("rplot",0,0.4);
     RooAbsPdf *model = w->pdf("model");
     RooAbsPdf *bkg =  w->pdf("bkg");
     
     /////////////bkg parameters//////////
     RooRealVar *k= w->var("k");
+    k->setRange(-100.,0.);
+    *k=-0.01;
     RooRealVar *mg= w->var("mg");
     RooRealVar *m= w->var("m");
     m->setRange(0.12,0.15);
     RooRealVar *sg= w->var("sg");
-    //*mg=0.07;mg->setConstant();
+    *mg=0.07;//mg->setConstant();
     *sg=0.018;//sg->setConstant();
  
  
@@ -93,7 +99,8 @@
       Float_t data=hdata->GetBinContent(b+1); 
       Float_t mdata=hm->GetBinContent(b+1);
       Float_t err=hdata->GetBinError(b+1);
-      hratio->SetBinContent(b+1,(data-mdata)/err);
+      if (err!=0) hratio->SetBinContent(b+1,(data-mdata)/err);
+      else  hratio->SetBinContent(b+1,0.);
       hratio->SetBinError(b+1,0.);
     }
     c->cd(2);
@@ -129,11 +136,12 @@
     std::cout<<":::::::::Final Parameters:::::::::::::\n";
     res->floatParsFinal().Print("v");
     std::cout<<"::::::::::::::::::::::::::::::::::::::\n";
-
+    /*    
     c->Write(Form("c1_%d_refit",bin),TObject::kOverwrite);
     w->Write(Form("w1_%d",bin),TObject::kOverwrite);
     pl->Write(Form("frm1_%d",bin),TObject::kOverwrite);
+    */
     
-  }
+    // }
 
 }

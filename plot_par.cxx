@@ -1,10 +1,10 @@
 {
-  TString fname="Pt2Q2NuZpi0_aa_all_UML_Pcorr_bkgExpxG_Tvz/data_CD_C/binned.root";
+  TString fname="Pt2Q2NuZpi0_aa_all_UML_Pcorr_bkgExpxG_Tvz/gsim_CD_Cgsim/binned.root";
 
-  TString parname1="mg";
-  TString parname2="sg";
-
-  TFile fout("pi0_val_"+parname1+"_" + parname2+"_CC.root","recreate");
+  TString parname1="m0";
+  TString parname2="s0";
+  
+  TFile fout("pi0_val_"+parname1+"_" + parname2+"_gsimC.root","recreate");
   
   Nbins=54;
   TH1F * h1= new TH1F("h1","values of: " + parname1,Nbins+2,-1,Nbins+1);
@@ -24,7 +24,7 @@
   TFile fin(fname);
   RooWorkspace *w =0;
   RooRealVar *par1=0,*par2=0;
-
+  std::cout<<"bin\t"<<parname1<<"\t"<<parname2<<std::endl;
   for (int k=0;k<Nbins;k++)
   {
     int bin=k;
@@ -38,7 +38,7 @@
 
     h2->SetBinContent(k+2,par2->getVal());
     h2->SetBinError(k+2,par2->getError());
-    
+    std::cout<<k<<"\t"<<par1->getVal()<<"\t"<<par2->getVal()<<std::endl;
   }
 
   fout.cd();

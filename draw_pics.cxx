@@ -1,11 +1,12 @@
 
 {
   Int_t Nbins=54;
-  TString fname= "Pt2Q2NuZpi0_aa_all_UML_Pcorr_bkgExpxG_Tvz/data_CD_C/binned.root";
+  TString fname= "Pt2Q2NuZpi0_aa_all_UML_Pcorr_bkgExpxG_Tvz/sim_CD_C/binned.root";
   gROOT->ProcessLine("#include <libgen.h>");
   TFile fin(fname);
   TString dname=dirname((char*)fname.Data());
   TCanvas *c=0;
+  cout<<"ok\n";
   for (int kk=0;kk<Nbins;kk++)
   {
 

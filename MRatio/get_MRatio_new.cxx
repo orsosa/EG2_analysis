@@ -33,7 +33,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
-#include "BinMgr.hxx"
+#include "BinMgr_rev.hxx"
 
 TString srLTfile, gsLTfile, srSTfile, gsSTfile, dataLTfile, dataSTfile, dataElecfile, outdir, st, lt, suffix, bin_info, indir, sig_name;
 
@@ -130,7 +130,7 @@ int main(int argc, char *argv[])
   else
     fdataElec = new TFile(dataElecfile.Data(),"read");
 
-
+  
   TH2F *hMR_2D = new TH2F("hMR_2D","Multiplicity ratio formated 2D histogram only data",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY+2,-1,bm.NY+1);
 
   TH2F *hMRa_2D = new TH2F("hMRa_2D","Multiplicity ratio formated 2D histogram + AC",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY+2,-1,bm.NY+1);

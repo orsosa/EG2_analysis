@@ -24,7 +24,7 @@ int compare_ratios(TString fname, TString facname,TString picname="outpic")
   }
 
   ha->Draw("nostack");
-  ha->GetXaxis()->SetTitle("Z");
+  ha->GetXaxis()->SetTitle("Pt2");
   ha->GetYaxis()->SetTitle("R^{A}_{D}");
   ha->SetTitle("Multipicity Ratio");
   leg->Draw();
