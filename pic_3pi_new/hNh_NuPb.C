@@ -1,0 +1,108 @@
+void hNh_NuPb()
+{
+//=========Macro generated from canvas: c1/c1
+//=========  (Wed Jun 20 07:10:09 2018) by ROOT version 6.12/06
+   TCanvas *c1 = new TCanvas("c1", "c1",1,1,1024,744);
+   c1->Range(1.858333,-2.063144e-06,4.591667,1.85683e-05);
+   c1->SetFillColor(0);
+   c1->SetBorderMode(0);
+   c1->SetBorderSize(2);
+   c1->SetTickx(1);
+   c1->SetTicky(1);
+   c1->SetLeftMargin(0.125);
+   c1->SetRightMargin(0.125);
+   c1->SetFrameBorderMode(0);
+   c1->SetFrameBorderMode(0);
+   Double_t xAxis23[6] = {2.2, 2.86, 3.22, 3.58, 3.87, 4.25}; 
+   
+   TH1D *hnul__23 = new TH1D("hnul__23","#un solid data",5, xAxis23);
+   hnul__23->SetBinContent(1,8.080498e-06);
+   hnul__23->SetBinContent(2,1.362712e-05);
+   hnul__23->SetBinContent(3,1.469985e-05);
+   hnul__23->SetBinContent(4,1.07554e-05);
+   hnul__23->SetBinContent(5,6.41587e-06);
+   hnul__23->SetBinError(1,5.958202e-07);
+   hnul__23->SetBinError(2,9.495639e-07);
+   hnul__23->SetBinError(3,1.019344e-06);
+   hnul__23->SetBinError(4,9.818866e-07);
+   hnul__23->SetBinError(5,6.384343e-07);
+   hnul__23->SetEntries(782.7488);
+   
+   TPaveStats *ptstats = new TPaveStats(0.78,0.835,0.98,0.995,"brNDC");
+   ptstats->SetName("stats");
+   ptstats->SetBorderSize(2);
+   ptstats->SetFillColor(0);
+   ptstats->SetTextAlign(12);
+   ptstats->SetTextFont(22);
+   TText *ptstats_LaTex = ptstats->AddText("hnul");
+   ptstats_LaTex->SetTextSize(0.0368);
+   ptstats_LaTex = ptstats->AddText("Entries = 783    ");
+   ptstats_LaTex = ptstats->AddText("Mean  =  3.322");
+   ptstats_LaTex = ptstats->AddText("Std Dev   = 0.4629");
+   ptstats->SetOptStat(1111);
+   ptstats->SetOptFit(0);
+   ptstats->Draw();
+   hnul__23->GetListOfFunctions()->Add(ptstats);
+   ptstats->SetParent(hnul__23);
+   hnul__23->SetLineWidth(2);
+   hnul__23->SetMarkerStyle(36);
+   hnul__23->SetMarkerSize(2);
+   hnul__23->GetXaxis()->SetTitle("#nu (GeV)");
+   hnul__23->GetXaxis()->SetLabelFont(22);
+   hnul__23->GetXaxis()->SetLabelSize(0.05);
+   hnul__23->GetXaxis()->SetTitleSize(0.05);
+   hnul__23->GetXaxis()->SetTitleFont(22);
+   hnul__23->GetYaxis()->SetTitle("dN/d#nu");
+   hnul__23->GetYaxis()->SetLabelFont(22);
+   hnul__23->GetYaxis()->SetLabelSize(0.05);
+   hnul__23->GetYaxis()->SetTitleSize(0.05);
+   hnul__23->GetYaxis()->SetTitleFont(22);
+   hnul__23->GetZaxis()->SetLabelFont(22);
+   hnul__23->GetZaxis()->SetLabelSize(0.05);
+   hnul__23->GetZaxis()->SetTitleSize(0.05);
+   hnul__23->GetZaxis()->SetTitleFont(22);
+   hnul__23->Draw("p");
+   Double_t xAxis24[6] = {2.2, 2.86, 3.22, 3.58, 3.87, 4.25}; 
+   
+   TH1D *hnus__24 = new TH1D("hnus__24","#un solid data",5, xAxis24);
+   hnus__24->SetBinContent(1,4.133892e-06);
+   hnus__24->SetBinContent(2,5.488156e-06);
+   hnus__24->SetBinContent(3,5.798145e-06);
+   hnus__24->SetBinContent(4,5.999157e-06);
+   hnus__24->SetBinContent(5,2.312343e-06);
+   hnus__24->SetBinError(1,6.706467e-07);
+   hnus__24->SetBinError(2,9.276969e-07);
+   hnus__24->SetBinError(3,9.80088e-07);
+   hnus__24->SetBinError(4,1.114039e-06);
+   hnus__24->SetBinError(5,5.780924e-07);
+   hnus__24->SetEntries(146.4271);
+   hnus__24->SetLineWidth(2);
+   hnus__24->SetMarkerStyle(8);
+   hnus__24->SetMarkerSize(2);
+   hnus__24->GetXaxis()->SetTitle("#nu (GeV)");
+   hnus__24->GetXaxis()->SetLabelFont(22);
+   hnus__24->GetXaxis()->SetLabelSize(0.05);
+   hnus__24->GetXaxis()->SetTitleSize(0.05);
+   hnus__24->GetXaxis()->SetTitleFont(22);
+   hnus__24->GetYaxis()->SetTitle("dN/d#nu");
+   hnus__24->GetYaxis()->SetLabelFont(22);
+   hnus__24->GetYaxis()->SetLabelSize(0.05);
+   hnus__24->GetYaxis()->SetTitleSize(0.05);
+   hnus__24->GetYaxis()->SetTitleFont(22);
+   hnus__24->GetZaxis()->SetLabelFont(22);
+   hnus__24->GetZaxis()->SetLabelSize(0.05);
+   hnus__24->GetZaxis()->SetTitleSize(0.05);
+   hnus__24->GetZaxis()->SetTitleFont(22);
+   hnus__24->Draw("samep");
+   
+   TPaveText *pt = new TPaveText(0.01,0.945,0.2603922,0.995,"blNDC");
+   pt->SetName("title");
+   pt->SetBorderSize(0);
+   pt->SetFillColor(0);
+   pt->SetTextFont(22);
+   TText *pt_LaTex = pt->AddText("#un solid data");
+   pt->Draw();
+   c1->Modified();
+   c1->cd();
+   c1->SetSelected(c1);
+}

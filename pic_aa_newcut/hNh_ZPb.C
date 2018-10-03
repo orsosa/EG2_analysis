@@ -1,0 +1,104 @@
+void hNh_ZPb()
+{
+//=========Macro generated from canvas: c1/c1
+//=========  (Wed Jun 20 22:19:39 2018) by ROOT version 6.12/06
+   TCanvas *c1 = new TCanvas("c1", "c1",10,64,1024,704);
+   c1->Range(0.4166667,-13567.71,1.083333,122109.4);
+   c1->SetFillColor(0);
+   c1->SetBorderMode(0);
+   c1->SetBorderSize(2);
+   c1->SetTickx(1);
+   c1->SetTicky(1);
+   c1->SetLeftMargin(0.125);
+   c1->SetRightMargin(0.125);
+   c1->SetFrameBorderMode(0);
+   c1->SetFrameBorderMode(0);
+   Double_t xAxis17[5] = {0.5, 0.6, 0.7, 0.8, 1}; 
+   
+   TH1D *hzl__17 = new TH1D("hzl__17","z solid data",4, xAxis17);
+   hzl__17->SetBinContent(1,103052);
+   hzl__17->SetBinContent(2,61741);
+   hzl__17->SetBinContent(3,33829);
+   hzl__17->SetBinContent(4,24817);
+   hzl__17->SetBinError(1,321.0171);
+   hzl__17->SetBinError(2,248.4774);
+   hzl__17->SetBinError(3,183.9266);
+   hzl__17->SetBinError(4,157.5341);
+   hzl__17->SetEntries(223439);
+   
+   TPaveStats *ptstats = new TPaveStats(0.78,0.835,0.98,0.995,"brNDC");
+   ptstats->SetName("stats");
+   ptstats->SetBorderSize(2);
+   ptstats->SetFillColor(0);
+   ptstats->SetTextAlign(12);
+   ptstats->SetTextFont(22);
+   TText *ptstats_LaTex = ptstats->AddText("hzl");
+   ptstats_LaTex->SetTextSize(0.0368);
+   ptstats_LaTex = ptstats->AddText("Entries = 223439 ");
+   ptstats_LaTex = ptstats->AddText("Mean  = 0.6402");
+   ptstats_LaTex = ptstats->AddText("Std Dev   = 0.1136");
+   ptstats->SetOptStat(1111);
+   ptstats->SetOptFit(0);
+   ptstats->Draw();
+   hzl__17->GetListOfFunctions()->Add(ptstats);
+   ptstats->SetParent(hzl__17);
+   hzl__17->SetLineWidth(2);
+   hzl__17->SetMarkerStyle(36);
+   hzl__17->SetMarkerSize(2);
+   hzl__17->GetXaxis()->SetTitle("z");
+   hzl__17->GetXaxis()->SetLabelFont(22);
+   hzl__17->GetXaxis()->SetLabelSize(0.05);
+   hzl__17->GetXaxis()->SetTitleSize(0.05);
+   hzl__17->GetXaxis()->SetTitleFont(22);
+   hzl__17->GetYaxis()->SetTitle("dN/dz");
+   hzl__17->GetYaxis()->SetLabelFont(22);
+   hzl__17->GetYaxis()->SetLabelSize(0.05);
+   hzl__17->GetYaxis()->SetTitleSize(0.05);
+   hzl__17->GetYaxis()->SetTitleFont(22);
+   hzl__17->GetZaxis()->SetLabelFont(22);
+   hzl__17->GetZaxis()->SetLabelSize(0.05);
+   hzl__17->GetZaxis()->SetTitleSize(0.05);
+   hzl__17->GetZaxis()->SetTitleFont(22);
+   hzl__17->Draw("p");
+   Double_t xAxis18[5] = {0.5, 0.6, 0.7, 0.8, 1}; 
+   
+   TH1D *hzs__18 = new TH1D("hzs__18","z solid data",4, xAxis18);
+   hzs__18->SetBinContent(1,17155);
+   hzs__18->SetBinContent(2,9967);
+   hzs__18->SetBinContent(3,5425);
+   hzs__18->SetBinContent(4,4114);
+   hzs__18->SetBinError(1,130.9771);
+   hzs__18->SetBinError(2,99.83486);
+   hzs__18->SetBinError(3,73.6546);
+   hzs__18->SetBinError(4,64.14047);
+   hzs__18->SetEntries(36661);
+   hzs__18->SetLineWidth(2);
+   hzs__18->SetMarkerStyle(8);
+   hzs__18->SetMarkerSize(2);
+   hzs__18->GetXaxis()->SetTitle("z");
+   hzs__18->GetXaxis()->SetLabelFont(22);
+   hzs__18->GetXaxis()->SetLabelSize(0.05);
+   hzs__18->GetXaxis()->SetTitleSize(0.05);
+   hzs__18->GetXaxis()->SetTitleFont(22);
+   hzs__18->GetYaxis()->SetTitle("dN/dz");
+   hzs__18->GetYaxis()->SetLabelFont(22);
+   hzs__18->GetYaxis()->SetLabelSize(0.05);
+   hzs__18->GetYaxis()->SetTitleSize(0.05);
+   hzs__18->GetYaxis()->SetTitleFont(22);
+   hzs__18->GetZaxis()->SetLabelFont(22);
+   hzs__18->GetZaxis()->SetLabelSize(0.05);
+   hzs__18->GetZaxis()->SetTitleSize(0.05);
+   hzs__18->GetZaxis()->SetTitleFont(22);
+   hzs__18->Draw("samep");
+   
+   TPaveText *pt = new TPaveText(0.01,0.945,0.21591,0.995,"blNDC");
+   pt->SetName("title");
+   pt->SetBorderSize(0);
+   pt->SetFillColor(0);
+   pt->SetTextFont(22);
+   TText *pt_LaTex = pt->AddText("z solid data");
+   pt->Draw();
+   c1->Modified();
+   c1->cd();
+   c1->SetSelected(c1);
+}

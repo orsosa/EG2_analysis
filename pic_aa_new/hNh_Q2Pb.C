@@ -1,0 +1,108 @@
+void hNh_Q2Pb()
+{
+//=========Macro generated from canvas: c1/c1
+//=========  (Wed Jun 20 07:09:15 2018) by ROOT version 6.12/06
+   TCanvas *c1 = new TCanvas("c1", "c1",1,1,1024,744);
+   c1->Range(0.4833333,-0.0003764088,4.616667,0.003387679);
+   c1->SetFillColor(0);
+   c1->SetBorderMode(0);
+   c1->SetBorderSize(2);
+   c1->SetTickx(1);
+   c1->SetTicky(1);
+   c1->SetLeftMargin(0.125);
+   c1->SetRightMargin(0.125);
+   c1->SetFrameBorderMode(0);
+   c1->SetFrameBorderMode(0);
+   Double_t xAxis21[6] = {1, 1.33, 1.66, 2, 2.5, 4.1}; 
+   
+   TH1D *hq2l__21 = new TH1D("hq2l__21","Q^{2} solid data",5, xAxis21);
+   hq2l__21->SetBinContent(1,0.001247452);
+   hq2l__21->SetBinContent(2,0.002151189);
+   hq2l__21->SetBinContent(3,0.002616158);
+   hq2l__21->SetBinContent(4,0.00284744);
+   hq2l__21->SetBinContent(5,0.002436246);
+   hq2l__21->SetBinError(1,5.784043e-06);
+   hq2l__21->SetBinError(2,1.090648e-05);
+   hq2l__21->SetBinError(3,1.635111e-05);
+   hq2l__21->SetBinError(4,2.043628e-05);
+   hq2l__21->SetBinError(5,2.298824e-05);
+   hq2l__21->SetEntries(93461.41);
+   
+   TPaveStats *ptstats = new TPaveStats(0.78,0.835,0.98,0.995,"brNDC");
+   ptstats->SetName("stats");
+   ptstats->SetBorderSize(2);
+   ptstats->SetFillColor(0);
+   ptstats->SetTextAlign(12);
+   ptstats->SetTextFont(22);
+   TText *ptstats_LaTex = ptstats->AddText("hq2l");
+   ptstats_LaTex->SetTextSize(0.0368);
+   ptstats_LaTex = ptstats->AddText("Entries = 93461  ");
+   ptstats_LaTex = ptstats->AddText("Mean  =  2.116");
+   ptstats_LaTex = ptstats->AddText("Std Dev   = 0.7064");
+   ptstats->SetOptStat(1111);
+   ptstats->SetOptFit(0);
+   ptstats->Draw();
+   hq2l__21->GetListOfFunctions()->Add(ptstats);
+   ptstats->SetParent(hq2l__21);
+   hq2l__21->SetLineWidth(2);
+   hq2l__21->SetMarkerStyle(36);
+   hq2l__21->SetMarkerSize(2);
+   hq2l__21->GetXaxis()->SetTitle("Q^{2} (GeV^{2})");
+   hq2l__21->GetXaxis()->SetLabelFont(22);
+   hq2l__21->GetXaxis()->SetLabelSize(0.05);
+   hq2l__21->GetXaxis()->SetTitleSize(0.05);
+   hq2l__21->GetXaxis()->SetTitleFont(22);
+   hq2l__21->GetYaxis()->SetTitle("dN/dQ^{2}");
+   hq2l__21->GetYaxis()->SetLabelFont(22);
+   hq2l__21->GetYaxis()->SetLabelSize(0.05);
+   hq2l__21->GetYaxis()->SetTitleSize(0.05);
+   hq2l__21->GetYaxis()->SetTitleFont(22);
+   hq2l__21->GetZaxis()->SetLabelFont(22);
+   hq2l__21->GetZaxis()->SetLabelSize(0.05);
+   hq2l__21->GetZaxis()->SetTitleSize(0.05);
+   hq2l__21->GetZaxis()->SetTitleFont(22);
+   hq2l__21->Draw("p");
+   Double_t xAxis22[6] = {1, 1.33, 1.66, 2, 2.5, 4.1}; 
+   
+   TH1D *hq2s__22 = new TH1D("hq2s__22","Q^{2} solid data",5, xAxis22);
+   hq2s__22->SetBinContent(1,0.000484952);
+   hq2s__22->SetBinContent(2,0.0008477661);
+   hq2s__22->SetBinContent(3,0.001056279);
+   hq2s__22->SetBinContent(4,0.001121941);
+   hq2s__22->SetBinContent(5,0.001066022);
+   hq2s__22->SetBinError(1,5.425264e-06);
+   hq2s__22->SetBinError(2,1.032408e-05);
+   hq2s__22->SetBinError(3,1.587755e-05);
+   hq2s__22->SetBinError(4,1.982536e-05);
+   hq2s__22->SetBinError(5,2.414137e-05);
+   hq2s__22->SetEntries(15358.54);
+   hq2s__22->SetLineWidth(2);
+   hq2s__22->SetMarkerStyle(8);
+   hq2s__22->SetMarkerSize(2);
+   hq2s__22->GetXaxis()->SetTitle("Q^{2} (GeV^{2})");
+   hq2s__22->GetXaxis()->SetLabelFont(22);
+   hq2s__22->GetXaxis()->SetLabelSize(0.05);
+   hq2s__22->GetXaxis()->SetTitleSize(0.05);
+   hq2s__22->GetXaxis()->SetTitleFont(22);
+   hq2s__22->GetYaxis()->SetTitle("dN/dQ^{2}");
+   hq2s__22->GetYaxis()->SetLabelFont(22);
+   hq2s__22->GetYaxis()->SetLabelSize(0.05);
+   hq2s__22->GetYaxis()->SetTitleSize(0.05);
+   hq2s__22->GetYaxis()->SetTitleFont(22);
+   hq2s__22->GetZaxis()->SetLabelFont(22);
+   hq2s__22->GetZaxis()->SetLabelSize(0.05);
+   hq2s__22->GetZaxis()->SetTitleSize(0.05);
+   hq2s__22->GetZaxis()->SetTitleFont(22);
+   hq2s__22->Draw("samep");
+   
+   TPaveText *pt = new TPaveText(0.01,0.9398649,0.2368627,0.995,"blNDC");
+   pt->SetName("title");
+   pt->SetBorderSize(0);
+   pt->SetFillColor(0);
+   pt->SetTextFont(22);
+   TText *pt_LaTex = pt->AddText("Q^{2} solid data");
+   pt->Draw();
+   c1->Modified();
+   c1->cd();
+   c1->SetSelected(c1);
+}

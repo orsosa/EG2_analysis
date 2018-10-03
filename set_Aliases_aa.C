@@ -135,14 +135,20 @@
 
   using namespace RooFit;
   // observable
-  RooRealVar meta("meta","M_{#eta}",0,1);
+  RooRealVar meta("meta","M_{#eta}",0.3,0.8);
   // RooRealVar m("m","mean",0.5,0.6);
 
   //////// pi0 peak ////////////
-  RooRealVar m0("m0","mean pi0",0.135076,0.12,0.145);
+  //  RooRealVar m0("m0","mean pi0",0.135076,0.12,0.145);
   //  RooRealVar s0("s0","sigma pi0",0.018,0.0,0.3);//rec
-  RooRealVar s0("s0","sigma pi0",0.000173711,0.0,0.001);//gsim
+  //RooRealVar s0("s0","sigma pi0",0.000173711,0.0,0.001);//gsim
 
+  //////// meta peak ////////////
+  RooRealVar m0("m0","mean eta",0.58,0.5,0.62);
+  RooRealVar s0("s0","sigma eta",0.04,0.03,0.06);//rec
+
+
+  
    
   RooRealVar m1("m1","mean eta",0.5467,0.543,0.55);
   RooRealVar s1("s1","sigma eta",0.045,0.0,0.3);//rec
@@ -182,14 +188,14 @@
   RooDataSet dsM("Mdata","Mass #eta #rightarrow #gamma #gamma",RooArgSet(meta));
 
   RooRealVar a0("a0","constant term",1.,-100,1e4);
-  RooRealVar a1("a1","linear term",-2.66155,-10,10);
-  RooRealVar a2("a2","quadratic term",0.01,-100,100);  
-  //RooRealVar a3("a3","cubic term",0.1,-1000.,1000.);
+  RooRealVar a1("a1","linear term",-0.3,-100,100);
+  RooRealVar a2("a2","quadratic term",-0.1,-100,100);  
+  RooRealVar a3("a3","cubic term",-0.01,-10.,10.);
   //RooPolynomial bkg("bkg","background",meta,RooArgList(a1,a2,a3));
   //  RooPolynomial bkg("bkg","background",meta,RooArgList(a1,a2));
   //RooPolynomial poly("poly","poly for gsim peak",meta,RooArgList(a0,a1),0);
-  //  RooChebychev poly("poly","poly for gsim peak",meta,RooArgList(a0,a1,a2),0);
-  RooChebychev poly("poly","poly for gsim peak",meta,RooArgList(a1));
+  RooChebychev poly("poly","poly background",meta,RooArgList(a1,a2,a3));
+  //  RooChebychev poly("poly","poly for gsim peak",meta,RooArgList(a1));
   
   //RooFormulaVar minFunc("minFunc","Minimum formula","(-a2 +TMath::Sqrt(a2*a2 - 3*a3*a1) )/(3*a3)",RooArgList(a1,a2,a3));
   //  RooFormulaVar minFunc("minFunc","Minimum formula","-a1/2./a2",RooArgList(a1,a2)); 
@@ -197,8 +203,8 @@
   //RooGaussian parConst("parConst","Minimum constrain",minFunc,RooConst(1),RooConst(0.15));
   RooRealVar Npi0("Npi0","Events on #pi^{0}",107859.,0.,1000000);
   RooRealVar Neta("Neta","Events on #eta",6853.,0.,1000000);
-  //  RooRealVar Nb("Nb","Events on background",182499.,0.,10000000);
-  RooRealVar Nb("Nb","Events on background",10.,-10,100.);
+  RooRealVar Nb("Nb","Events on background",182499.,0.,10000000);
+  //  RooRealVar Nb("Nb","Events on background",10.,-10,100.);
 
   RooRealVar Nm("Nm","Events on #pi^{0} model +bkg",290116,0.,1000000);
 
@@ -211,19 +217,20 @@
   //Nb=526029.;Neta=20000.;
 
   //RooAddPdf gspeak("gspeak","peak_bwxg + pol1",RooArgList(peak_bwxg,poly),RooArgList(Neta,Nb));//eta
-  RooAddPdf gspeak("gspeak","peak_bwxg + pol1",RooArgList(peak_bwxg,poly),RooArgList(Npi0,Nb));//pi0
+  //  RooAddPdf gspeak("gspeak","peak_bwxg + pol1",RooArgList(peak_bwxg,poly),RooArgList(Npi0,Nb));//pi0
   //RooAddPdf gspeak("gspeak","peak + pol1",RooArgList(BWpeak,poly),RooArgList(Neta,Nb));
   //RooAddPdf model("model","peak0 + peak1  + bkg",RooArgList(peak0,peak1,bkg_lxg),RooArgList(Npi0,Neta,Nb));
 
   //RooAddPdf model("model","peak0 + bkg",RooArgList(peak0,bkg_lxg),RooArgList(Npi0,Nb));
-  RooAddPdf model("model","peak0 + bkg",RooArgList(peak0,bkg_exg),RooArgList(Npi0,Nb));
+  //RooAddPdf model("model","peak0 + bkg",RooArgList(peak0,bkg_exg),RooArgList(Npi0,Nb));
+  RooAddPdf model("model","peak0 + bkg",RooArgList(peak0,poly),RooArgList(Neta,Nb));
 
   RooAddPdf model_full("model_full","peak1 + peak0 + bkg",RooArgList(peak1,model),RooArgList(Neta,Nm));
 
-  s0.setConstant();
-  m0.setConstant();
-  sg.setConstant();
-  mg.setConstant();
+  //s0.setConstant();
+  //m0.setConstant();
+  //sg.setConstant();
+  //mg.setConstant();
 
   RooFitResult* res;  
   
@@ -234,7 +241,7 @@
 //455685.60
   class_for_aa reader(t);
   reader.Loop(&dsM,&meta);
-
+  
   res=model.fitTo(dsM,RooFit::Extended(),RooFit::Range(0.05,0.4),RooFit::Save());
 Nb=0.5;
   res=gspeak.fitTo(dsM,RooFit::Range(0.12,0.15),RooFit::Extended(),RooFit::Save()); //pi0
@@ -272,20 +279,25 @@ Nb=0.5;
     pl->Draw();
 
   */
-// Int_t nev=t->Draw("meta",ma0cut&&ma1cut&&"0.5<Z&&Z<0.6");
+  Int_t nev=t->Draw("M",ma0cut&&ma1cut&&"0.5<Z&&Z<0.6&&0.3<M&&M<0.8");
 //Int_t nev=t->Draw("meta",ma0cut&&ma1cut);
-  //Double_t *dataArr=t->GetV1();
-
+  Double_t *dataArr=t->GetV1();
+  for (int k =0;k<nev;k++)
+  {
+    if (!(k%10000)) std::cout<<(float)k/nev*100.<<std::endl;
+    meta=dataArr[k];
+    dsM.add(meta);
+  }
+  
   /*
-
   class_for_aa reader(t);
   reader.Loop(&dsM,&meta);
-
-
-  res=model.fitTo(dsM,RooFit::Extended(),RooFit::Range(0.05,0.4),RooFit::Save());
-
-
   */
+
+  res=model.fitTo(dsM,RooFit::Extended(),RooFit::Range(0.3,0.8),RooFit::Save());
+
+
+  
  /*  
 
 

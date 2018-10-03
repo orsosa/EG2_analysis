@@ -1,7 +1,6 @@
-
 {
-  Int_t Nbins=54;
-  TString fname= "Pt2Q2NuZpi0_aa_all_UML_Pcorr_bkgExpxG_Tvz/sim_CD_C/binned.root";
+  Int_t Nbins=5;
+  TString fname= "Pt2eta_aa_all_UML_Pcorr_bkgPol3_full_Tvz/data_PbD_D/binned.root";
   gROOT->ProcessLine("#include <libgen.h>");
   TFile fin(fname);
   TString dname=dirname((char*)fname.Data());

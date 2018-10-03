@@ -1,4 +1,4 @@
-int compare_ratios(TString fname, TString facname,TString picname="outpic")
+int compare_ratios(TString fname, TString facname,TString xtitle="",TString picname="outpic")
 {
   TCanvas *c = new TCanvas();
   c->SetGrid();
@@ -9,8 +9,11 @@ int compare_ratios(TString fname, TString facname,TString picname="outpic")
   TFile fout(picname+".root","recreate");
   ha->Write("hs_ac");
   h->Write("hs_raw");
-
-  TLegend *leg=new TLegend(0.25,0.12,0.41,0.33);
+  
+  //  TLegend *leg=new TLegend(0.26,0.6,0.47,0.86);
+  TLegend *leg=new TLegend(0.25,0.12,0.47,0.41);
+    //  TLegend *leg=new TLegend(0.25,0.52,0.41,0.73);
+  //    TLegend *leg=new TLegend(0.47,0.63,0.62,0.84);
   for (int i=0;i<3;i++)
   {
     ((TH1F*)h->GetHists()->At(i))->SetLineWidth(3);
@@ -24,9 +27,11 @@ int compare_ratios(TString fname, TString facname,TString picname="outpic")
   }
 
   ha->Draw("nostack");
-  ha->GetXaxis()->SetTitle("Pt2");
+  ha->GetXaxis()->SetTitle(xtitle);
+  ha->GetXaxis()->SetTitleOffset(0.85);
   ha->GetYaxis()->SetTitle("R^{A}_{D}");
   ha->SetTitle("Multipicity Ratio");
+  
   leg->Draw();
   // h->Draw("nostacksame");
   c->SaveAs(picname+".pdf");

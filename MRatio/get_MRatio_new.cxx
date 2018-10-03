@@ -48,6 +48,7 @@ int main(int argc, char *argv[])
 {
   TBenchmark bench;
   bench.Start("job");
+  gROOT->SetStyle("orsosaStyle");
   parse_opt(argc,argv);
 
   TCanvas *c = new TCanvas("c","c",1200,900);
@@ -125,31 +126,32 @@ int main(int argc, char *argv[])
   if (binorder.empty()) for (int i=0;i<bm.Nf;i++) binorder.push_back(i);
   bm.setBinOrder(binorder);
 
-  if (!strcmp(bm.getNameX(),"Q2") || !strcmp(bm.getNameX(),"Nu") )
+  /*if (!strcmp(bm.getNameX(),"Q2") || !strcmp(bm.getNameX(),"Nu") )
     fdataElec = new TFile("/home/orsosa/EG2_Analysis/Ne_AllTarg_OSim_Tcut_Q2Nu.root","read");
   else
-    fdataElec = new TFile(dataElecfile.Data(),"read");
+  */
+  fdataElec = new TFile(dataElecfile.Data(),"read");
 
   
-  TH2F *hMR_2D = new TH2F("hMR_2D","Multiplicity ratio formated 2D histogram only data",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY+2,-1,bm.NY+1);
+  TH2F *hMR_2D = new TH2F("hMR_2D","Multiplicity ratio formated 2D histogram only data",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY,0,bm.NY);
 
-  TH2F *hMRa_2D = new TH2F("hMRa_2D","Multiplicity ratio formated 2D histogram + AC",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY+2,-1,bm.NY+1);
+  TH2F *hMRa_2D = new TH2F("hMRa_2D","Multiplicity ratio formated 2D histogram + AC",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY,0,bm.NY);
   
-  TH2F *h_acc2D_ST = new TH2F("h_acc2D_ST","acceptance formated 2D histogram ST",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY+2,-1,bm.NY+1);
+  TH2F *h_acc2D_ST = new TH2F("h_acc2D_ST","acceptance formated 2D histogram ST",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY,0,bm.NY);
 
-  TH2F *h_acc2D_LT = new TH2F("h_acc2D_LT","acceptance formated 2D histogram LT",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY+2,-1,bm.NY+1);
+  TH2F *h_acc2D_LT = new TH2F("h_acc2D_LT","acceptance formated 2D histogram LT",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY,0,bm.NY);
 
-  TH2F *hNh_dST = new TH2F("hNh_dST","N hadrons formated 2D histogram ST",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY+2,-1,bm.NY+1);
+  TH2F *hNh_dST = new TH2F("hNh_dST","N hadrons formated 2D histogram ST",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY,0,bm.NY);
 
-  TH2F *hNh_dLT = new TH2F("hNh_dLT","N hadrons formated 2D histogram LT",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY+2,-1,bm.NY+1);
+  TH2F *hNh_dLT = new TH2F("hNh_dLT","N hadrons formated 2D histogram LT",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY,0,bm.NY);
 
-  TH2F *hNh_gST = new TH2F("hNh_gST","N hadrons formated 2D histogram ST sim",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY+2,-1,bm.NY+1);
+  TH2F *hNh_gST = new TH2F("hNh_gST","N hadrons formated 2D histogram ST sim",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY,0,bm.NY);
 
-  TH2F *hNh_gLT = new TH2F("hNh_gLT","N hadrons formated 2D histogram LT sim",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY+2,-1,bm.NY+1);
+  TH2F *hNh_gLT = new TH2F("hNh_gLT","N hadrons formated 2D histogram LT sim",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY,0,bm.NY);
   
-  TH2F *hNh_rST = new TH2F("hNh_rST","N hadrons formated 2D histogram ST rec",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY+2,-1,bm.NY+1);
+  TH2F *hNh_rST = new TH2F("hNh_rST","N hadrons formated 2D histogram ST rec",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY,0,bm.NY);
 
-  TH2F *hNh_rLT = new TH2F("hNh_rLT","N hadrons formated 2D histogram LT rec",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY+2,-1,bm.NY+1);
+  TH2F *hNh_rLT = new TH2F("hNh_rLT","N hadrons formated 2D histogram LT rec",bm.getNEdgesX()-1,bm.getBinEdgesX(),bm.NY,0,bm.NY);
 
   //  TH1D *hMRatioProj = new TH1D("hMRatioProj",Form("Multiplicity Ratio (%s)",bm.getNameX()),bm.getNEdgesX()-1,bm.getBinEdgesX());
   TH1D *hMRatioProj;
@@ -204,28 +206,28 @@ int main(int argc, char *argv[])
     bm.getIndexRaw(k);
 
     ///// Data solid target///////
-    hNh_dST->SetBinContent(bm.getCodeX()+1,bm.getCodeY()+2,Nh_dST->getVal());// Y start at -1, aesthetic reasons.
-    hNh_dST->SetBinError(bm.getCodeX()+1,bm.getCodeY()+2,Nh_dST->getError());// Y start at -1, aesthetic reasons.
+    hNh_dST->SetBinContent(bm.getCodeX()+1,bm.getCodeY()+1,Nh_dST->getVal());// Y start at -1, aesthetic reasons.
+    hNh_dST->SetBinError(bm.getCodeX()+1,bm.getCodeY()+1,Nh_dST->getError());// Y start at -1, aesthetic reasons.
 
     ///// Data liquid target///////
-    hNh_dLT->SetBinContent(bm.getCodeX()+1,bm.getCodeY()+2,Nh_dLT->getVal());// Y start at -1, aesthetic reasons.
-    hNh_dLT->SetBinError(bm.getCodeX()+1,bm.getCodeY()+2,Nh_dLT->getError());// Y start at -1, aesthetic reasons.
+    hNh_dLT->SetBinContent(bm.getCodeX()+1,bm.getCodeY()+1,Nh_dLT->getVal());// Y start at -1, aesthetic reasons.
+    hNh_dLT->SetBinError(bm.getCodeX()+1,bm.getCodeY()+1,Nh_dLT->getError());// Y start at -1, aesthetic reasons.
 
     ///// sim solid target///////
-    hNh_gST->SetBinContent(bm.getCodeX()+1,bm.getCodeY()+2,Nh_gST->getVal());// Y start at -1, aesthetic reasons.
-    hNh_gST->SetBinError(bm.getCodeX()+1,bm.getCodeY()+2,Nh_gST->getError());// Y start at -1, aesthetic reasons.
+    hNh_gST->SetBinContent(bm.getCodeX()+1,bm.getCodeY()+1,Nh_gST->getVal());// Y start at -1, aesthetic reasons.
+    hNh_gST->SetBinError(bm.getCodeX()+1,bm.getCodeY()+1,Nh_gST->getError());// Y start at -1, aesthetic reasons.
 
     ///// sim liquid target///////
-    hNh_gLT->SetBinContent(bm.getCodeX()+1,bm.getCodeY()+2,Nh_gLT->getVal());// Y start at -1, aesthetic reasons.
-    hNh_gLT->SetBinError(bm.getCodeX()+1,bm.getCodeY()+2,Nh_gLT->getError());// Y start at -1, aesthetic reasons.
+    hNh_gLT->SetBinContent(bm.getCodeX()+1,bm.getCodeY()+1,Nh_gLT->getVal());// Y start at -1, aesthetic reasons.
+    hNh_gLT->SetBinError(bm.getCodeX()+1,bm.getCodeY()+1,Nh_gLT->getError());// Y start at -1, aesthetic reasons.
 
     ///// rec sim solid target///////
-    hNh_rST->SetBinContent(bm.getCodeX()+1,bm.getCodeY()+2,Nh_rST->getVal());// Y start at -1, aesthetic reasons.
-    hNh_rST->SetBinError(bm.getCodeX()+1,bm.getCodeY()+2,Nh_rST->getError());// Y start at -1, aesthetic reasons.
+    hNh_rST->SetBinContent(bm.getCodeX()+1,bm.getCodeY()+1,Nh_rST->getVal());// Y start at -1, aesthetic reasons.
+    hNh_rST->SetBinError(bm.getCodeX()+1,bm.getCodeY()+1,Nh_rST->getError());// Y start at -1, aesthetic reasons.
 
     ///// recsim liquid target///////
-    hNh_rLT->SetBinContent(bm.getCodeX()+1,bm.getCodeY()+2,Nh_rLT->getVal());// Y start at -1, aesthetic reasons.
-    hNh_rLT->SetBinError(bm.getCodeX()+1,bm.getCodeY()+2,Nh_rLT->getError());// Y start at -1, aesthetic reasons.
+    hNh_rLT->SetBinContent(bm.getCodeX()+1,bm.getCodeY()+1,Nh_rLT->getVal());// Y start at -1, aesthetic reasons.
+    hNh_rLT->SetBinError(bm.getCodeX()+1,bm.getCodeY()+1,Nh_rLT->getError());// Y start at -1, aesthetic reasons.
   }
   //// Making Histograms Divisions. ////////////////////
 
@@ -238,8 +240,14 @@ int main(int argc, char *argv[])
   h_acc2D_LT->Divide(hNh_rLT,hNh_gLT);// Acceptance.
 
   outf->cd();
+
+  hNh_dST->Draw("textcol");
+  hNh_dLT->Draw("textcol");
+  
   hNh_dST->Write(histname+"_noacc_2D_ST",TObject::kOverwrite);
   hNh_dLT->Write(histname+"_noacc_2D_LT",TObject::kOverwrite);
+
+
   
   hNh_dST->Divide(h_acc2D_ST);
   hNh_dLT->Divide(h_acc2D_LT);  
@@ -251,22 +259,22 @@ int main(int argc, char *argv[])
   TH1D *hLT_px = hNh_dLT->ProjectionX("hLT_px",1,hNh_dLT->GetNbinsY());
   ///////////////////////////////////////
   hMRatioProj = (TH1D*)hST_px->Clone("hMRatioProj");
-  TH1D *hST_elec_px=0,*hLT_elec_px=0;
+  TH1D *hST_elec_pj=0,*hLT_elec_pj=0;
   if (!strcmp(bm.getNameX(),"Q2"))
   {
-    hST_elec_px = (TH1D*)heST->ProjectionY("hST_elec_px");
-    hLT_elec_px = (TH1D*)heLT->ProjectionY("hLT_elec_px");
-    hST_px->Divide(hST_elec_px);
-    hLT_px->Divide(hLT_elec_px);
+    hST_elec_pj = (TH1D*)heST->ProjectionX("hST_elec_pj");
+    hLT_elec_pj = (TH1D*)heLT->ProjectionX("hLT_elec_pj");
+    hST_px->Divide(hST_elec_pj);
+    hLT_px->Divide(hLT_elec_pj);
     
     hMRatioProj->Divide(hST_px,hLT_px);
   }
   else if (!strcmp(bm.getNameX(),"Nu"))
   {
-    hST_elec_px = (TH1D*)heST->ProjectionX("hST_elec_px");
-    hLT_elec_px = (TH1D*)heLT->ProjectionX("hLT_elec_px");
-    hST_px->Divide(hST_elec_px);
-    hLT_px->Divide(hLT_elec_px);
+    hST_elec_pj = (TH1D*)heST->ProjectionY("hST_elec_pj");
+    hLT_elec_pj = (TH1D*)heLT->ProjectionY("hLT_elec_pj");
+    hST_px->Divide(hST_elec_pj);
+    hLT_px->Divide(hLT_elec_pj);
     
     hMRatioProj->Divide(hST_px,hLT_px);
   }
@@ -297,6 +305,12 @@ int main(int argc, char *argv[])
   c->SaveAs(Form("%s/hMRa_1d_%s_%s.C",outdir.Data(),bm.getNameX(),suffix.Data()));
   outf->cd();
   allratios->Write("allratios",TObject::kOverwrite);
+
+  hNh_dST->Draw("coltext");
+  hNh_dLT->Draw("coltext");
+  hMR_2D->Draw("coltext");
+  hMRa_2D->Draw("coltext");
+  
   hNh_dST->Write(histname+"2D_ST",TObject::kOverwrite);
   hNh_dLT->Write(histname+"2D_LT",TObject::kOverwrite);
   hMR_2D->Write(histname+"2D_MR",TObject::kOverwrite);
@@ -304,6 +318,8 @@ int main(int argc, char *argv[])
 
   if (!no_acc)
   {
+    h_acc2D_ST->Draw("coltext");
+    h_acc2D_LT->Draw("coltext");
     h_acc2D_ST->Write(histname+"2D_STacc",TObject::kOverwrite);
     h_acc2D_LT->Write(histname+"2D_LTacc",TObject::kOverwrite);
   }

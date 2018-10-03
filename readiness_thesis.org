@@ -1,0 +1,24 @@
+* Finish eta -> aa [0%]
+** TODO Z 
+** TODO Pt
+** TODO Nu
+** TODO Q2
+** TODO PhiPQ
+** TODO Fit phipq
+** TODO Estimate RC
+* Finish pi0 (Z,Q2,Nu) [0%]
+** TODO Check all bins
+** TODO Include RC
+* Finish pi0 (Pt2,Z,Nu) [0%]
+** TODO Check all bins
+** TODO Include RC
+* Finish eta -> 3pi [0%]
+** TODO Z 
+** TODO Pt
+** TODO Nu
+** TODO Q2
+** TODO PhiPQ
+** TODO Fit phipq
+** TODO Estimate RC
+
+

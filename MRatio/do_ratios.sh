@@ -1,12 +1,27 @@
 #!/bin/bash
 ######## PARAMETERS ###############
-signal="Npi0"
+meson="eta"
+signal="N"$meson
 #prefix="R_Q2_NuZPt2"
-prefix="R_Pt2_Q2NuZ"
+#prefix="R_Pt2_Q2NuZ"
+#prefix="R_Pt2"
+#prefix="R_Nu"
+#prefix="R_Q2"
+#prefix="R_PhiPQ"
+#prefix="R_Z"
 #prefix="R_Nu_Q2ZPt2"
 #prefix="R_Z_Q2NuPt2"
-bin_order="1,0,3,2" #Last bin is preserved, all others are integrated.
+prefix="R_Pt2Z_eta"
+#bin_order="0,1,2,3,4" #PhiPQ analysis.
+#bin_order="1,2,3,0" #Last bin is preserved, all others are integrated.
+bin_order="0,1,2,3" #Last bin is preserved, all others are integrated.
+
 ###############################
+
+fileElec="/home/orsosa/EG2_Analysis/Ne_${meson}_AllTarg_OSim_Tcut_Q2Nu.root" #eta
+#fileElec="/home/orsosa/EG2_Analysis/Ne_AllTarg_OSim_Tcut_Q2Nu.root" #pi0
+#fileElec="/home/orsosa/EG2_Analysis/Ne_eta_AllTarg_OSim_Tcut_Q2Nu.root" #eta
+#fileElec="/user/o/orsosa/osoto_ana/Ne_AllTarg_HSim_Tcut.root"
 
 
 acceptance="no"
@@ -20,8 +35,6 @@ else
     echo "USING ACCEPTANCE!"
 fi
 
-fileElec="/home/orsosa/EG2_Analysis/Ne_AllTarg_OSim_Tcut.root"
-#fileElec="/user/o/orsosa/osoto_ana/Ne_AllTarg_HSim_Tcut.root"
 
 echo "using ${fileElec} to get Nelectrons."
 #indir="Pt2Q2NuZpi0c_fullrange" #directory containing data and simulation binned.

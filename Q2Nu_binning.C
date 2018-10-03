@@ -1,8 +1,8 @@
 void Q2Nu_binning()
 {
 //=========Macro generated from canvas: c1/c1
-//=========  (Sun Jun 10 02:18:49 2018) by ROOT version 6.12/06
-   TCanvas *c1 = new TCanvas("c1", "c1",10,64,1024,768);
+//=========  (Mon Jul  2 06:40:27 2018) by ROOT version 6.12/06
+   TCanvas *c1 = new TCanvas("c1", "c1",10,64,1024,704);
    gStyle->SetOptStat(0);
    c1->Range(1.858333,0.6125,4.591667,4.4875);
    c1->SetFillColor(0);
@@ -50776,26 +50776,26 @@ void Q2Nu_binning()
    hq2nu->SetEntries(6732537);
    hq2nu->SetStats(0);
    hq2nu->SetContour(20);
-   hq2nu->SetContourLevel(0,0.468);
-   hq2nu->SetContourLevel(1,0.6610676);
-   hq2nu->SetContourLevel(2,0.9337828);
-   hq2nu->SetContourLevel(3,1.319003);
-   hq2nu->SetContourLevel(4,1.863142);
-   hq2nu->SetContourLevel(5,2.631757);
-   hq2nu->SetContourLevel(6,3.717456);
-   hq2nu->SetContourLevel(7,5.251046);
-   hq2nu->SetContourLevel(8,7.4173);
-   hq2nu->SetContourLevel(9,10.47721);
-   hq2nu->SetContourLevel(10,14.79946);
-   hq2nu->SetContourLevel(11,20.90479);
-   hq2nu->SetContourLevel(12,29.5288);
-   hq2nu->SetContourLevel(13,41.71054);
-   hq2nu->SetContourLevel(14,58.91771);
-   hq2nu->SetContourLevel(15,83.22348);
-   hq2nu->SetContourLevel(16,117.5563);
-   hq2nu->SetContourLevel(17,166.0527);
-   hq2nu->SetContourLevel(18,234.5556);
-   hq2nu->SetContourLevel(19,331.3186);
+   hq2nu->SetContourLevel(0,2.93765);
+   hq2nu->SetContourLevel(1,4.582132);
+   hq2nu->SetContourLevel(2,8.58584);
+   hq2nu->SetContourLevel(3,20.84505);
+   hq2nu->SetContourLevel(4,72.96961);
+   hq2nu->SetContourLevel(5,428.3088);
+   hq2nu->SetContourLevel(6,5217.422);
+   hq2nu->SetContourLevel(7,178256.8);
+   hq2nu->SetContourLevel(8,2.613966e+07);
+   hq2nu->SetContourLevel(9,3.000613e+10);
+   hq2nu->SetContourLevel(10,6.301733e+14);
+   hq2nu->SetContourLevel(11,8.031377e+20);
+   hq2nu->SetContourLevel(12,3.379092e+29);
+   hq2nu->SetContourLevel(13,5.134995e+41);
+   hq2nu->SetContourLevel(14,8.273895e+58);
+   hq2nu->SetContourLevel(15,1.672939e+83);
+   hq2nu->SetContourLevel(16,3.599979e+117);
+   hq2nu->SetContourLevel(17,1.129016e+166);
+   hq2nu->SetContourLevel(18,3.594181e+234);
+   hq2nu->SetContourLevel(19,inf);
    
    TPaletteAxis *palette = new TPaletteAxis(4.263667,1,4.386667,4.1,hq2nu);
    palette->SetLabelColor(1);
@@ -50812,15 +50812,17 @@ void Q2Nu_binning()
    palette->SetFillStyle(1001);
    hq2nu->GetListOfFunctions()->Add(palette,"br");
    hq2nu->SetLineWidth(2);
-   hq2nu->GetXaxis()->SetTitle("Q^{2} (GeV^{2})");
+   hq2nu->GetXaxis()->SetTitle("#nu (GeV)");
    hq2nu->GetXaxis()->SetLabelFont(22);
    hq2nu->GetXaxis()->SetLabelSize(0.05);
    hq2nu->GetXaxis()->SetTitleSize(0.05);
+   hq2nu->GetXaxis()->SetTitleOffset(0.85);
    hq2nu->GetXaxis()->SetTitleFont(22);
-   hq2nu->GetYaxis()->SetTitle("#nu (GeV)");
+   hq2nu->GetYaxis()->SetTitle("Q^{2} (GeV^{2})");
    hq2nu->GetYaxis()->SetLabelFont(22);
    hq2nu->GetYaxis()->SetLabelSize(0.05);
    hq2nu->GetYaxis()->SetTitleSize(0.05);
+   hq2nu->GetYaxis()->SetTitleOffset(0.85);
    hq2nu->GetYaxis()->SetTitleFont(22);
    hq2nu->GetZaxis()->SetLabelFont(22);
    hq2nu->GetZaxis()->SetLabelSize(0.05);

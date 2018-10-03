@@ -39,3 +39,7 @@ Thumbs.db
 *~
 *.root
 vertex_fit/vz_cutPerformance_ST/*
+omega_lepto_mother.txt
+eta_lepto_mother.txt
+pi0_lepto_mother.txt
+

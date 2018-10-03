@@ -1,7 +1,7 @@
 void Pt2Z_binning()
 {
 //=========Macro generated from canvas: c1/c1
-//=========  (Sun Jun 10 02:18:49 2018) by ROOT version 6.12/06
+//=========  (Mon Jul  2 06:38:51 2018) by ROOT version 6.12/06
    TCanvas *c1 = new TCanvas("c1", "c1",10,64,1024,704);
    gStyle->SetOptStat(0);
    c1->Range(0.1833333,-0.1875,1.116667,1.6875);
@@ -69631,26 +69631,26 @@ void Pt2Z_binning()
    hpt2z->SetEntries(6732537);
    hpt2z->SetStats(0);
    hpt2z->SetContour(20);
-   hpt2z->SetContourLevel(0,1);
-   hpt2z->SetContourLevel(1,1.431355);
-   hpt2z->SetContourLevel(2,2.048776);
-   hpt2z->SetContourLevel(3,2.932525);
-   hpt2z->SetContourLevel(4,4.197482);
-   hpt2z->SetContourLevel(5,6.008085);
-   hpt2z->SetContourLevel(6,8.5997);
-   hpt2z->SetContourLevel(7,12.30922);
-   hpt2z->SetContourLevel(8,17.61886);
-   hpt2z->SetContourLevel(9,25.21883);
-   hpt2z->SetContourLevel(10,36.09709);
-   hpt2z->SetContourLevel(11,51.66774);
-   hpt2z->SetContourLevel(12,73.95485);
-   hpt2z->SetContourLevel(13,105.8556);
-   hpt2z->SetContourLevel(14,151.5169);
-   hpt2z->SetContourLevel(15,216.8744);
-   hpt2z->SetContourLevel(16,310.4242);
-   hpt2z->SetContourLevel(17,444.3271);
-   hpt2z->SetContourLevel(18,635.9895);
-   hpt2z->SetContourLevel(19,910.3265);
+   hpt2z->SetContourLevel(0,10);
+   hpt2z->SetContourLevel(1,26.99946);
+   hpt2z->SetContourLevel(2,111.8861);
+   hpt2z->SetContourLevel(3,856.101);
+   hpt2z->SetContourLevel(4,15757.31);
+   hpt2z->SetContourLevel(5,1018791);
+   hpt2z->SetContourLevel(6,3.978323e+08);
+   hpt2z->SetContourLevel(7,2.038074e+12);
+   hpt2z->SetContourLevel(8,4.157766e+17);
+   hpt2z->SetContourLevel(9,1.655122e+25);
+   hpt2z->SetContourLevel(10,1.250518e+36);
+   hpt2z->SetContourLevel(11,4.653074e+51);
+   hpt2z->SetContourLevel(12,9.012598e+73);
+   hpt2z->SetContourLevel(13,7.171335e+105);
+   hpt2z->SetContourLevel(14,3.287759e+151);
+   hpt2z->SetContourLevel(15,7.488589e+216);
+   hpt2z->SetContourLevel(16,inf);
+   hpt2z->SetContourLevel(17,inf);
+   hpt2z->SetContourLevel(18,inf);
+   hpt2z->SetContourLevel(19,inf);
    
    TPaletteAxis *palette = new TPaletteAxis(1.004667,0,1.046667,1.5,hpt2z);
    palette->SetLabelColor(1);
@@ -69667,12 +69667,12 @@ void Pt2Z_binning()
    palette->SetFillStyle(1001);
    hpt2z->GetListOfFunctions()->Add(palette,"br");
    hpt2z->SetLineWidth(2);
-   hpt2z->GetXaxis()->SetTitle("Pt^{2} (GeV^{2})");
+   hpt2z->GetXaxis()->SetTitle("Z");
    hpt2z->GetXaxis()->SetLabelFont(22);
    hpt2z->GetXaxis()->SetLabelSize(0.05);
    hpt2z->GetXaxis()->SetTitleSize(0.05);
    hpt2z->GetXaxis()->SetTitleFont(22);
-   hpt2z->GetYaxis()->SetTitle("Z (GeV)");
+   hpt2z->GetYaxis()->SetTitle("Pt^{2} (GeV^{2})");
    hpt2z->GetYaxis()->SetLabelFont(22);
    hpt2z->GetYaxis()->SetLabelSize(0.05);
    hpt2z->GetYaxis()->SetTitleSize(0.05);

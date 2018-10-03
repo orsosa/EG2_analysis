@@ -1,18 +1,25 @@
 {
+  gROOT->ProcessLine("#include <libgen.h>");
+  //  TString fname= "ZQ2NuPt2pi0_aa_all_UML_Pcorr_BkgPol3_Tvz/sim_CD_D/binned.root";
+
+  TString fname="Pt2Q2NuZpi0_aa_all_UML_Pcorr_bkgExpxG_Tvz/data_CD_C/binned.root";
+  TString fnameclone=fname.Copy();
+  TString dname=dirname((char*)fnameclone.Data());
   
-  TString fname= "Pt2Q2NuZpi0_aa_all_UML_Pcorr_bkgExpxG_Tvz/sim_CD_C/binned.root";
-  Nbins=54;
-  /*  for (int kk=0;kk<Nbins;kk++)
+  Nbins=9;
+  for (int kk=0;kk<Nbins;kk++)
   {
-  */
-  int bin=0;
+  
+  int bin=kk*6;
 
   /*
 
   c->Write(Form("c1_%d_refit",bin),TObject::kOverwrite);
   w->Write(Form("w1_%d",bin),TObject::kOverwrite);
   pl->Write(Form("frm1_%d",bin),TObject::kOverwrite);
-  
+  c->SaveAs(Form("%s/rspic/c1_%d_refit.gif",dname.Data(),bin));
+  c->SaveAs(Form("%s/rspic/c1_%d_refit.pdf",dname.Data(),bin));
+  .q
   
   */
   
@@ -31,21 +38,33 @@
     meta->setRange("rplot",0,0.4);
     RooAbsPdf *model = w->pdf("model");
     RooAbsPdf *bkg =  w->pdf("bkg");
+
     
     /////////////bkg parameters//////////
-    RooRealVar *k= w->var("k");
+        RooRealVar *k= w->var("k");
     k->setRange(-100.,0.);
     *k=-0.01;
     RooRealVar *mg= w->var("mg");
     RooRealVar *m= w->var("m");
+
     m->setRange(0.12,0.15);
     RooRealVar *sg= w->var("sg");
-    *mg=0.07;//mg->setConstant();
-    *sg=0.018;//sg->setConstant();
- 
- 
+    *mg=0.01;//mg->setConstant();
+    *sg=0.01;//sg->setConstant();
+    RooRealVar *s= w->var("s"); 
+    *s=0.018;
     //////////////////////////////////////
-
+    
+    /*
+    RooRealVar *a1= w->var("a1_bkg");
+    *a1=0.0;    
+    RooRealVar *a2= w->var("a2_bkg");
+    *a2=-0.0;
+    a2->setRange(-100,10);
+    RooRealVar *a3= w->var("a3_bkg");
+    *a3=0.0;
+    a3->setConstant();
+    */
     
     
     RooFitResult *res;
@@ -136,12 +155,18 @@
     std::cout<<":::::::::Final Parameters:::::::::::::\n";
     res->floatParsFinal().Print("v");
     std::cout<<"::::::::::::::::::::::::::::::::::::::\n";
-    /*    
+        
     c->Write(Form("c1_%d_refit",bin),TObject::kOverwrite);
     w->Write(Form("w1_%d",bin),TObject::kOverwrite);
     pl->Write(Form("frm1_%d",bin),TObject::kOverwrite);
-    */
+
+    c->Draw();
+    c->SaveAs(Form("%s/rspic/c1_%d_refit.gif",dname.Data(),bin));
+    c->SaveAs(Form("%s/rspic/c1_%d_refit.pdf",dname.Data(),bin));
+
+
+   
     
-    // }
+    }
 
 }

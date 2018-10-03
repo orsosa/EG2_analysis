@@ -1,24 +1,25 @@
 {
-  //  TString fname="ZQ2NuPt2eta_aa_all_UML_widthfix_bkgExpPol1_full_Tvz/sim_CD_C/binned.root";
-  //  TString fname="ZQ2NuPt2eta_aa_all_UML_widthfix_bkgExpPol1_full_Tvz/sim_CD_D/binned.root";
-
-  //  TString fname="ZQ2NuPt2eta_aa_all_UML_widthfix_bkgExpPol1_full_Tvz/data_CD_C/binned.root";
-  //TString fname="ZQ2NuPt2eta_aa_all_UML_widthfix_bkgExpPol1_full_Tvz/data_CD_D/binned.root";
-  //  TString fname="ZQ2NuPt2eta_aa_all_UML_widthfix_bkgExpPol1_full_Tvz/data_FeD_Fe/binned.root";
-  //  TString fname="ZQ2NuPt2eta_aa_all_UML_widthfix_bkgExpPol1_full_Tvz/data_FeD_D/binned.root";
-  //TString fname="ZQ2NuPt2eta_aa_all_UML_widthfix_bkgExpPol1_full_Tvz/data_PbD_Pb/binned.root";
-    TString fname="ZQ2NuPt2eta_aa_all_UML_widthfix_bkgExpPol1_full_Tvz/data_PbD_D/binned.root";
+  gROOT->ProcessLine("#include <libgen.h>");
+  TString fname="Zeta_3pi_all_UML_Pcorr_bkgPol2_Tvz/data_PbD_Pb/binned.root";
   
-  for (int k=0;k<6;k++)
-  {
-    int bin=k;
-
+  TString fnameclone=fname.Copy();
+  TString dname=dirname((char*)fnameclone.Data());  
+  Int_t Nbins=5;
   /*
+  for (int k=0;k<Nbins;k++)
+  {
+  */
+    int bin=4;
 
+    
+    /*
   c->Write(Form("c1_%d_refit",bin),TObject::kOverwrite);
   w->Write(Form("w1_%d",bin),TObject::kOverwrite);
   pl->Write(Form("frm1_%d",bin),TObject::kOverwrite);
-  
+  //c->Draw();
+  c->SaveAs(Form("%s/rspic/c1_%d_refit.gif",dname.Data(),bin));
+  c->SaveAs(Form("%s/rspic/c1_%d_refit.pdf",dname.Data(),bin));
+  .q
   
   */
   
@@ -28,11 +29,41 @@
     RooWorkspace *w = ( RooWorkspace *) fin.Get(Form("w1_%d",bin));
     RooDataSet *ds = ( RooDataSet *) fin.Get(Form("ds1_%d",bin));
     
+    
     RooPlot *pl = w->var("meta")->frame();
     RooRealVar *Neta= w->var("Neta");
+    RooRealVar *Nb= w->var("Nb");
     RooRealVar *meta= w->var("meta");
+    RooRealVar *m= w->var("m");
+    m->setRange(0.53,0.58);
+
+
+    
+    RooRealVar *s= w->var("s");
+    //s->setRange(0.04,0.05);
+
+    RooRealVar *a1= w->var("a1");
+     *a1=-0.0;    
+    RooRealVar *a2= w->var("a2");
+     *a2=0.0;
+     a1->setConstant();
+     //a2->setConstant();
+    
+    //a2->setRange(-100,0);
+    /*    RooRealVar *a3= w->var("a3");
+    *a3=0.0;
+    a3->setConstant();
+    */
+
+    /*
+  
+    */
+
     RooAbsPdf *model = w->pdf("model");
     RooAbsPdf *bkg =  w->pdf("bkg");
+    //    meta->setRange("rplot",0.3,0.8);
+    meta->setRange("rplot",0.45,0.62);
+
     
     RooFitResult *res;
     std::cout<<"Neta before refit: \n";
@@ -55,12 +86,12 @@
     
     c->cd(1);
     
-    res =  model->fitTo(*ds,RooFit::Extended(),RooFit::Save());
+    res =  model->fitTo(*ds,RooFit::Extended(),RooFit::Save(),RooFit::Range("rplot"));
     ds->plotOn(pl);  
-    model->plotOn(pl,RooFit::VisualizeError(*res,1),RooFit::FillColor(kOrange));
+    //    model->plotOn(pl,RooFit::VisualizeError(*res,1),RooFit::FillColor(kOrange),RooFit::NormRange("rplot"));
     ds->plotOn(pl);
-    model->plotOn(pl,RooFit::LineColor(kRed));
-    model->plotOn(pl,RooFit::Components(*bkg),RooFit::LineColor(kBlue),RooFit::LineStyle(kDashed));
+    model->plotOn(pl,RooFit::LineColor(kRed),RooFit::NormRange("rplot"));
+    model->plotOn(pl,RooFit::Components(*bkg),RooFit::LineColor(kBlue),RooFit::LineStyle(kDashed),RooFit::NormRange("rplot"));
     
     pl->GetYaxis()->SetTitleSize(1.0);
     pl->GetYaxis()->SetTitle("R^{A}_{D}");
@@ -85,7 +116,9 @@
       Float_t data=hdata->GetBinContent(b+1); 
       Float_t mdata=hm->GetBinContent(b+1);
       Float_t err=hdata->GetBinError(b+1);
-      hratio->SetBinContent(b+1,(data-mdata)/err);
+      if (err!=0) hratio->SetBinContent(b+1,(data-mdata)/err);
+      else hratio->SetBinContent(b+1,0.);
+
       hratio->SetBinError(b+1,0.);
     }
     c->cd(2);
@@ -121,10 +154,20 @@
     std::cout<<":::::::::Final Parameters:::::::::::::\n";
     res->floatParsFinal().Print("v");
     std::cout<<"::::::::::::::::::::::::::::::::::::::\n";
-
+    /*    
+    
     c->Write(Form("c1_%d_refit",bin),TObject::kOverwrite);
     w->Write(Form("w1_%d",bin),TObject::kOverwrite);
     pl->Write(Form("frm1_%d",bin),TObject::kOverwrite);
-  }   
 
+
+
+    c->Draw();
+    c->SaveAs(Form("%s/rspic/c1_%d_refit.gif",dname.Data(),bin));
+    c->SaveAs(Form("%s/rspic/c1_%d_refit.pdf",dname.Data(),bin));
+    
+
+  }
+    */
+  
 }

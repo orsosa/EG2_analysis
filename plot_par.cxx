@@ -1,10 +1,10 @@
 {
-  TString fname="Pt2Q2NuZpi0_aa_all_UML_Pcorr_bkgExpxG_Tvz/gsim_CD_Cgsim/binned.root";
+  TString fname="Pt2Q2NuZpi0_aa_all_UML_Pcorr_bkgExpxG_Tvz/data_CD_C/binned.root";
 
-  TString parname1="m0";
-  TString parname2="s0";
+  TString parname1="mg";
+  TString parname2="sg";
   
-  TFile fout("pi0_val_"+parname1+"_" + parname2+"_gsimC.root","recreate");
+  TFile fout("pi0_val_"+parname1+"_" + parname2+"_CC.root","recreate");
   
   Nbins=54;
   TH1F * h1= new TH1F("h1","values of: " + parname1,Nbins+2,-1,Nbins+1);
